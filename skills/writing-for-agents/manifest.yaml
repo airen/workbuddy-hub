@@ -1,0 +1,9 @@
+id: writing-for-agents
+name: 给 agent 写文档
+version: 1.0.0
+type: skill
+description: 该技能是「怎么给 agent 写文档」的参考：技能（skill）、`AGENTS.md`、以及任何靠一条指针够到的文档都适用，讲上下文指针、两种负载、信息层级、完成判据、引导词与修剪。适用于「给
+  agent 写文档」「写个 skill」「怎么写技能描述」「改一下 AGENTS.md」「文档该怎么组织」「这段是不是废话」这类需求。
+category: development
+tags: []
+status: active

@@ -1,0 +1,9 @@
+id: setup-matt-pocock-skills
+name: 工程技能初始化
+version: 1.0.0
+type: skill
+description: 该技能用于把当前仓库配置成其他工程技能所假定的样子：设置 issue 追踪器、分诊标签词汇和领域文档布局，每个仓库在首次使用其他工程技能之前跑一次。适用于「初始化」「配置仓库」「跑一遍
+  setup」「setup 一下」「配置 issue 追踪器」「这些工程技能怎么用起来」这类需求。
+category: development
+tags: []
+status: active

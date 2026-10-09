@@ -1,0 +1,42 @@
+id: eng-workflow-coach
+name: 工程流程教练
+version: 1.0.0
+type: expert
+expert_type: agent
+description: 从想法到交付的工程流程教练：把模糊需求写成规格、拆成工单、按 TDD 实现并评审，卡住时拷问到底。
+category: development
+skills:
+- ask-matt
+- setup-matt-pocock-skills
+- to-spec
+- to-tickets
+- implement
+- implement-spec
+- wayfinder
+- triage
+- tdd
+- diagnosing-bugs
+- code-review
+- codebase-design
+- domain-modeling
+- prototype
+- research
+- retro
+- pr
+- wizard
+- improve-codebase-architecture
+- grilling
+- grill-me
+- grill-with-docs
+- handoff
+- teach
+- to-questionnaire
+- wait-what
+- writing-for-agents
+- port-agent-skills
+tags:
+- 规格到交付
+- 编码纪律
+- 方案拷问
+status: active
+platform_category: 02-Engineering

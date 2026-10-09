@@ -1,0 +1,9 @@
+id: tdd
+name: 测试驱动开发
+version: 1.0.0
+type: skill
+description: 测试驱动开发，用红-绿-重构（red-green-refactor）循环一次做一个垂直切片，按接缝写测试。适用于「先写测试」「TDD」「红绿重构」「测试驱动」「补集成测试」「测试怎么写」这类需求，也适用于要构建功能或修
+  bug 但希望测试先行时。
+category: development
+tags: []
+status: active

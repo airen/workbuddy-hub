@@ -1,0 +1,9 @@
+id: codebase-design
+name: 深模块设计
+version: 1.0.0
+type: skill
+description: 为设计深模块（deep module）提供共同词汇：模块、接口、深度、接缝、适配器、杠杆、局部性。适用于「帮我设计一下这个模块」「这个接口怎么设计」「这里该不该抽一层」「怎么让代码更好测」「deepen
+  一下」这类需求，也供其他技能查阅深模块词汇时加载。
+category: development
+tags: []
+status: active

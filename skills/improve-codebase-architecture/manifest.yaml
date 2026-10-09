@@ -1,0 +1,9 @@
+id: improve-codebase-architecture
+name: 架构深化扫描
+version: 1.0.0
+type: skill
+description: 该技能扫描一个代码库，找出可以深化（deepening）的地方——把浅模块（shallow module）变成深模块（deep module）的重构——把它们做成一份可视化的 HTML
+  报告，再就你选中的那一个陪你一路拷问下去。适用于「帮我看看架构」「哪里能重构」「模块太浅了」「提升可测试性」「架构评审」「deepen 一下」这类需求。
+category: development
+tags: []
+status: active

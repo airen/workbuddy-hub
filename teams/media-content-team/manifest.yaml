@@ -1,0 +1,23 @@
+id: media-content-team
+name: 自媒体图文产线团
+version: 1.0.0
+type: team
+description: 统筹小红书与公众号图文产线：热点选题、对标拆解、封面配图与多平台排版，默认只出草稿不自动群发。
+category: content
+members:
+- expert_id: media-content-team-team-lead
+  role: coordinator
+  embedded: true
+- expert_id: topic-intel
+  role: member
+  embedded: true
+- expert_id: visual-editor
+  role: member
+  embedded: true
+workflow: agents/media-content-team-team-lead.md
+tags:
+- 选题对标
+- 图文排版
+- 草稿优先
+status: active
+platform_category: 06-ContentCreative

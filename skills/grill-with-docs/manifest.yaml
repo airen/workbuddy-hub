@@ -1,0 +1,9 @@
+id: grill-with-docs
+name: 拷问并留档
+version: 1.0.0
+type: skill
+description: 该技能用于就用户的计划、决策或想法做不留情面的深度访谈，并在访谈过程中顺手产出文档 —— 架构决策记录（ADR）和术语表（glossary）。适用于「拷问我并顺便把文档写了」「边聊边补
+  ADR 和术语表」「磨方案同时沉淀文档」「grill with docs」这类需求，适合既想磨清设计、又想留下决策记录的场合。
+category: development
+tags: []
+status: active

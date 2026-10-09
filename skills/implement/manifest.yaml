@@ -1,0 +1,9 @@
+id: implement
+name: 按规格实现
+version: 1.0.0
+type: skill
+description: 该技能用于按一份规格说明或一组工单把用户描述的工作实现出来：在事先约定好的接缝（seam）上驱动 TDD，定期跑类型检查与单测、最后跑一次完整测试套件，收尾时用 code-review
+  技能评审并把工作提交到当前分支。适用于「开始实现」「按工单做」「把规格做出来」「动手写吧」「implement」这类需求。
+category: development
+tags: []
+status: active

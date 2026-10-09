@@ -1,0 +1,9 @@
+id: retro
+name: 会话复盘
+version: 1.0.0
+type: skill
+description: 该技能对一次编码会话做复盘（retrospective），找出可改进编码 agent 环境（environment）的候选项，以改善后续运行。适用于「复盘一下这次会话」「做个 retro」「agent
+  哪里可以改进」「怎么让下次跑得更好」「这次为什么这么费劲」这类需求。
+category: development
+tags: []
+status: active

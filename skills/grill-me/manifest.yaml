@@ -1,0 +1,9 @@
+id: grill-me
+name: 拷问我
+version: 1.0.0
+type: skill
+description: 该技能用于就用户的计划、决策或想法做不留情面的深度访谈，通过加载 `grilling` 技能把设计树（design tree）的每个分支都逼到有定论，从而把方案磨得更锋利。适用于「拷问我」「帮我挑刺」「压力测试一下这个方案」「这个设计有什么漏洞」「grill
+  me」这类需求，尤其适合在动手写代码前把计划里的模糊处挖出来。
+category: other
+tags: []
+status: active

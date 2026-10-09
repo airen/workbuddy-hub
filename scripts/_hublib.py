@@ -64,11 +64,18 @@ def find_package_root(path: Path) -> Path | None:
         tmp = Path(tempfile.mkdtemp(prefix="hub_import_"))
         with zipfile.ZipFile(str(path)) as z:
             z.extractall(tmp)
+        # 1) zip 没有多套一层，临时目录本身就是包
+        if detect_type(tmp):
+            return tmp
+        # 2) 唯一子目录是包（标准多套一层）
+        subs = [d for d in tmp.iterdir() if d.is_dir() and not d.name.startswith(".")]
+        if len(subs) == 1 and detect_type(subs[0]):
+            return subs[0]
+        # 3) 兜底：深度优先找一个包
         for p in sorted(tmp.rglob("*")):
             if p.is_dir() and detect_type(p):
                 return p
-        subs = [d for d in tmp.iterdir() if d.is_dir()]
-        return subs[0] if len(subs) == 1 else tmp
+        return tmp
     if path.is_dir():
         if detect_type(path):
             return path

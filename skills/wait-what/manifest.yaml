@@ -1,0 +1,9 @@
+id: wait-what
+name: 换个说法重讲
+version: 1.0.0
+type: skill
+description: 该技能用于在用户没看懂上一条消息时，让 agent 停下来，用 ASD-STE100 简化技术英语（Simplified Technical English）把那段话重讲一遍：补一点上下文，并使用
+  `GLOSSARY.md` 里的通用语言。适用于「我懵了」「等一下，你在说什么」「没听懂」「换个说法重讲」「wait what」这类需求。
+category: other
+tags: []
+status: active

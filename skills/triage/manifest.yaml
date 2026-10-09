@@ -1,0 +1,9 @@
+id: triage
+name: 分诊
+version: 1.0.0
+type: skill
+description: '该技能把 issue tracker 上的 issue 和外部 PR 推进一个由 triage 角色构成的状态机：分类、核验、必要时拷问，最后写出 agent 可直接执行的简报。适用于「帮我
+  triage 一下」「看看哪些需要我处理」「把 #42 移到 ready-for-agent」「这个 issue 该怎么分类」「有什么能让 agent 接手了」这类需求。'
+category: development
+tags: []
+status: active

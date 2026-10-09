@@ -1,0 +1,10 @@
+id: port-agent-skills
+name: 移植外部技能
+version: 1.0.0
+type: skill
+description: 把一个外部 agent 技能仓库（Claude Code / Codex / Cursor 等格式的 SKILL.md 集合）批量转换并安装成 WorkBuddy 可用的技能。适用于「把这个仓库的
+  skill 封装成 workbuddy 能用的」「移植 xxx 的 skills」「转换这批 skill」「把 Claude Code 的 skill 搬过来」这类需求。覆盖侦察、转换规范、并行分发、校验、安装、MIT
+  归属全流程，并附一份校验脚本与一份可直接复用的转换规范。
+category: development
+tags: []
+status: active

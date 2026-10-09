@@ -1,0 +1,91 @@
+{
+  "name": "eng-workflow-coach",
+  "version": "1.0.0",
+  "description": "Engineering workflow coach covering the full idea-to-ship loop plus code discipline. Route when the user asks which skill or flow to use, wants a fuzzy ask turned into a spec or tickets, needs implementation driven by TDD, wants a diff reviewed, is stuck on a hard bug, or wants a plan grilled. Bundles 28 skills.",
+  "author": {
+    "name": "大漠",
+    "email": "damo@example.com"
+  },
+  "agents": [
+    "./agents/eng-workflow-coach.md"
+  ],
+  "skills": [
+    "./skills/ask-matt",
+    "./skills/setup-matt-pocock-skills",
+    "./skills/to-spec",
+    "./skills/to-tickets",
+    "./skills/implement",
+    "./skills/implement-spec",
+    "./skills/wayfinder",
+    "./skills/triage",
+    "./skills/tdd",
+    "./skills/diagnosing-bugs",
+    "./skills/code-review",
+    "./skills/codebase-design",
+    "./skills/domain-modeling",
+    "./skills/prototype",
+    "./skills/research",
+    "./skills/retro",
+    "./skills/pr",
+    "./skills/wizard",
+    "./skills/improve-codebase-architecture",
+    "./skills/grilling",
+    "./skills/grill-me",
+    "./skills/grill-with-docs",
+    "./skills/handoff",
+    "./skills/teach",
+    "./skills/to-questionnaire",
+    "./skills/wait-what",
+    "./skills/writing-for-agents",
+    "./skills/port-agent-skills"
+  ],
+  "expertType": "agent",
+  "agentName": "eng-workflow-coach",
+  "displayName": {
+    "en": "Engineering Workflow Coach",
+    "zh": "工程流程教练"
+  },
+  "profession": {
+    "en": "Engineering Workflow Coach",
+    "zh": "工程流程教练"
+  },
+  "displayDescription": {
+    "en": "An engineering workflow coach from idea to ship: turn fuzzy asks into specs and tickets, implement test-first, review the diff, and grill the design when you get stuck.",
+    "zh": "从想法到交付的工程流程教练：把模糊需求写成规格、拆成工单、按 TDD 实现并评审，卡住时拷问到底。"
+  },
+  "avatar": "avatars/eng-workflow-coach.png",
+  "categoryId": "02-Engineering",
+  "defaultInitPrompt": {
+    "en": "Which skill should I use? Walk me through the idea-to-ship flow",
+    "zh": "我该用哪个技能？带我走一遍从想法到交付的流程"
+  },
+  "plugin": "eng-workflow-coach",
+  "tags": [
+    {
+      "en": "Spec to Ship",
+      "zh": "规格到交付"
+    },
+    {
+      "en": "Code Discipline",
+      "zh": "编码纪律"
+    },
+    {
+      "en": "Design Interview",
+      "zh": "方案拷问"
+    }
+  ],
+  "quickPrompts": [
+    {
+      "en": "Which skill should I use? Walk me through the idea-to-ship flow",
+      "zh": "我该用哪个技能？带我走一遍从想法到交付的流程"
+    },
+    {
+      "en": "This bug is hard—help me build a reliable failing test first",
+      "zh": "这个 bug 好难，先帮我造一个能稳定复现的失败测试"
+    },
+    {
+      "en": "Grill my plan and force out every ambiguity",
+      "zh": "拷问我的方案，把模糊的地方全逼出来"
+    }
+  ]
+}

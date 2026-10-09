@@ -1,0 +1,9 @@
+id: implement-spec
+name: 整份规格实现
+version: 1.0.0
+type: skill
+description: 该技能用于把一份规格说明和它的关联工单在代码里实现出来：把工单读成一张带阻塞关系的任务图，在一条集成分支（integration branch）上并发调度实施者子代理（用 Agent
+  工具），最后跑一次 code-review 技能并结掉所有工单。适用于「按规格实施」「把整个 spec 做出来」「并发实现」「implement-spec」这类需求。
+category: development
+tags: []
+status: active

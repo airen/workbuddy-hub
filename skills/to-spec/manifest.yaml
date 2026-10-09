@@ -1,0 +1,8 @@
+id: to-spec
+name: 写成规格
+version: 1.0.0
+type: skill
+description: 该技能用于把当前对话的上下文和代码库理解综合成一份规格说明（spec），并发布到项目的 issue 追踪器上；它不做访谈，只综合你已经讨论过的东西。适用于「写成规格」「生成 spec」「把刚才聊的整理成文档」「沉淀成方案」「输出规格说明」「to-spec」这类需求。
+category: development
+tags: []
+status: active

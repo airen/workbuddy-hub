@@ -5,6 +5,9 @@
 # 本地暂存区：未纳入核心的非核心/第三方资产与迁移冗余副本（不提交，仅本地保留）
 archive/
 
+# 打包输出：package.py 产出的可上传 zip（不提交，需要时重新打包）
+build/
+
 # Python
 __pycache__/
 *.pyc

@@ -1,0 +1,9 @@
+id: grilling
+name: 拷问式访谈
+version: 1.0.0
+type: skill
+description: 就用户的计划、决策或想法做不留情面的深度访谈，直到设计树的每个分支都被解决。适用于「拷问我」「帮我挑刺」「压力测试一下这个方案」「这个设计有什么漏洞」「grill me」这类需求，也是
+  grill-me / grill-with-docs / triage / wayfinder / improve-codebase-architecture 等技能的底层访谈原语。
+category: other
+tags: []
+status: active

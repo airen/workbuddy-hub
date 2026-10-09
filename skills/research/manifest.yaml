@@ -1,0 +1,9 @@
+id: research
+name: 一手资料调研
+version: 1.0.0
+type: skill
+description: 该技能针对高可信度的一手资料（primary sources）调研一个具体问题，并把结论写成仓库里的一份 Markdown 文件，每条论断都标注来源。适用于「研究一下这个」「帮我查官方文档」「把
+  API 事实查清楚」「把这个主题研究明白」「查一下第一方资料」这类需求，也适用于要把读资料的体力活交给后台子代理去跑、好让自己继续干活时。
+category: research
+tags: []
+status: active

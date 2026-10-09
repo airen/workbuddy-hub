@@ -1,0 +1,9 @@
+id: teach
+name: 教学
+version: 1.0.0
+type: skill
+description: 该技能用于在用户的工作区里教他一门新技能或新概念，以跨多次会话、有状态的方式持续教学：维护任务书（MISSION.md）、术语表（GLOSSARY.md）、学习记录、资源清单和
+  HTML 课程。适用于「教我这个」「我想学 X」「带我入门」「给我讲清楚这个主题」「教我学一下」这类需求。可传入一段说明，描述用户想学什么。
+category: research
+tags: []
+status: active

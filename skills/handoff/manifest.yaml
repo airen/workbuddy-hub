@@ -1,0 +1,8 @@
+id: handoff
+name: 会话交接
+version: 1.0.0
+type: skill
+description: 该技能用于把当前会话压缩成一份交接（handoff）文档，供另一个 agent 接手继续工作。适用于「交接一下」「写个交接文档」「把这个会话总结给下一个人」「换会话前留个 handoff」这类需求，也适用于上下文快满、需要开新会话前保存进度时。可传入一段说明，描述下一个会话将用来做什么，文档会据此调整重点。
+category: other
+tags: []
+status: active

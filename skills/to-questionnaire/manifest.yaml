@@ -1,0 +1,9 @@
+id: to-questionnaire
+name: 转成问卷
+version: 1.0.0
+type: skill
+description: 该技能用于把用户一个人答不上来的决策，转成一份问卷（questionnaire），交给某个人异步填写或在会上一起填。适用于「帮我做份问卷」「这个我不懂，得去问人」「整理成一份问题清单发给对方」「to
+  questionnaire」这类需求，也适用于用户缺少某个人掌握的信息、需要把它问出来时。
+category: other
+tags: []
+status: active

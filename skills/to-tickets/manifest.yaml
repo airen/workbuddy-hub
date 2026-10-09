@@ -1,0 +1,9 @@
+id: to-tickets
+name: 拆成工单
+version: 1.0.0
+type: skill
+description: 该技能用于把一份计划、规格说明或当前对话拆成一组曳光弹（tracer bullet）工单，每张工单都声明自己的阻塞边（blocking edge），并发布到已配置的追踪器（本地是每张工单一个文件、边写成文本，真实追踪器上则用原生阻塞链接）。适用于「拆工单」「切成任务」「分成
+  ticket」「拆成可执行的步骤」「to-tickets」这类需求。
+category: development
+tags: []
+status: active

@@ -1,0 +1,9 @@
+id: ask-matt
+name: 技能路由
+version: 1.0.0
+type: skill
+description: 该技能是一个路由器（router），根据你此刻的处境告诉你该用哪个技能、走哪条流程：从想法到交付的主流程、分诊 / 诊断 / 寻路这类入口（on-ramp）、代码库维护，以及运行在底层的词汇技能。适用于「我该用哪个技能」「接下来干嘛」「这个情况走什么流程」「下一步做什么」「ask
+  matt」这类需求。
+category: development
+tags: []
+status: active

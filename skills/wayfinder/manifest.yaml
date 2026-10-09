@@ -1,0 +1,8 @@
+id: wayfinder
+name: 寻路规划
+version: 1.0.0
+type: skill
+description: 该技能把一次 agent 会话装不下的庞大工作，规划成 issue tracker 上一份由决策票据组成的共享地图，再逐张推进直到通往目的地的路清晰。适用于「这个项目太大了」「帮我规划一下」「先理清路线再动手」「拆成决策票」这类需求，也适用于想法还很模糊、路线看不见时。
+category: development
+tags: []
+status: active

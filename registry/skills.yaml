@@ -8,6 +8,7 @@ skills:
     不需要记忆」时使用。也适用于 agent 自己：即将开始一个跨会话的长期项目、要做技术决策、写了规格、搞清楚某个第三方库的用法、澄清了术语、或发现文档与代码不一致时，主动把知识写进文档工作区。产出
     INDEX.md 索引与约定 / 规格 / 决策 / 调研 / 术语五类文档，并可对既有文档工作区做孤儿文档、断链、过期审计。
   category: other
+  tags: []
   status: active
   _source: manifest.yaml
   path: skills/agent-doc-memory
@@ -20,9 +21,43 @@ skills:
     需求怎么定价值」「AI 项目怎么验收」「智能体项目怎么推进」「这个 AI 项目卡住了」「AI 项目推不动」「模型上线后效果变差」这类问题，或要为项目定一份工程规范（CLAUDE.md / AGENTS.md）时使用。产出项目章程、相关方登记册、风险登记册、WBS
     与里程碑、状态报告、变更申请、验收记录、运营交接包、复盘报告、工程规范等可直接使用的文档。
   category: other
+  tags: []
   status: active
   _source: manifest.yaml
   path: skills/ai-project-pilot
+- id: ask-matt
+  name: 技能路由
+  version: 1.0.0
+  type: skill
+  description: 该技能是一个路由器（router），根据你此刻的处境告诉你该用哪个技能、走哪条流程：从想法到交付的主流程、分诊 / 诊断 / 寻路这类入口（on-ramp）、代码库维护，以及运行在底层的词汇技能。适用于「我该用哪个技能」「接下来干嘛」「这个情况走什么流程」「下一步做什么」「ask
+    matt」这类需求。
+  category: development
+  tags: []
+  status: active
+  _source: manifest.yaml
+  path: skills/ask-matt
+- id: code-review
+  name: 代码评审
+  version: 1.0.0
+  type: skill
+  description: 该技能沿两个轴评审自某个固定点（commit、分支、tag 或 merge-base）以来的改动：标准（Standards，代码是否符合本仓库有文档记录的编码标准？）与规格（Spec，代码是否忠实实现了来源
+    issue/spec？）。两个评审作为并行子代理运行并并排汇报。适用于「review 一下这个分支」「帮我审一下这个 PR」「review since X」「看看这些改动有没有问题」这类需求。
+  category: development
+  tags: []
+  status: active
+  _source: manifest.yaml
+  path: skills/code-review
+- id: codebase-design
+  name: 深模块设计
+  version: 1.0.0
+  type: skill
+  description: 为设计深模块（deep module）提供共同词汇：模块、接口、深度、接缝、适配器、杠杆、局部性。适用于「帮我设计一下这个模块」「这个接口怎么设计」「这里该不该抽一层」「怎么让代码更好测」「deepen
+    一下」这类需求，也供其他技能查阅深模块词汇时加载。
+  category: development
+  tags: []
+  status: active
+  _source: manifest.yaml
+  path: skills/codebase-design
 - id: de-ai-rewrite
   name: 去AI味改写
   version: 1.0.0
@@ -30,9 +65,241 @@ skills:
   description: 去 AI 味改写（自然编辑指南）。当用户要求「去 AI 味」「去掉 AI 腔」「让文字像人写的」「降 AI 检测率」「人味改写」「润色得自然一点」「重写得更自然」或粘贴一段文字要求降低机器痕迹时使用。按资深编辑标准重写文本：删除
     AI 腔模式 + 注入真实人声，三遍流程交付最终版。
   category: content
+  tags: []
   status: active
   _source: manifest.yaml
   path: skills/de-ai-rewrite
+- id: diagnosing-bugs
+  name: Bug 诊断
+  version: 1.0.0
+  type: skill
+  description: 针对疑难 bug 和性能回退的诊断纪律：先构造一个能稳定变红的反馈回路，再复现、最小化、假设、埋点、修复并补回归测试。适用于「debug 一下」「这个 bug 好难」「帮我定位一下为什么报错」「性能变慢了」「diagnose
+    this」这类需求。
+  category: development
+  tags: []
+  status: active
+  _source: manifest.yaml
+  path: skills/diagnosing-bugs
+- id: domain-modeling
+  name: 领域建模
+  version: 1.0.0
+  type: skill
+  description: 主动构建并磨利项目的领域模型：挑战术语、打磨模糊用语、就地更新 GLOSSARY.md、按需记录 ADR。适用于「这个术语到底指什么」「帮我理一下领域模型」「写个 ADR」「更新术语表」「domain
+    modeling」这类需求。
+  category: development
+  tags: []
+  status: active
+  _source: manifest.yaml
+  path: skills/domain-modeling
+- id: grill-me
+  name: 拷问我
+  version: 1.0.0
+  type: skill
+  description: 该技能用于就用户的计划、决策或想法做不留情面的深度访谈，通过加载 `grilling` 技能把设计树（design tree）的每个分支都逼到有定论，从而把方案磨得更锋利。适用于「拷问我」「帮我挑刺」「压力测试一下这个方案」「这个设计有什么漏洞」「grill
+    me」这类需求，尤其适合在动手写代码前把计划里的模糊处挖出来。
+  category: other
+  tags: []
+  status: active
+  _source: manifest.yaml
+  path: skills/grill-me
+- id: grill-with-docs
+  name: 拷问并留档
+  version: 1.0.0
+  type: skill
+  description: 该技能用于就用户的计划、决策或想法做不留情面的深度访谈，并在访谈过程中顺手产出文档 —— 架构决策记录（ADR）和术语表（glossary）。适用于「拷问我并顺便把文档写了」「边聊边补
+    ADR 和术语表」「磨方案同时沉淀文档」「grill with docs」这类需求，适合既想磨清设计、又想留下决策记录的场合。
+  category: development
+  tags: []
+  status: active
+  _source: manifest.yaml
+  path: skills/grill-with-docs
+- id: grilling
+  name: 拷问式访谈
+  version: 1.0.0
+  type: skill
+  description: 就用户的计划、决策或想法做不留情面的深度访谈，直到设计树的每个分支都被解决。适用于「拷问我」「帮我挑刺」「压力测试一下这个方案」「这个设计有什么漏洞」「grill me」这类需求，也是
+    grill-me / grill-with-docs / triage / wayfinder / improve-codebase-architecture 等技能的底层访谈原语。
+  category: other
+  tags: []
+  status: active
+  _source: manifest.yaml
+  path: skills/grilling
+- id: handoff
+  name: 会话交接
+  version: 1.0.0
+  type: skill
+  description: 该技能用于把当前会话压缩成一份交接（handoff）文档，供另一个 agent 接手继续工作。适用于「交接一下」「写个交接文档」「把这个会话总结给下一个人」「换会话前留个 handoff」这类需求，也适用于上下文快满、需要开新会话前保存进度时。可传入一段说明，描述下一个会话将用来做什么，文档会据此调整重点。
+  category: other
+  tags: []
+  status: active
+  _source: manifest.yaml
+  path: skills/handoff
+- id: implement
+  name: 按规格实现
+  version: 1.0.0
+  type: skill
+  description: 该技能用于按一份规格说明或一组工单把用户描述的工作实现出来：在事先约定好的接缝（seam）上驱动 TDD，定期跑类型检查与单测、最后跑一次完整测试套件，收尾时用 code-review
+    技能评审并把工作提交到当前分支。适用于「开始实现」「按工单做」「把规格做出来」「动手写吧」「implement」这类需求。
+  category: development
+  tags: []
+  status: active
+  _source: manifest.yaml
+  path: skills/implement
+- id: implement-spec
+  name: 整份规格实现
+  version: 1.0.0
+  type: skill
+  description: 该技能用于把一份规格说明和它的关联工单在代码里实现出来：把工单读成一张带阻塞关系的任务图，在一条集成分支（integration branch）上并发调度实施者子代理（用 Agent
+    工具），最后跑一次 code-review 技能并结掉所有工单。适用于「按规格实施」「把整个 spec 做出来」「并发实现」「implement-spec」这类需求。
+  category: development
+  tags: []
+  status: active
+  _source: manifest.yaml
+  path: skills/implement-spec
+- id: improve-codebase-architecture
+  name: 架构深化扫描
+  version: 1.0.0
+  type: skill
+  description: 该技能扫描一个代码库，找出可以深化（deepening）的地方——把浅模块（shallow module）变成深模块（deep module）的重构——把它们做成一份可视化的
+    HTML 报告，再就你选中的那一个陪你一路拷问下去。适用于「帮我看看架构」「哪里能重构」「模块太浅了」「提升可测试性」「架构评审」「deepen 一下」这类需求。
+  category: development
+  tags: []
+  status: active
+  _source: manifest.yaml
+  path: skills/improve-codebase-architecture
+- id: port-agent-skills
+  name: 移植外部技能
+  version: 1.0.0
+  type: skill
+  description: 把一个外部 agent 技能仓库（Claude Code / Codex / Cursor 等格式的 SKILL.md 集合）批量转换并安装成 WorkBuddy 可用的技能。适用于「把这个仓库的
+    skill 封装成 workbuddy 能用的」「移植 xxx 的 skills」「转换这批 skill」「把 Claude Code 的 skill 搬过来」这类需求。覆盖侦察、转换规范、并行分发、校验、安装、MIT
+    归属全流程，并附一份校验脚本与一份可直接复用的转换规范。
+  category: development
+  tags: []
+  status: active
+  _source: manifest.yaml
+  path: skills/port-agent-skills
+- id: pr
+  name: PR 正文
+  version: 1.0.0
+  type: skill
+  description: 该技能提供一个撰写 PR 正文（PR body）的模板与配图指引：Summary（摘要配图）、Evidence（证据，前后对比）、Merge Danger（合并风险：单向门/双向门与影响半径）。适用于「写一下
+    PR 描述」「帮我填 PR 正文」「这个 PR 该怎么写说明」这类需求。
+  category: development
+  tags: []
+  status: active
+  _source: manifest.yaml
+  path: skills/pr
+- id: prototype
+  name: 原型验证
+  version: 1.0.0
+  type: skill
+  description: 构建一次性原型来回答一个设计问题：要么是逻辑 / 状态模型原型，要么是 UI 变体原型。适用于「这个状态机设计得对不对」「帮我看看这个界面应该长什么样」「搭个原型验证一下」「prototype
+    一下」这类需求。
+  category: development
+  tags: []
+  status: active
+  _source: manifest.yaml
+  path: skills/prototype
+- id: research
+  name: 一手资料调研
+  version: 1.0.0
+  type: skill
+  description: 该技能针对高可信度的一手资料（primary sources）调研一个具体问题，并把结论写成仓库里的一份 Markdown 文件，每条论断都标注来源。适用于「研究一下这个」「帮我查官方文档」「把
+    API 事实查清楚」「把这个主题研究明白」「查一下第一方资料」这类需求，也适用于要把读资料的体力活交给后台子代理去跑、好让自己继续干活时。
+  category: research
+  tags: []
+  status: active
+  _source: manifest.yaml
+  path: skills/research
+- id: retro
+  name: 会话复盘
+  version: 1.0.0
+  type: skill
+  description: 该技能对一次编码会话做复盘（retrospective），找出可改进编码 agent 环境（environment）的候选项，以改善后续运行。适用于「复盘一下这次会话」「做个
+    retro」「agent 哪里可以改进」「怎么让下次跑得更好」「这次为什么这么费劲」这类需求。
+  category: development
+  tags: []
+  status: active
+  _source: manifest.yaml
+  path: skills/retro
+- id: setup-matt-pocock-skills
+  name: 工程技能初始化
+  version: 1.0.0
+  type: skill
+  description: 该技能用于把当前仓库配置成其他工程技能所假定的样子：设置 issue 追踪器、分诊标签词汇和领域文档布局，每个仓库在首次使用其他工程技能之前跑一次。适用于「初始化」「配置仓库」「跑一遍
+    setup」「setup 一下」「配置 issue 追踪器」「这些工程技能怎么用起来」这类需求。
+  category: development
+  tags: []
+  status: active
+  _source: manifest.yaml
+  path: skills/setup-matt-pocock-skills
+- id: tdd
+  name: 测试驱动开发
+  version: 1.0.0
+  type: skill
+  description: 测试驱动开发，用红-绿-重构（red-green-refactor）循环一次做一个垂直切片，按接缝写测试。适用于「先写测试」「TDD」「红绿重构」「测试驱动」「补集成测试」「测试怎么写」这类需求，也适用于要构建功能或修
+    bug 但希望测试先行时。
+  category: development
+  tags: []
+  status: active
+  _source: manifest.yaml
+  path: skills/tdd
+- id: teach
+  name: 教学
+  version: 1.0.0
+  type: skill
+  description: 该技能用于在用户的工作区里教他一门新技能或新概念，以跨多次会话、有状态的方式持续教学：维护任务书（MISSION.md）、术语表（GLOSSARY.md）、学习记录、资源清单和
+    HTML 课程。适用于「教我这个」「我想学 X」「带我入门」「给我讲清楚这个主题」「教我学一下」这类需求。可传入一段说明，描述用户想学什么。
+  category: research
+  tags: []
+  status: active
+  _source: manifest.yaml
+  path: skills/teach
+- id: to-questionnaire
+  name: 转成问卷
+  version: 1.0.0
+  type: skill
+  description: 该技能用于把用户一个人答不上来的决策，转成一份问卷（questionnaire），交给某个人异步填写或在会上一起填。适用于「帮我做份问卷」「这个我不懂，得去问人」「整理成一份问题清单发给对方」「to
+    questionnaire」这类需求，也适用于用户缺少某个人掌握的信息、需要把它问出来时。
+  category: other
+  tags: []
+  status: active
+  _source: manifest.yaml
+  path: skills/to-questionnaire
+- id: to-spec
+  name: 写成规格
+  version: 1.0.0
+  type: skill
+  description: 该技能用于把当前对话的上下文和代码库理解综合成一份规格说明（spec），并发布到项目的 issue 追踪器上；它不做访谈，只综合你已经讨论过的东西。适用于「写成规格」「生成
+    spec」「把刚才聊的整理成文档」「沉淀成方案」「输出规格说明」「to-spec」这类需求。
+  category: development
+  tags: []
+  status: active
+  _source: manifest.yaml
+  path: skills/to-spec
+- id: to-tickets
+  name: 拆成工单
+  version: 1.0.0
+  type: skill
+  description: 该技能用于把一份计划、规格说明或当前对话拆成一组曳光弹（tracer bullet）工单，每张工单都声明自己的阻塞边（blocking edge），并发布到已配置的追踪器（本地是每张工单一个文件、边写成文本，真实追踪器上则用原生阻塞链接）。适用于「拆工单」「切成任务」「分成
+    ticket」「拆成可执行的步骤」「to-tickets」这类需求。
+  category: development
+  tags: []
+  status: active
+  _source: manifest.yaml
+  path: skills/to-tickets
+- id: triage
+  name: 分诊
+  version: 1.0.0
+  type: skill
+  description: '该技能把 issue tracker 上的 issue 和外部 PR 推进一个由 triage 角色构成的状态机：分类、核验、必要时拷问，最后写出 agent 可直接执行的简报。适用于「帮我
+    triage 一下」「看看哪些需要我处理」「把 #42 移到 ready-for-agent」「这个 issue 该怎么分类」「有什么能让 agent 接手了」这类需求。'
+  category: development
+  tags: []
+  status: active
+  _source: manifest.yaml
+  path: skills/triage
 - id: ui-design-field-manual
   name: UI 设计军规
   version: 1.0.0
@@ -43,6 +310,50 @@ skills:
     UI」时使用。也适用于 agent 在生成 HTML/CSS/Tailwind/React 界面代码前先定基调与首屏骨架、生成后做交付前视觉自检与独立评审，或为用户建立一套可复用的设计令牌（字号
     / 行高 / 间距 / 色阶）。产出可直接落地的设计令牌、基调卡、自检报告与独立评审意见。
   category: development
+  tags: []
   status: active
   _source: manifest.yaml
   path: skills/ui-design-field-manual
+- id: wait-what
+  name: 换个说法重讲
+  version: 1.0.0
+  type: skill
+  description: 该技能用于在用户没看懂上一条消息时，让 agent 停下来，用 ASD-STE100 简化技术英语（Simplified Technical English）把那段话重讲一遍：补一点上下文，并使用
+    `GLOSSARY.md` 里的通用语言。适用于「我懵了」「等一下，你在说什么」「没听懂」「换个说法重讲」「wait what」这类需求。
+  category: other
+  tags: []
+  status: active
+  _source: manifest.yaml
+  path: skills/wait-what
+- id: wayfinder
+  name: 寻路规划
+  version: 1.0.0
+  type: skill
+  description: 该技能把一次 agent 会话装不下的庞大工作，规划成 issue tracker 上一份由决策票据组成的共享地图，再逐张推进直到通往目的地的路清晰。适用于「这个项目太大了」「帮我规划一下」「先理清路线再动手」「拆成决策票」这类需求，也适用于想法还很模糊、路线看不见时。
+  category: development
+  tags: []
+  status: active
+  _source: manifest.yaml
+  path: skills/wayfinder
+- id: wizard
+  name: 交互式向导
+  version: 1.0.0
+  type: skill
+  description: 该技能生成一个交互式 bash 向导（wizard），一步一步带一个人走完只有他们本人才能做的步骤：打开每个 URL、精确说明点哪里复制什么、捕获值、写到该去的地方（.env、GitHub
+    secrets），并逐阶段确认。适用于「给我写个向导」「带我配置一下」「走一遍开通流程」「配一下 CI secrets」「跑一次性的迁移/切换」「有个第三方后台要人手动点」这类需求。agent 自己能做的步骤不要用它。
+  category: development
+  tags: []
+  status: active
+  _source: manifest.yaml
+  path: skills/wizard
+- id: writing-for-agents
+  name: 给 agent 写文档
+  version: 1.0.0
+  type: skill
+  description: 该技能是「怎么给 agent 写文档」的参考：技能（skill）、`AGENTS.md`、以及任何靠一条指针够到的文档都适用，讲上下文指针、两种负载、信息层级、完成判据、引导词与修剪。适用于「给
+    agent 写文档」「写个 skill」「怎么写技能描述」「改一下 AGENTS.md」「文档该怎么组织」「这段是不是废话」这类需求。
+  category: development
+  tags: []
+  status: active
+  _source: manifest.yaml
+  path: skills/writing-for-agents

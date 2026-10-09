@@ -1,0 +1,254 @@
+{
+  "name": "creator-ops",
+  "version": "1.0.0",
+  "description": "A self-media content operations team for creators: a Content Director orchestrates six stage specialists across topic intelligence, copywriting, visual assets, video production, multi-platform distribution and analytics — holding a human authorization gate before anything is published.",
+  "author": {
+    "name": "大漠",
+    "email": "damo@example.com"
+  },
+  "agents": [
+    "./agents/creator-ops-team-lead.md",
+    "./agents/creator-ops-topic-scout.md",
+    "./agents/creator-ops-copywriter.md",
+    "./agents/creator-ops-visual.md",
+    "./agents/creator-ops-video.md",
+    "./agents/creator-ops-publisher.md",
+    "./agents/creator-ops-analyst.md"
+  ],
+  "skills": [
+    "./skills/auto-editor",
+    "./skills/auto-editor-effects",
+    "./skills/auto-editor-export",
+    "./skills/auto-editor-transcribe",
+    "./skills/baoyu-article-illustrator",
+    "./skills/baoyu-comic",
+    "./skills/baoyu-compress-image",
+    "./skills/baoyu-cover-image",
+    "./skills/baoyu-danger-gemini-web",
+    "./skills/baoyu-danger-x-to-markdown",
+    "./skills/baoyu-diagram",
+    "./skills/baoyu-electron-extract",
+    "./skills/baoyu-format-markdown",
+    "./skills/baoyu-image-gen",
+    "./skills/baoyu-infographic",
+    "./skills/baoyu-markdown-to-html",
+    "./skills/baoyu-post-to-wechat",
+    "./skills/baoyu-post-to-weibo",
+    "./skills/baoyu-post-to-x",
+    "./skills/baoyu-skill",
+    "./skills/baoyu-slide-deck",
+    "./skills/baoyu-translate",
+    "./skills/baoyu-url-to-markdown",
+    "./skills/baoyu-wechat-summary",
+    "./skills/baoyu-xhs-images",
+    "./skills/baoyu-youtube-transcript",
+    "./skills/bilibili-upload",
+    "./skills/creator-ops",
+    "./skills/creator-toolbox",
+    "./skills/douyin-upload",
+    "./skills/guixingren-skill",
+    "./skills/jikegongyuan-skill",
+    "./skills/jiqizhixin-skill",
+    "./skills/kuaishou-upload",
+    "./skills/liangziwei-skill",
+    "./skills/lijigang-skill",
+    "./skills/qiuzhi2046-skill",
+    "./skills/saibochanshin-skill",
+    "./skills/saiwenqiaoyi-skill",
+    "./skills/self-media-content-analytics",
+    "./skills/self-media-content-brief",
+    "./skills/self-media-content-delivery",
+    "./skills/self-media-content-strategy",
+    "./skills/self-media-content-workflow",
+    "./skills/self-media-platform-copywriting",
+    "./skills/self-media-short-video",
+    "./skills/self-media-trend-radar",
+    "./skills/self-media-video-publisher",
+    "./skills/self-media-wechat-publisher",
+    "./skills/shuzishengmingkazike-skill",
+    "./skills/tegongyuzhou-skill",
+    "./skills/xiaohongshu-upload",
+    "./skills/xinzhiyuan-skill"
+  ],
+  "expertType": "team",
+  "agentName": "creator-ops-team-lead",
+  "teamInfo": {
+    "leadAgent": "creator-ops-team-lead",
+    "memberAgents": [
+      "creator-ops-topic-scout",
+      "creator-ops-copywriter",
+      "creator-ops-visual",
+      "creator-ops-video",
+      "creator-ops-publisher",
+      "creator-ops-analyst"
+    ]
+  },
+  "displayName": {
+    "en": "Creator Ops Team",
+    "zh": "自媒体创作专家团"
+  },
+  "profession": {
+    "en": "Creator Ops Team",
+    "zh": "自媒体创作专家团"
+  },
+  "displayDescription": {
+    "en": "A full self-media content pipeline: topic intelligence, platform-native copy, visual assets, video production, multi-platform distribution and analytics — with a human gate before every publish.",
+    "zh": "从选题情报到多平台发布与数据复盘，六位环节专家接力，把一句话选题做成可直接发布的成品。"
+  },
+  "avatar": "avatars/team.jpg",
+  "categoryId": "06-ContentCreative",
+  "defaultInitPrompt": {
+    "zh": "我有个选题，帮我从找证据一路做到多平台发布",
+    "en": "I have a topic — take me from evidence gathering all the way to multi-platform publishing"
+  },
+  "plugin": "creator-ops",
+  "tags": [
+    {
+      "en": "Self-Media Production",
+      "zh": "自媒体内容生产"
+    },
+    {
+      "en": "Multi-Platform Distribution",
+      "zh": "多平台分发"
+    },
+    {
+      "en": "Short Video Pipeline",
+      "zh": "短视频制片"
+    }
+  ],
+  "quickPrompts": [
+    {
+      "zh": "我有个选题，帮我从找证据一路做到多平台发布",
+      "en": "I have a topic — take me from evidence gathering all the way to multi-platform publishing"
+    },
+    {
+      "zh": "帮我给这个账号定内容策略：定位、栏目和选题池",
+      "en": "Draft a content strategy for this account: positioning, columns and a topic pool"
+    },
+    {
+      "zh": "这条口播录好了，帮我剪掉废话、加字幕、切成短视频",
+      "en": "This talking-head recording is done — cut the dead air, add captions, and slice it into shorts"
+    }
+  ],
+  "members": [
+    {
+      "id": "creator-ops-team-lead",
+      "displayName": {
+        "en": "Zhang Youxu",
+        "zh": "章有序"
+      },
+      "name": {
+        "en": "Zhang Youxu",
+        "zh": "章有序"
+      },
+      "profession": {
+        "en": "Content Director",
+        "zh": "内容总监"
+      },
+      "avatar": "avatars/creator-ops-team-lead.jpg",
+      "role": "lead"
+    },
+    {
+      "id": "creator-ops-topic-scout",
+      "displayName": {
+        "en": "Wen Xianji",
+        "zh": "闻先机"
+      },
+      "name": {
+        "en": "Wen Xianji",
+        "zh": "闻先机"
+      },
+      "profession": {
+        "en": "Topic Intelligence Scout",
+        "zh": "选题情报官"
+      },
+      "avatar": "avatars/creator-ops-topic-scout.jpg",
+      "role": "member"
+    },
+    {
+      "id": "creator-ops-copywriter",
+      "displayName": {
+        "en": "Bi Chengzhang",
+        "zh": "毕成章"
+      },
+      "name": {
+        "en": "Bi Chengzhang",
+        "zh": "毕成章"
+      },
+      "profession": {
+        "en": "Lead Copywriter",
+        "zh": "主笔"
+      },
+      "avatar": "avatars/creator-ops-copywriter.jpg",
+      "role": "member"
+    },
+    {
+      "id": "creator-ops-visual",
+      "displayName": {
+        "en": "Yan Keguang",
+        "zh": "颜可观"
+      },
+      "name": {
+        "en": "Yan Keguang",
+        "zh": "颜可观"
+      },
+      "profession": {
+        "en": "Visual Designer",
+        "zh": "视觉设计师"
+      },
+      "avatar": "avatars/creator-ops-visual.jpg",
+      "role": "member"
+    },
+    {
+      "id": "creator-ops-video",
+      "displayName": {
+        "en": "Tao Chengzhen",
+        "zh": "陶成帧"
+      },
+      "name": {
+        "en": "Tao Chengzhen",
+        "zh": "陶成帧"
+      },
+      "profession": {
+        "en": "Video Producer",
+        "zh": "视频制片"
+      },
+      "avatar": "avatars/creator-ops-video.jpg",
+      "role": "member"
+    },
+    {
+      "id": "creator-ops-publisher",
+      "displayName": {
+        "en": "Zheng Duoping",
+        "zh": "郑多平"
+      },
+      "name": {
+        "en": "Zheng Duoping",
+        "zh": "郑多平"
+      },
+      "profession": {
+        "en": "Distribution Operator",
+        "zh": "分发运营"
+      },
+      "avatar": "avatars/creator-ops-publisher.jpg",
+      "role": "member"
+    },
+    {
+      "id": "creator-ops-analyst",
+      "displayName": {
+        "en": "Zha Youshu",
+        "zh": "查有数"
+      },
+      "name": {
+        "en": "Zha Youshu",
+        "zh": "查有数"
+      },
+      "profession": {
+        "en": "Content Analyst",
+        "zh": "内容分析师"
+      },
+      "avatar": "avatars/creator-ops-analyst.jpg",
+      "role": "member"
+    }
+  ]
+}

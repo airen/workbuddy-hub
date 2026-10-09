@@ -1,0 +1,9 @@
+id: diagnosing-bugs
+name: Bug 诊断
+version: 1.0.0
+type: skill
+description: 针对疑难 bug 和性能回退的诊断纪律：先构造一个能稳定变红的反馈回路，再复现、最小化、假设、埋点、修复并补回归测试。适用于「debug 一下」「这个 bug 好难」「帮我定位一下为什么报错」「性能变慢了」「diagnose
+  this」这类需求。
+category: development
+tags: []
+status: active

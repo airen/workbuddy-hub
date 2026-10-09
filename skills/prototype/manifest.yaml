@@ -1,0 +1,9 @@
+id: prototype
+name: 原型验证
+version: 1.0.0
+type: skill
+description: 构建一次性原型来回答一个设计问题：要么是逻辑 / 状态模型原型，要么是 UI 变体原型。适用于「这个状态机设计得对不对」「帮我看看这个界面应该长什么样」「搭个原型验证一下」「prototype
+  一下」这类需求。
+category: development
+tags: []
+status: active

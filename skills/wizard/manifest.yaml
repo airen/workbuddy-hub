@@ -1,0 +1,9 @@
+id: wizard
+name: 交互式向导
+version: 1.0.0
+type: skill
+description: 该技能生成一个交互式 bash 向导（wizard），一步一步带一个人走完只有他们本人才能做的步骤：打开每个 URL、精确说明点哪里复制什么、捕获值、写到该去的地方（.env、GitHub
+  secrets），并逐阶段确认。适用于「给我写个向导」「带我配置一下」「走一遍开通流程」「配一下 CI secrets」「跑一次性的迁移/切换」「有个第三方后台要人手动点」这类需求。agent 自己能做的步骤不要用它。
+category: development
+tags: []
+status: active

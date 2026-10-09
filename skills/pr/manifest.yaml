@@ -1,0 +1,9 @@
+id: pr
+name: PR 正文
+version: 1.0.0
+type: skill
+description: 该技能提供一个撰写 PR 正文（PR body）的模板与配图指引：Summary（摘要配图）、Evidence（证据，前后对比）、Merge Danger（合并风险：单向门/双向门与影响半径）。适用于「写一下
+  PR 描述」「帮我填 PR 正文」「这个 PR 该怎么写说明」这类需求。
+category: development
+tags: []
+status: active

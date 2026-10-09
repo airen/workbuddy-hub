@@ -1,0 +1,9 @@
+id: domain-modeling
+name: 领域建模
+version: 1.0.0
+type: skill
+description: 主动构建并磨利项目的领域模型：挑战术语、打磨模糊用语、就地更新 GLOSSARY.md、按需记录 ADR。适用于「这个术语到底指什么」「帮我理一下领域模型」「写个 ADR」「更新术语表」「domain
+  modeling」这类需求。
+category: development
+tags: []
+status: active

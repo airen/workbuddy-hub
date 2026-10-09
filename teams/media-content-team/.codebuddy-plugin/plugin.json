@@ -1,0 +1,123 @@
+{
+  "name": "media-content-team",
+  "version": "1.0.0",
+  "description": "Lean self-media content team (Team type) for Xiaohongshu & WeChat: topic research + benchmark, visual/article production. Draft-only, never auto-publishes.",
+  "author": {
+    "name": "漠漠",
+    "email": "agent@workbuddy.local"
+  },
+  "agents": [
+    "./agents/media-content-team-team-lead.md",
+    "./agents/topic-intel.md",
+    "./agents/visual-editor.md"
+  ],
+  "expertType": "team",
+  "agentName": "media-content-team-team-lead",
+  "teamInfo": {
+    "leadAgent": "media-content-team-team-lead",
+    "memberAgents": [
+      "topic-intel",
+      "visual-editor"
+    ]
+  },
+  "displayName": {
+    "en": "Self-Media Content Team",
+    "zh": "自媒体图文产线团"
+  },
+  "profession": {
+    "en": "Self-Media Content Team",
+    "zh": "自媒体图文产线团"
+  },
+  "displayDescription": {
+    "en": "Coordinates Xiaohongshu & WeChat content pipeline: trend topics, benchmark deconstruction, cover/illustration and multi-platform layout. Draft-only, no auto-publish.",
+    "zh": "统筹小红书与公众号图文产线：热点选题、对标拆解、封面配图与多平台排版，默认只出草稿不自动群发。"
+  },
+  "avatar": "avatars/team.png",
+  "categoryId": "06-ContentCreative",
+  "defaultInitPrompt": {
+    "zh": "帮我给小红书账号做本周选题",
+    "en": "Plan this week's Xiaohongshu topics"
+  },
+  "plugin": "media-content-team",
+  "tags": [
+    {
+      "en": "Topic & Benchmark",
+      "zh": "选题对标"
+    },
+    {
+      "en": "Visual & Layout",
+      "zh": "图文排版"
+    },
+    {
+      "en": "Draft-Only Publishing",
+      "zh": "草稿优先"
+    }
+  ],
+  "quickPrompts": [
+    {
+      "en": "Plan this week's Xiaohongshu topics",
+      "zh": "帮我给小红书账号做本周选题"
+    },
+    {
+      "en": "Deconstruct a benchmark creator's viral playbook",
+      "zh": "拆解一个对标博主的爆款打法"
+    },
+    {
+      "en": "Layout this draft into XHS cards + WeChat article",
+      "zh": "把这篇稿子排成小红书图文+公众号长文"
+    }
+  ],
+  "members": [
+    {
+      "id": "media-content-team-team-lead",
+      "name": {
+        "en": "Su Tongchou",
+        "zh": "苏统筹"
+      },
+      "displayName": {
+        "en": "Su Tongchou",
+        "zh": "苏统筹"
+      },
+      "profession": {
+        "en": "Content Operator",
+        "zh": "内容操盘手"
+      },
+      "avatar": "avatars/media-content-team-lead.png",
+      "role": "lead"
+    },
+    {
+      "id": "topic-intel",
+      "name": {
+        "en": "Tao Xunbao",
+        "zh": "陶寻爆"
+      },
+      "displayName": {
+        "en": "Tao Xunbao",
+        "zh": "陶寻爆"
+      },
+      "profession": {
+        "en": "Topic Intelligence Officer",
+        "zh": "选题情报官"
+      },
+      "avatar": "avatars/topic-intel.png",
+      "role": "member"
+    },
+    {
+      "id": "visual-editor",
+      "name": {
+        "en": "Pu Meibian",
+        "zh": "蒲美编"
+      },
+      "displayName": {
+        "en": "Pu Meibian",
+        "zh": "蒲美编"
+      },
+      "profession": {
+        "en": "Visual Editor",
+        "zh": "图文制片"
+      },
+      "avatar": "avatars/visual-editor.png",
+      "role": "member"
+    }
+  ]
+}
