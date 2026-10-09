@@ -9,10 +9,9 @@ from pathlib import Path
 
 WORKSPACE = Path(__file__).parent.parent
 OUTPUT_DIR = WORKSPACE / "build"
-OUTPUT_DIR.mkdir(exist_ok=True)
 
 
-def get_manifest(metadata_path: Path) -> dict | None:
+def get_manifest(metadata_path: Path):
     """读取 manifest.yaml。"""
     try:
         import yaml
@@ -24,7 +23,7 @@ def get_manifest(metadata_path: Path) -> dict | None:
         return yaml.safe_load(f)
 
 
-def collect_assets() -> dict:
+def collect_assets():
     """扫描所有资产，生成 manifest。"""
     result = {"skills": [], "experts": [], "teams": []}
 
@@ -67,7 +66,7 @@ def collect_assets() -> dict:
     return result
 
 
-def package_item(asset_type: str, item_id: str) -> Path:
+def package_item(asset_type: str, item_id: str):
     """打包单个资产为 zip 文件。"""
     source_dir = WORKSPACE / asset_type / item_id
     if not source_dir.is_dir():
@@ -85,11 +84,11 @@ def package_item(asset_type: str, item_id: str) -> Path:
                 arcname = str(file_path.relative_to(WORKSPACE))
                 zf.write(file_path, arcname)
 
-    print(f"[OK] 已打包: {output_file} ({output_file.stat().st_size / 1024:.1f}KB)")
+    print(f"[OK] 已打包: {output_file.name} ({output_file.stat().st_size / 1024:.1f}KB)")
     return output_file
 
 
-def package_all() -> list[Path]:
+def package_all():
     """打包所有资产。"""
     assets = collect_assets()
     packages = []
@@ -122,7 +121,7 @@ def package_all() -> list[Path]:
             arcname = f"packages/{pkg.name}"
             zf.write(pkg, arcname)
 
-    print(f"\n📦 已打包总览: {summary} ({len(packages)} 个资产)")
+    print(f"\n📦 已打包总览: {summary.name} ({len(packages)} 个资产)")
     return packages
 
 
