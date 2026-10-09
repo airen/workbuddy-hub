@@ -4,7 +4,7 @@ categories:
   count: 4
 - id: development
   label: 开发与工程
-  count: 31
+  count: 32
 - id: content
   label: 内容生产
   count: 4
@@ -19,4 +19,4 @@ categories:
   count: 7
 - id: _total
   label: 合计
-  count: 46
+  count: 47

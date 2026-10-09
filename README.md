@@ -84,7 +84,7 @@ python scripts/generate_readme.py
 > 由 `scripts/generate_readme.py` 自动生成（见下方标记区间）。
 
 <!-- ASSETS_START -->
-**当前共 46 个资产**（技能 32 / 专家 9 / 专家团 5）。
+**当前共 47 个资产**（技能 32 / 专家 10 / 专家团 5）。
 
 ## 专家团（Teams）
 
@@ -125,6 +125,7 @@ python scripts/generate_readme.py
 | `doc-memory-steward` | 纪文远 | 把项目知识沉淀成可读可改可提交的文档工作区：干活前先查、干完再更新，替代靠召回的记忆插件。 |
 | `eng-workflow-coach` | 工程流程教练 | 从想法到交付的工程流程教练：把模糊需求写成规格、拆成工单、按 TDD 实现并评审，卡住时拷问到底。 |
 | `engineering-review-board` | 陆鉴 | 全仓库代码审查入口：先建地图，再按需调用架构、技术债、安全、测试等专项技能，默认只读、结论附证据。 |
+| `ppt-architect` | 林镜 | 把任意主题变成可直接交付的 PPT：按需选 PPTX 或 HTML 格式，内置 14 种专业风格，产出可直接投屏的正式汇报材料。 |
 | `software-architect` | 方权衡 | 用权衡分析驱动架构决策：质量属性、风格选型、领域建模、分布式数据与演化，产出 ADR 与图表。 |
 | `spec-driven-dev` | 章立言 | 把模糊需求固化成可执行规格：章程、规格、澄清、方案、任务清单、校验与收敛，让 AI 有据可依。 |
 
@@ -189,6 +190,7 @@ python scripts/generate_readme.py
 | `teach` | 教学 | 该技能用于在用户的工作区里教他一门新技能或新概念，以跨多次会话、有状态的方式持续教学：维护任务书（MISSION.md）、术语表（GLOSSARY.md）、学习记录、资源清单和 HTML 课程。适用于「教我这个」「我想学 X」「带我入门」… |
 
 <!-- ASSETS_END -->
+
 
 
 ## 文档

@@ -1,0 +1,44 @@
+{
+  "name": "ppt-architect",
+  "version": "1.0.0",
+  "description": "PPT architecture expert who transforms any topic into production-ready presentations with professional design, supporting both editable PPTX and browser-ready HTML formats.",
+  "author": {
+    "name": "大漠",
+    "email": "damo@example.com"
+  },
+  "agents": ["./agents/ppt-architect.md"],
+  "skills": ["./skills/ppt-architect"],
+
+  "expertType": "agent",
+  "agentName": "ppt-architect",
+
+  "displayName": {
+    "en": "Lin Jing",
+    "zh": "林镜"
+  },
+  "profession": {
+    "en": "PPT Architect",
+    "zh": "PPT 架构师"
+  },
+  "displayDescription": {
+    "en": "Transforms any topic into production-ready presentations: chooses between editable PPTX or browser-ready HTML, applies professional design systems with 14 built-in styles, and delivers polished results ready for formal delivery.",
+    "zh": "把任意主题变成可直接交付的 PPT：按需选 PPTX 或 HTML 格式，内置 14 种专业风格，产出可直接投屏的正式汇报材料。"
+  },
+  "avatar": "avatars/ppt-architect.png",
+  "categoryId": "02-Engineering",
+  "defaultInitPrompt": {
+    "zh": "帮我做一份 PPT",
+    "en": "Help me make a PPT"
+  },
+  "plugin": "ppt-architect",
+  "tags": [
+    { "en": "PPT Generation", "zh": "PPT 生成" },
+    { "en": "Presentation Design", "zh": "演示设计" },
+    { "en": "Slide Deck", "zh": "幻灯片" }
+  ],
+  "quickPrompts": [
+    { "en": "Make a 12-page PPT about AI tools annual review, ink magazine style", "zh": "帮我做一份 12 页的 PPT，主题 AI 工具号年度复盘，墨水杂志风格" },
+    { "en": "Convert this outline into a PPTX for formal presentation", "zh": "把这份大纲转成 PPTX，用于正式汇报" },
+    { "en": "Make an HTML presentation with speaker notes", "zh": "做一个带演讲者备注的 HTML 演示文稿" }
+  ]
+}

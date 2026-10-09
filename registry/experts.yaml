@@ -214,6 +214,23 @@ experts:
   platform_category: 04-DataAI
   _source: manifest.yaml
   path: experts/lao-dao-editor
+- id: ppt-architect
+  name: 林镜
+  version: 1.0.0
+  type: expert
+  expert_type: agent
+  description: 把任意主题变成可直接交付的 PPT：按需选 PPTX 或 HTML 格式，内置 14 种专业风格，产出可直接投屏的正式汇报材料。
+  category: development
+  skills:
+  - ppt-architect
+  tags:
+  - PPT 生成
+  - 演示设计
+  - 幻灯片
+  status: active
+  platform_category: 02-Engineering
+  _source: manifest.yaml
+  path: experts/ppt-architect
 - id: self-media-studio
   name: 柳成文
   version: 1.0.0
