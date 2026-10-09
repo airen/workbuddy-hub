@@ -1,0 +1,35 @@
+id: hai-stack
+name: 软件迭代专家团
+version: 1.0.0
+type: team
+description: 把一次软件迭代做对：先判断值不值得做，再设计边界、按测试驱动落地，用证据确认，最后把文档沉淀干净。
+category: development
+members:
+- expert_id: hai-stack-team-lead
+  role: coordinator
+  embedded: true
+- expert_id: hai-idea-judge
+  role: member
+  embedded: true
+- expert_id: hai-architect
+  role: member
+  embedded: true
+- expert_id: hai-engineer
+  role: member
+  embedded: true
+- expert_id: hai-reviewer
+  role: member
+  embedded: true
+- expert_id: hai-doc-officer
+  role: member
+  embedded: true
+- expert_id: hai-corrector
+  role: member
+  embedded: true
+workflow: agents/hai-stack-team-lead.md
+tags:
+- 迭代判断
+- 架构与测试驱动
+- 技术文档简化
+status: active
+platform_category: 02-Engineering

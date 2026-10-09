@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/airen/workbuddy-hub/schemas/team.schema.json",
+  "title": "WorkBuddy Hub — Team Manifest",
+  "description": "校验 teams/<id>/manifest.yaml 的结构。专家团的真实定义以 .codebuddy-plugin/plugin.json（members）+ agents/*.md 为准，本 manifest 是仓库内部的索引/筛选元数据。",
+  "type": "object",
+  "required": ["id", "name", "version", "type", "description", "members"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9-]*$"
+    },
+    "name": { "type": "string" },
+    "version": { "type": "string", "pattern": "^\\d+\\.\\d+\\.\\d+$" },
+    "type": { "const": "team" },
+    "description": { "type": "string" },
+    "category": {
+      "type": "string",
+      "enum": ["research", "development", "content", "design", "business", "other"]
+    },
+    "members": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["expert_id", "role"],
+        "properties": {
+          "expert_id": { "type": "string" },
+          "role": { "type": "string" },
+          "embedded": {
+            "type": "boolean",
+            "description": "true 表示该成员由团队自带（agents/ 内），未单独登记在 experts/ 中"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "workflow": {
+      "type": "string",
+      "description": "协作流程文档路径（通常指向团队主理人 agents/*.md 或 workflow.md）"
+    },
+    "tags": { "type": "array", "items": { "type": "string" } },
+    "status": {
+      "type": "string",
+      "enum": ["active", "draft", "deprecated"],
+      "default": "active"
+    },
+    "license": { "type": "string" },
+    "upstream": { "type": "string" },
+    "created": { "type": "string" },
+    "updated": { "type": "string" }
+  },
+  "additionalProperties": true
+}

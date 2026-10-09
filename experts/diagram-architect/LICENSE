@@ -1,0 +1,94 @@
+# 许可与第三方归属
+
+`diagram-architect` 专家包**自身新增的部分**（`plugin.json`、`agents/diagram-architect.md`、
+`skills/diagram-architect/SKILL.md`、`README.md`、`avatars/`）采用 **MIT** 许可。
+
+包内 `skills/` 下的五个技能目录是**上游开源项目的移植内容**，各自保留原许可。下面逐项说明
+搬运范围与许可。**各上游的许可全文已随内容一并保留在其技能目录内**（见每节的「全文位置」）。
+
+---
+
+## 1. `skills/diagram-design/` — MIT
+
+- 来源：<https://github.com/cathrynlavery/diagram-design>（`skills/diagram-design/`，v2.6）
+- 版权：Copyright (c) 2025 Cathryn Lavery
+- 原样搬运：`SKILL.md`、`references/**`、`scripts/**`、`assets/**`
+- 全文位置：`skills/diagram-design/LICENSE`
+
+## 2. `skills/svg-diagram/` — MIT
+
+- 来源：<https://github.com/bybit-exchange/svg-diagram>
+- 版权：Copyright (c) 2026 bybit-exchange
+- 原样搬运：`SKILL.md`、`gallery/**`、`assets/**`、`tools/svg-lint/bin/**`、`tools/svg-lint/lib/**`、`tools/svg-lint/README.md`
+- **未搬运**：`tools/svg-lint/test/**`（上游 984 个测试，仅服务于上游仓库自身维护）
+- 全文位置：`skills/svg-diagram/LICENSE`
+
+## 3. `skills/dashmotion/` — MIT
+
+- 来源：<https://github.com/csthink/dashmotion>（`skills/dashmotion/`，v2.2.4）
+- 版权：Copyright (c) 2026 Mars (csthink)
+- 原样搬运：`SKILL.md`、`references/**`、`scripts/**`、`resources/**`
+- 全文位置：`skills/dashmotion/LICENSE`
+
+## 4. `skills/archify/` — MIT
+
+- 来源：<https://github.com/tt-a1i/archify>（`archify/`，v3.0.1）
+- 版权：Copyright (c) 2026 tt-a1i (Archify) · Copyright (c) 2025 Cocoon AI
+- 原样搬运：`SKILL.md`、`bin/**`、`renderers/**`、`schemas/**`、`references/**`、`recipes/**`、`delta/**`、`assets/**`、`brand-marks/**`、`migrations/**`、`scripts/**`、`examples/**`（JSON 与 locales）、`package.json`、`package-lock.json`
+- **未搬运**：`test/**`（上游测试套件）、`examples/*.html`（5 个已渲染的演示成品，合计约 3.8 MB）
+- 全文位置：`skills/archify/LICENSE`
+
+## 5. `skills/documd-visuals/` — CC-BY-4.0
+
+- 来源：<https://github.com/markdown-viewer/skills>（`documd-visuals/`）
+- 原样搬运：整个包目录
+- 全文位置：`skills/documd-visuals/LICENSE.md`
+- ⚠️ 该许可**只覆盖技能包本身**。上游的 `documd` CLI（`@markdown-viewer/documd`）及其调用的渲染引擎
+  （`@markdown-viewer/draw-uml`、`@markdown-viewer/drawio2svg`）是**独立作品**，采用 GPL-3.0-only，
+  **不在本包内，也不受 CC-BY-4.0 授权覆盖**。本包没有打包、也没有安装这些 CLI。
+- 本包对上游内容的**唯一改动**是新增 `skills/diagram-architect/` 这一层编排技能，未修改其任何文件。
+
+---
+
+## MIT 许可全文
+
+以下全文适用于本包新增部分，以及第 1–4 节列出的四个上游组件（各组件另有自己的版权行，见上）。
+
+```
+MIT License
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
+
+各上游组件对应的版权行：
+
+```
+Copyright (c) 2025 Cathryn Lavery          — skills/diagram-design
+Copyright (c) 2026 bybit-exchange          — skills/svg-diagram
+Copyright (c) 2026 Mars (csthink)          — skills/dashmotion
+Copyright (c) 2026 tt-a1i (Archify)        — skills/archify
+Copyright (c) 2025 Cocoon AI               — skills/archify (基于 Cocoon-AI/architecture-diagram-generator)
+```
+
+---
+
+## 商标
+
+包内出现的第三方产品名（PlantUML、AWS、Azure、Cisco、ArchiMate、ECharts、Vega、AntV、Kubernetes、
+Docker 等）均为其各自所有者的商标，仅用于说明所记录的语法与图标集，不授予任何商标权利。

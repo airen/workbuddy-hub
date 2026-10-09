@@ -1,0 +1,20 @@
+id: diagram-architect
+name: 江图南
+version: 1.0.0
+type: expert
+expert_type: agent
+description: 把模糊的绘图需求变成可交付的图表：定图型、定出口，调度五套绘图能力库，过机械质检再交付。
+category: development
+skills:
+- diagram-architect
+- diagram-design
+- svg-diagram
+- dashmotion
+- documd-visuals
+- archify
+tags:
+- 图表设计
+- SVG 生成
+- 技术可视化
+status: active
+platform_category: 02-Engineering

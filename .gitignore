@@ -1,0 +1,17 @@
+# WorkBuddy / 本地工具状态（不纳入仓库）
+.workbuddy/
+.workbuddy-ai/
+
+# 本地暂存区：未纳入核心的非核心/第三方资产与迁移冗余副本（不提交，仅本地保留）
+archive/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# 系统/临时
+.DS_Store
+*.tmp
+dist/_import_*/

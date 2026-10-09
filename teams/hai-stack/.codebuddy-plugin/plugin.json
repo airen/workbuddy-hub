@@ -1,0 +1,162 @@
+{
+  "name": "hai-stack",
+  "version": "1.0.0",
+  "description": "A software iteration team that gets the whole loop right: judge whether the work is worth doing, settle the boundary, implement test-first, confirm with evidence, and leave the docs with one reading only. Orchestrates 19 bundled skills from the hai-stack methodology across six phases.",
+  "author": {
+    "name": "大漠",
+    "email": "damo@example.com"
+  },
+  "homepage": {
+    "url": "https://github.com/hylarucoder/hai-stack",
+    "type": "github"
+  },
+  "license": "CC-BY-NC-4.0",
+  "keywords": [
+    "software-iteration",
+    "code-review",
+    "tdd",
+    "architecture",
+    "technical-writing"
+  ],
+  "agents": [
+    "./agents/hai-stack-team-lead.md",
+    "./agents/hai-idea-judge.md",
+    "./agents/hai-architect.md",
+    "./agents/hai-engineer.md",
+    "./agents/hai-reviewer.md",
+    "./agents/hai-doc-officer.md",
+    "./agents/hai-corrector.md"
+  ],
+  "skills": [
+    "./skills/hai-idea",
+    "./skills/hai-prd",
+    "./skills/hai-architecture",
+    "./skills/entity-model-auditor",
+    "./skills/hai-naming",
+    "./skills/hai-goal",
+    "./skills/hai-tdd",
+    "./skills/hai-debug",
+    "./skills/hai-ast-grep",
+    "./skills/code-review-and-quality",
+    "./skills/write-technical-acceptance-report",
+    "./skills/hai-audit-docs",
+    "./skills/hai-rewrite-doc",
+    "./skills/hai-simplified-technical",
+    "./skills/hai-visual-explainer",
+    "./skills/readme-beautifier",
+    "./skills/geju",
+    "./skills/goudi",
+    "./skills/hai-razor"
+  ],
+
+  "expertType": "team",
+  "agentName": "hai-stack-team-lead",
+  "teamInfo": {
+    "leadAgent": "hai-stack-team-lead",
+    "memberAgents": [
+      "hai-idea-judge",
+      "hai-architect",
+      "hai-engineer",
+      "hai-reviewer",
+      "hai-doc-officer",
+      "hai-corrector"
+    ]
+  },
+
+  "displayName": {
+    "en": "Software Iteration Team",
+    "zh": "软件迭代专家团"
+  },
+  "profession": {
+    "en": "Software Iteration Team",
+    "zh": "软件迭代专家团"
+  },
+  "displayDescription": {
+    "en": "A six-role iteration team: judge whether the work deserves doing, settle boundaries and fields, land it test-first, confirm with executed evidence, and leave every doc with one reading only.",
+    "zh": "把一次软件迭代做对：先判断值不值得做，再设计边界、按测试驱动落地，用证据确认，最后把文档沉淀干净。"
+  },
+  "avatar": "avatars/team.png",
+  "categoryId": "02-Engineering",
+  "defaultInitPrompt": {
+    "en": "Decide whether this feature is worth building — kill it if it is not",
+    "zh": "帮我判断这个功能值不值得做，不值得就砍掉"
+  },
+  "plugin": "hai-stack",
+  "tags": [
+    { "en": "Iteration Judgment", "zh": "迭代判断" },
+    { "en": "Architecture & TDD", "zh": "架构与测试驱动" },
+    { "en": "Technical Writing", "zh": "技术文档简化" }
+  ],
+  "quickPrompts": [
+    {
+      "en": "Decide whether this feature is worth building — kill it if it is not",
+      "zh": "帮我判断这个功能值不值得做，不值得就砍掉"
+    },
+    {
+      "en": "The system is too tangled — trace from the entrypoints why changing one retry rule is so painful",
+      "zh": "系统太绕了，从 server 和 worker 入口看看为什么改重试规则这么费劲"
+    },
+    {
+      "en": "Rewrite this runbook in simplified technical Chinese — the meaning must not change",
+      "zh": "这份 runbook 写得太绕，按简化技术中文改一遍，意思不要变"
+    }
+  ],
+  "members": [
+    {
+      "id": "hai-stack-team-lead",
+      "displayName": { "en": "Ji Xunzhang", "zh": "纪循章" },
+      "profession": { "en": "Iteration Director", "zh": "迭代总控" },
+      "avatar": "avatars/hai-stack-team-lead.png",
+      "role": "lead",
+      "name": { "en": "Ji Xunzhang", "zh": "纪循章" }
+    },
+    {
+      "id": "hai-idea-judge",
+      "displayName": { "en": "Zhen Kexing", "zh": "甄可行" },
+      "profession": { "en": "Requirement Judge", "zh": "需求判断官" },
+      "avatar": "avatars/hai-idea-judge.png",
+      "role": "member",
+      "name": { "en": "Zhen Kexing", "zh": "甄可行" }
+    },
+    {
+      "id": "hai-architect",
+      "displayName": { "en": "Fang Qingyuan", "zh": "房清源" },
+      "profession": { "en": "Systems Architect", "zh": "系统架构师" },
+      "avatar": "avatars/hai-architect.png",
+      "role": "member",
+      "name": { "en": "Fang Qingyuan", "zh": "房清源" }
+    },
+    {
+      "id": "hai-engineer",
+      "displayName": { "en": "Shi Bida", "zh": "施必达" },
+      "profession": { "en": "Implementation Engineer", "zh": "实施工程师" },
+      "avatar": "avatars/hai-engineer.png",
+      "role": "member",
+      "name": { "en": "Shi Bida", "zh": "施必达" }
+    },
+    {
+      "id": "hai-reviewer",
+      "displayName": { "en": "Zheng Bianzhen", "zh": "郑辨真" },
+      "profession": { "en": "Quality Reviewer", "zh": "质量评审官" },
+      "avatar": "avatars/hai-reviewer.png",
+      "role": "member",
+      "name": { "en": "Zheng Bianzhen", "zh": "郑辨真" }
+    },
+    {
+      "id": "hai-doc-officer",
+      "displayName": { "en": "Wen Yizhang", "zh": "文一章" },
+      "profession": { "en": "Technical Documentation Officer", "zh": "技术文档官" },
+      "avatar": "avatars/hai-doc-officer.png",
+      "role": "member",
+      "name": { "en": "Wen Yizhang", "zh": "文一章" }
+    },
+    {
+      "id": "hai-corrector",
+      "displayName": { "en": "Bi Kaijiang", "zh": "毕开疆" },
+      "profession": { "en": "Course-Correction Officer", "zh": "方案纠偏官" },
+      "avatar": "avatars/hai-corrector.png",
+      "role": "member",
+      "name": { "en": "Bi Kaijiang", "zh": "毕开疆" }
+    }
+  ]
+}

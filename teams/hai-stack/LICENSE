@@ -1,0 +1,49 @@
+Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)
+
+https://creativecommons.org/licenses/by-nc/4.0/
+
+You are free to:
+- Share — copy and redistribute the material in any medium or format
+- Adapt — remix, transform, and build upon the material
+
+Under the following terms:
+- Attribution — You must give appropriate credit, provide a link to the license,
+  and indicate if changes were made.
+- NonCommercial — You may not use the material for commercial purposes.
+
+No additional restrictions — You may not apply legal terms or technological
+measures that legally restrict others from doing anything the license permits.
+
+Full legal code: https://creativecommons.org/licenses/by-nc/4.0/legalcode
+
+Copyright (c) 2026 hylarucoder
+https://github.com/hylarucoder/hai-stack
+
+---
+
+## Attribution for this package (软件迭代专家团 / hai-stack expert for WorkBuddy)
+
+Upstream work:
+- Project: hai-stack
+- Author: @hylarucoder (海拉鲁编程客) — https://github.com/hylarucoder
+- Repository: https://github.com/hylarucoder/hai-stack
+- License: CC BY-NC 4.0 (Copyright (c) 2026 hylarucoder)
+
+Files copied verbatim from upstream, under CC BY-NC 4.0:
+- `skills/**` — all 19 bundled skill directories, including their `SKILL.md`,
+  `SKILL.zh_CN.md`, `references/`, `scripts/`, `assets/` and `LICENSE` files.
+  The only removal: each skill's `agents/openai.yaml`, an interface declaration
+  for other agent platforms that WorkBuddy does not use.
+
+Files newly written for this package, also released under CC BY-NC 4.0:
+- `.codebuddy-plugin/plugin.json`, `settings.json`, `agents/**`, `avatars/**`,
+  `README.md`, `ATTRIBUTION.md`, `LICENSE` (this file).
+
+Third-party license:
+- `skills/code-review-and-quality/` is adapted by upstream from Addy Osmani's
+  agent-skills (https://github.com/addyosmani/agent-skills) and retains its
+  original MIT license. See `skills/code-review-and-quality/LICENSE`.
+
+Commercial use of the upstream material requires separate authorization from
+the original author. Personal use, study, research and non-commercial projects
+may use it directly with attribution.

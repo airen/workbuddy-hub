@@ -1,0 +1,188 @@
+{
+  "name": "engineering-delivery",
+  "version": "1.0.0",
+  "description": "Production-grade engineering delivery team for AI coding agents. A Delivery Director orchestrates 25 lifecycle skills across DEFINE, PLAN, BUILD, VERIFY, REVIEW and SHIP, while four independent reviewers (code review, testing, security, web performance) verify every change before it ships.",
+  "author": {
+    "name": "大漠",
+    "email": "damo@example.com"
+  },
+  "agents": [
+    "./agents/engineering-delivery-team-lead.md",
+    "./agents/engineering-delivery-code-reviewer.md",
+    "./agents/engineering-delivery-test-engineer.md",
+    "./agents/engineering-delivery-security-auditor.md",
+    "./agents/engineering-delivery-performance-auditor.md"
+  ],
+  "skills": [
+    "./skills/using-agent-skills",
+    "./skills/interview-me",
+    "./skills/idea-refine",
+    "./skills/spec-driven-development",
+    "./skills/constraint-driven-development",
+    "./skills/planning-and-task-breakdown",
+    "./skills/context-engineering",
+    "./skills/source-driven-development",
+    "./skills/incremental-implementation",
+    "./skills/doubt-driven-development",
+    "./skills/test-driven-development",
+    "./skills/browser-testing-with-devtools",
+    "./skills/debugging-and-error-recovery",
+    "./skills/frontend-ui-engineering",
+    "./skills/api-and-interface-design",
+    "./skills/code-review-and-quality",
+    "./skills/code-simplification",
+    "./skills/security-and-hardening",
+    "./skills/performance-optimization",
+    "./skills/git-workflow-and-versioning",
+    "./skills/ci-cd-and-automation",
+    "./skills/deprecation-and-migration",
+    "./skills/documentation-and-adrs",
+    "./skills/observability-and-instrumentation",
+    "./skills/shipping-and-launch"
+  ],
+  "expertType": "team",
+  "agentName": "engineering-delivery-team-lead",
+  "teamInfo": {
+    "leadAgent": "engineering-delivery-team-lead",
+    "memberAgents": [
+      "engineering-delivery-code-reviewer",
+      "engineering-delivery-test-engineer",
+      "engineering-delivery-security-auditor",
+      "engineering-delivery-performance-auditor"
+    ]
+  },
+  "displayName": {
+    "en": "Engineering Delivery Team",
+    "zh": "软件工程交付专家团"
+  },
+  "profession": {
+    "en": "Engineering Delivery Team",
+    "zh": "软件工程交付专家团"
+  },
+  "displayDescription": {
+    "en": "A production-grade engineering team: a Delivery Director runs the full lifecycle while four independent reviewers audit code quality, testing, security, and web performance before anything ships.",
+    "zh": "从需求澄清到上线交付的软件工程专家团：主理人编排六阶段，代码审查、测试、安全、性能四路独立把关。"
+  },
+  "avatar": "avatars/team.jpg",
+  "categoryId": "02-Engineering",
+  "defaultInitPrompt": {
+    "zh": "我要做一个新功能，带我走一遍从规格到上线的完整流程",
+    "en": "I'm building a new feature — walk me through the full spec-to-ship flow"
+  },
+  "plugin": "engineering-delivery",
+  "tags": [
+    {
+      "en": "Full Lifecycle Delivery",
+      "zh": "全周期交付"
+    },
+    {
+      "en": "Multi-Axis Review",
+      "zh": "多维审查"
+    },
+    {
+      "en": "Production-Grade Quality",
+      "zh": "生产级质量"
+    }
+  ],
+  "quickPrompts": [
+    {
+      "zh": "我要做一个新功能，带我走一遍从规格到上线的完整流程",
+      "en": "I'm building a new feature — walk me through the full spec-to-ship flow"
+    },
+    {
+      "zh": "帮我审查这次改动：正确性、可读性、架构、安全、性能五个维度都要过一遍",
+      "en": "Review my changes across all five axes: correctness, readability, architecture, security, and performance"
+    },
+    {
+      "zh": "上线前帮我做一轮安全检查、性能审计和发布清单核对",
+      "en": "Run a pre-launch security audit, performance audit, and release checklist"
+    }
+  ],
+  "members": [
+    {
+      "id": "engineering-delivery-team-lead",
+      "displayName": {
+        "en": "Qi Huolin",
+        "zh": "齐活林"
+      },
+      "profession": {
+        "en": "Delivery Director",
+        "zh": "交付总监"
+      },
+      "avatar": "avatars/engineering-delivery-team-lead.jpg",
+      "role": "lead",
+      "name": {
+        "en": "Qi Huolin",
+        "zh": "齐活林"
+      }
+    },
+    {
+      "id": "engineering-delivery-code-reviewer",
+      "displayName": {
+        "en": "Shen Cha",
+        "zh": "沈查"
+      },
+      "profession": {
+        "en": "Code Reviewer",
+        "zh": "代码审查官"
+      },
+      "avatar": "avatars/engineering-delivery-code-reviewer.jpg",
+      "role": "member",
+      "name": {
+        "en": "Shen Cha",
+        "zh": "沈查"
+      }
+    },
+    {
+      "id": "engineering-delivery-test-engineer",
+      "displayName": {
+        "en": "Yan Guoguan",
+        "zh": "严过关"
+      },
+      "profession": {
+        "en": "Test Engineer",
+        "zh": "测试工程师"
+      },
+      "avatar": "avatars/engineering-delivery-test-engineer.jpg",
+      "role": "member",
+      "name": {
+        "en": "Yan Guoguan",
+        "zh": "严过关"
+      }
+    },
+    {
+      "id": "engineering-delivery-security-auditor",
+      "displayName": {
+        "en": "An Shouzheng",
+        "zh": "安守正"
+      },
+      "profession": {
+        "en": "Security Auditor",
+        "zh": "安全审计师"
+      },
+      "avatar": "avatars/engineering-delivery-security-auditor.jpg",
+      "role": "member",
+      "name": {
+        "en": "An Shouzheng",
+        "zh": "安守正"
+      }
+    },
+    {
+      "id": "engineering-delivery-performance-auditor",
+      "displayName": {
+        "en": "Ma Xunda",
+        "zh": "马迅达"
+      },
+      "profession": {
+        "en": "Web Performance Auditor",
+        "zh": "Web性能审计师"
+      },
+      "avatar": "avatars/engineering-delivery-performance-auditor.jpg",
+      "role": "member",
+      "name": {
+        "en": "Ma Xunda",
+        "zh": "马迅达"
+      }
+    }
+  ]
+}

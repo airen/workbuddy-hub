@@ -1,0 +1,15 @@
+id: doc-memory-steward
+name: 纪文远
+version: 1.0.0
+type: expert
+expert_type: agent
+description: 把项目知识沉淀成可读可改可提交的文档工作区：干活前先查、干完再更新，替代靠召回的记忆插件。
+category: development
+skills:
+- agent-doc-memory
+tags:
+- 文档记忆
+- 跨会话上下文
+- 项目知识库
+status: active
+platform_category: 02-Engineering

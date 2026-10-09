@@ -1,0 +1,20 @@
+# 专家团 manifest（hub 内部索引/筛选元数据）
+# 权威定义仍在 .codebuddy-plugin/plugin.json 与 agents/*.md。
+id: your-team-id
+name: 专家团展示名
+version: 0.1.0
+type: team
+description: 一句话说明专家团的目标与最终交付物。
+category: development       # research|development|content|design|business|other
+members:
+  - expert_id: your-team-id-team-lead
+    role: coordinator        # coordinator=主理人；member=成员
+    embedded: true           # true=由本团队自带 agents/，未单独登记在 experts/
+  - expert_id: some-member
+    role: member
+    embedded: true
+workflow: agents/your-team-id-team-lead.md   # 协作流程（通常即主理人 SOP）
+tags:
+  - 标签一
+status: active
+platform_category: "02-Engineering"

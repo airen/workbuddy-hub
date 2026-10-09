@@ -1,0 +1,35 @@
+id: deep-research-crew
+name: 深度研究专家团
+version: 1.0.0
+type: team
+description: 七角色的研究流水线：导航、清洗、解构、归档、溯源各司其职，把散乱网页与厚报告变成可回看的带源报告。
+category: research
+members:
+- expert_id: deep-research-crew-team-lead
+  role: coordinator
+  embedded: true
+- expert_id: deep-research-web-navigator
+  role: member
+  embedded: true
+- expert_id: deep-research-content-refiner
+  role: member
+  embedded: true
+- expert_id: deep-research-doc-parser
+  role: member
+  embedded: true
+- expert_id: deep-research-evidence-librarian
+  role: member
+  embedded: true
+- expert_id: deep-research-trace-auditor
+  role: member
+  embedded: true
+- expert_id: deep-research-report-writer
+  role: member
+  embedded: true
+workflow: agents/deep-research-crew-team-lead.md
+tags:
+- 深度研究
+- 证据溯源
+- 知识库沉淀
+status: active
+platform_category: 04-DataAI

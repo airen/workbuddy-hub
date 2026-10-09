@@ -1,0 +1,15 @@
+id: spec-driven-dev
+name: 章立言
+version: 1.0.0
+type: expert
+expert_type: agent
+description: 把模糊需求固化成可执行规格：章程、规格、澄清、方案、任务清单、校验与收敛，让 AI 有据可依。
+category: development
+skills:
+- spec-driven-development
+tags:
+- 规格驱动开发
+- 需求澄清
+- AI 编码工作流
+status: active
+platform_category: 02-Engineering

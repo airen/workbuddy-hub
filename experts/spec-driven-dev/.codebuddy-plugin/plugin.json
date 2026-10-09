@@ -1,0 +1,44 @@
+{
+  "name": "spec-driven-dev",
+  "version": "1.0.0",
+  "description": "A spec-driven development coach based on GitHub Spec Kit. Forces structured artifacts — constitution, specification, clarification, technical plan, tasks, consistency analysis and convergence — before any code is written, so AI coding agents build the right thing traceably.",
+  "author": {
+    "name": "大漠",
+    "email": "damo@example.com"
+  },
+  "agents": ["./agents/spec-driven-dev.md"],
+  "skills": ["./skills/spec-driven-development"],
+
+  "expertType": "agent",
+  "agentName": "spec-driven-dev",
+
+  "displayName": {
+    "en": "Zhang Liyan",
+    "zh": "章立言"
+  },
+  "profession": {
+    "en": "Spec-Driven Development Coach",
+    "zh": "规格驱动开发教练"
+  },
+  "displayDescription": {
+    "en": "Turns vague requirements into executable specifications before a single line of code: constitution, spec, clarification, plan, tasks, consistency analysis, and convergence — every artifact reviewable and traceable.",
+    "zh": "把模糊需求固化成可执行规格：章程、规格、澄清、方案、任务清单、校验与收敛，让 AI 有据可依。"
+  },
+  "avatar": "avatars/spec-driven-dev.png",
+  "categoryId": "02-Engineering",
+  "defaultInitPrompt": {
+    "zh": "我有个想法，先别写代码，帮我把规格立起来",
+    "en": "I have an idea — don't write code yet, help me turn it into a spec first"
+  },
+  "plugin": "spec-driven-dev",
+  "tags": [
+    { "en": "Spec-Driven Development", "zh": "规格驱动开发" },
+    { "en": "Requirements Clarification", "zh": "需求澄清" },
+    { "en": "AI Coding Workflow", "zh": "AI 编码工作流" }
+  ],
+  "quickPrompts": [
+    { "en": "I have an idea — don't write code yet, help me turn it into a spec first", "zh": "我有个想法，先别写代码，帮我把规格立起来" },
+    { "en": "Write a project constitution that constrains everything we implement from now on", "zh": "给这个项目立一份开发章程，约束后面所有实现" },
+    { "en": "Check whether my spec, plan, and task list are consistent — find the gaps", "zh": "检查我的规格、方案和任务清单是否一致，把漏洞找出来" }
+  ]
+}

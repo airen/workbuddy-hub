@@ -1,0 +1,15 @@
+id: software-architect
+name: 方权衡
+version: 1.0.0
+type: expert
+expert_type: agent
+description: 用权衡分析驱动架构决策：质量属性、风格选型、领域建模、分布式数据与演化，产出 ADR 与图表。
+category: development
+skills:
+- software-architecture
+tags:
+- 架构权衡
+- 系统设计
+- 演化式架构
+status: active
+platform_category: 02-Engineering

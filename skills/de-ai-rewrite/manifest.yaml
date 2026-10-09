@@ -1,0 +1,9 @@
+id: de-ai-rewrite
+name: 去AI味改写
+version: 1.0.0
+type: skill
+description: 去 AI 味改写（自然编辑指南）。当用户要求「去 AI 味」「去掉 AI 腔」「让文字像人写的」「降 AI 检测率」「人味改写」「润色得自然一点」「重写得更自然」或粘贴一段文字要求降低机器痕迹时使用。按资深编辑标准重写文本：删除
+  AI 腔模式 + 注入真实人声，三遍流程交付最终版。
+category: content
+tags: []
+status: active

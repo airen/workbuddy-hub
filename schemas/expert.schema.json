@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/airen/workbuddy-hub/schemas/expert.schema.json",
+  "title": "WorkBuddy Hub — Expert Manifest",
+  "description": "校验 experts/<id>/manifest.yaml 的结构。专家的真实定义以 .codebuddy-plugin/plugin.json + agents/<id>.md 为准，本 manifest 是仓库内部的索引/筛选元数据。",
+  "type": "object",
+  "required": ["id", "name", "version", "type", "description", "skills"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9-]*$",
+      "description": "专家唯一 ID（kebab-case），与目录名、plugin.json 的 name 一致"
+    },
+    "name": { "type": "string", "description": "展示名（可含中文）" },
+    "version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$"
+    },
+    "type": { "const": "expert" },
+    "description": { "type": "string" },
+    "category": {
+      "type": "string",
+      "enum": ["research", "development", "content", "design", "business", "other"]
+    },
+    "expert_type": {
+      "type": "string",
+      "enum": ["agent", "team"],
+      "description": "对应 plugin.json 的 expertType；agent=单专家，team=专家团"
+    },
+    "skills": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "该专家内置/引用的 Skill ID 列表（内置在自身 skills/ 下的也列出，build_registry 会标记为 embedded）"
+    },
+    "tags": { "type": "array", "items": { "type": "string" } },
+    "status": {
+      "type": "string",
+      "enum": ["active", "draft", "deprecated"],
+      "default": "active"
+    },
+    "license": { "type": "string" },
+    "upstream": { "type": "string" },
+    "created": { "type": "string" },
+    "updated": { "type": "string"
+    }
+  },
+  "additionalProperties": true
+}

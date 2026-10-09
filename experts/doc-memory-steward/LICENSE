@@ -1,0 +1,38 @@
+项目文档管家 · 纪文远（doc-memory-steward）
+================================================
+
+原创方法论封装。本专家包不包含任何第三方代码依赖。
+
+内容许可
+--------
+本专家包内的全部文本、模板与脚本均为原创编写，可自由使用、修改与分发。
+
+脚本依赖
+--------
+skills/agent-doc-memory/scripts/ 下的两个脚本仅使用 Python 标准库
+（os / re / sys / json / time / struct / zipfile / argparse），
+无任何第三方包依赖。
+
+
+来源与归属
+----------
+本专家的核心论点来自以下公开资料，特此署名：
+
+  Kevin Liao（Aerovato Research）
+  《Agent 不需要记忆，它们需要文档》
+  Agents don't need memory, they need documentation
+  2026-10-03
+
+  原文：https://liao.gg/blog/agents-dont-need-memory
+  参考实现 Operator Memory：https://github.com/aerovato/operator-memory
+
+说明：本专家包为面向 agent 的可执行化封装，正文按本项目的口径重写与扩充，
+未照抄原文，也未复用 Operator Memory 的任何代码。原文作者的观点构成本技能的
+立论基础，其余部分（六类文档分类、五步工作流、查/更新两份协议、更新触发事件表、
+审计脚本、可填空模板等）为本项目原创补充。
+
+
+免责
+----
+本专家包按"现状"提供，不附带任何明示或暗示的担保。使用者应自行评估其
+在具体项目中的适用性。

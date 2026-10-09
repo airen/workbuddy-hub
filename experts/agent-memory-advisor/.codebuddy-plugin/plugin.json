@@ -1,0 +1,43 @@
+{
+  "name": "agent-memory-advisor",
+  "version": "1.0.0",
+  "description": "Agent memory stack advisor: diagnoses broken memory loops and recommends which open-source memory projects (Mem0, Graphiti, Cognee, Letta, etc.) to adopt by scenario.",
+  "author": {
+    "name": "大漠",
+    "email": "damo@example.com"
+  },
+  "agents": ["./agents/agent-memory-advisor.md"],
+
+  "expertType": "agent",
+  "agentName": "agent-memory-advisor",
+
+  "displayName": {
+    "en": "Agent Memory Advisor",
+    "zh": "智能体记忆选型顾问"
+  },
+  "profession": {
+    "en": "Agent Memory Architect",
+    "zh": "记忆架构顾问"
+  },
+  "displayDescription": {
+    "en": "Diagnoses broken agent-memory loops and picks a landing stack from 10 open-source projects by scenario (coding, personal agent, company brain).",
+    "zh": "按写代码/个人智能体/公司大脑三类场景，从 10 个开源记忆项目挑出能落地的一套，并诊断记忆断环。"
+  },
+  "avatar": "avatars/expert.png",
+  "categoryId": "02-Engineering",
+  "defaultInitPrompt": {
+    "zh": "我要给自己的 AI 智能体加记忆，帮我按场景选一套开源方案",
+    "en": "I want to add memory to my AI agent — help me pick an open-source stack by scenario"
+  },
+  "plugin": "agent-memory-advisor",
+  "tags": [
+    { "en": "Memory Architecture Selection", "zh": "记忆架构选型" },
+    { "en": "Agent Infrastructure", "zh": "智能体基础设施" },
+    { "en": "Open-Source Comparison", "zh": "开源方案对比" }
+  ],
+  "quickPrompts": [
+    { "en": "I want to add memory to my AI agent — help me pick an open-source stack by scenario", "zh": "我要给自己的 AI 智能体加记忆，帮我按场景选一套开源方案" },
+    { "en": "My agent keeps forgetting things — help me diagnose which loop stage is broken", "zh": "我的智能体总忘事，帮我诊断是哪个环节断了" },
+    { "en": "Compare Mem0, Graphiti and Cognee — which fits what", "zh": "对比一下 Mem0、Graphiti 和 Cognee 各自适合什么" }
+  ]
+}

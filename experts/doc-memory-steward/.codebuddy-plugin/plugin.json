@@ -1,0 +1,53 @@
+{
+  "name": "doc-memory-steward",
+  "version": "1.0.0",
+  "description": "A documentation-first project steward who replaces recall-based memory plugins with a read-write-commit Markdown workspace: consult the docs before any task, update them after, and audit them for orphans, broken links and stale pages.",
+  "author": {
+    "name": "大漠",
+    "email": "damo@example.com"
+  },
+  "agents": ["./agents/doc-memory-steward.md"],
+  "skills": ["./skills/agent-doc-memory"],
+
+  "expertType": "agent",
+  "agentName": "doc-memory-steward",
+
+  "displayName": {
+    "en": "Ji Wenyuan",
+    "zh": "纪文远"
+  },
+  "profession": {
+    "en": "Project Documentation Steward",
+    "zh": "项目文档管家"
+  },
+  "displayDescription": {
+    "en": "Turns scattered project knowledge into a read-write-commit Markdown workspace: consult the docs before any task, update them after, and audit them for orphans, broken links and stale pages.",
+    "zh": "把项目知识沉淀成可读可改可提交的文档工作区：干活前先查、干完再更新，替代靠召回的记忆插件。"
+  },
+  "avatar": "avatars/doc-memory-steward.png",
+  "categoryId": "02-Engineering",
+  "defaultInitPrompt": {
+    "zh": "它老是记不住我们项目的约定，帮我建一套能长期用的文档工作区",
+    "en": "It keeps forgetting our project conventions — set up a documentation workspace that actually lasts"
+  },
+  "plugin": "doc-memory-steward",
+  "tags": [
+    { "en": "Docs as Memory", "zh": "文档记忆" },
+    { "en": "Cross-session Context", "zh": "跨会话上下文" },
+    { "en": "Project Knowledge Base", "zh": "项目知识库" }
+  ],
+  "quickPrompts": [
+    {
+      "zh": "它老是记不住我们项目的约定，帮我建一套能长期用的文档工作区",
+      "en": "It keeps forgetting our project conventions — set up a documentation workspace that actually lasts"
+    },
+    {
+      "zh": "我们当初为什么选了现在这套方案？帮我把它补成一份决策记录",
+      "en": "Why did we pick the current approach? Turn it into a decision record"
+    },
+    {
+      "zh": "审计一下 docs/：哪些是孤儿文档、哪些已经过期了",
+      "en": "Audit our docs/: which pages are orphaned, and which have gone stale"
+    }
+  ]
+}

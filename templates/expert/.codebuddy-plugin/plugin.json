@@ -1,0 +1,27 @@
+{
+  "name": "your-expert-id",
+  "version": "0.1.0",
+  "description": "专家一句话描述（英文或中文均可）",
+  "author": { "name": "你的名字" },
+  "agents": ["./agents/your-expert-id.md"],
+  "skills": [],
+  "expertType": "agent",
+  "agentName": "your-expert-id",
+  "plugin": "your-expert-id",
+  "displayName": { "zh": "专家展示名", "en": "Your Expert" },
+  "profession": { "zh": "职业", "en": "Profession" },
+  "displayDescription": {
+    "zh": "40–50 字的中文展示描述（平台硬性要求）",
+    "en": "English display description"
+  },
+  "avatar": "avatars/your-expert-id.png",
+  "categoryId": "02-Engineering",
+  "defaultInitPrompt": { "zh": "默认开场提示", "en": "Default init prompt" },
+  "tags": [
+    { "zh": "标签一", "en": "Tag One" },
+    { "zh": "标签二", "en": "Tag Two" }
+  ],
+  "quickPrompts": [
+    { "zh": "快捷提示一", "en": "Quick prompt one" }
+  ]
+}

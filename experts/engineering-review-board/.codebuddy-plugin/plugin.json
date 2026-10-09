@@ -1,0 +1,146 @@
+{
+  "name": "engineering-review-board",
+  "version": "1.0.0",
+  "description": "A full-repository code review board: map the repo first, then route to 82 specialist review lenses on demand. Read-only by default; every finding is evidence-backed and every sampled review states its scope.",
+  "author": {
+    "name": "大漠",
+    "email": "damo@example.com"
+  },
+  "agents": [
+    "./agents/engineering-review-board.md"
+  ],
+  "expertType": "agent",
+  "agentName": "engineering-review-board",
+  "displayName": {
+    "en": "Lu Jian",
+    "zh": "陆鉴"
+  },
+  "profession": {
+    "en": "Engineering Review Director",
+    "zh": "工程评审总监"
+  },
+  "displayDescription": {
+    "en": "A full-repository review entry point: build the repo map first, then call architecture, tech-debt, security and testing lenses on demand. Read-only by default, evidence-backed findings, stated scope.",
+    "zh": "全仓库代码审查入口：先建地图，再按需调用架构、技术债、安全、测试等专项技能，默认只读、结论附证据。"
+  },
+  "avatar": "avatars/engineering-review-board.jpg",
+  "categoryId": "02-Engineering",
+  "defaultInitPrompt": {
+    "zh": "帮我给这个仓库做一次全面审查，看看架构、技术债、安全和测试都有什么问题",
+    "en": "Run a full review of this repository — architecture, technical debt, security, and tests"
+  },
+  "plugin": "engineering-review-board",
+  "tags": [
+    {
+      "en": "Full-Repo Review",
+      "zh": "全仓审查"
+    },
+    {
+      "en": "Evidence-Based Findings",
+      "zh": "证据驱动"
+    },
+    {
+      "en": "Engineering Health",
+      "zh": "工程健康度"
+    }
+  ],
+  "quickPrompts": [
+    {
+      "zh": "帮我给这个仓库做一次全面审查，看看架构、技术债、安全和测试都有什么问题",
+      "en": "Run a full review of this repository — architecture, technical debt, security, and tests"
+    },
+    {
+      "zh": "审查一下这个项目的架构边界和依赖方向，有没有腐化的地方",
+      "en": "Review this project's architectural boundaries and dependency direction — is anything eroding?"
+    },
+    {
+      "zh": "这个代码库能不能放心上线？帮我评估发布就绪度和测试质量",
+      "en": "Is this codebase safe to ship? Assess release readiness and test quality"
+    }
+  ],
+  "skills": [
+    "./skills/adversarial-review",
+    "./skills/api-design",
+    "./skills/architecture-review",
+    "./skills/behavior-driven-development",
+    "./skills/brainstorming",
+    "./skills/ci-release-engineering",
+    "./skills/clean-architecture",
+    "./skills/code-review",
+    "./skills/container-engineering",
+    "./skills/create-agent-skill",
+    "./skills/csharp-dotnet-engineering",
+    "./skills/css-scss-styling",
+    "./skills/data-platform-engineering",
+    "./skills/dependency-supply-chain-review",
+    "./skills/digital-asset-management",
+    "./skills/documentation-engineering",
+    "./skills/domain-driven-design",
+    "./skills/domain-modeling",
+    "./skills/engineering-review-board",
+    "./skills/gherkin",
+    "./skills/git-commit",
+    "./skills/git-workflows",
+    "./skills/gossamer-engineering",
+    "./skills/hexagonal-architecture",
+    "./skills/hound-web-research",
+    "./skills/impeccable",
+    "./skills/internationalization-localization",
+    "./skills/javascript-typescript-engineering",
+    "./skills/justfiles",
+    "./skills/mcp-server-engineering",
+    "./skills/mysql-mariadb-sql-engineering",
+    "./skills/object-pascal-antipatterns",
+    "./skills/object-pascal-design-patterns",
+    "./skills/object-pascal-engineering",
+    "./skills/object-pascal-testing-quality",
+    "./skills/observability-engineering",
+    "./skills/onion-architecture",
+    "./skills/parallelism-engineering",
+    "./skills/performance-review",
+    "./skills/photo-supreme-scripting",
+    "./skills/php-antipatterns",
+    "./skills/php-design-patterns",
+    "./skills/php-engineering",
+    "./skills/php-testing-quality",
+    "./skills/piwigo-plugin-engineering",
+    "./skills/playwright-e2e",
+    "./skills/postgresql-sql-engineering",
+    "./skills/powershell-engineering",
+    "./skills/prompt-engineering-review",
+    "./skills/python-antipatterns",
+    "./skills/python-design-patterns",
+    "./skills/python-engineering",
+    "./skills/random-data-identifiers",
+    "./skills/release-readiness",
+    "./skills/review-verification-protocol",
+    "./skills/root-cause-analysis",
+    "./skills/ruby-engineering",
+    "./skills/rust-antipatterns",
+    "./skills/rust-async-web",
+    "./skills/rust-code-review",
+    "./skills/rust-design-patterns",
+    "./skills/rust-desktop-gui",
+    "./skills/rust-engineering",
+    "./skills/rust-persistence-sql",
+    "./skills/rust-testing-quality",
+    "./skills/script-engineering",
+    "./skills/security-review",
+    "./skills/security-review-evidence",
+    "./skills/semantic-versioning",
+    "./skills/sql-engineering",
+    "./skills/sqlite-sql-engineering",
+    "./skills/suggest-lucide-icons",
+    "./skills/svelte-sveltekit-engineering",
+    "./skills/systematic-debugging",
+    "./skills/technical-debt-audit",
+    "./skills/test-driven-development",
+    "./skills/testing-strategy",
+    "./skills/threat-modeling",
+    "./skills/typescript-javascript-antipatterns",
+    "./skills/typescript-javascript-design-patterns",
+    "./skills/ux-accessibility-review",
+    "./skills/webassembly-engineering",
+    "./skills/zod-engineering"
+  ]
+}

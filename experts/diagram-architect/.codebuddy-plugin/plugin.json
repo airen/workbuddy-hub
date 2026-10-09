@@ -1,0 +1,51 @@
+{
+  "name": "diagram-architect",
+  "version": "1.0.0",
+  "description": "Turns a vague drawing request into a deliverable figure: decides whether a figure is worth drawing, picks the diagram type and the output channel (inline widget vs. saved artifact), routes across five diagramming libraries, and passes a mechanical quality gate before delivery.",
+  "author": {
+    "name": "大漠",
+    "email": "damo@example.com"
+  },
+  "agents": ["./agents/diagram-architect.md"],
+  "skills": [
+    "./skills/diagram-architect",
+    "./skills/diagram-design",
+    "./skills/svg-diagram",
+    "./skills/dashmotion",
+    "./skills/documd-visuals",
+    "./skills/archify"
+  ],
+
+  "expertType": "agent",
+  "agentName": "diagram-architect",
+
+  "displayName": {
+    "en": "Jiang Tunan",
+    "zh": "江图南"
+  },
+  "profession": {
+    "en": "Diagram Architect",
+    "zh": "图表架构师"
+  },
+  "displayDescription": {
+    "en": "Turns a vague drawing request into a deliverable figure: picks the diagram type and the output channel, routes across five diagramming libraries, and passes a mechanical quality gate before handing anything over.",
+    "zh": "把模糊的绘图需求变成可交付的图表：定图型、定出口，调度五套绘图能力库，过机械质检再交付。"
+  },
+  "avatar": "avatars/diagram-architect.jpg",
+  "categoryId": "02-Engineering",
+  "defaultInitPrompt": {
+    "zh": "把这个系统的架构画成一张图，标出主要请求路径",
+    "en": "Draw this system's architecture and mark the main request path"
+  },
+  "plugin": "diagram-architect",
+  "tags": [
+    { "en": "Diagram Design", "zh": "图表设计" },
+    { "en": "SVG Generation", "zh": "SVG 生成" },
+    { "en": "Technical Visualization", "zh": "技术可视化" }
+  ],
+  "quickPrompts": [
+    { "en": "Draw this system's architecture and mark the main request path", "zh": "把这个系统的架构画成一张图，标出主要请求路径" },
+    { "en": "Turn this process into a flowchart where the branches and merges read at a glance", "zh": "把这段流程画成流程图，分支和汇合要一眼看清" },
+    { "en": "This diagram looks bad — redraw it to technical-documentation standard", "zh": "这张图太丑了，按技术文档的标准重画一版" }
+  ]
+}

@@ -1,0 +1,57 @@
+MIT License
+
+Copyright (c) 2026 Nick Ledford
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+---
+
+## Attribution / 归属说明
+
+This expert package is a WorkBuddy adaptation of the upstream repository
+**`nledford/engineering-review-board`** (<https://github.com/nledford/engineering-review-board>),
+licensed under the MIT License, Copyright (c) 2026 Nick Ledford.
+
+### Files carried over verbatim from upstream / 原样搬运的文件
+
+- `skills/<name>/**` — all 82 first-party skills (SKILL.md, `references/`,
+  `scripts/`, `templates/`, and `agents/` metadata where present), copied
+  unchanged from the upstream `skills/` directory. Their internal relative
+  links (`../<skill>/SKILL.md`) are preserved because the `skills/<name>/`
+  layout is kept identical.
+- The MIT license text above is the upstream license, reproduced in full.
+
+### Files newly written for this package / 本包新写的文件
+
+- `.codebuddy-plugin/plugin.json` — WorkBuddy expert metadata.
+- `agents/engineering-review-board.md` — the review-lead persona (new).
+- `skills/engineering-review-board/SKILL.md` — the full-repository review
+  entry point and skill routing table (new; the upstream repository has no
+  skill by this name).
+- `README.md`, `avatars/**`.
+
+The newly written files are released under the same MIT License.
+
+### Not included / 未纳入
+
+The upstream repository's own maintenance infrastructure is not part of this
+package: `AGENTS.md`, `Justfile`, `third-party-skills.json`, the dated skill
+audits (`ZOD_SKILL_AUDIT.md`, `OBJECT_PASCAL_SKILL_AUDIT.md`), and `.gitignore`.
+They describe how upstream maintains its skill library and have no runtime role
+in a WorkBuddy expert package.

@@ -1,0 +1,11 @@
+id: agent-doc-memory
+name: 文档即记忆
+version: 1.0.0
+type: skill
+description: 用「能读、能改、能提交」的 Markdown 文档工作区替代召回式记忆插件，让 agent 干活前先查、干完再更新。当用户抱怨「agent 记不住项目」「每次都要重新解释」「上次说好的又忘了」「同一个坑踩三次」「跨会话记不住」，或要建立
+  AGENTS.md / CLAUDE.md / 项目文档 / 知识库 / 长期记忆 / 跨会话记忆 / 团队共享上下文，或提到「记忆插件」「RAG 记忆」「向量库记忆」「Operator Memory」「Agent
+  不需要记忆」时使用。也适用于 agent 自己：即将开始一个跨会话的长期项目、要做技术决策、写了规格、搞清楚某个第三方库的用法、澄清了术语、或发现文档与代码不一致时，主动把知识写进文档工作区。产出 INDEX.md
+  索引与约定 / 规格 / 决策 / 调研 / 术语五类文档，并可对既有文档工作区做孤儿文档、断链、过期审计。
+category: other
+tags: []
+status: active

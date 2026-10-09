@@ -1,0 +1,4 @@
+# 管理工具层依赖（Python 3.11+）
+# 安装：pip install -r scripts/requirements.txt
+pyyaml>=6.0
+jsonschema>=4.20

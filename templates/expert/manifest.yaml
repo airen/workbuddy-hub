@@ -1,0 +1,16 @@
+# 专家 manifest（hub 内部索引/筛选元数据）
+# 权威定义仍在 .codebuddy-plugin/plugin.json 与 agents/<id>.md，本文件可由 sync_manifests.py 自动生成。
+id: your-expert-id
+name: 专家展示名
+version: 0.1.0
+type: expert
+expert_type: agent          # agent=单专家；team=专家团（团队请用 templates/team）
+description: 一句话说明专家负责什么、产出什么。
+category: development       # research|development|content|design|business|other
+skills:                     # 该专家内置/引用的 Skill ID（内置在自身 skills/ 下的也会列出）
+  - some-skill-id
+tags:
+  - 标签一
+  - 标签二
+status: active              # active|draft|deprecated
+platform_category: "02-Engineering"   # 对应 WorkBuddy 平台类目 ID（可选）

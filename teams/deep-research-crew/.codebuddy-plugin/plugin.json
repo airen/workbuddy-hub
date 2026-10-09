@@ -1,0 +1,132 @@
+{
+  "name": "deep-research-crew",
+  "version": "1.0.0",
+  "description": "A seven-role deep research crew. One orchestrator plans the investigation route, then six specialists navigate the open web, clean raw pages into readable text, parse thick PDFs and reports, archive evidence in a semantic store, audit every claim back to its source, and write a final source-linked research report.",
+  "author": {
+    "name": "大漠",
+    "email": "damo@example.com"
+  },
+  "agents": [
+    "./agents/deep-research-crew-team-lead.md",
+    "./agents/deep-research-web-navigator.md",
+    "./agents/deep-research-content-refiner.md",
+    "./agents/deep-research-doc-parser.md",
+    "./agents/deep-research-evidence-librarian.md",
+    "./agents/deep-research-trace-auditor.md",
+    "./agents/deep-research-report-writer.md"
+  ],
+  "skills": [
+    "./skills/research-evidence-protocol"
+  ],
+
+  "expertType": "team",
+  "agentName": "deep-research-crew-team-lead",
+  "teamInfo": {
+    "leadAgent": "deep-research-crew-team-lead",
+    "memberAgents": [
+      "deep-research-web-navigator",
+      "deep-research-content-refiner",
+      "deep-research-doc-parser",
+      "deep-research-evidence-librarian",
+      "deep-research-trace-auditor",
+      "deep-research-report-writer"
+    ]
+  },
+
+  "displayName": {
+    "en": "Deep Research Crew",
+    "zh": "深度研究专家团"
+  },
+  "profession": {
+    "en": "Deep Research Crew",
+    "zh": "深度研究专家团"
+  },
+  "displayDescription": {
+    "en": "A seven-role research pipeline — navigate, clean, parse, archive, trace — that turns scattered web pages and thick reports into a source-linked research report you can replay.",
+    "zh": "七角色的研究流水线：导航、清洗、解构、归档、溯源各司其职，把散乱网页与厚报告变成可回看的带源报告。"
+  },
+  "avatar": "avatars/team.jpg",
+  "categoryId": "04-DataAI",
+  "defaultInitPrompt": {
+    "zh": "帮我查清一件事：这件事到底是真的吗？",
+    "en": "Help me verify a claim — is this actually true?"
+  },
+  "plugin": "deep-research-crew",
+  "tags": [
+    { "en": "Deep Research", "zh": "深度研究" },
+    { "en": "Evidence Tracing", "zh": "证据溯源" },
+    { "en": "Knowledge Base", "zh": "知识库沉淀" }
+  ],
+  "quickPrompts": [
+    {
+      "zh": "帮我查清一件事：这件事到底是真的吗？",
+      "en": "Help me verify a claim — is this actually true?"
+    },
+    {
+      "zh": "围绕这个话题做一份带来源链接的深度研究报告，每条结论都要能回看原文",
+      "en": "Produce an in-depth, source-linked research report on this topic — every conclusion must trace back to the original text"
+    },
+    {
+      "zh": "这堆网页和 PDF 太乱了，帮我采集、洗净、归档成可查的证据库，再据此写结论",
+      "en": "These pages and PDFs are a mess — collect, clean and archive them into a searchable evidence base, then draw conclusions from it"
+    }
+  ],
+  "members": [
+    {
+      "id": "deep-research-crew-team-lead",
+      "displayName": { "en": "Lu Zhiyuan", "zh": "路知远" },
+      "name": { "en": "Lu Zhiyuan", "zh": "路知远" },
+      "profession": { "en": "Research Orchestrator", "zh": "研究总调度" },
+      "avatar": "avatars/deep-research-crew-team-lead.jpg",
+      "role": "lead"
+    },
+    {
+      "id": "deep-research-web-navigator",
+      "displayName": { "en": "Liu Lanzhi", "zh": "刘览之" },
+      "name": { "en": "Liu Lanzhi", "zh": "刘览之" },
+      "profession": { "en": "Web Navigator", "zh": "网络导航员" },
+      "avatar": "avatars/deep-research-web-navigator.jpg",
+      "role": "member"
+    },
+    {
+      "id": "deep-research-content-refiner",
+      "displayName": { "en": "Xu Chengming", "zh": "许澄明" },
+      "name": { "en": "Xu Chengming", "zh": "许澄明" },
+      "profession": { "en": "Content Refiner", "zh": "内容清洗师" },
+      "avatar": "avatars/deep-research-content-refiner.jpg",
+      "role": "member"
+    },
+    {
+      "id": "deep-research-doc-parser",
+      "displayName": { "en": "Xie Wenshan", "zh": "解文山" },
+      "name": { "en": "Xie Wenshan", "zh": "解文山" },
+      "profession": { "en": "Document Parser", "zh": "文档解构师" },
+      "avatar": "avatars/deep-research-doc-parser.jpg",
+      "role": "member"
+    },
+    {
+      "id": "deep-research-evidence-librarian",
+      "displayName": { "en": "Xiang Zhizhang", "zh": "向知章" },
+      "name": { "en": "Xiang Zhizhang", "zh": "向知章" },
+      "profession": { "en": "Evidence Librarian", "zh": "证据库管家" },
+      "avatar": "avatars/deep-research-evidence-librarian.jpg",
+      "role": "member"
+    },
+    {
+      "id": "deep-research-trace-auditor",
+      "displayName": { "en": "Lu Kesu", "zh": "陆可溯" },
+      "name": { "en": "Lu Kesu", "zh": "陆可溯" },
+      "profession": { "en": "Trace Auditor", "zh": "溯源审计员" },
+      "avatar": "avatars/deep-research-trace-auditor.jpg",
+      "role": "member"
+    },
+    {
+      "id": "deep-research-report-writer",
+      "displayName": { "en": "Chang Youju", "zh": "常有据" },
+      "name": { "en": "Chang Youju", "zh": "常有据" },
+      "profession": { "en": "Research Writer", "zh": "研究撰稿人" },
+      "avatar": "avatars/deep-research-report-writer.jpg",
+      "role": "member"
+    }
+  ]
+}

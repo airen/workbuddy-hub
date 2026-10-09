@@ -1,0 +1,137 @@
+# SSOT Patterns for Architecture Reviews
+
+Use this lens in bounded mode for an identified concept/contract, or alongside global investigation
+for a repository-wide sweep. Apply the shared evidence gate and count each root cause once across
+SSOT, React, and module-boundary findings. Reuse the same ownership map, callers, and contracts.
+
+## Purpose
+
+Hunt down places where one fact, one shape, or one word has more than one authoritative home —
+or where one name secretly serves several facts. Produce a findings report that an engineer can
+execute from: every finding numbered, evidenced, honestly adjudicated, and routed to a concrete
+disposition. This lens is a diagnostic with a strong opinion about treatment, not a linter.
+
+## The Core Law
+
+SSOT violations are especially likely at boundaries a single type system cannot protect:
+language↔database, language↔wire, typed↔untyped payloads, code↔docs, and production↔fixtures.
+They also occur inside one language when modules independently redeclare constants, shapes,
+defaults, or derivations; compilers do not prevent semantically duplicated authorities.
+
+Two corollaries that direct the hunt:
+
+1. Start at the cross-stack seams because risk is high there, then follow each concept through its
+   intra-language definitions and consumers.
+2. A test that pins two copies equal ("parity test", "pin test", "currency test") is a flag:
+   either the copy should not exist (eliminate it, then delete the test), or both sides are
+   genuinely real artifacts that cannot share a source (then the test IS the correct treatment).
+   Locate every such test early — each one marks either a violation or a treatment already applied.
+
+## The Ten Symptom Classes
+
+Use the symptom table to choose likely classes, then read only those class recipes in
+`references/ssot-detection-cookbook.md` before searching.
+
+| # | Symptom | One-line definition | Canonical tell |
+|---|---|---|---|
+| 1 | **Multi-source literals** | One wire string / enum value defined independently in N places | Same quoted literal in two modules; a private const shadowing a public one |
+| 2 | **Shape proliferation** | One concept carried by N type/schema shapes across seams | Hand-written schema on one side of a wire mirroring the producing type on the other; typed→untyped "regressions" where a typed object gets flattened back into a string-keyed map at a seam |
+| 3 | **Word overload** | One word meaning N different things (the mirror of #1) | The domain's most valuable word (e.g. "memory" as product moat) also used for infrastructure ("in-memory"); a term with 2-3 documented senses |
+| 4 | **Legacy-vocabulary mapping layers** | Old vocabulary survives inside display/fixture mapping functions after a wire rename — and the mappings themselves get copy-pasted | The same old→new word map appearing in two files; fixtures asserting retired vocabulary |
+| 5 | **Dual-pathway behavior forks** | The same operation behaves differently depending on which entry path/host ran it | A CLI path skipping the safety pipeline the server path runs; one caller passing explicit-empty where another gets defaults |
+| 6 | **Scattered defaults** | The same fallback value born independently at multiple layers | A default directory/timeout/limit defined as a constant in one layer AND as an inline fallback in another, neither referencing the other |
+| 7 | **Pure-subset shape pairs** | Type B = type A minus k fields, plus a field-by-field copy converter | A converter function that only copies fields; the "information" carried by the second shape is merely hiding fields |
+| 8 | **Same-name-different-shape** | Two exported types with the same name in the same semantic domain but different fields | `RunSnapshot` in two sibling modules meaning related-but-different things |
+| 9 | **Redundant conversion chains** | One concept reshaped at multiple hops along a single call path, where the intermediate shapes add no information | A value converted A→B→C on its way through layers; round-trips (A→B→A); typed→string→typed relays where a value is serialized and re-parsed inside one process. Kill question per hop: "what information does this shape add?" — no answer means the hop merges |
+| 10 | **Re-implemented derivations** | The same rule — validation, normalization, parsing, a derived field — implemented independently at N layers, each a drift point | The same regex/threshold/branching duplicated with small diffs; a date string parsed at three layers; `isActive`/`displayName` computed differently in two views |
+
+Severity logic: a violation that has **already caused a production symptom** (silent empty
+rendering, correctness bug, wrong cursor) outranks everything; next, violations on persisted or
+user-visible wire; then cross-team/cross-stack seams; intra-module duplication last.
+
+## Honest Adjudication — what NOT to flag
+
+Findings are leads, not verdicts. Run these checks before a finding enters the report; record
+exonerated candidates in a "not counted" note so the next sweeper doesn't re-litigate:
+
+- **Module-qualified generic names are idiomatic, not violations.** A short generic type name
+  qualified by its module (`stream.Message` vs `processor.Message`) is the standard-library
+  pattern in every module system (see the cookbook's language notes for per-language exemplars).
+  Flag same-name types only when they share a semantic domain and confuse a cross-module reader
+  (class #8), or collide in one file.
+- **Forward contracts are alive even with zero producers.** A registry entry / enum value with no
+  backend producer may be consumed by a frontend switch as a forward contract. Grep every consumer
+  surface (web, contract, seeds) before calling anything dead. Disposition for these: annotate and
+  group, never delete on producer-absence alone.
+- **Persisted wire literals are frozen.** The fix unifies *definition sites*; the string values
+  on disk/in events never change. Even naming inconsistencies baked into the wire (mixed prefixes)
+  get documented, not repaired.
+- **A shape change is legitimate when it carries information** — adds a sequence number, hides
+  internal fields for an audience, renames into a consumer's vocabulary. The disease is reshaping
+  that carries nothing (class #7), typed→map regressions, and chains where every hop re-converts
+  without adding anything (class #9). Judge each hop separately: a chain can contain one real
+  boundary and two gratuitous ones.
+- **Re-checks at trust boundaries are defense, not duplication.** A server re-validating client
+  input, or a DB constraint backing an app-level check, is deliberate redundancy across trust
+  levels. Class #10 flags re-implemented rules at the *same* trust level — two layers behind the
+  same boundary each owning their own copy of the regex, threshold, or parse.
+- **Port/impl module pairs and per-plugin modules are conventions**, not fragmentation. Don't
+  recommend flattening them in an SSOT report.
+- **Deliberate, adjudicated dual vocabularies can exist** (e.g. an ADR chose a flat result type
+  with a closed discriminator). Check decision records before flagging; contrast honestly — a
+  4-field type with a closed-set kind is not the same disease as a 9-field union with no
+  discriminator semantics.
+
+The credibility of the whole report rests on this section. One overreaching finding ("unify all
+the Messages!") teaches the reader to ignore the real ones.
+
+## Treatment Recipes
+
+Every confirmed finding routes to exactly one recipe; the recipe determines the disposition:
+
+| Recipe | When | Notes |
+|---|---|---|
+| **Codegen** | One side can mechanically generate the other (type → schema, registry → enum file) | Strongest fix; pairs with a *currency test* (guards "forgot to regenerate" — that is a constructive gap a compiler can't close, so the test is legitimate) |
+| **Parity guard** | Both sides are real artifacts that cannot share a source (language enum vs DB CHECK constraint) | Include a *red drill*: deliberately desync once and confirm the guard fires |
+| **Constant promotion** | Bare string keys in map envelopes crossing layers | Promote to a named constant next to its siblings; both writer and reader reference it |
+| **Typed payload** | Shape proliferation / map regressions at seams | Often a phase of a larger contract plan; don't band-aid per-field |
+| **Convert at the edge** | Redundant conversion chains | Convert once where the value enters the system; pass one canonical type through the interior; merge hops that add no information |
+| **Single rule owner** | Re-implemented derivations | Hoist the rule into one named function/type and make every layer call it; where possible encode the proof in the type (parse, don't validate) so downstream layers cannot re-do the work |
+| **Vocabulary close-out** | Word overload, legacy mapping layers | Glossary entry + rename of the cheap side; map function single-sourced or fixtures moved to current vocabulary |
+| **Adjudication** | Behavior forks | These need a *decision*, not a patch: unify the behavior, or promote the fork into an explicitly documented contract. Present both options with a default recommendation |
+| **Delete the pin** | After any recipe eliminates a copy, delete the parity test that was holding the copies together — its survival is evidence of remaining multi-source |
+
+## Apply within the architecture workflow
+
+1. **Scope.** Use the requested sweep surface (a module, a contract plane, the whole repo). Note any
+   prior sweeps/plans to avoid re-finding adjudicated items.
+2. **Map the seams first.** List type-system-unreachable boundaries, then the internal modules that
+   independently define or derive the same concepts. Seams are priority entrypoints, not the only
+   possible location of findings.
+3. **Hunt per symptom class** using the cookbook greps. For each candidate, capture file:line for
+   *every* definition/use site — counts matter ("this literal is defined in exactly 2 places",
+   "adding one event touches 6 files" is the change-amplification number that lands the point).
+4. **Verify producer AND consumer** for anything you might call dead or removable. The
+   three-surface discipline: backend producers, frontend/contract consumers, seeds/fixtures.
+5. **Adjudicate honestly** (section above). Sort exonerated candidates into the "not counted" note.
+6. **Write the report** using `references/ssot-output-template.md`: numbered findings, evidence,
+   severity, recipe, disposition table, positive list ("already-healthy patterns to copy" —
+   naming what the repo already does right makes the report constructive and gives fixes a local
+   precedent to imitate).
+7. **Execute fixes only when requested.** Preserve persisted wire values and verify affected
+   consumers. For a larger migration, use `hai-goal` when an execution plan is needed; if
+   implementation is already authorized, continue through verification. An unresolved behavior
+   fork needs a contract decision before changing behavior.
+
+
+## Output and boundaries
+
+Use `references/ssot-output-template.md` for an SSOT-focused review; a quick question may use a
+compact verdict but still explain false positives and treatment. In global mode retain entrypoint,
+call-chain, state/config, and test coverage from `references/global-output-template.md`, embedding
+SSOT findings rather than producing a second report. For mixed reviews use the relevant SSOT
+fields inside the main report. Keep nontrivial alternatives, residual risk, and a first proof.
+
+A module-ownership root cause stays in the same architecture review. Use `hai-naming` for a naming
+exercise, `hai-goal` for a needed phased execution plan, or `geju` to reframe the contract surface.
+Do not report raw search matches, unify unrelated concepts, or silently change persisted wire.

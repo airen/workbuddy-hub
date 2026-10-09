@@ -1,0 +1,29 @@
+id: engineering-delivery
+name: 软件工程交付专家团
+version: 1.0.0
+type: team
+description: 从需求澄清到上线交付的软件工程专家团：主理人编排六阶段，代码审查、测试、安全、性能四路独立把关。
+category: development
+members:
+- expert_id: engineering-delivery-team-lead
+  role: coordinator
+  embedded: true
+- expert_id: engineering-delivery-code-reviewer
+  role: member
+  embedded: true
+- expert_id: engineering-delivery-test-engineer
+  role: member
+  embedded: true
+- expert_id: engineering-delivery-security-auditor
+  role: member
+  embedded: true
+- expert_id: engineering-delivery-performance-auditor
+  role: member
+  embedded: true
+workflow: agents/engineering-delivery-team-lead.md
+tags:
+- 全周期交付
+- 多维审查
+- 生产级质量
+status: active
+platform_category: 02-Engineering

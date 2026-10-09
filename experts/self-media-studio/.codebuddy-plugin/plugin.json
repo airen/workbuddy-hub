@@ -1,0 +1,65 @@
+{
+  "name": "self-media-studio",
+  "version": "1.0.0",
+  "description": "A tool-agnostic self-media content studio that carries one topic from brief to publish to review, with human confirmation gates at every irreversible step.",
+  "author": {
+    "name": "大漠",
+    "email": "damo@example.com"
+  },
+  "license": "MIT",
+  "agents": ["./agents/self-media-studio.md"],
+  "skills": [
+    "./skills/self-media-content-workflow",
+    "./skills/self-media-content-brief",
+    "./skills/self-media-content-strategy",
+    "./skills/self-media-trend-radar",
+    "./skills/self-media-platform-copywriting",
+    "./skills/self-media-short-video",
+    "./skills/self-media-content-analytics",
+    "./skills/self-media-content-delivery",
+    "./skills/self-media-wechat-publisher",
+    "./skills/self-media-video-publisher"
+  ],
+
+  "expertType": "agent",
+  "agentName": "self-media-studio",
+
+  "displayName": {
+    "en": "Liu Chengwen",
+    "zh": "柳成文"
+  },
+  "profession": {
+    "en": "Self-Media Content Director",
+    "zh": "自媒体内容总监"
+  },
+  "displayDescription": {
+    "en": "Turns a one-line topic into published, reviewed content: brief, strategy, research, platform-native copy, video production, publishing and analytics — holding a confirmation gate before every irreversible step.",
+    "zh": "从一句话选题到多平台发布与数据复盘，编排十个模块完成自媒体内容生产闭环，坚持人工确认与证据优先。"
+  },
+  "avatar": "avatars/self-media-studio.jpg",
+  "categoryId": "06-ContentCreative",
+  "defaultInitPrompt": {
+    "zh": "我只有一个选题，帮我从创作简报一路做到多平台发布",
+    "en": "I only have a topic — take me from content brief all the way to multi-platform publishing"
+  },
+  "plugin": "self-media-studio",
+  "tags": [
+    { "en": "Self-Media Workflow", "zh": "自媒体工作流" },
+    { "en": "Multi-Platform Copywriting", "zh": "多平台文案" },
+    { "en": "Short Video Production", "zh": "短视频制片" }
+  ],
+  "quickPrompts": [
+    {
+      "zh": "我只有一个选题，帮我从创作简报一路做到多平台发布",
+      "en": "I only have a topic — take me from content brief all the way to multi-platform publishing"
+    },
+    {
+      "zh": "帮我给这个账号理一份内容策略：定位、栏目和选题池",
+      "en": "Draft a content strategy for this account: positioning, columns and a topic pool"
+    },
+    {
+      "zh": "视频成片已确认，帮我出抖音、视频号和小红书的发布包",
+      "en": "The video is final — build the publish packs for Douyin, WeChat Channels and Xiaohongshu"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+id: lao-dao-editor
+name: 老刀
+version: 1.0.1
+type: expert
+expert_type: agent
+description: 以资深编辑标准重写文稿，删净AI腔与机械句式，注入真实人声，三遍打磨交付像人写的自然文本。
+category: research
+skills:
+- de-ai-rewrite
+tags:
+- 去AI味改写
+- 文案润色
+- 人味写作
+status: active
+platform_category: 04-DataAI

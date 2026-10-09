@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/airen/workbuddy-hub/schemas/skill.schema.json",
+  "title": "WorkBuddy Hub — Skill Manifest",
+  "description": "校验 skills/<id>/manifest.yaml 的结构。Skill 的真实能力定义仍以 SKILL.md 的 frontmatter 为准，本 manifest 是仓库内部的索引/筛选元数据。",
+  "type": "object",
+  "required": ["id", "name", "version", "type", "description"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9-]*$",
+      "description": "技能唯一 ID（kebab-case），与目录名、SKILL.md 的 name 一致"
+    },
+    "name": { "type": "string", "description": "展示名（可含中文）" },
+    "version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$",
+      "description": "语义化版本 x.y.z"
+    },
+    "type": { "const": "skill" },
+    "description": { "type": "string", "description": "一句话能力描述" },
+    "category": {
+      "type": "string",
+      "enum": ["research", "development", "content", "design", "business", "other"],
+      "description": "能力分类，对应 registry/categories.yaml"
+    },
+    "tags": { "type": "array", "items": { "type": "string" } },
+    "status": {
+      "type": "string",
+      "enum": ["active", "draft", "deprecated"],
+      "default": "active"
+    },
+    "license": { "type": "string" },
+    "upstream": { "type": "string", "description": "上游来源/归属（第三方搬运时填写）" },
+    "created": { "type": "string" },
+    "updated": { "type": "string" }
+  },
+  "additionalProperties": true
+}

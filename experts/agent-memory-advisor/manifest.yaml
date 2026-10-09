@@ -1,0 +1,14 @@
+id: agent-memory-advisor
+name: 智能体记忆选型顾问
+version: 1.0.0
+type: expert
+expert_type: agent
+description: 按写代码/个人智能体/公司大脑三类场景，从 10 个开源记忆项目挑出能落地的一套，并诊断记忆断环。
+category: development
+skills: []
+tags:
+- 记忆架构选型
+- 智能体基础设施
+- 开源方案对比
+status: active
+platform_category: 02-Engineering

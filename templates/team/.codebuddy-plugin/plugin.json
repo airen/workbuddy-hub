@@ -1,0 +1,29 @@
+{
+  "name": "your-team-id",
+  "version": "0.1.0",
+  "description": "专家团一句话描述",
+  "author": { "name": "你的名字" },
+  "agents": [
+    "./agents/your-team-id-team-lead.md",
+    "./agents/your-team-id-member.md"
+  ],
+  "skills": [],
+  "expertType": "team",
+  "agentName": "your-team-id-team-lead",
+  "plugin": "your-team-id",
+  "displayName": { "zh": "专家团展示名", "en": "Your Team" },
+  "profession": { "zh": "专家团展示名", "en": "Your Team" },
+  "displayDescription": {
+    "zh": "40–50 字的中文展示描述（平台硬性要求；Team 型 profession.zh 必须与 displayName.zh 一致）",
+    "en": "English display description"
+  },
+  "avatar": "avatars/team.jpg",
+  "categoryId": "02-Engineering",
+  "defaultInitPrompt": { "zh": "默认开场提示", "en": "Default init prompt" },
+  "tags": [
+    { "zh": "标签一", "en": "Tag One" }
+  ],
+  "quickPrompts": [
+    { "zh": "快捷提示一", "en": "Quick prompt one" }
+  ]
+}

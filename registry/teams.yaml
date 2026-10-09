@@ -1,0 +1,106 @@
+teams:
+- id: deep-research-crew
+  name: 深度研究专家团
+  version: 1.0.0
+  type: team
+  description: 七角色的研究流水线：导航、清洗、解构、归档、溯源各司其职，把散乱网页与厚报告变成可回看的带源报告。
+  category: research
+  members:
+  - expert_id: deep-research-crew-team-lead
+    role: coordinator
+    embedded: true
+  - expert_id: deep-research-web-navigator
+    role: member
+    embedded: true
+  - expert_id: deep-research-content-refiner
+    role: member
+    embedded: true
+  - expert_id: deep-research-doc-parser
+    role: member
+    embedded: true
+  - expert_id: deep-research-evidence-librarian
+    role: member
+    embedded: true
+  - expert_id: deep-research-trace-auditor
+    role: member
+    embedded: true
+  - expert_id: deep-research-report-writer
+    role: member
+    embedded: true
+  workflow: agents/deep-research-crew-team-lead.md
+  tags:
+  - 深度研究
+  - 证据溯源
+  - 知识库沉淀
+  status: active
+  platform_category: 04-DataAI
+  _source: manifest.yaml
+  path: teams/deep-research-crew
+- id: engineering-delivery
+  name: 软件工程交付专家团
+  version: 1.0.0
+  type: team
+  description: 从需求澄清到上线交付的软件工程专家团：主理人编排六阶段，代码审查、测试、安全、性能四路独立把关。
+  category: development
+  members:
+  - expert_id: engineering-delivery-team-lead
+    role: coordinator
+    embedded: true
+  - expert_id: engineering-delivery-code-reviewer
+    role: member
+    embedded: true
+  - expert_id: engineering-delivery-test-engineer
+    role: member
+    embedded: true
+  - expert_id: engineering-delivery-security-auditor
+    role: member
+    embedded: true
+  - expert_id: engineering-delivery-performance-auditor
+    role: member
+    embedded: true
+  workflow: agents/engineering-delivery-team-lead.md
+  tags:
+  - 全周期交付
+  - 多维审查
+  - 生产级质量
+  status: active
+  platform_category: 02-Engineering
+  _source: manifest.yaml
+  path: teams/engineering-delivery
+- id: hai-stack
+  name: 软件迭代专家团
+  version: 1.0.0
+  type: team
+  description: 把一次软件迭代做对：先判断值不值得做，再设计边界、按测试驱动落地，用证据确认，最后把文档沉淀干净。
+  category: development
+  members:
+  - expert_id: hai-stack-team-lead
+    role: coordinator
+    embedded: true
+  - expert_id: hai-idea-judge
+    role: member
+    embedded: true
+  - expert_id: hai-architect
+    role: member
+    embedded: true
+  - expert_id: hai-engineer
+    role: member
+    embedded: true
+  - expert_id: hai-reviewer
+    role: member
+    embedded: true
+  - expert_id: hai-doc-officer
+    role: member
+    embedded: true
+  - expert_id: hai-corrector
+    role: member
+    embedded: true
+  workflow: agents/hai-stack-team-lead.md
+  tags:
+  - 迭代判断
+  - 架构与测试驱动
+  - 技术文档简化
+  status: active
+  platform_category: 02-Engineering
+  _source: manifest.yaml
+  path: teams/hai-stack

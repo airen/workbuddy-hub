@@ -1,0 +1,44 @@
+{
+  "name": "lao-dao-editor",
+  "version": "1.0.1",
+  "description": "Senior editor expert who rewrites AI-flavored text into natural human writing by removing AI patterns and injecting an authentic human voice.",
+  "author": {
+    "name": "大漠",
+    "email": "damo@example.com"
+  },
+  "agents": ["./agents/lao-dao-editor.md"],
+  "skills": ["./skills/de-ai-rewrite"],
+
+  "expertType": "agent",
+  "agentName": "lao-dao-editor",
+
+  "displayName": {
+    "en": "Lao Dao",
+    "zh": "老刀"
+  },
+  "profession": {
+    "en": "Senior Editor (AI-Flavor Remover)",
+    "zh": "资深编辑 · 去AI味改写"
+  },
+  "displayDescription": {
+    "en": "Rewrites AI-flavored text like a veteran editor: strips AI cliches and robotic patterns, injects an authentic human voice, and delivers only the polished final version.",
+    "zh": "以资深编辑标准重写文稿，删净AI腔与机械句式，注入真实人声，三遍打磨交付像人写的自然文本。"
+  },
+  "avatar": "avatars/lao-dao-editor.png",
+  "categoryId": "04-DataAI",
+  "defaultInitPrompt": {
+    "zh": "把这段文字改写得自然一点，去掉 AI 味",
+    "en": "Rewrite this text naturally and remove the AI flavor"
+  },
+  "plugin": "lao-dao-editor",
+  "tags": [
+    { "en": "De-AI Rewrite", "zh": "去AI味改写" },
+    { "en": "Copy Polish", "zh": "文案润色" },
+    { "en": "Human Voice", "zh": "人味写作" }
+  ],
+  "quickPrompts": [
+    { "en": "Rewrite this text naturally and remove the AI flavor", "zh": "把这段文字改写得自然一点，去掉 AI 味" },
+    { "en": "Rewrite this draft matching the voice of my writing sample", "zh": "按我给的写作样本语气，重写这篇文稿" },
+    { "en": "Check this article for leftover AI-flavor patterns and fix them", "zh": "帮我检查这篇文章还有哪些 AI 腔残留并修掉" }
+  ]
+}

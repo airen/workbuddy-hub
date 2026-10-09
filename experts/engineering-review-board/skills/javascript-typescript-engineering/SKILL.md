@@ -1,0 +1,348 @@
+---
+name: javascript-typescript-engineering
+description: JavaScript and TypeScript engineering guidance. Use when adding, changing, reviewing, testing, linting, formatting, dependency-managing, packaging, or refactoring JS/TS source, package.json scripts, lockfiles, workspaces, CLIs, Node/npm, Bun, Deno, pnpm, or Yarn workflows, or project automation. Do not use for checked-in hosted CI/release-provider or Docker/OCI/Compose configuration except the JS/TS commands they invoke; use ci-release-engineering or container-engineering. Use api-design for public service/SDK/CLI contracts, observability-engineering for telemetry/logging signal design, css-scss-styling for CSS/SCSS/CSS-module/CSS-in-JS/utility styling decisions, and svelte-sveltekit-engineering for Svelte/SvelteKit component, routing, and reactivity decisions. Do not use for checked-in Playwright test design; use playwright-e2e.
+---
+
+# JavaScript and TypeScript Engineering
+
+Use this skill for project-neutral JS/TS implementation and workflow work. Inspect
+the repository before assuming a runtime, package manager, framework, formatter,
+linter, test runner, or bundler.
+
+## Use When
+
+- Editing `.js`, `.jsx`, `.ts`, `.tsx`, `.mts`, `.cts`, package manifests,
+  lockfiles, TypeScript configs, lint/format configs, build configs, tests, CLIs,
+  workspaces, or project scripts.
+- Working with Node.js, npm, `npx`, pnpm, Yarn, Deno, Bun,
+  package-manager migration, or one-off package CLIs.
+- Reviewing JS/TS correctness, types, async behavior, module boundaries,
+  dependency changes, formatting/linting, build output, or runtime compatibility.
+
+Do not use this skill for Rust, Python, database-native design, or checked-in
+Playwright test design. Use [`playwright-e2e`](../playwright-e2e/SKILL.md) for
+Playwright specs/configs and browser-visible test lanes. Use
+[`css-scss-styling`](../css-scss-styling/SKILL.md) for stylesheet architecture,
+CSS/SCSS migration, CSS modules, CSS-in-JS styling choices, utility classes,
+responsive layout, and design-token decisions. Use
+[`svelte-sveltekit-engineering`](../svelte-sveltekit-engineering/SKILL.md) for
+Svelte component design, runes/reactivity, and SvelteKit routing, load
+functions, form actions, and adapters; keep this skill's role to the
+underlying package manager, bundler, and generic TypeScript mechanics for
+those projects.
+
+## Tauri Frontend Routing
+
+For a Tauri application, this skill owns the WebView frontend's JavaScript or
+TypeScript source, package manager, bundler, frontend tests, and browser-facing
+runtime behavior. Use [`rust-desktop-gui`](../rust-desktop-gui/SKILL.md) for the
+Rust host, native window lifecycle, IPC integration, and desktop delivery; use
+[`api-design`](../api-design/SKILL.md) when commands, events, or channels define
+a compatibility-sensitive contract. Load [`security-review`](../security-review/SKILL.md)
+for capabilities, command authorization, plugin permissions, and other WebView
+trust boundaries.
+
+## MCP SDK Composition
+
+For MCP implementation, load
+[`mcp-server-engineering`](../mcp-server-engineering/SKILL.md) and its dated
+[SDK selection record](../mcp-server-engineering/references/sdk-selection.md).
+The selection record is the canonical source for the selected TypeScript lane's
+retrieval-time authority, package/version, tier, core-revision, transport, and
+conformance caveats. It is not a target-repository pin or local test result.
+
+## MCP TypeScript Mechanics
+
+Use this section only after loading
+[`mcp-server-engineering`](../mcp-server-engineering/SKILL.md) and its dated
+[SDK selection record](../mcp-server-engineering/references/sdk-selection.md).
+They own MCP revision, capability, and transport rules; this section owns v2
+package, runtime, type, lifecycle, and test mechanics.
+
+- **Discover and resolve the v2 package set:** inspect `package.json`, the
+  selected lockfile, workspace dependency boundaries, runtime declaration, and
+  CI scripts. Resolve compatible `@modelcontextprotocol/server` and
+  `@modelcontextprotocol/client` versions together from the target lockfile;
+  retain legacy `@modelcontextprotocol/sdk` only when a deliberate, tested v1
+  compatibility decision requires it. Do not fetch a package or infer API shape
+  from the dated record.
+- **Wire SDK objects at a composition boundary:** create the resolved server,
+  client, registrations, and transport adapter in the executable entry point or
+  framework bootstrap. Give handlers narrow typed dependencies and delegate to
+  transport-independent operations. Keep client/connection objects scoped to an
+  adapter or factory instead of leaking them through application/domain types.
+- **Use the selected runtime's lifecycle primitives:** connect the SDK transport
+  through its documented adapter, propagate `AbortSignal`/request cancellation,
+  and await every owned `close`/`dispose`/shutdown promise in the process or
+  framework shutdown hook. Do not use unawaited cleanup, process-exit callbacks,
+  or an SDK `connect()` call as evidence that transports and background work are
+  closed. The parent skill, not this section, decides protocol transport policy.
+- **Pair static and runtime schema checks:** model handler data with explicit
+  TypeScript types and use the resolved SDK's supported Standard Schema or wire
+  schema adapter. Validate runtime JSON at the boundary and test the derived or
+  declared input/output schema with representative malformed, optional, and
+  nested values; a TypeScript type or `as` assertion is not validation.
+- **Test in layers:** use the repository's configured runner and runtime. Test
+  operations independently with fakes, then integration-test the resolved SDK
+  adapter, schema bridge, abort path, and cleanup with an SDK-supported local or
+  in-memory transport when available. Run a spawned-process or remote transport
+  fixture only in an authorized repository lane; obtain protocol test cases from
+  the parent MCP skill.
+
+## Workflow
+
+1. Inspect local evidence first: `package.json`, lockfiles, `bunfig.toml`,
+   `deno.json`, `.npmrc`, workspaces, source/test layout, `tsconfig*`, lint and
+   formatter config, bundler config, CI, README, and agent instructions.
+   Use local code navigation, direct reads, and search for symbols, references,
+   implementations, exact strings, docs, config, logs, fixtures, and generated
+   assets; use repository commands for tests, builds, and other validation.
+2. Identify the runtime and package manager actually owned by the repository.
+   Use Node.js and npm by default when there is no local evidence requiring a
+   different workflow. Use Bun only when the repo explicitly uses `bun.lock`, Bun
+   scripts, Bun runtime features, or the task is Bun-specific.
+3. Define the behavior before editing. Use BDD examples for user-visible or CLI
+   behavior and TDD for focused logic changes and bug fixes.
+4. Keep boundaries explicit: domain logic, adapters, UI, scripts, generated code,
+   and external service clients should not blur together. Load
+   [`hexagonal-architecture`](../hexagonal-architecture/SKILL.md) for
+   ports/adapters and external actors, [`clean-architecture`](../clean-architecture/SKILL.md)
+   for use-case and interface-adapter boundaries, or
+   [`onion-architecture`](../onion-architecture/SKILL.md) for domain/application
+   rings.
+5. Verify with the narrowest useful script or direct command first, then broaden
+   to the repository's lint, type, test, format, and build lanes.
+
+## Runtime and Package Manager Rules
+
+- Do not switch package managers silently. Lockfiles are policy evidence:
+  `package-lock.json`, `pnpm-lock.yaml`, `yarn.lock`, `bun.lock`, and
+  `deno.lock` imply different workflows.
+- Use Node.js and npm for install/run/test/add/remove commands by default only
+  when no repository evidence selects another workflow. Use pnpm, Yarn, Deno,
+  or Bun when local config, CI, runtime APIs,
+  deployment target, or workspace policy requires them.
+- Do not introduce another lockfile unless the project intentionally supports
+  multiple package managers.
+- Add dependencies when durable project code or a repeatable project workflow
+  needs them. Prefer locked local executables over fetch-and-run commands.
+- Keep package scripts explicit about arguments, environment variables, working
+  directory, generated files, and exit codes.
+
+## Local CPU Parallelism Routing
+
+Compose with [`parallelism-engineering`](../parallelism-engineering/SKILL.md)
+when a local CPU-bound JS/TS workload needs data or task decomposition,
+partition sizing, bounded worker-pool design, deterministic reduction,
+cancellation, or nested-parallelism control. That skill owns the cross-language
+parallel design; this skill owns JavaScript/TypeScript worker, runtime, type,
+package, and test mechanics.
+
+Do not route ordinary promises, event-loop behavior, async I/O, request fan-out,
+or routine concurrency to `parallelism-engineering`; keep those runtime concerns
+in this skill. Use the data-platform owner for Spark/PySpark execution rather
+than treating it as local JS/TS parallelism.
+
+## WebAssembly Routing
+
+Compose with [`webassembly-engineering`](../webassembly-engineering/SKILL.md)
+when JS/TS work includes a general WebAssembly decision: a WAT or `.wasm`
+artifact, WASI or WIT, the Component Model, host/guest contract, runtime or
+target selection, capability grants, or Wasm packaging and deployment. That
+skill owns those Wasm boundary and compatibility decisions. This skill retains
+JS/TS source, package, compiler or binding-tool, browser/framework, host-
+integration, and test mechanics; the Wasm skill does not establish JS/TS
+toolchain, framework, or binding support.
+
+## Package Scripts And One-Off Runners
+
+Use `package.json` scripts for durable, repository-owned entry points that should
+be discoverable and run consistently through the selected package manager. Keep
+one short cross-platform command inline. Move quoting-heavy commands, reusable
+functions, structured data work, substantial branching, cleanup, or separately
+tested behavior into a checked-in script and keep the package script a thin
+wrapper. Load [`script-engineering`](../script-engineering/SKILL.md) for that
+boundary and script implementation.
+
+Distinguish commands that expose already installed project dependencies from
+commands that may fetch code:
+
+- Prefer package scripts or the selected manager's local execution form, such as
+  `npm exec` or `pnpm exec`, for locked project tools. Verify the tool is present
+  locally when network access or unreviewed fetching is forbidden.
+- Treat `npx`/`npm exec` with a missing package, pnpm's `pnx`/`pnpm dlx`/`pnpx`
+  family, `yarn dlx`, `bunx`, and comparable commands as potential
+  fetch-and-execute operations. Exact aliases, prompts, caches, lifecycle
+  scripts, and trust controls vary by package-manager version; inspect the
+  repository's pinned version and current official documentation.
+- Use an ephemeral runner only for explicit low-risk exploration or a bounded
+  maintenance action when the package identity and source are trusted, the
+  version is exact where practical, network execution is authorized, lifecycle
+  behavior is understood, and the command receives no secrets or unnecessary
+  privileges.
+- Do not use an ephemeral runner for a recurring project workflow, CI/release or
+  production execution, offline/reproducible builds, privileged automation, or
+  untrusted repository input. Add and lock the tool, use an existing trusted
+  toolchain, or stop and request a supply-chain decision.
+- Do not assume a confirmation prompt will protect CI or a non-interactive
+  agent. Some runners fetch automatically or assume approval without a TTY.
+
+Load
+[`dependency-supply-chain-review`](../dependency-supply-chain-review/SKILL.md)
+before approving new downloaded executables, package lifecycle scripts,
+registry/provenance changes, or fetch-and-run behavior.
+
+Common commands to adapt to the repo:
+
+```sh
+npm ci
+npm run <script>
+npx <tool> [args]
+pnpm exec <tool> [args]
+pnpm dlx <package>@<version> [args]
+pnpm install --frozen-lockfile
+pnpm run <script>
+yarn install --immutable
+yarn <script>
+bun install --frozen-lockfile
+bun run <script>
+bunx <package>@<version> [args]
+bun test <filter>
+deno task <task>
+```
+
+## JavaScript and TypeScript Checklist
+
+- Async work is awaited, returned, cancelled, or intentionally detached; promise
+  rejections are observed and surfaced.
+- TypeScript contracts are explicit at module, API, CLI, network, and persistence
+  boundaries. Avoid `any` and broad assertions unless a boundary is genuinely
+  untyped and checked at runtime.
+- Runtime validation exists for untrusted input. Compile-time types do not prove
+  JSON, form, query, environment, file, plugin, or network data is valid.
+- ESM/CJS choices match the repo and runtime. Side effects at import time are
+  deliberate, cheap, and documented when they affect callers.
+- Errors preserve actionable context without logging secrets, tokens, cookies,
+  credentialed URLs, or private paths.
+- Generated types and artifacts are regenerated through the repo's workflow and
+  not hand-edited.
+- Random IDs, tokens, and test data follow
+  [`random-data-identifiers`](../random-data-identifiers/SKILL.md).
+
+## Pattern Routing
+
+- Load
+  [`typescript-javascript-design-patterns`](../typescript-javascript-design-patterns/SKILL.md)
+  when the change needs JS/TS-specific pattern choices: discriminated unions,
+  branded types, runtime validation boundaries, functional core/imperative shell,
+  adapter modules, command or use-case handlers, dependency injection, async
+  orchestration, or test builders.
+- Load
+  [`typescript-javascript-antipatterns`](../typescript-javascript-antipatterns/SKILL.md)
+  when reviewing or refactoring JS/TS smells: `any`, unsafe assertions, missing
+  runtime validation, unawaited promises, framework/UI leakage, singleton service
+  bags, import-time side effects, weak randomness, over-mocked tests, or brittle
+  E2E tests.
+
+## Styling Routing
+
+- Load [`css-scss-styling`](../css-scss-styling/SKILL.md) when JS/TS work
+  touches `.css`, `.scss`, `.sass`, CSS modules, CSS-in-JS, utility-class
+  conventions, PostCSS/Tailwind/Sass config, design tokens, responsive layout,
+  or browser-visible cascade behavior.
+- Keep this skill focused on package-manager workflow, TypeScript contracts,
+  bundler integration, component code, tests, and build commands. Let the styling
+  skill own CSS-vs-SCSS decisions, selector/cascade maintainability,
+  accessibility-related visual states, and stylesheet migration risks.
+
+## API and Observability Routing
+
+- Load [`api-design`](../api-design/SKILL.md) when JS/TS work defines or changes
+  HTTP/RPC/GraphQL/webhook, SDK, CLI, request/response/error, pagination,
+  versioning, or generated-client contracts. Keep this skill focused on JS/TS
+  implementation, types, serializers, package workflow, and tests.
+- Load [`observability-engineering`](../observability-engineering/SKILL.md) when
+  adding or changing structured logs, metrics, traces, correlation IDs, audit
+  events, frontend/backend diagnostics, or operator-facing telemetry.
+- For public API docs, examples, or migration guides, load
+  [`api-design`](../api-design/SKILL.md) first if the contract is still being
+  shaped; otherwise use
+  [`documentation-engineering`](../documentation-engineering/SKILL.md).
+
+## CI, Release, and Container Routing
+
+- Load [`ci-release-engineering`](../ci-release-engineering/SKILL.md) for hosted
+  workflow triggers, jobs, matrices, permissions, artifacts, and automated
+  releases. Keep package scripts and JavaScript/TypeScript build mechanics here.
+- Load [`container-engineering`](../container-engineering/SKILL.md) for
+  Dockerfile, OCI image, or Compose behavior; keep JS/TS runtime and bundler
+  behavior here.
+
+## Formatting, Linting, Types, and Builds
+
+- Use checked-in scripts when they exist. Otherwise inspect configured tools:
+  Prettier, ESLint, Biome, TypeScript, tsup, esbuild, Vite, Next.js, Rollup,
+  Webpack, SWC, Jest, Vitest, Node's test runner, Bun test, or Deno tasks.
+- Prettier is formatting only. ESLint/Biome and TypeScript checks cover different
+  contracts; do not report one as a substitute for the other.
+- Run format checks before changing style broadly. Avoid formatting unrelated
+  files unless the task is explicitly a formatting pass.
+- For TypeScript, run the repo's configured typecheck. If none exists, use the
+  narrowest command that respects local `tsconfig` and module resolution.
+- For build changes, check bundle/runtime compatibility and generated output only
+  where the repository expects generated artifacts to be committed.
+
+## Testing Guidance
+
+- Unit tests: pure logic, parsers, formatters, validators, state machines,
+  reducers, and small adapters.
+- Integration tests: filesystem, subprocesses, package scripts, API clients,
+  database adapters, framework wiring, and generated contracts.
+- E2E/browser tests: only when browser behavior is the confidence target; use the
+  Playwright skill for checked-in browser tests.
+- Keep tests deterministic: no uncontrolled clocks, ports, network calls, random
+  seeds, process-global state, shared temp directories, or order dependence.
+- Use targeted filters for iteration, then broaden to package/workspace/CI lanes
+  when the changed surface crosses boundaries.
+
+## Security Review Prompts
+
+Load [`security-review`](../security-review/SKILL.md) when JS/TS changes touch
+auth, sessions, cookies, CSRF/CORS/CSP, cryptography, secrets, `.env`, command
+execution, path handling, uploads/downloads, plugin execution, HTML/Markdown
+rendering, SSR, or other implemented trust boundaries. Use
+[`dependency-supply-chain-review`](../dependency-supply-chain-review/SKILL.md)
+for dependency bumps, lockfile churn, package-manager updates, package scripts,
+install/postinstall hooks, one-off CLIs, CI bootstrap, generated clients,
+vendored code, provenance, or advisory questions. Use
+[`threat-modeling`](../threat-modeling/SKILL.md) before or during new auth
+middleware, request/API/SSR boundaries, plugins, webhooks, background workers,
+external-service integrations, or sensitive data flows. Use
+[`security-review-evidence`](../security-review-evidence/SKILL.md) when
+collecting or reporting sensitive security evidence.
+
+## Anti-Patterns
+
+- Assuming every JS/TS repo uses React, Next.js, Vite, ESLint, Prettier, Jest,
+  Vitest, pnpm, Yarn, Bun, or Deno without local evidence.
+- Following default `npm`/`npx` instructions after local evidence shows the repo
+  requires pnpm, Yarn, Bun, or Deno, without translating and verifying them.
+- Adding dependencies for trivial standard-library or platform behavior.
+- Using `npx`, `pnpx`, `pnpm dlx`, `bunx`, or another fetch-and-run command as a
+  durable substitute for a locked project dependency.
+- Letting framework, ORM, SDK, HTTP, UI, or generated-client types leak into core
+  domain APIs without an intentional adapter boundary.
+- Using `Math.random()` for secrets, tokens, identifiers, or security-sensitive
+  test fixtures.
+- Reporting a script, typecheck, lint, format, build, or test lane as valid
+  without checking it exists or running the relevant command.
+
+## Successful Use
+
+The final handoff states the source/script/package surface changed, package
+manager and lockfile impact, commands run, test/type/lint/format/build evidence,
+and any remaining runtime or CI compatibility risk.
+
+## Zod Routing
+
+When Zod is selected, load [`zod-engineering`](../zod-engineering/SKILL.md) for schema implementation and migration mechanics. This skill retains runtime, package, Standard Schema adapter, and test/tooling mechanics.

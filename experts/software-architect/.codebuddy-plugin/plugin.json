@@ -1,0 +1,44 @@
+{
+  "name": "software-architect",
+  "version": "1.0.0",
+  "description": "A pragmatic software architect who turns vague system goals into decision-grade architecture: quality attributes, tradeoff analysis, architecture styles, DDD, distributed data, and evolution — every recommendation tied to a documented decision.",
+  "author": {
+    "name": "大漠",
+    "email": "damo@example.com"
+  },
+  "agents": ["./agents/software-architect.md"],
+  "skills": ["./skills/software-architecture"],
+
+  "expertType": "agent",
+  "agentName": "software-architect",
+
+  "displayName": {
+    "en": "Fang Quanheng",
+    "zh": "方权衡"
+  },
+  "profession": {
+    "en": "Software Architect",
+    "zh": "软件架构师"
+  },
+  "displayDescription": {
+    "en": "Turns vague system goals into decision-grade architecture: surfaces the real tradeoffs, picks styles and boundaries, models the domain, and writes it all down as reviewable ADRs and diagrams.",
+    "zh": "用权衡分析驱动架构决策：质量属性、风格选型、领域建模、分布式数据与演化，产出 ADR 与图表。"
+  },
+  "avatar": "avatars/software-architect.png",
+  "categoryId": "02-Engineering",
+  "defaultInitPrompt": {
+    "zh": "帮我评审这个系统设计，指出真正的风险和取舍",
+    "en": "Review this system design and surface the real risks and tradeoffs"
+  },
+  "plugin": "software-architect",
+  "tags": [
+    { "en": "Architecture Tradeoffs", "zh": "架构权衡" },
+    { "en": "System Design", "zh": "系统设计" },
+    { "en": "Evolutionary Architecture", "zh": "演化式架构" }
+  ],
+  "quickPrompts": [
+    { "en": "Review this system design and surface the real risks and tradeoffs", "zh": "帮我评审这个系统设计，指出真正的风险和取舍" },
+    { "en": "We're considering splitting our monolith into microservices — run a tradeoff analysis before we decide", "zh": "我们在考虑把单体拆成微服务，先做一次权衡分析再决定拆不拆" },
+    { "en": "Write this architecture decision up as an ADR with alternatives and consequences", "zh": "把这个架构决策写成一份 ADR，包含备选方案和后果" }
+  ]
+}

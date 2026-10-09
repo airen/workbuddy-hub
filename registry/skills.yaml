@@ -1,0 +1,48 @@
+skills:
+- id: agent-doc-memory
+  name: 文档即记忆
+  version: 1.0.0
+  type: skill
+  description: 用「能读、能改、能提交」的 Markdown 文档工作区替代召回式记忆插件，让 agent 干活前先查、干完再更新。当用户抱怨「agent 记不住项目」「每次都要重新解释」「上次说好的又忘了」「同一个坑踩三次」「跨会话记不住」，或要建立
+    AGENTS.md / CLAUDE.md / 项目文档 / 知识库 / 长期记忆 / 跨会话记忆 / 团队共享上下文，或提到「记忆插件」「RAG 记忆」「向量库记忆」「Operator Memory」「Agent
+    不需要记忆」时使用。也适用于 agent 自己：即将开始一个跨会话的长期项目、要做技术决策、写了规格、搞清楚某个第三方库的用法、澄清了术语、或发现文档与代码不一致时，主动把知识写进文档工作区。产出
+    INDEX.md 索引与约定 / 规格 / 决策 / 调研 / 术语五类文档，并可对既有文档工作区做孤儿文档、断链、过期审计。
+  category: other
+  status: active
+  _source: manifest.yaml
+  path: skills/agent-doc-memory
+- id: ai-project-pilot
+  name: AI 项目推进官
+  version: 1.0.0
+  type: skill
+  description: 用「立项 → 计划 → 执行与监控 → 验收与上线」四阶段方法推进 AI 产品与 AI 项目落地，融合 PMP 项目管理与 AI 软件工程实践。当用户要推进或管理一个 AI
+    项目／AI 产品、写 AI 项目立项与项目章程、定义业务目标与成功标准、拆 WBS 与里程碑、做资源与风险计划、盯执行与偏差、做上线验收与复盘，或提出「AI 助手怎么做」「大模型应用怎么落地」「AI
+    需求怎么定价值」「AI 项目怎么验收」「智能体项目怎么推进」「这个 AI 项目卡住了」「AI 项目推不动」「模型上线后效果变差」这类问题，或要为项目定一份工程规范（CLAUDE.md / AGENTS.md）时使用。产出项目章程、相关方登记册、风险登记册、WBS
+    与里程碑、状态报告、变更申请、验收记录、运营交接包、复盘报告、工程规范等可直接使用的文档。
+  category: other
+  status: active
+  _source: manifest.yaml
+  path: skills/ai-project-pilot
+- id: de-ai-rewrite
+  name: 去AI味改写
+  version: 1.0.0
+  type: skill
+  description: 去 AI 味改写（自然编辑指南）。当用户要求「去 AI 味」「去掉 AI 腔」「让文字像人写的」「降 AI 检测率」「人味改写」「润色得自然一点」「重写得更自然」或粘贴一段文字要求降低机器痕迹时使用。按资深编辑标准重写文本：删除
+    AI 腔模式 + 注入真实人声，三遍流程交付最终版。
+  category: content
+  status: active
+  _source: manifest.yaml
+  path: skills/de-ai-rewrite
+- id: ui-design-field-manual
+  name: UI 设计军规
+  version: 1.0.0
+  type: skill
+  description: 用 26 条可工程化的视觉规则，治住 AI 生成界面的「塑料风 / 草台班子感」，让 agent 写出来的页面达到可交付的商业水准。当用户要写或改任何界面、做前端页面、做 Web
+    App / 小程序 / 后台 / 落地页 / 表单 / 卡片 / 列表 / 仪表盘 / 定价页 / 空状态，或说「界面太丑」「一股 AI 味」「AI 塑料风」「看着很廉价」「像草台班子」「不够高级」「帮我美化一下
+    UI」「排版不好看」「颜色很乱」「间距很挤」「界面很平没有重点」「假数据一眼假」「图标太普通」「一点动效都没有」「这个设计能不能用」「帮我做设计评审」「UI 自检」「设计军规」「Refactoring
+    UI」时使用。也适用于 agent 在生成 HTML/CSS/Tailwind/React 界面代码前先定基调与首屏骨架、生成后做交付前视觉自检与独立评审，或为用户建立一套可复用的设计令牌（字号
+    / 行高 / 间距 / 色阶）。产出可直接落地的设计令牌、基调卡、自检报告与独立评审意见。
+  category: development
+  status: active
+  _source: manifest.yaml
+  path: skills/ui-design-field-manual

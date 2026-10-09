@@ -1,0 +1,24 @@
+id: self-media-studio
+name: 柳成文
+version: 1.0.0
+type: expert
+expert_type: agent
+description: 从一句话选题到多平台发布与数据复盘，编排十个模块完成自媒体内容生产闭环，坚持人工确认与证据优先。
+category: content
+skills:
+- self-media-content-workflow
+- self-media-content-brief
+- self-media-content-strategy
+- self-media-trend-radar
+- self-media-platform-copywriting
+- self-media-short-video
+- self-media-content-analytics
+- self-media-content-delivery
+- self-media-wechat-publisher
+- self-media-video-publisher
+tags:
+- 自媒体工作流
+- 多平台文案
+- 短视频制片
+status: active
+platform_category: 06-ContentCreative

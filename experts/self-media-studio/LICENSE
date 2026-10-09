@@ -1,0 +1,52 @@
+MIT License
+
+Copyright (c) 2026 Yanhua (upstream skill suite)
+Copyright (c) 2026 大漠 (WorkBuddy expert package)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+---
+
+## Attribution / 归属说明
+
+本专家包是对开源项目 **self-media-content-workflow** 的封装转化。
+
+- 上游仓库：https://github.com/yanhua1010/self-media-content-workflow
+- 上游作者：yanhua (https://github.com/yanhua1010)
+- 上游许可：MIT License, Copyright (c) 2026 Yanhua
+
+### 原样搬运的文件（保留上游内容与许可）
+
+- `skills/**` — 全部 10 个 Skill（`SKILL.md`、`references/`、`assets/`、`agents/openai.yaml`）逐字保留，未翻译、未简化、未改写正文。
+
+### 本包新写的文件
+
+- `.codebuddy-plugin/plugin.json` — WorkBuddy 专家包元数据
+- `agents/self-media-studio.md` — 主理人 persona（角色定义、SOP、确认点、WorkBuddy 机制适配、安全边界）
+- `README.md` — 本文件
+- `LICENSE` — 本许可文件（MIT 原文 + 归属说明）
+- `avatars/self-media-studio.jpg` — 专家头像
+
+### 改动说明
+
+本包**未修改任何上游 Skill 正文**。所有新增内容都是围绕上游技能的**编排层**：把原本由「总控 Skill + 9 个模块」承担的流程，映射为一个 WorkBuddy Agent 型专家（主理人 persona + 10 个预加载技能）。
+
+上游仓库根目录的 `scripts/validate.py`、`.github/workflows/`、`.claude-plugin/`、`AGENTS.md`、`CONTRIBUTING.md`、`SECURITY.md`、`CHANGELOG.md` 属于**上游仓库自身的工程与发布设施**，与技能内容无关，未纳入本包。
+
+上游与本包同为 MIT 许可。

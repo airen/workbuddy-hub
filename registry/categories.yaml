@@ -1,0 +1,22 @@
+categories:
+- id: research
+  label: 调研与信息检索
+  count: 2
+- id: development
+  label: 开发与工程
+  count: 9
+- id: content
+  label: 内容生产
+  count: 2
+- id: design
+  label: 设计与视觉
+  count: 0
+- id: business
+  label: 商业分析与运营
+  count: 0
+- id: other
+  label: 其他 / 未分类
+  count: 2
+- id: _total
+  label: 合计
+  count: 15
