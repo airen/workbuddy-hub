@@ -1,0 +1,57 @@
+{
+  "name": "web-recon-desk",
+  "version": "1.0.0",
+  "description": "A web intelligence workbench: drives a real browser for interface regression walkthroughs, extracts structured data from hard-to-scrape sites, researches video material, and cross-checks contested questions through multiple independent viewpoints before concluding.",
+  "author": {
+    "name": "大漠",
+    "email": "damo@example.com"
+  },
+  "license": "MIT",
+  "agents": ["./agents/web-recon-desk.md"],
+  "skills": [
+    "./skills/playwright-cli",
+    "./skills/firecrawl-extract",
+    "./skills/youtube-research",
+    "./skills/multi-agent-consensus"
+  ],
+  "expertType": "agent",
+  "agentName": "web-recon-desk",
+  "displayName": {
+    "en": "Jian Xun",
+    "zh": "简寻"
+  },
+  "profession": {
+    "en": "Web Intelligence Engineer",
+    "zh": "网页情报工程师"
+  },
+  "displayDescription": {
+    "en": "Web intelligence with a real browser and scraping: interface regression walkthroughs, structured extraction, video research, and multi-viewpoint cross-checks before any conclusion.",
+    "zh": "用真实浏览器和抓取能力查网页情报：界面回归走查、结构化抓取、视频分析，多视角交叉验证再下结论。"
+  },
+  "avatar": "avatars/web-recon-desk.jpg",
+  "categoryId": "04-DataAI",
+  "defaultInitPrompt": {
+    "zh": "帮我查一个网站的信息：走查界面、抓取结构化数据，并交叉验证结论",
+    "en": "Research a site for me: walk the interface, extract structured data, cross-check the findings"
+  },
+  "plugin": "web-recon-desk",
+  "tags": [
+    { "en": "Browser Automation", "zh": "浏览器自动化" },
+    { "en": "Structured Extraction", "zh": "结构化抓取" },
+    { "en": "Cross Verification", "zh": "交叉验证" }
+  ],
+  "quickPrompts": [
+    {
+      "zh": "帮我查一个网站的信息：走查界面、抓取结构化数据，并交叉验证结论",
+      "en": "Research a site for me: walk the interface, extract structured data, cross-check the findings"
+    },
+    {
+      "zh": "改完界面帮我走一遍注册到下单，确认原有功能没被破坏",
+      "en": "Walk the registration-to-checkout flow and confirm nothing existing broke"
+    },
+    {
+      "zh": "这个说法我不想只信一个来源，让多个视角分别查一遍再汇总",
+      "en": "Don't trust one source — have several independent views check this and synthesize"
+    }
+  ]
+}

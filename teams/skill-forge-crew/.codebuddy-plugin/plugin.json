@@ -1,0 +1,129 @@
+{
+  "name": "skill-forge-crew",
+  "version": "1.0.0",
+  "description": "A skill-driven engineering pipeline team. Turns a vague request into shipped work: interrogate the requirement, write the PRD, plan and split the work, implement test-first, guard quality, and harden the repo — while also forging the recurring steps into reusable skills.",
+  "author": {
+    "name": "大漠",
+    "email": "damo@example.com"
+  },
+  "license": "MIT",
+  "agents": [
+    "./agents/skill-forge-crew-team-lead.md",
+    "./agents/skill-forge-crew-requirements-analyst.md",
+    "./agents/skill-forge-crew-implementation-engineer.md",
+    "./agents/skill-forge-crew-quality-guardian.md",
+    "./agents/skill-forge-crew-repo-guardian.md"
+  ],
+  "skills": [
+    "./skills/skill-authoring",
+    "./skills/skill-discovery",
+    "./skills/requirement-interview",
+    "./skills/write-a-prd",
+    "./skills/prd-to-plan",
+    "./skills/prd-to-issues",
+    "./skills/design-an-interface",
+    "./skills/refactor-planning",
+    "./skills/tdd",
+    "./skills/qa",
+    "./skills/code-review",
+    "./skills/systematic-debugging",
+    "./skills/issue-triage",
+    "./skills/brainstorming",
+    "./skills/commit-and-changelog",
+    "./skills/react-best-practices",
+    "./skills/code-search",
+    "./skills/context-optimization",
+    "./skills/repo-guardrails"
+  ],
+  "expertType": "team",
+  "agentName": "skill-forge-crew-team-lead",
+  "teamInfo": {
+    "leadAgent": "skill-forge-crew-team-lead",
+    "memberAgents": [
+      "skill-forge-crew-requirements-analyst",
+      "skill-forge-crew-implementation-engineer",
+      "skill-forge-crew-quality-guardian",
+      "skill-forge-crew-repo-guardian"
+    ]
+  },
+  "displayName": {
+    "en": "Skill Forge Crew",
+    "zh": "技能工程流水线专家团"
+  },
+  "profession": {
+    "en": "Skill Forge Crew",
+    "zh": "技能工程流水线专家团"
+  },
+  "displayDescription": {
+    "en": "Runs work as a pipeline: interrogate the requirement, write the PRD, split the plan, implement test-first, guard quality, harden the repo — and forge whatever repeats into a reusable skill.",
+    "zh": "把技能用成流水线：需求问透、规格落地、测试驱动、质量把关、仓库设防，五人协作，交付可复用的能力。"
+  },
+  "avatar": "avatars/skill-forge-crew.jpg",
+  "categoryId": "02-Engineering",
+  "defaultInitPrompt": {
+    "zh": "我要做一个新功能，从需求问清楚到测试驱动实现，走一遍完整流水线",
+    "en": "I'm building a new feature — run the full pipeline from requirements to test-driven implementation"
+  },
+  "plugin": "skill-forge-crew",
+  "tags": [
+    { "en": "Skill Pipeline", "zh": "技能流水线" },
+    { "en": "Test-Driven", "zh": "测试驱动" },
+    { "en": "Repo Guardrails", "zh": "仓库设防" }
+  ],
+  "quickPrompts": [
+    {
+      "zh": "我要做一个新功能，从需求问清楚到测试驱动实现，走一遍完整流水线",
+      "en": "I'm building a new feature — run the full pipeline from requirements to test-driven implementation"
+    },
+    {
+      "zh": "把需求问透再写 PRD：一次问一个关键选择，直到没有含糊的地方",
+      "en": "Grill me on the requirement, then write the PRD — one key decision at a time"
+    },
+    {
+      "zh": "我这套重复操作想固化成 Skill，帮我起草、试跑并迭代",
+      "en": "Turn this recurring workflow into a skill: draft it, test it on real tasks, iterate"
+    }
+  ],
+  "members": [
+    {
+      "id": "skill-forge-crew-team-lead",
+      "displayName": { "en": "Fei Ming", "zh": "费鸣" },
+      "profession": { "en": "Skill Engineering Director", "zh": "技能工程总监" },
+      "avatar": "avatars/skill-forge-crew-team-lead.jpg",
+      "role": "lead",
+      "name": { "en": "Fei Ming", "zh": "费鸣" }
+    },
+    {
+      "id": "skill-forge-crew-requirements-analyst",
+      "displayName": { "en": "Wen Che", "zh": "闻澈" },
+      "profession": { "en": "Requirements Analyst", "zh": "需求澄清与规划师" },
+      "avatar": "avatars/skill-forge-crew-requirements-analyst.jpg",
+      "role": "member",
+      "name": { "en": "Wen Che", "zh": "闻澈" }
+    },
+    {
+      "id": "skill-forge-crew-implementation-engineer",
+      "displayName": { "en": "Ke Jian", "zh": "柯建" },
+      "profession": { "en": "Implementation Engineer", "zh": "实现工程师" },
+      "avatar": "avatars/skill-forge-crew-implementation-engineer.jpg",
+      "role": "member",
+      "name": { "en": "Ke Jian", "zh": "柯建" }
+    },
+    {
+      "id": "skill-forge-crew-quality-guardian",
+      "displayName": { "en": "Qin Jian", "zh": "秦检" },
+      "profession": { "en": "Quality Guardian", "zh": "质量守卫" },
+      "avatar": "avatars/skill-forge-crew-quality-guardian.jpg",
+      "role": "member",
+      "name": { "en": "Qin Jian", "zh": "秦检" }
+    },
+    {
+      "id": "skill-forge-crew-repo-guardian",
+      "displayName": { "en": "Wei Ku", "zh": "卫库" },
+      "profession": { "en": "Repo Guardian", "zh": "仓库守卫" },
+      "avatar": "avatars/skill-forge-crew-repo-guardian.jpg",
+      "role": "member",
+      "name": { "en": "Wei Ku", "zh": "卫库" }
+    }
+  ]
+}

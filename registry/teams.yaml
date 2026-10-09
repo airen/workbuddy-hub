@@ -166,3 +166,35 @@ teams:
   platform_category: 06-ContentCreative
   _source: manifest.yaml
   path: teams/media-content-team
+- id: skill-forge-crew
+  name: 技能工程流水线专家团
+  version: 1.0.0
+  type: team
+  description: 把技能用成流水线：需求问透、规格落地、测试驱动、质量把关、仓库设防，五名成员协作，交付可复用的能力。
+  category: development
+  members:
+  - expert_id: skill-forge-crew-team-lead
+    role: coordinator
+    embedded: true
+  - expert_id: skill-forge-crew-requirements-analyst
+    role: member
+    embedded: true
+  - expert_id: skill-forge-crew-implementation-engineer
+    role: member
+    embedded: true
+  - expert_id: skill-forge-crew-quality-guardian
+    role: member
+    embedded: true
+  - expert_id: skill-forge-crew-repo-guardian
+    role: member
+    embedded: true
+  workflow: agents/skill-forge-crew-team-lead.md
+  tags:
+  - 技能流水线
+  - 规格到计划
+  - 测试驱动
+  - 仓库设防
+  status: active
+  platform_category: 02-Engineering
+  _source: manifest.yaml
+  path: teams/skill-forge-crew

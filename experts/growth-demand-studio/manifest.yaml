@@ -1,0 +1,21 @@
+id: growth-demand-studio
+name: 路拓
+version: 1.0.0
+type: expert
+expert_type: agent
+description: 从定位到获客的增长营销：起名查域名、支付接入、客户线索研究、SEO 审计、选题挖掘与长文撰写。
+category: content
+skills:
+- domain-name-brainstormer
+- stripe-integration
+- lead-research-assistant
+- marketing-playbooks
+- seo-audit
+- idea-mining
+- content-researcher
+tags:
+- 客户线索
+- 搜索优化
+- 转化文案
+status: active
+platform_category: 06-ContentCreative

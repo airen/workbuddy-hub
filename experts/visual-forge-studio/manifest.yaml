@@ -1,0 +1,23 @@
+id: visual-forge-studio
+name: 苗绘
+version: 1.0.0
+type: expert
+expert_type: agent
+description: 从文字需求到成品视觉：界面设计、主题配色、社媒配图、交互网页工具与生成艺术，全程守住品牌一致性。
+category: content
+skills:
+- frontend-design
+- design-templates
+- theme-factory
+- canvas-design
+- web-artifacts-builder
+- algorithmic-art
+- brand-guidelines
+- image-generation
+- image-optimizer
+tags:
+- 界面设计
+- 品牌配色
+- 社媒配图
+status: active
+platform_category: 06-ContentCreative

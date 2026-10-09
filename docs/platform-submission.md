@@ -49,7 +49,7 @@ python scripts/package.py --all --type skill
 | `name` / `plugin` / `agentName` | **三处一致**，且为全平台全局唯一（不是账号内唯一） |
 | `displayDescription.zh` | **40–50 字**（平台硬校验） |
 | Team 型 `profession.zh` | 必须与 `displayName.zh` 完全一致 |
-| `members[].name` / `tags[]` | 新解析器要求有 `zh` 与 `en` |
+| `members[].name` / `tags[]` | 新解析器要求有 `zh` 与 `en`；`tags[]` **必须恰好 3 个**（多于或少于都会报「tags 须固定 3 个」） |
 | `defaultInitPrompt` | 必须等于 `quickPrompts[0]` |
 | 头像 | 512×512，≤500 KB |
 | 团队 | 必须有 `settings.json`（`{"agent": "<team-id>-team-lead"}`） |

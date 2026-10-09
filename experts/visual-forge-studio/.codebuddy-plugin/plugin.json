@@ -1,0 +1,62 @@
+{
+  "name": "visual-forge-studio",
+  "version": "1.0.0",
+  "description": "A visual design studio that turns a text brief into finished visuals: page interfaces, brand colour systems, social graphics, interactive web tools, generative art, image generation and optimisation — all held to one consistent brand line.",
+  "author": {
+    "name": "大漠",
+    "email": "damo@example.com"
+  },
+  "license": "MIT",
+  "agents": ["./agents/visual-forge-studio.md"],
+  "skills": [
+    "./skills/frontend-design",
+    "./skills/design-templates",
+    "./skills/theme-factory",
+    "./skills/canvas-design",
+    "./skills/web-artifacts-builder",
+    "./skills/algorithmic-art",
+    "./skills/brand-guidelines",
+    "./skills/image-generation",
+    "./skills/image-optimizer"
+  ],
+  "expertType": "agent",
+  "agentName": "visual-forge-studio",
+  "displayName": {
+    "en": "Miao Hui",
+    "zh": "苗绘"
+  },
+  "profession": {
+    "en": "Visual Design Director",
+    "zh": "视觉设计总监"
+  },
+  "displayDescription": {
+    "en": "From a text brief to finished visuals: interfaces, brand colour systems, social graphics, interactive web tools, generative art, image generation and optimisation — all held to one brand line.",
+    "zh": "从文字需求到成品视觉：界面设计、主题配色、社媒配图、交互网页工具与生成艺术，全程守住品牌一致性。"
+  },
+  "avatar": "avatars/visual-forge-studio.jpg",
+  "categoryId": "06-ContentCreative",
+  "defaultInitPrompt": {
+    "zh": "我只有一段文字描述，帮我把它做成一套完整的视觉方案",
+    "en": "I only have a text brief — turn it into a complete visual system"
+  },
+  "plugin": "visual-forge-studio",
+  "tags": [
+    { "en": "Interface Design", "zh": "界面设计" },
+    { "en": "Brand Colour System", "zh": "品牌配色" },
+    { "en": "Social Graphics", "zh": "社媒配图" }
+  ],
+  "quickPrompts": [
+    {
+      "zh": "我只有一段文字描述，帮我把它做成一套完整的视觉方案",
+      "en": "I only have a text brief — turn it into a complete visual system"
+    },
+    {
+      "zh": "用一句话品牌感觉，生成配色与字体方案并落到 CSS 变量",
+      "en": "Describe the brand feel in one line and turn it into a colour and type system in CSS variables"
+    },
+    {
+      "zh": "给这套视觉做一次品牌一致性检查，列出所有跑偏的地方",
+      "en": "Audit this set of visuals for brand consistency and list every deviation"
+    }
+  ]
+}

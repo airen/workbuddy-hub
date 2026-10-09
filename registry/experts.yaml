@@ -197,6 +197,30 @@ experts:
   platform_category: 02-Engineering
   _source: manifest.yaml
   path: experts/engineering-review-board
+- id: growth-demand-studio
+  name: 路拓
+  version: 1.0.0
+  type: expert
+  expert_type: agent
+  description: 从定位到获客的增长营销工作台：起名查域名、支付接入、客户线索研究、SEO 审计、选题挖掘与长文撰写。
+  category: content
+  skills:
+  - domain-name-brainstormer
+  - stripe-integration
+  - lead-research-assistant
+  - marketing-playbooks
+  - seo-audit
+  - idea-mining
+  - content-researcher
+  tags:
+  - 客户线索
+  - 搜索优化
+  - 转化文案
+  - 选题挖掘
+  status: active
+  platform_category: 06-ContentCreative
+  _source: manifest.yaml
+  path: experts/growth-demand-studio
 - id: lao-dao-editor
   name: 老刀
   version: 1.0.1
@@ -291,3 +315,50 @@ experts:
   platform_category: 02-Engineering
   _source: manifest.yaml
   path: experts/spec-driven-dev
+- id: visual-forge-studio
+  name: 苗绘
+  version: 1.0.0
+  type: expert
+  expert_type: agent
+  description: 从一段文字需求到成品视觉：界面设计、主题配色、社媒配图、交互网页工具与生成艺术，全程守住品牌一致性。
+  category: content
+  skills:
+  - frontend-design
+  - design-templates
+  - theme-factory
+  - canvas-design
+  - web-artifacts-builder
+  - algorithmic-art
+  - brand-guidelines
+  - image-generation
+  - image-optimizer
+  tags:
+  - 界面设计
+  - 品牌配色
+  - 社媒配图
+  - 生成视觉
+  status: active
+  platform_category: 06-ContentCreative
+  _source: manifest.yaml
+  path: experts/visual-forge-studio
+- id: web-recon-desk
+  name: 简寻
+  version: 1.0.0
+  type: expert
+  expert_type: agent
+  description: 用真实浏览器和抓取能力做网页情报：界面回归走查、结构化抓取、视频资料分析，多视角交叉验证再下结论。
+  category: research
+  skills:
+  - playwright-cli
+  - firecrawl-extract
+  - youtube-research
+  - multi-agent-consensus
+  tags:
+  - 浏览器自动化
+  - 结构化抓取
+  - 视频资料研究
+  - 交叉验证
+  status: active
+  platform_category: 04-DataAI
+  _source: manifest.yaml
+  path: experts/web-recon-desk

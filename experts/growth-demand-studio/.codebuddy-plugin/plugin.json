@@ -1,0 +1,60 @@
+{
+  "name": "growth-demand-studio",
+  "version": "1.0.0",
+  "description": "A growth marketing workbench: name and domain checks, payment integration, ideal-customer-profile lead research, conversion and email playbooks, technical SEO audits, video topic mining with SWOT, and long-form content research — all source-linked and no invented numbers.",
+  "author": {
+    "name": "大漠",
+    "email": "damo@example.com"
+  },
+  "license": "MIT",
+  "agents": ["./agents/growth-demand-studio.md"],
+  "skills": [
+    "./skills/domain-name-brainstormer",
+    "./skills/stripe-integration",
+    "./skills/lead-research-assistant",
+    "./skills/marketing-playbooks",
+    "./skills/seo-audit",
+    "./skills/idea-mining",
+    "./skills/content-researcher"
+  ],
+  "expertType": "agent",
+  "agentName": "growth-demand-studio",
+  "displayName": {
+    "en": "Lu Tuo",
+    "zh": "路拓"
+  },
+  "profession": {
+    "en": "Growth Marketing Director",
+    "zh": "增长营销总监"
+  },
+  "displayDescription": {
+    "en": "A growth workbench from positioning to acquisition: name and domain checks, payment integration, ICP lead research, SEO audits, topic mining and long-form content — every number source-linked.",
+    "zh": "从定位到获客的增长营销：起名查域名、支付接入、客户线索研究、SEO 审计、选题挖掘与长文撰写。"
+  },
+  "avatar": "avatars/growth-demand-studio.jpg",
+  "categoryId": "06-ContentCreative",
+  "defaultInitPrompt": {
+    "zh": "我要推一个新产品，帮我从定位、获客到内容做一轮增长方案",
+    "en": "I'm launching a product — build a growth plan from positioning through acquisition to content"
+  },
+  "plugin": "growth-demand-studio",
+  "tags": [
+    { "en": "Lead Research", "zh": "客户线索" },
+    { "en": "SEO Audit", "zh": "搜索优化" },
+    { "en": "Conversion Copy", "zh": "转化文案" }
+  ],
+  "quickPrompts": [
+    {
+      "zh": "我要推一个新产品，帮我从定位、获客到内容做一轮增长方案",
+      "en": "I'm launching a product — build a growth plan from positioning through acquisition to content"
+    },
+    {
+      "zh": "按我的理想客户画像，找一批符合条件的公司和决策人",
+      "en": "Given my ideal customer profile, find matching companies and decision makers"
+    },
+    {
+      "zh": "给我的网站做一轮技术 SEO 审查，列出问题和处理顺序",
+      "en": "Run a technical SEO audit on my site and list issues in fix order"
+    }
+  ]
+}

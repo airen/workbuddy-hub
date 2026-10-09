@@ -1,0 +1,18 @@
+id: web-recon-desk
+name: 简寻
+version: 1.0.0
+type: expert
+expert_type: agent
+description: 用真实浏览器和抓取能力查网页情报：界面回归走查、结构化抓取、视频分析，多视角交叉验证再下结论。
+category: research
+skills:
+- playwright-cli
+- firecrawl-extract
+- youtube-research
+- multi-agent-consensus
+tags:
+- 浏览器自动化
+- 结构化抓取
+- 交叉验证
+status: active
+platform_category: 04-DataAI
