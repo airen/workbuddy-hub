@@ -8,7 +8,7 @@ import zipfile
 from pathlib import Path
 
 WORKSPACE = Path(__file__).parent.parent
-OUTPUT_DIR = WORKSPACE / "dist"
+OUTPUT_DIR = WORKSPACE / "build"
 OUTPUT_DIR.mkdir(exist_ok=True)
 
 
