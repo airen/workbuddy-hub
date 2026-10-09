@@ -27,8 +27,8 @@
   "avatar": "avatars/ppt-architect.png",
   "categoryId": "02-Engineering",
   "defaultInitPrompt": {
-    "zh": "帮我做一份 PPT",
-    "en": "Help me make a PPT"
+    "zh": "帮我做一份 12 页的 PPT，主题 AI 工具号年度复盘，墨水杂志风格",
+    "en": "Make a 12-page PPT about AI tools annual review, ink magazine style"
   },
   "plugin": "ppt-architect",
   "tags": [
