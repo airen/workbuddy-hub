@@ -33,6 +33,15 @@
 - 头像用仓库默认占位图（未消耗生成积分），正式上架前可替换。
 - 全局唯一性只能由平台上传校验确认；当前 ID 尚未收到占用报错，不代表已获平台预留。
 
+### 2026-10-11 — 新增 AI 教学落地专家（ai-edu-practice-copilot / 践衡）
+- 新增 Agent 型专家 `experts/ai-edu-practice-copilot`（践衡，AI 教学落地顾问，分类 `15-Education`）：针对「想把 AI 用进教学，却卡在明天这节课怎么用」，基于 6 个开源项目做选型与前置/合规核对 —— bobqiu/ai-edu-for-kids（小学到初中 AI 通识课程 + 伦理安全模块，⚠️ CC BY-NC-SA 4.0 非商用）、FW1201/tw-edu-skills（35 个 K-12 教师技能，课程设计/命题/教材，默认台湾 108 课纲需按地区适配，⚠️ 授权未明）、lixianglaoshi/lx-skill（学习教练：提问/分级提示/复述 + 互动教学网页生成，混合授权 MIT + Apache-2.0）、MatrixDriver/aixue（初高中上传题目→解题思路 + 答题弱项分析，全栈 FastAPI+Next.js，需 OpenRouter key，⚠️ 授权未声明）、FW1201/tw-ai-literacy-4d（委托/描述/辨识/尽责 4D 框架 + 60 教学提示词，声明非官方）、Vinceli-9527/EduDaily（聚合教育信息源生成日报，多平台适配，本地 RAG，需 DeepSeek key）。
+- 内置技能 `edu-stack-selector`（教学任务→工具路由 + 逐项核对运行时/key/课纲适配/授权边界，输出可粘贴落地清单）与 `edu-boundary-check`（教学合规闸：不替代教师决策、不替学生写答案、课纲地区适配、学生隐私与数据流向、License 差异、非官方声明）。
+- 已 `build_registry.py` 重生索引（专家 17）；`validate.py` 全仓 56/56 通过；`verify_upload_ready.py` 0 失败 0 提示；打包 `build/ai-edu-practice-copilot.zip` 约 269 KB（第一层即资产目录）。
+- 已通过 `sync_my_experts.py` 同步至「我的专家」：白名单 23→24、recents、marketplace index 各 +1。
+- 双人审查（结构 + 安全合规）：结构审计 PASS；安全审计 0 Critical / 0 High，2 Medium + 3 Low 已修 —— M1 README 增「分发边界」声明（仅原创简介与链接、不重新分发上游素材；上架收费须与 ai-edu-for-kids 的 CC BY-NC-SA 4.0 非商用条款兼容）、M2 aixue 学生 PII 经 OpenRouter 第三方 LLM 升级为「监护人/学校同意 + DPA + 授权未声明」高警示、L1 EduDaily 自动脱敏补「逐条人工核验」提示、L2 安装脚本预检具体化（先打开脚本核对 curl/wget/提权，绝不管道远程脚本）。
+- 头像用仓库默认占位图（未消耗生成积分），正式上架前可替换。
+- 全局唯一性只能由平台上传校验确认；当前 ID 尚未收到占用报错，不代表已获平台预留。
+
 ### 2026-10-09 — 仓库初始化与结构重构
 - 按 `资产定义层 + 组合层 + 管理工具层` 思路建立 workbuddy-hub 骨架：
   `skills/`、`experts/`、`teams/`、`registry/`、`schemas/`、`templates/`、`scripts/`、`tests/`、`docs/`、`examples/`、`archive/`、`.github/`。

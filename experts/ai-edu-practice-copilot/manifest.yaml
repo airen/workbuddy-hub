@@ -1,0 +1,16 @@
+id: ai-edu-practice-copilot
+name: 践衡
+version: 1.0.0
+type: expert
+expert_type: agent
+description: 想把 AI 用进教学，但卡在明天这节课怎么用？从六个开源项目挑能落地的一套并核对前置与合规。
+category: other
+skills:
+- edu-stack-selector
+- edu-boundary-check
+tags:
+- 教学场景选型
+- AI 备课与辅导
+- 开源教育工具
+status: active
+platform_category: 15-Education

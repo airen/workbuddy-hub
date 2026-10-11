@@ -1,0 +1,54 @@
+{
+  "name": "ai-edu-practice-copilot",
+  "version": "1.0.0",
+  "description": "Teaching-practice AI advisor that maps 'how do I actually use AI in tomorrow's class' to six open-source projects — what to teach (AI literacy), lesson prep, student guidance, tutoring, AI-literacy frameworks, and education-news tracking — then checks deployment, curriculum-fit and license boundaries before you commit.",
+  "author": {
+    "name": "大漠",
+    "email": "damo@example.com"
+  },
+  "agents": ["./agents/ai-edu-practice-copilot.md"],
+  "skills": [
+    "./skills/edu-stack-selector",
+    "./skills/edu-boundary-check"
+  ],
+  "expertType": "agent",
+  "agentName": "ai-edu-practice-copilot",
+  "displayName": {
+    "en": "Jian Heng",
+    "zh": "践衡"
+  },
+  "profession": {
+    "en": "AI Teaching-Practice Advisor",
+    "zh": "AI 教学落地顾问"
+  },
+  "displayDescription": {
+    "en": "Maps 'how do I use AI in tomorrow's class' to six open-source projects — what to teach, lesson prep, guidance, tutoring, AI-literacy frameworks, news tracking — checks deployment, curriculum-fit and license boundaries.",
+    "zh": "想把 AI 用进教学，但卡在明天这节课怎么用？从六个开源项目挑能落地的一套并核对前置与合规。"
+  },
+  "avatar": "avatars/ai-edu-practice-copilot.jpg",
+  "categoryId": "15-Education",
+  "defaultInitPrompt": {
+    "zh": "明天这节课我想用 AI，但不知道从哪下手，该用哪套开源工具？",
+    "en": "I want to use AI in tomorrow's class but don't know where to start — which open-source tool fits?"
+  },
+  "plugin": "ai-edu-practice-copilot",
+  "tags": [
+    { "en": "Teaching Scenario Picking", "zh": "教学场景选型" },
+    { "en": "AI Lesson Prep & Tutoring", "zh": "AI 备课与辅导" },
+    { "en": "Open-Source Edu Tools", "zh": "开源教育工具" }
+  ],
+  "quickPrompts": [
+    {
+      "en": "I want to use AI in tomorrow's class but don't know where to start — which open-source tool fits?",
+      "zh": "明天这节课我想用 AI，但不知道从哪下手，该用哪套开源工具？"
+    },
+    {
+      "en": "Help me prep a lesson against the local curriculum — which open-source skills can I use directly?",
+      "zh": "帮我按本地课纲备一节课，有哪些开源技能可以直接用？"
+    },
+    {
+      "en": "I want interactive teaching web pages or to let students learn with AI — what open-source options exist?",
+      "zh": "想做互动教学网页或让学生用 AI 学，有什么开源方案？"
+    }
+  ]
+}
