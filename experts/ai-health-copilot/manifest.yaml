@@ -1,0 +1,16 @@
+id: ai-health-copilot
+name: 康衡
+version: 1.0.0
+type: expert
+expert_type: agent
+description: 按久坐提醒、饮食记录、聊天录入等场景，从五个开源项目挑能落地的一套，核对部署与模型要求再上手。
+category: other
+skills:
+- health-stack-selector
+- health-boundary-check
+tags:
+- 健康数据记录
+- 开源工具选型
+- 循证与合规边界
+status: active
+platform_category: 12-IndustryConsultant

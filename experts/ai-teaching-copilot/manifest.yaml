@@ -1,0 +1,16 @@
+id: ai-teaching-copilot
+name: 喻衡
+version: 1.0.0
+type: expert
+expert_type: agent
+description: 按备课、出题、答疑、复习等场景，从六个开源项目匹配可用组合，核对部署模型要求，交付前核题核答案。
+category: other
+skills:
+- teaching-stack-selector
+- item-and-answer-qa
+tags:
+- AI 备课出题
+- 间隔复习
+- 开源工具选型
+status: active
+platform_category: 15-Education

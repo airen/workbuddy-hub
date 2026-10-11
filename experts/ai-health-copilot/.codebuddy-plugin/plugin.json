@@ -1,0 +1,54 @@
+{
+  "name": "ai-health-copilot",
+  "version": "1.0.0",
+  "description": "Health AI advisor that matches your task — sedentary posture alerts, meal logging, chat-based health records or building a medical agent — to one of five open-source projects, then checks deployment and model requirements before you commit.",
+  "author": {
+    "name": "大漠",
+    "email": "damo@example.com"
+  },
+  "agents": ["./agents/ai-health-copilot.md"],
+  "skills": [
+    "./skills/health-stack-selector",
+    "./skills/health-boundary-check"
+  ],
+  "expertType": "agent",
+  "agentName": "ai-health-copilot",
+  "displayName": {
+    "en": "Kang Heng",
+    "zh": "康衡"
+  },
+  "profession": {
+    "en": "AI Health Stack Advisor",
+    "zh": "AI 健康方案顾问"
+  },
+  "displayDescription": {
+    "en": "Matches your task to one of five open-source health projects, checks deployment and model requirements, and hands you a setup list you can actually run.",
+    "zh": "按久坐提醒、饮食记录、聊天录入等场景，从五个开源项目挑能落地的一套，核对部署与模型要求再上手。"
+  },
+  "avatar": "avatars/ai-health-copilot.jpg",
+  "categoryId": "12-IndustryConsultant",
+  "defaultInitPrompt": {
+    "zh": "我天天坐 10 小时写代码，想让 AI 帮我管坐姿和饮食，该用哪套？",
+    "en": "I sit coding 10 hours a day — which stack should I use to have AI watch my posture and diet?"
+  },
+  "plugin": "ai-health-copilot",
+  "tags": [
+    { "en": "Health Data Logging", "zh": "健康数据记录" },
+    { "en": "Open-Source Stack Picking", "zh": "开源工具选型" },
+    { "en": "Evidence & Compliance", "zh": "循证与合规边界" }
+  ],
+  "quickPrompts": [
+    {
+      "en": "I sit coding 10 hours a day — which stack should I use to have AI watch my posture and diet?",
+      "zh": "我天天坐 10 小时写代码，想让 AI 帮我管坐姿和饮食，该用哪套？"
+    },
+    {
+      "en": "I want to log weight, sleep and meals by chat every day — pick a stack and get it running",
+      "zh": "我想把每天的体重、睡眠、饮食用聊天记下来，帮我选工具并跑起来"
+    },
+    {
+      "en": "How do these health projects deploy, and which models or API keys do they need?",
+      "zh": "这几个健康项目分别怎么部署，需要什么模型和 API key？"
+    }
+  ]
+}
