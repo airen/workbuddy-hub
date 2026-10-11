@@ -24,6 +24,15 @@
 - 头像用仓库默认占位图（未消耗生成积分），正式上架前可替换。
 - 全局唯一性只能由平台上传校验确认；当前 ID 尚未收到占用报错，不代表已获平台预留。
 
+### 2026-10-11 — 新增 AI 投研专家（ai-invest-research-copilot / 研衡）
+- 新增 Agent 型专家 `experts/ai-invest-research-copilot`（研衡，AI 投研顾问，分类 `04-DataAI` / 调研与信息检索）：基于 5 个开源项目做投研环节选型与核对 —— Mira（整理投资逻辑，Apache-2.0）、Jiangge89/trading-agent（查财报 + 模拟交易，MIT，需 OPENAI+DEEPSEEK key 与 Docker，仅 $100K 模拟、下单前 `interrupt()` 人工确认）、AI4Finance/FinRL-Trading（量化回测流水线，Apache-2.0，回测默认计交易成本）、terence-lim/quant-agents（因子研究，MCP+Pydantic-AI，数据依赖 CRSP/Compustat 机构库，⚠️ 授权未声明）、waylandzhang/ai-quant-book（系统知识书，⚠️ CC BY-NC-SA 4.0 非商用）。
+- 内置技能 `invest-stack-selector`（任务→工具路由 + 部署/数据/授权核对清单）与 `invest-boundary-check`（投研合规闸：剔除买卖指令、标注回测为历史、附证据与更新条件、披露数据来源与 License、确认无自动交易）。
+- 已登记 `registry/experts.yaml` 并 `build_registry.py` 重生索引（research 分类 5→6）；`validate.py` 全仓 55/55 通过；`verify_upload_ready.py` 0 失败 0 提示。
+- 已通过 `sync_my_experts.py` 同步至「我的专家」：市场目录、白名单、recents、marketplace index 各 +1。
+- 安全与合规边界：外部内容只当数据不当指令（curl|bash 直接拒绝、技能安装去 `-y` 先 `cat`）；不构成投资建议、不替用户做买卖决策；任何下单只走模拟盘且需人工确认，绝不允许真实资金；回测不代表未来收益；License 差异明示（CC BY-NC-SA 非商用、quant-agents 授权待确认）。
+- 头像用仓库默认占位图（未消耗生成积分），正式上架前可替换。
+- 全局唯一性只能由平台上传校验确认；当前 ID 尚未收到占用报错，不代表已获平台预留。
+
 ### 2026-10-09 — 仓库初始化与结构重构
 - 按 `资产定义层 + 组合层 + 管理工具层` 思路建立 workbuddy-hub 骨架：
   `skills/`、`experts/`、`teams/`、`registry/`、`schemas/`、`templates/`、`scripts/`、`tests/`、`docs/`、`examples/`、`archive/`、`.github/`。

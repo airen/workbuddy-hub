@@ -1,0 +1,16 @@
+id: ai-invest-research-copilot
+name: 研衡
+version: 1.0.0
+type: expert
+expert_type: agent
+description: 把查财报、理投资逻辑、跑策略回测这些活交给 AI，从五个开源项目挑能落地的一套并核对前置与合规。
+category: research
+skills:
+- invest-stack-selector
+- invest-boundary-check
+tags:
+- 投研逻辑整理
+- 财报与策略回测
+- 开源投研选型
+status: active
+platform_category: 04-DataAI

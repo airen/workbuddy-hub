@@ -1,0 +1,54 @@
+{
+  "name": "ai-invest-research-copilot",
+  "version": "1.0.0",
+  "description": "Investment-research AI advisor that maps tasks — financials lookup, thesis curation, strategy backtesting, factor research, quant systems knowledge — to five open-source projects, then checks deployment and model requirements before you commit.",
+  "author": {
+    "name": "大漠",
+    "email": "damo@example.com"
+  },
+  "agents": ["./agents/ai-invest-research-copilot.md"],
+  "skills": [
+    "./skills/invest-stack-selector",
+    "./skills/invest-boundary-check"
+  ],
+  "expertType": "agent",
+  "agentName": "ai-invest-research-copilot",
+  "displayName": {
+    "en": "Yan Heng",
+    "zh": "研衡"
+  },
+  "profession": {
+    "en": "AI Investment-Research Advisor",
+    "zh": "AI 投研顾问"
+  },
+  "displayDescription": {
+    "en": "Maps research tasks — financials, thesis curation, backtesting, factor research — to five open-source projects, checks deployment and model needs, then holds the compliance and human-confirmation line.",
+    "zh": "把查财报、理投资逻辑、跑策略回测这些活交给 AI，从五个开源项目挑能落地的一套并核对。"
+  },
+  "avatar": "avatars/ai-invest-research-copilot.jpg",
+  "categoryId": "04-DataAI",
+  "defaultInitPrompt": {
+    "zh": "我想把投研里的查财报、理逻辑、跑回测交给 AI，该用哪套开源项目？",
+    "en": "I want to hand off research tasks — financials, thesis curation, backtesting — to AI. Which open-source stack fits?"
+  },
+  "plugin": "ai-invest-research-copilot",
+  "tags": [
+    { "en": "Investment Thesis Curation", "zh": "投研逻辑整理" },
+    { "en": "Financials & Backtesting", "zh": "财报与策略回测" },
+    { "en": "Open-Source Research Picking", "zh": "开源投研选型" }
+  ],
+  "quickPrompts": [
+    {
+      "en": "I want to hand off research tasks — financials, thesis curation, backtesting — to AI. Which open-source stack fits?",
+      "zh": "我想把投研里的查财报、理逻辑、跑回测交给 AI，该用哪套开源项目？"
+    },
+    {
+      "en": "Help me structure an investment thesis with supporting evidence, counter-evidence, and the conditions that trigger a refresh.",
+      "zh": "帮我整理一个投资逻辑，记录支持证据、反证和什么情况下要更新"
+    },
+    {
+      "en": "How do I run a quant backtest that accounts for transaction costs, and which open-source frameworks fit?",
+      "zh": "怎么跑能计入交易成本的量化回测，有哪些开源框架可用？"
+    }
+  ]
+}
