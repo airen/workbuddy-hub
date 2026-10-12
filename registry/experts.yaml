@@ -15,6 +15,120 @@ experts:
   platform_category: 02-Engineering
   _source: manifest.yaml
   path: experts/agent-memory-advisor
+- id: ai-edu-practice-copilot
+  name: 践衡
+  version: 1.0.0
+  type: expert
+  expert_type: agent
+  description: 想把 AI 用进教学，但卡在明天这节课怎么用？从六个开源项目挑能落地的一套并核对前置与合规。
+  category: other
+  skills:
+  - edu-stack-selector
+  - edu-boundary-check
+  tags:
+  - 教学场景选型
+  - AI 备课与辅导
+  - 开源教育工具
+  status: active
+  platform_category: 15-Education
+  _source: manifest.yaml
+  path: experts/ai-edu-practice-copilot
+- id: ai-health-copilot
+  name: 康衡
+  version: 1.0.0
+  type: expert
+  expert_type: agent
+  description: 按久坐提醒、饮食记录、聊天录入等场景，从五个开源项目挑能落地的一套，核对部署与模型要求再上手。
+  category: other
+  skills:
+  - health-stack-selector
+  - health-boundary-check
+  tags:
+  - 健康数据记录
+  - 开源工具选型
+  - 循证与合规边界
+  status: active
+  platform_category: 12-IndustryConsultant
+  _source: manifest.yaml
+  path: experts/ai-health-copilot
+- id: ai-invest-research-copilot
+  name: 研衡
+  version: 1.0.0
+  type: expert
+  expert_type: agent
+  description: 把查财报、理投资逻辑、跑策略回测这些活交给 AI，从五个开源项目挑能落地的一套并核对前置与合规。
+  category: research
+  skills:
+  - invest-stack-selector
+  - invest-boundary-check
+  tags:
+  - 投研逻辑整理
+  - 财报与策略回测
+  - 开源投研选型
+  status: active
+  platform_category: 04-DataAI
+  _source: manifest.yaml
+  path: experts/ai-invest-research-copilot
+- id: ai-teaching-copilot
+  name: 喻衡
+  version: 1.0.0
+  type: expert
+  expert_type: agent
+  description: 按备课、出题、答疑、复习等场景，从六个开源项目匹配可用组合，核对部署模型要求，交付前核题核答案。
+  category: other
+  skills:
+  - teaching-stack-selector
+  - item-and-answer-qa
+  tags:
+  - AI 备课出题
+  - 间隔复习
+  - 开源工具选型
+  status: active
+  platform_category: 15-Education
+  _source: manifest.yaml
+  path: experts/ai-teaching-copilot
+- id: ai-video-studio
+  name: 影导
+  version: 1.0.0
+  type: expert
+  expert_type: agent
+  description: AI 视频制片顾问：把用户的出片目标映射到最合适的外部视频 skill，安装前先核对环境依赖、API key、积分成本与开源许可，再给出安装命令与制作流程，并可在 WorkBuddy
+    内承接上游的文案、分镜与提示词工作。
+  category: content
+  skills:
+  - ai-video-studio
+  tags:
+  - AI 视频
+  - 技能选型
+  - 制作流程
+  status: active
+  platform_category: 06-ContentCreative
+  _source: manifest.yaml
+  path: experts/ai-video-studio
+- id: changxiao-marketing
+  name: 长销
+  version: 1.0.0
+  type: expert
+  expert_type: agent
+  description: 一站搞定营销活儿：SEO 审计、文案写作、转化优化、邮件、社媒、SEO 与发现、投放与衡量、增长留存、商业化销售。先定产品营销基础（受众/定位），再按需选专项，给可直接拿去用的成果。灵感来自
+    coreyhaines31/marketingskills（约 50 个营销技能），已内化为 7 类可落地玩法。
+  category: content
+  skills:
+  - product-marketing
+  - conversion-optimization
+  - copywriting-content
+  - seo-discovery
+  - ads-measurement
+  - growth-retention
+  - monetization-sales
+  tags:
+  - SEO 与文案
+  - 转化与增长
+  - 营销一站搞定
+  status: active
+  platform_category: 06-ContentCreative
+  _source: manifest.yaml
+  path: experts/changxiao-marketing
 - id: diagram-architect
   name: 江图南
   version: 1.0.0
@@ -197,12 +311,33 @@ experts:
   platform_category: 02-Engineering
   _source: manifest.yaml
   path: experts/engineering-review-board
+- id: geo-seo-strategist
+  name: 显扬
+  version: 1.0.0
+  type: expert
+  expert_type: agent
+  description: 网站与应用 GEO SEO 顾问：从选题、写作到 llms.txt，让 AI 与搜索更常引用你。
+  category: content
+  skills:
+  - seo-foundations
+  - geo-topic-research
+  - geo-content-writing
+  - llms-txt-builder
+  - geo-measurement
+  tags:
+  - GEO 优化
+  - 搜索可见性
+  - 内容选题
+  status: active
+  platform_category: 06-ContentCreative
+  _source: manifest.yaml
+  path: experts/geo-seo-strategist
 - id: growth-demand-studio
   name: 路拓
   version: 1.0.0
   type: expert
   expert_type: agent
-  description: 从定位到获客的增长营销工作台：起名查域名、支付接入、客户线索研究、SEO 审计、选题挖掘与长文撰写。
+  description: 从定位到获客的增长营销：起名查域名、支付接入、客户线索研究、SEO 审计、选题挖掘与长文撰写。
   category: content
   skills:
   - domain-name-brainstormer
@@ -216,17 +351,16 @@ experts:
   - 客户线索
   - 搜索优化
   - 转化文案
-  - 选题挖掘
   status: active
   platform_category: 06-ContentCreative
   _source: manifest.yaml
   path: experts/growth-demand-studio
 - id: lao-dao-editor
   name: 老刀
-  version: 1.0.1
+  version: 1.1.0
   type: expert
   expert_type: agent
-  description: 以资深编辑标准重写文稿，删净AI腔与机械句式，注入真实人声，三遍打磨交付像人写的自然文本。
+  description: 按三层模型（表层/措辞/结构）重写 AI 味文稿。先动结构骨架——删掉讲明的道理、把结尾打开、把泛指换成具体、留一条没收的线头；再清措辞与用词标点。附结构改动回执与自检脚本，杜绝「只换词不动结构」的假去味。
   category: research
   skills:
   - de-ai-rewrite
@@ -238,9 +372,71 @@ experts:
   platform_category: 04-DataAI
   _source: manifest.yaml
   path: experts/lao-dao-editor
+- id: life-assistant
+  name: 当当
+  version: 1.0.0
+  type: expert
+  expert_type: agent
+  description: 帮你管生活里的琐碎小事——今天吃什么、钱花哪了、东西放哪了、上次练了多重。按冰箱食材出菜谱与采购单，排一周食谱，记账看开销图，登记家当与保修，记录训练并对照上次。内置工具均为离线网页，数据存本地。
+  category: other
+  skills:
+  - recipe-by-ingredient
+  - weekly-meal-planner
+  - expense-tracker
+  - home-inventory
+  - workout-log
+  tags:
+  - 今天吃什么
+  - 钱花哪了
+  - 家当与训练
+  status: active
+  platform_category: 12-IndustryConsultant
+  _source: manifest.yaml
+  path: experts/life-assistant
+- id: office-automation
+  name: 办妥
+  version: 1.0.0
+  type: expert
+  expert_type: agent
+  description: 帮你把手头的 Office 文件往前推进——改文档看差异可回退、交代一句就出 PPT/Word/Excel/网页、用自然语言改 Excel、整理存量文档、给内部工具嵌办公能力。灵感来自
+    genoffice、openworkbuddy、MS-Office-AI、paperless-aissist、univer 五个开源项目，已内化为可在本平台直接落地的玩法。
+  category: content
+  skills:
+  - doc-revise-diff
+  - task-to-file
+  - excel-nl-edit
+  - doc-triage
+  - office-sdk-embed
+  tags:
+  - 改文档看差异
+  - 一句话出文件
+  - 整理存量文档
+  status: active
+  platform_category: 06-ContentCreative
+  _source: manifest.yaml
+  path: experts/office-automation
+- id: podcast-to-article
+  name: 陈听
+  version: 1.0.0
+  type: expert
+  expert_type: agent
+  description: 把播客链接或逐字稿改写成中文精华长文，保留关键原声并逐章配图，可一键存入 Obsidian。
+  category: content
+  skills:
+  - keke-podcast-to-article
+  tags:
+  - 播客改稿
+  - 精华长文
+  - 章节配图
+  status: active
+  platform_category: 06-ContentCreative
+  license: MIT
+  upstream: https://github.com/sunkeke-ai/keke-podcast-to-article
+  _source: manifest.yaml
+  path: experts/podcast-to-article
 - id: ppt-architect
   name: 林镜
-  version: 1.0.0
+  version: 1.1.0
   type: expert
   expert_type: agent
   description: 把任意主题变成可直接交付的 PPT：按需选 PPTX 或 HTML 格式，内置 14 种专业风格，产出可直接投屏的正式汇报材料。
@@ -315,12 +511,51 @@ experts:
   platform_category: 02-Engineering
   _source: manifest.yaml
   path: experts/spec-driven-dev
-- id: visual-forge-studio
-  name: 苗绘
+- id: tuwen-forge
+  name: 墨匠
+  version: 1.1.2
+  type: expert
+  expert_type: agent
+  description: 用代码把内容、故事或主题精确排成可直接发布的中文图文：单图、整套轮播、公众号封面与长图，风格可自选也可自动匹配。
+  category: content
+  skills:
+  - tuwen-engine
+  - tuwen-typography
+  - tuwen-storytelling
+  - tuwen-imagery
+  tags:
+  - 中文图文排版
+  - 卡片与轮播生成
+  - 版式与风格系统
+  status: active
+  platform_category: 06-ContentCreative
+  license: MIT
+  created: '2026-10-12'
+  _source: manifest.yaml
+  path: experts/tuwen-forge
+- id: viral-video-decoder
+  name: 爆析
   version: 1.0.0
   type: expert
   expert_type: agent
-  description: 从一段文字需求到成品视觉：界面设计、主题配色、社媒配图、交互网页工具与生成艺术，全程守住品牌一致性。
+  description: 视频爆款拆解师：结合 Hypit 把视频还原成 SVML 脚本图（结构层），再用 WorkBuddy 用证据+套路框架提炼可复用创作模板（分析层），手把手带用户一步步拆解任意爆款视频。
+  category: content
+  skills:
+  - viral-video-decoder
+  tags:
+  - 视频爆款拆解
+  - Hypit 工作流
+  - 可复用套路
+  status: active
+  platform_category: 06-ContentCreative
+  _source: manifest.yaml
+  path: experts/viral-video-decoder
+- id: visual-forge-studio
+  name: 苗绘
+  version: 1.1.0
+  type: expert
+  expert_type: agent
+  description: 从文字需求到成品视觉：界面设计、主题配色、社媒配图、交互网页工具与生成艺术，全程守住品牌一致性。
   category: content
   skills:
   - frontend-design
@@ -332,11 +567,13 @@ experts:
   - brand-guidelines
   - image-generation
   - image-optimizer
+  - ui-ux-pro-max
+  - ui-styling
+  - design-system
   tags:
   - 界面设计
   - 品牌配色
   - 社媒配图
-  - 生成视觉
   status: active
   platform_category: 06-ContentCreative
   _source: manifest.yaml
@@ -346,7 +583,7 @@ experts:
   version: 1.0.0
   type: expert
   expert_type: agent
-  description: 用真实浏览器和抓取能力做网页情报：界面回归走查、结构化抓取、视频资料分析，多视角交叉验证再下结论。
+  description: 用真实浏览器和抓取能力查网页情报：界面回归走查、结构化抓取、视频分析，多视角交叉验证再下结论。
   category: research
   skills:
   - playwright-cli
@@ -356,7 +593,6 @@ experts:
   tags:
   - 浏览器自动化
   - 结构化抓取
-  - 视频资料研究
   - 交叉验证
   status: active
   platform_category: 04-DataAI

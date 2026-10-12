@@ -1,0 +1,49 @@
+{
+  "name": "tuwen-forge",
+  "version": "1.0.0",
+  "description": "Turns content, a story, or a bare topic into publish-ready Chinese image-text cards by typesetting code, not by generating images. Chooses the output (single card, full carousel, WeChat cover pair, or long infographic), routes across a professional CJK typesetting / storytelling / imagery knowledge base, composes single-file HTML/CSS, renders deterministically to PNG via Playwright, and passes a mechanical layout gate before delivery.",
+  "author": {
+    "name": "大漠",
+    "email": "damo@example.com"
+  },
+  "agents": ["./agents/tuwen-forge.md"],
+  "skills": [
+    "./skills/tuwen-engine",
+    "./skills/tuwen-typography",
+    "./skills/tuwen-storytelling",
+    "./skills/tuwen-imagery"
+  ],
+
+  "expertType": "agent",
+  "agentName": "tuwen-forge",
+
+  "displayName": {
+    "en": "Mo Jiang",
+    "zh": "墨匠"
+  },
+  "profession": {
+    "en": "Card Typographer",
+    "zh": "图文排版师"
+  },
+  "displayDescription": {
+    "en": "Typesets content into publish-ready Chinese cards with code: single card, full carousel, WeChat cover pair or long infographic — style auto-matched or chosen by you.",
+    "zh": "用代码把内容精确排成可直接发布的中文图文：单图、整套轮播、公众号封面与长图，风格自动匹配。"
+  },
+  "avatar": "avatars/tuwen-forge.jpg",
+  "categoryId": "06-ContentCreative",
+  "defaultInitPrompt": {
+    "zh": "把这篇内容做成一套小红书图文，风格你帮我挑，5 张左右",
+    "en": "Turn this article into a 5-card Xiaohongshu set — you pick the style"
+  },
+  "plugin": "tuwen-forge",
+  "tags": [
+    { "en": "CJK Typesetting", "zh": "中文图文排版" },
+    { "en": "Card & Carousel Generation", "zh": "卡片与轮播生成" },
+    { "en": "Layout & Style Systems", "zh": "版式与风格系统" }
+  ],
+  "quickPrompts": [
+    { "en": "Turn this article into a 5-card Xiaohongshu set — you pick the style", "zh": "把这篇内容做成一套小红书图文，风格你帮我挑，5 张左右" },
+    { "en": "I only have a theme: why typography still matters in the AI era. Make the whole set.", "zh": "只有一个主题：AI 时代为什么还要学排版，帮我做整套图文" },
+    { "en": "Make a WeChat cover pair from this article: 21:9 header + 1:1 share card", "zh": "把这篇文章做成公众号封面对：21:9 头图 + 1:1 分享卡" }
+  ]
+}

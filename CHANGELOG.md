@@ -42,6 +42,16 @@
 - 头像用仓库默认占位图（未消耗生成积分），正式上架前可替换。
 - 全局唯一性只能由平台上传校验确认；当前 ID 尚未收到占用报错，不代表已获平台预留。
 
+### 2026-10-11 — 新增播客改稿专家（podcast-to-article / 陈听）
+- 新增 Agent 型专家 `experts/podcast-to-article`（陈听，播客改稿主编，分类 `06-ContentCreative`）：把 YouTube / 小宇宙单集链接或逐字稿整理成中文精华长文 —— 保留关键原声并按读者问题重组，先出第一正文章节配图、确认后逐章配图，用户说「存入 Obsidian」时把成稿与已接受配图导出到本机仓库。
+- 上游：sunkeke-ai/keke-podcast-to-article（MIT）。内置技能 `keke-podcast-to-article`，`SKILL.md` / `references/`（editorial-examples、source-input-workflow、punk-illustration-workflow、obsidian-export）/ `scripts/save_to_obsidian.py` **逐字保留**；唯一改动是给 `SKILL.md` frontmatter 追加平台必需的 `display_name` / `display_name_en` / `category` / `version` 四个字段，正文零改动。
+- 三个人工确认点：G1 文字稿可靠且覆盖范围明确（不得凭简介编造访谈）、G2 首图确认（未获明确确认不生成其余章节）、G3 保存授权（未授权不写 Obsidian）。
+- 已登记 `registry/experts.yaml`；`build_registry.py` 重生索引（专家 23→24、content 12→13）；`validate.py` 全仓 64/64 通过；`verify_upload_ready.py` 0 失败 0 提示；`preflight.py`（Agent 型 34 项）34 PASS / 0 WARN / 0 FAIL。
+- 打包 `build/podcast-to-article.zip` 334 KB（第一层即资产目录，14 个文件）；附 `build/上架指引_播客改稿主编陈听.md`。
+- 已通过 `sync_my_experts.py` 同步至「我的专家」：市场目录、白名单、recents、marketplace index 各 +1；版本化缓存无需刷新（app 侧首次安装后生成）。
+- 头像用图像生成能力生成（1024×1024 → 512×512 JPEG，96 KB，背景取 `06-ContentCreative` 的 pink-magenta）；第一版把名字画成「陈婷」，重生成后确认为「陈听」。
+- 全局唯一性只能由平台上传校验确认；当前 ID 尚未收到占用报错，不代表已获平台预留。
+
 ### 2026-10-09 — 仓库初始化与结构重构
 - 按 `资产定义层 + 组合层 + 管理工具层` 思路建立 workbuddy-hub 骨架：
   `skills/`、`experts/`、`teams/`、`registry/`、`schemas/`、`templates/`、`scripts/`、`tests/`、`docs/`、`examples/`、`archive/`、`.github/`。

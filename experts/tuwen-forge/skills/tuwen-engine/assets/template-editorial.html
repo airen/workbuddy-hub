@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>Editorial 种子模板 · tuwen-forge</title>
+<!--
+  Editorial 编辑杂志风 · 种子模板
+  用法：整份拷到任务目录当 index.html，然后
+    1. 按需删掉不需要的 <section class="poster">
+    2. 每个 poster 改 data-theme（10 套主题见 references/theme-presets.md）
+    3. 填自己的文案，保持 class 不变（verify.cjs 靠 class 测量）
+    4. node scripts/render.cjs <任务目录>
+  画板：.poster = 1080×1440（3:4）· .poster.wide = 2100×900 · .poster.square = 1080×1080 · .poster.long = 1080×auto
+  规则：所有颜色走 CSS 变量；不要写死 hex；不要用 overflow:hidden 掩盖溢出。
+        有意留白处加 <div class="allow-void" data-void="理由"></div>，否则质检会报「底部空洞」。
+-->
+<style>
+:root{
+  --font-serif: "Songti SC","STSong","Noto Serif SC","Source Han Serif SC",Georgia,serif;
+  --font-sans: "PingFang SC","Hiragino Sans GB","Helvetica Neue","Noto Sans SC",system-ui,sans-serif;
+  --font-mono: "SF Mono","Menlo","JetBrains Mono",monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#8f8f8f;padding:48px;display:flex;flex-direction:column;gap:48px;align-items:flex-start}
+
+/* ============ 画板 ============ */
+.poster{
+  width:1080px;height:1440px;flex:0 0 auto;position:relative;
+  background:var(--paper);color:var(--ink);
+  font-family:var(--font-sans);
+  padding:84px 76px;
+  display:flex;flex-direction:column;
+}
+.poster.wide{width:2100px;height:900px;padding:72px 96px}
+.poster.square{width:1080px;height:1080px;padding:76px}
+/* 长图垂直留白 120px：platform-specs.md 要求「顶部 / 底部各 120px 留白」（便于裁切与二次使用），
+   与 3:4 的 84px 不同——长图不受 3:4 安全区约束，但两端留白要更大。 */
+.poster.long{height:auto;min-height:2400px;padding:120px 84px}
+
+/* ============ 10 套主题（只改这些变量） ============ */
+.poster[data-theme="ink"]      {--paper:#F2EDE4;--ink:#17130F;--ink-2:#6B6156;--accent:#9E3B2E;--accent-ink:#FFF8F0;--rule:#D8CFC0}
+.poster[data-theme="porcelain"]{--paper:#F3F6F7;--ink:#0F2233;--ink-2:#5C6E7A;--accent:#1E5C8A;--accent-ink:#FFFFFF;--rule:#D3DEE4}
+.poster[data-theme="pine"]     {--paper:#F3EFE6;--ink:#182619;--ink-2:#5E6B5C;--accent:#3E6B4A;--accent-ink:#F6F4EC;--rule:#D6D0C2}
+.poster[data-theme="kraft"]    {--paper:#E9DCC3;--ink:#2A1E12;--ink-2:#6E5C42;--accent:#A2541C;--accent-ink:#FFF6E8;--rule:#D2BE9C}
+.poster[data-theme="dune"]     {--paper:#F0E5D0;--ink:#221B12;--ink-2:#6B5C45;--accent:#B07A3C;--accent-ink:#FFF9F0;--rule:#DCCBB0}
+.poster[data-theme="midnight"] {--paper:#12100E;--ink:#EFE7D8;--ink-2:#9C9184;--accent:#C9A24A;--accent-ink:#14110D;--rule:#2E2A25}
+.poster[data-theme="klein"]    {--paper:#F5F5F3;--ink:#111111;--ink-2:#6B6B6B;--accent:#0B2FA8;--accent-ink:#FFFFFF;--rule:#DCDCDC}
+.poster[data-theme="lemon"]    {--paper:#F7F6F1;--ink:#111111;--ink-2:#6B6B6B;--accent:#E8C400;--accent-ink:#111111;--rule:#DCDCDC}
+.poster[data-theme="lime"]     {--paper:#F6F7F0;--ink:#111111;--ink-2:#6B6B6B;--accent:#A8CC1E;--accent-ink:#111111;--rule:#DCDCDC}
+.poster[data-theme="amber"]    {--paper:#F6F4F0;--ink:#111111;--ink-2:#6B6B6B;--accent:#E4572E;--accent-ink:#FFFFFF;--rule:#DCDCDC}
+
+/* ============ 结构 ============ */
+.poster-body{flex:1 1 auto;display:flex;flex-direction:column;gap:34px;min-height:0;align-items:flex-start}
+.poster-body > *{max-width:100%}
+.poster-footer{
+  margin-top:48px;padding-top:24px;border-top:1px solid var(--rule);
+  display:flex;justify-content:space-between;align-items:baseline;width:100%;
+  font-size:22px;color:var(--ink-2);letter-spacing:.04em;
+}
+.allow-void{flex:1 1 auto;min-height:60px;width:100%}
+
+/* ============ 文字层级（正文不得低于 24px） ============ */
+.eyebrow{font-size:26px;letter-spacing:.2em;color:var(--ink-2);text-transform:uppercase}
+.tag{display:inline-block;align-self:flex-start;background:var(--accent);color:var(--accent-ink);
+  font-size:24px;font-weight:600;padding:10px 20px;letter-spacing:.12em}
+.h-display{font-family:var(--font-serif);font-size:96px;line-height:1.14;font-weight:700;letter-spacing:-.005em}
+.h-xl{font-family:var(--font-serif);font-size:80px;line-height:1.2;font-weight:700}
+.h-lg{font-family:var(--font-serif);font-size:58px;line-height:1.3;font-weight:700}
+.h-md{font-size:44px;line-height:1.34;font-weight:600}
+.body{font-size:34px;line-height:1.9;color:var(--ink);text-wrap:pretty}
+.body-2{font-size:30px;line-height:1.85;color:var(--ink-2);text-wrap:pretty}
+.caption{font-size:24px;line-height:1.6;color:var(--ink-2);text-wrap:pretty}
+.accent-text{color:var(--accent);font-weight:600}
+
+/* ============ 装饰 ============ */
+.rule{width:112px;height:4px;background:var(--accent);flex:0 0 auto}
+.hr{height:1px;background:var(--rule);width:100%;flex:0 0 auto}
+.mark{background:var(--accent);color:var(--accent-ink);padding:2px 12px}
+.callout{border-left:5px solid var(--accent);padding:8px 0 8px 32px;width:100%}
+.callout .body{font-size:34px;line-height:1.7;font-weight:600}
+
+/* ============ 编号清单 ============ */
+.nlist{display:flex;flex-direction:column;gap:34px;width:100%}
+.nlist-item{display:flex;gap:28px;align-items:baseline}
+.nlist-num{font-family:var(--font-mono);font-size:36px;font-weight:700;color:var(--accent);flex:0 0 auto;min-width:64px}
+.nlist-text{font-size:34px;line-height:1.55}
+
+/* ============ 数据卡 ============ */
+.stats{display:flex;gap:64px;flex-wrap:wrap}
+.stat{display:flex;flex-direction:column;gap:12px}
+.stat-num{font-family:var(--font-mono);font-size:118px;line-height:1;font-weight:700;color:var(--accent);letter-spacing:-.02em}
+.stat-label{font-size:26px;color:var(--ink-2)}
+
+/* ============ 时间线 ============ */
+.timeline{display:flex;flex-direction:column;width:100%}
+.tl-item{display:flex;gap:32px;padding:34px 0;border-bottom:1px solid var(--rule)}
+.tl-item:last-child{border-bottom:0}
+.tl-year{font-family:var(--font-mono);font-size:30px;color:var(--accent);flex:0 0 168px;font-weight:700}
+.tl-body{display:flex;flex-direction:column;gap:10px}
+.tl-title{font-size:38px;font-weight:600;line-height:1.35}
+.tl-desc{font-size:26px;line-height:1.6;color:var(--ink-2)}
+
+/* ============ 对比 ============ */
+.compare{display:grid;grid-template-columns:1fr 1px 1fr;gap:44px;align-items:start;width:100%}
+.compare .divider{background:var(--rule);height:100%}
+.compare-col{display:flex;flex-direction:column;gap:26px}
+.compare-head{font-size:28px;letter-spacing:.14em;color:var(--ink-2)}
+.compare-col .nlist-text{font-size:32px}
+
+/* ============ 卡片网格 ============ */
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:30px;width:100%}
+.card{border:1px solid var(--rule);padding:38px;display:flex;flex-direction:column;gap:16px}
+.card h4{font-size:34px;font-weight:600;line-height:1.35}
+.card p{font-size:26px;line-height:1.65;color:var(--ink-2);text-wrap:pretty}
+
+/* ============ 满铺图封面（M16） ============ */
+.poster.image-led{padding:0;justify-content:flex-end}
+.image-led .bg{position:absolute;inset:0;background:var(--rule);background-size:cover;background-position:center}
+.image-led .scrim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 30%,rgba(0,0,0,.74) 100%)}
+.image-led .overlay{position:relative;z-index:2;padding:0 84px 96px;color:#fff;display:flex;flex-direction:column;gap:22px}
+.image-led .overlay .eyebrow{color:rgba(255,255,255,.82)}
+.image-led .overlay .h-xl{color:#fff}
+</style>
+</head>
+<body>
+
+<!-- ========== 01 封面 · M01 杂志封面 ========== -->
+<section class="poster" data-theme="ink" data-name="01-cover">
+  <div class="poster-body">
+    <span class="tag">内容观察</span>
+    <h1 class="h-display">AI 能一键出图，<br>为什么图文还没死？</h1>
+    <div class="rule"></div>
+    <p class="body-2">三个被忽略的原因，<br>和一个反直觉的结论。</p>
+    <div class="allow-void" data-void="封面下部留白，让标题呼吸（杂志封面惯例）"></div>
+  </div>
+  <div class="poster-footer"><span>@墨匠</span><span>01 / 08</span></div>
+</section>
+
+<!-- ========== 02 观点 · M02 单栏正文 ========== -->
+<section class="poster" data-theme="ink" data-name="02-view">
+  <div class="poster-body">
+    <span class="eyebrow">原因一</span>
+    <h2 class="h-xl">字不会错，<br>是生图补不上的短板</h2>
+    <div class="hr"></div>
+    <p class="body">生图模型画出来的字，本质是「像字的花纹」。它不懂笔画，也不懂语法，更不知道这个词对不对。</p>
+    <p class="body">中文尤其吃亏。同音字、形近字、生僻字，一画就露馅——而你往往要在发布之后才发现。</p>
+    <p class="body">用字体渲染的每一个字，都是真实的字形。改一个错字，重出一套图只要<span class="accent-text">一秒</span>。</p>
+    <p class="body">如果只是给文章配一张图，生图确实更快。但图文卡片是内容资产——它要能改、能复用、能出第二期。</p>
+    <div class="callout"><p class="body">生图给你的是「看起来对」，排版给你的是「确实对」。</p></div>
+  </div>
+  <div class="poster-footer"><span>@墨匠</span><span>02 / 08</span></div>
+</section>
+
+<!-- ========== 03 时间线 · M09 ========== -->
+<section class="poster" data-theme="kraft" data-name="03-timeline">
+  <div class="poster-body">
+    <span class="eyebrow">演化</span>
+    <h2 class="h-lg">图文工具的四个阶段</h2>
+    <div class="timeline">
+      <div class="tl-item"><span class="tl-year">2019</span><div class="tl-body"><span class="tl-title">模板拼贴</span><span class="tl-desc">套模板、拖素材，好看，但一套套都撞脸</span></div></div>
+      <div class="tl-item"><span class="tl-year">2022</span><div class="tl-body"><span class="tl-title">生图模型</span><span class="tl-desc">出图快，但字不可控，改一个字要重画</span></div></div>
+      <div class="tl-item"><span class="tl-year">2024</span><div class="tl-body"><span class="tl-title">代码排版</span><span class="tl-desc">HTML/CSS 确定性渲染，每个字都可控可复现</span></div></div>
+      <div class="tl-item"><span class="tl-year">2026</span><div class="tl-body"><span class="tl-title">内容直达成品</span><span class="tl-desc">给一段内容或一个主题，直接出整套图文</span></div></div>
+    </div>
+    <div class="allow-void" data-void="时间线后留白，与页脚拉开距离"></div>
+  </div>
+  <div class="poster-footer"><span>@墨匠</span><span>03 / 08</span></div>
+</section>
+
+<!-- ========== 04 数据 · M07 数据卡 ========== -->
+<section class="poster" data-theme="porcelain" data-name="04-stats">
+  <div class="poster-body">
+    <span class="eyebrow">代价</span>
+    <h2 class="h-lg">改一个字，差多少</h2>
+    <div class="stats">
+      <div class="stat"><span class="stat-num">1s</span><span class="stat-label">代码排版，重出一整套</span></div>
+      <div class="stat"><span class="stat-num">3min</span><span class="stat-label">生图模型，重画一张</span></div>
+      <div class="stat"><span class="stat-num">0</span><span class="stat-label">套图之间的样式漂移</span></div>
+    </div>
+    <div class="hr"></div>
+    <p class="body">确定性渲染把「改一处」的成本压到几乎为零。整套图的字号、配色、版式严格统一，不会这一页大、那一页小。</p>
+    <p class="body-2">同一份规格，在同一个运行环境里，每次出图逐像素一致——这让图文也能做回归测试。</p>
+    <p class="body">而一旦素材、文案、版式都落在可读的文本里，团队协作也就成立了：谁都能改，改完立刻重出，不用排队等设计师重新画一遍。</p>
+    <p class="caption">以上为同一台机器、同一字体环境下的实测口径。</p>
+    <div class="callout"><p class="body">一条内容做三十期，靠的不是灵感，是可维护性。</p></div>
+  </div>
+  <div class="poster-footer"><span>@墨匠</span><span>04 / 08</span></div>
+</section>
+
+<!-- ========== 05 对比 · M08 Before/After ========== -->
+<section class="poster" data-theme="dune" data-name="05-compare">
+  <div class="poster-body">
+    <span class="eyebrow">两种路线</span>
+    <h2 class="h-lg">生图 vs 排版</h2>
+    <div class="compare">
+      <div class="compare-col">
+        <span class="compare-head">生图模型</span>
+        <div class="nlist">
+          <div class="nlist-item"><span class="nlist-text">字形不可控</span></div>
+          <div class="nlist-item"><span class="nlist-text">改字要重画</span></div>
+          <div class="nlist-item"><span class="nlist-text">套图不统一</span></div>
+          <div class="nlist-item"><span class="nlist-text">结果不可复现</span></div>
+        </div>
+      </div>
+      <div class="divider"></div>
+      <div class="compare-col">
+        <span class="compare-head accent-text">代码排版</span>
+        <div class="nlist">
+          <div class="nlist-item"><span class="nlist-text">每个字都是真字形</span></div>
+          <div class="nlist-item"><span class="nlist-text">改字约一秒</span></div>
+          <div class="nlist-item"><span class="nlist-text">逐像素可复现</span></div>
+          <div class="nlist-item"><span class="nlist-text">可过自动质检</span></div>
+        </div>
+      </div>
+    </div>
+    <p class="body-2">选哪条路，取决于你要的是「一张好看的图」，还是「一套能改、能复用、能回归的图」。</p>
+    <p class="body">生图擅长画那些「不存在」的东西，赢在氛围与想象；排版擅长把「已经想清楚」的东西讲明白，赢在精确与复用。</p>
+    <p class="caption">本页对比基于同一段内容、同一套文案的实测。</p>
+    <div class="callout"><p class="body">要一次性的成品，生图更快；要能长期维护的资产，排版更省。</p></div>
+  </div>
+  <div class="poster-footer"><span>@墨匠</span><span>05 / 08</span></div>
+</section>
+
+<!-- ========== 06 观点 · M15 大字号 ========== -->
+<section class="poster" data-theme="midnight" data-name="06-statement">
+  <div class="poster-body">
+    <div class="allow-void" data-void="上半留白，把视觉重心压到下半大字"></div>
+    <div class="rule"></div>
+    <h2 class="h-display">能改的字，<br>才是能用的字。</h2>
+    <p class="caption">—— 图文的底线不是好看，是可控。</p>
+  </div>
+  <div class="poster-footer"><span>@墨匠</span><span>06 / 08</span></div>
+</section>
+
+<!-- ========== 07 清单 · M06 编号清单 ========== -->
+<section class="poster" data-theme="ink" data-name="07-checklist">
+  <div class="poster-body">
+    <span class="eyebrow">划重点</span>
+    <h2 class="h-lg">记住这五条就够</h2>
+    <div class="nlist">
+      <div class="nlist-item"><span class="nlist-num">01</span><span class="nlist-text">一页只讲一个核心判断</span></div>
+      <div class="nlist-item"><span class="nlist-num">02</span><span class="nlist-text">封面必须能独立成立</span></div>
+      <div class="nlist-item"><span class="nlist-num">03</span><span class="nlist-text">正文不小于 24 像素</span></div>
+      <div class="nlist-item"><span class="nlist-num">04</span><span class="nlist-text">一套图只用一个主题色</span></div>
+      <div class="nlist-item"><span class="nlist-num">05</span><span class="nlist-text">排完一定要过质检闸门</span></div>
+    </div>
+    <div class="allow-void" data-void="清单后留白"></div>
+  </div>
+  <div class="poster-footer"><span>@墨匠</span><span>07 / 08</span></div>
+</section>
+
+<!-- ========== 08 收束 · M14 卡片网格 ========== -->
+<section class="poster" data-theme="ink" data-name="08-cta">
+  <div class="poster-body">
+    <span class="eyebrow">下一步</span>
+    <h2 class="h-lg">想试哪一种？</h2>
+    <div class="grid">
+      <div class="card"><h4>给我一段内容</h4><p>文章、笔记、讲稿，我拆成整套图文</p></div>
+      <div class="card"><h4>给我一个主题</h4><p>只有一个题目，我补结构、写文案、再排版</p></div>
+      <div class="card"><h4>给我一个封面需求</h4><p>公众号 21:9 + 1:1 一对，视觉保持一致</p></div>
+      <div class="card"><h4>给我一份数据</h4><p>做成 KPI 塔、横条图或高密度长图</p></div>
+    </div>
+    <div class="allow-void" data-void="收束页留白"></div>
+  </div>
+  <div class="poster-footer"><span>@墨匠</span><span>08 / 08</span></div>
+</section>
+
+</body>
+</html>

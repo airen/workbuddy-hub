@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>中文长图 种子模板 · tuwen-forge</title>
+<!--
+  中文高密度长图 · 种子模板
+  长图不切页：一张超高画布，靠 .block 板块分层，纵向扫读。
+  宽固定 1080，高自适应（建议 2400–8000）。超过 8000 考虑拆成 2–3 张。
+  留白：垂直 120px / 水平 84px（platform-specs.md 要求长图两端各留 120px，便于裁切与二次使用）。
+  每个板块 400–900px，板块之间用发丝线或留白呼吸。
+  主题：10 套预设全部内置（ink / porcelain / pine / kraft / dune / midnight /
+  klein / lemon / lime / amber），改 data-theme 即可。hex 取自 references/theme-presets.md，
+  不要自造颜色。
+-->
+<style>
+:root{
+  --font-sans: "PingFang SC","Hiragino Sans GB","Helvetica Neue","Noto Sans SC",system-ui,sans-serif;
+  --font-serif: "Songti SC","STSong",Georgia,serif;
+  --font-mono: "SF Mono","Menlo","JetBrains Mono",monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#8f8f8f;padding:48px;display:flex;flex-direction:column;gap:48px;align-items:flex-start}
+
+.poster.long{
+  width:1080px;min-height:2400px;flex:0 0 auto;position:relative;
+  background:var(--paper);color:var(--ink);
+  font-family:var(--font-sans);
+  /* 垂直 120px = platform-specs.md 的长图两端留白要求（便于裁切与二次使用） */
+  padding:120px 84px;
+  display:flex;flex-direction:column;
+}
+/* 10 套主题预设全量内置（与 Editorial / Swiss 模板同一套色票，hex 一字不改）。
+   长图额外需要 --tint（.callout 的底色）：按现有规律取「纸色降约 10 级」，
+   midnight 是深色主题，方向相反（比纸色提亮）。缺 --tint 会让 .callout 背景透明。 */
+.poster[data-theme="ink"]      {--paper:#F2EDE4;--ink:#17130F;--ink-2:#6B6156;--accent:#9E3B2E;--accent-ink:#FFF8F0;--rule:#D8CFC0;--tint:#E8E1D5}
+.poster[data-theme="porcelain"]{--paper:#F3F6F7;--ink:#0F2233;--ink-2:#5C6E7A;--accent:#1E5C8A;--accent-ink:#FFFFFF;--rule:#D3DEE4;--tint:#E7EEF1}
+.poster[data-theme="pine"]     {--paper:#F3EFE6;--ink:#182619;--ink-2:#5E6B5C;--accent:#3E6B4A;--accent-ink:#F6F4EC;--rule:#D6D0C2;--tint:#E9E5DC}
+.poster[data-theme="kraft"]    {--paper:#E9DCC3;--ink:#2A1E12;--ink-2:#6E5C42;--accent:#A2541C;--accent-ink:#FFF6E8;--rule:#D2BE9C;--tint:#DFD2B9}
+.poster[data-theme="dune"]     {--paper:#F0E5D0;--ink:#221B12;--ink-2:#6B5C45;--accent:#B07A3C;--accent-ink:#FFF9F0;--rule:#DCCBB0;--tint:#E6DBC6}
+.poster[data-theme="midnight"] {--paper:#12100E;--ink:#EFE7D8;--ink-2:#9C9184;--accent:#C9A24A;--accent-ink:#14110D;--rule:#2E2A25;--tint:#1E1A16}
+.poster[data-theme="klein"]    {--paper:#F5F5F3;--ink:#111111;--ink-2:#6B6B6B;--accent:#0B2FA8;--accent-ink:#FFFFFF;--rule:#DCDCDC;--tint:#EDEDEA}
+.poster[data-theme="lemon"]    {--paper:#F7F6F1;--ink:#111111;--ink-2:#6B6B6B;--accent:#E8C400;--accent-ink:#111111;--rule:#DCDCDC;--tint:#EDECE7}
+.poster[data-theme="lime"]     {--paper:#F6F7F0;--ink:#111111;--ink-2:#6B6B6B;--accent:#A8CC1E;--accent-ink:#111111;--rule:#DCDCDC;--tint:#ECEDE6}
+.poster[data-theme="amber"]    {--paper:#F6F4F0;--ink:#111111;--ink-2:#6B6B6B;--accent:#E4572E;--accent-ink:#FFFFFF;--rule:#DCDCDC;--tint:#ECEAE6}
+
+.block{display:flex;flex-direction:column;gap:28px;padding:56px 0;border-bottom:1px solid var(--rule);width:100%}
+.block:first-child{padding-top:0}
+.block:last-child{border-bottom:0;padding-bottom:0}
+.block-kicker{font-size:24px;letter-spacing:.2em;color:var(--accent);font-weight:700;text-transform:uppercase}
+.block-title{font-size:52px;line-height:1.25;font-weight:700;letter-spacing:-.01em}
+.block-sub{font-size:28px;line-height:1.7;color:var(--ink-2)}
+.body{font-size:30px;line-height:1.85;color:var(--ink);text-wrap:pretty}
+.body-2{font-size:26px;line-height:1.7;color:var(--ink-2);text-wrap:pretty}
+.caption{font-size:22px;line-height:1.6;color:var(--ink-2);text-wrap:pretty}
+.hairline{height:1px;background:var(--rule);width:100%}
+.allow-void{flex:1 1 auto;min-height:60px;width:100%}
+
+/* 封面板块 */
+.block-cover{padding-bottom:64px}
+.cover-title{font-size:88px;line-height:1.12;font-weight:700;letter-spacing:-.01em}
+.cover-meta{display:flex;gap:36px;font-size:24px;color:var(--ink-2);flex-wrap:wrap}
+
+/* 指标行 */
+.stat-row{display:flex;gap:48px;flex-wrap:wrap;width:100%}
+.stat{display:flex;flex-direction:column;gap:10px;flex:1 1 0;min-width:200px}
+.stat-num{font-family:var(--font-mono);font-size:76px;line-height:1;font-weight:700;color:var(--accent)}
+.stat-label{font-size:24px;color:var(--ink-2)}
+
+/* 表格 */
+.long-table{width:100%;border-collapse:collapse;border-top:2px solid var(--ink)}
+.long-table th{font-size:24px;text-align:left;padding:18px 16px;color:var(--ink-2);font-weight:600;letter-spacing:.06em;border-bottom:1px solid var(--rule)}
+.long-table td{font-size:26px;padding:22px 16px;border-bottom:1px solid var(--rule);vertical-align:top}
+.long-table td.num{font-family:var(--font-mono);text-align:right}
+
+/* 纵向时间线 */
+.long-timeline{display:flex;flex-direction:column;width:100%}
+.lt-item{display:grid;grid-template-columns:150px 1fr;gap:28px;padding:26px 0;border-bottom:1px solid var(--rule)}
+.lt-item:last-child{border-bottom:0}
+.lt-time{font-family:var(--font-mono);font-size:26px;font-weight:700;color:var(--accent)}
+.lt-text{font-size:28px;line-height:1.6}
+
+/* 清单 */
+.long-list{display:flex;flex-direction:column;gap:22px;width:100%}
+.ll-item{display:flex;gap:24px;align-items:baseline}
+.ll-mark{font-family:var(--font-mono);font-size:26px;font-weight:700;color:var(--accent);flex:0 0 56px}
+.ll-text{font-size:28px;line-height:1.6}
+
+/* 强调块 */
+.callout{background:var(--tint);border-left:6px solid var(--accent);padding:32px 34px;width:100%}
+.callout p{font-size:30px;line-height:1.7;font-weight:600}
+</style>
+</head>
+<body>
+
+<section class="poster long" data-theme="porcelain" data-name="01-longform">
+
+  <!-- 封面板块 -->
+  <div class="block block-cover">
+    <span class="block-kicker">季度复盘 · 全景</span>
+    <h1 class="cover-title">2026 Q3<br>内容交付复盘</h1>
+    <div class="hairline"></div>
+    <div class="cover-meta">
+      <span>产出 128 张图文</span><span>覆盖 6 个栏目</span><span>平均交付 11 分钟/套</span>
+    </div>
+    <p class="block-sub">本页为高密度长图示例：所有板块在一张画布上纵向排布，不切页、不翻页，扫读即得全貌。</p>
+  </div>
+
+  <!-- 指标板块 -->
+  <div class="block">
+    <span class="block-kicker">关键指标</span>
+    <div class="stat-row">
+      <div class="stat"><span class="stat-num">128</span><span class="stat-label">图文产出（张）</span></div>
+      <div class="stat"><span class="stat-num">11m</span><span class="stat-label">平均交付耗时</span></div>
+      <div class="stat"><span class="stat-num">0</span><span class="stat-label">错字返工</span></div>
+      <div class="stat"><span class="stat-num">97%</span><span class="stat-label">一次过质检</span></div>
+    </div>
+    <p class="body-2">指标口径：从收到内容到交付 PNG，不含用户审阅等待时间。</p>
+  </div>
+
+  <!-- 正文板块 -->
+  <div class="block">
+    <span class="block-kicker">复盘</span>
+    <h2 class="block-title">三件做对的事</h2>
+    <p class="body">这一季最大的变化，是把「排版」从手工活变成了可复用的工程。素材、文案、版式全部落在可读的文本里，改一处不必重做全套。</p>
+    <div class="callout"><p>把版式写成代码，等于把设计决策固化成了可测试的资产。</p></div>
+    <div class="long-list">
+      <div class="ll-item"><span class="ll-mark">01</span><span class="ll-text">先定出口再动手：发布平台一确定，尺寸、页数、命名全部锁死</span></div>
+      <div class="ll-item"><span class="ll-mark">02</span><span class="ll-text">一页只讲一个判断：拆页代替缩字号，完读率提升了约 18%</span></div>
+      <div class="ll-item"><span class="ll-mark">03</span><span class="ll-text">交付前必过闸门：溢出、字号、留白等八条自动规则拦掉了大部分低级问题</span></div>
+    </div>
+  </div>
+
+  <!-- 时间线板块 -->
+  <div class="block">
+    <span class="block-kicker">节奏</span>
+    <h2 class="block-title">一季度的推进节奏</h2>
+    <div class="long-timeline">
+      <div class="lt-item"><span class="lt-time">7 月上</span><span class="lt-text">确定两套视觉系统（Editorial / Swiss）与 10 套主题色票</span></div>
+      <div class="lt-item"><span class="lt-time">7 月下</span><span class="lt-text">完成 28 个版式骨架，沉淀为可拷贝的种子模板</span></div>
+      <div class="lt-item"><span class="lt-time">8 月</span><span class="lt-text">接入确定性渲染链路，产出逐像素可复现的 PNG</span></div>
+      <div class="lt-item"><span class="lt-time">9 月</span><span class="lt-text">上线质检闸门，把人工核对压缩成 8 条自动规则</span></div>
+    </div>
+  </div>
+
+  <!-- 表格板块 -->
+  <div class="block">
+    <span class="block-kicker">栏目表现</span>
+    <h2 class="block-title">六个栏目的交付情况</h2>
+    <table class="long-table">
+      <thead><tr><th>栏目</th><th>套数</th><th>平均页数</th><th class="num">一次过质检</th></tr></thead>
+      <tbody>
+        <tr><td>工具测评</td><td>32</td><td>7</td><td class="num">100%</td></tr>
+        <tr><td>方法论拆解</td><td>28</td><td>8</td><td class="num">96%</td></tr>
+        <tr><td>数据周报</td><td>24</td><td>5</td><td class="num">100%</td></tr>
+        <tr><td>案例复盘</td><td>20</td><td>9</td><td class="num">90%</td></tr>
+        <tr><td>书摘与随笔</td><td>14</td><td>6</td><td class="num">100%</td></tr>
+        <tr><td>旅行记录</td><td>10</td><td>8</td><td class="num">90%</td></tr>
+      </tbody>
+    </table>
+    <p class="caption">「一次过质检」指首次运行 verify 即无 error 的比例。</p>
+  </div>
+
+  <!-- 收束板块 -->
+  <div class="block">
+    <span class="block-kicker">下一步</span>
+    <h2 class="block-title">下一季要补的三块</h2>
+    <div class="long-list">
+      <div class="ll-item"><span class="ll-mark">A</span><span class="ll-text">插图能力：在保留纯排版路线的同时，接入可控的矢量插图</span></div>
+      <div class="ll-item"><span class="ll-mark">B</span><span class="ll-text">更多平台模板：朋友圈、知乎问答、视频号封面</span></div>
+      <div class="ll-item"><span class="ll-mark">C</span><span class="ll-text">故事型内容：把「一个主题」扩写成有起承转合的整套图文</span></div>
+    </div>
+  </div>
+
+</section>
+
+</body>
+</html>

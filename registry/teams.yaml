@@ -1,4 +1,47 @@
 teams:
+- id: content-creation-team
+  name: 内容工厂专家团
+  version: 1.0.0
+  type: team
+  description: 素材采集、灵感库、选题排期到创作改编与复盘复用，八位环节专家接力，把零散灵感做成内容工厂。
+  category: content
+  members:
+  - expert_id: content-creation-team-team-lead
+    role: coordinator
+    embedded: true
+  - expert_id: content-creation-team-sourcing
+    role: member
+    embedded: true
+  - expert_id: content-creation-team-library
+    role: member
+    embedded: true
+  - expert_id: content-creation-team-strategy
+    role: member
+    embedded: true
+  - expert_id: content-creation-team-calendar
+    role: member
+    embedded: true
+  - expert_id: content-creation-team-writer
+    role: member
+    embedded: true
+  - expert_id: content-creation-team-adaptation
+    role: member
+    embedded: true
+  - expert_id: content-creation-team-analyst
+    role: member
+    embedded: true
+  - expert_id: content-creation-team-recycler
+    role: member
+    embedded: true
+  workflow: agents/content-creation-team-team-lead.md
+  tags:
+  - 素材灵感库
+  - 内容生产流水线
+  - 复盘与复用
+  status: active
+  platform_category: 06-ContentCreative
+  _source: manifest.yaml
+  path: teams/content-creation-team
 - id: creator-ops
   name: 自媒体创作专家团
   version: 1.0.0
@@ -166,11 +209,39 @@ teams:
   platform_category: 06-ContentCreative
   _source: manifest.yaml
   path: teams/media-content-team
+- id: replica-machine
+  name: 复刻机
+  version: 1.0.0
+  type: team
+  description: 用 REA 逆向侦察参考站的页面、脚本与网络请求，据此复刻实现，再由独立验证员逐项比对差异，主理人把关需求与交付。
+  category: development
+  members:
+  - expert_id: replica-machine-team-lead
+    role: coordinator
+    embedded: true
+  - expert_id: replica-machine-recon-analyst
+    role: member
+    embedded: true
+  - expert_id: replica-machine-replica-engineer
+    role: member
+    embedded: true
+  - expert_id: replica-machine-parity-verifier
+    role: member
+    embedded: true
+  workflow: agents/replica-machine-team-lead.md
+  tags:
+  - 网站复刻
+  - 逆向侦察
+  - 逐项比对验证
+  status: active
+  platform_category: 02-Engineering
+  _source: manifest.yaml
+  path: teams/replica-machine
 - id: skill-forge-crew
   name: 技能工程流水线专家团
   version: 1.0.0
   type: team
-  description: 把技能用成流水线：需求问透、规格落地、测试驱动、质量把关、仓库设防，五名成员协作，交付可复用的能力。
+  description: 把技能用成流水线：需求问透、规格落地、测试驱动、质量把关、仓库设防，五人协作，交付可复用的能力。
   category: development
   members:
   - expert_id: skill-forge-crew-team-lead
@@ -191,7 +262,6 @@ teams:
   workflow: agents/skill-forge-crew-team-lead.md
   tags:
   - 技能流水线
-  - 规格到计划
   - 测试驱动
   - 仓库设防
   status: active

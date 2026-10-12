@@ -1,0 +1,88 @@
+# 许可与第三方归属
+
+`tuwen-forge` 专家包**自身新增的部分**（`plugin.json`、`manifest.yaml`、`agents/tuwen-forge.md`、
+`README.md`、`LICENSE`、`avatars/`，以及 `skills/` 下四个技能的全部内容）采用 **MIT** 许可。
+
+Copyright (c) 2026 大漠
+
+---
+
+## 关于第三方开源项目
+
+本包的**代码与文档全部自研**，没有搬运任何第三方源文件。但在设计思路上参考了下列开源项目。
+逐一说明**学到了什么**与**边界在哪**。
+
+### 1. `op7418/guizang-social-card-skill` — **AGPL-3.0**
+
+- 来源：<https://github.com/op7418/guizang-social-card-skill>
+- **只学思想，代码一行不搬。**
+
+| 学到的 | 边界 |
+|---|---|
+| 「HTML/CSS → Playwright → PNG」确定性渲染这条路走得通 | 渲染脚本 100% 自写 |
+| 「从预设里挑色，不允许自定义 hex」的产品决策 | 10 套色票全部自研，颜色值与命名均不同 |
+| 「版式骨架先选后改，不发明新页面」的工作方式 | 28 个版式骨架全部自研定义 |
+| 「越大越细」等排版原则（属公共设计常识） | 规则文本自写 |
+
+**为什么不能搬**：AGPL-3.0 传染性强——任何修改版本、Fork、二次分发，甚至只是把修改版部署成网络服务，
+都必须以 AGPL-3.0 公开完整源代码。本包要以 MIT 分发，因此**不能包含任何 AGPL 代码**。
+颜色值本身不受著作权保护，但为清晰起见，本包仍采用了完全自研的色票。
+
+### 2. `joysinleung/hanzi-infographic-skill` — **MIT**
+
+- 来源：<https://github.com/joysinleung/hanzi-infographic-skill>
+- **只学工程思想，代码一行不搬。**
+
+| 学到的 | 边界 |
+|---|---|
+| 中文长图的板块化布局思路（复盘全景 / 台账 / 知识卡） | 板块与模板自写 |
+| 中文硬约束：正文 ≥ 24px、渲染前必须 `await document.fonts.ready`、缺字显式失败 | 规则文本自写 |
+| 「确定性渲染规避生图糊字错字」的定位 | — |
+
+MIT 允许借鉴与再分发，本包仍选择只取思想、不复制文件。
+
+### 3. `yenava/xiaohongshu-tuwen-skill`
+
+- 来源：<https://github.com/yenava/xiaohongshu-tuwen-skill>
+- 学到：拆页逻辑（「一页只表达一个核心判断」）、截图前的布局 QA 风险清单
+  （正文绝对定位、高风险漂浮结构、封面底部空洞、内容块过少）。
+- 边界：质检脚本 100% 自写，且改为**真实 DOM 测量**而非启发式扫描。
+
+### 4. `xiaonizhou-crypto/xhs-carousel-skill` — **MIT**
+
+- 来源：<https://github.com/xiaonizhou-crypto/xhs-carousel-skill>
+- 学到：「内容 → 成品」的完整产物清单（图 + 发布文案 + 话题标签）这一闭环意识。
+- 边界：未复制任何文件。
+
+### 5. `misjia-397/make-knowledge-cards` — **MIT**
+
+- 来源：<https://github.com/misjia-397/make-knowledge-cards>
+- 学到：内容提炼的质控口径——「一张卡片只讲一个知识点」「删除重复」「不编造原文没有的信息」
+  「信息不足时不强行凑数量」。
+- 边界：未复制任何文件。
+
+---
+
+## 字体
+
+本包**不内嵌任何字体文件**，全部使用渲染机器上的系统字体：
+
+- 中文：`PingFang SC`、`Songti SC`（macOS 系统字体）
+- 西文/等宽：`Helvetica Neue`、`SF Mono`
+
+字体栈在模板中以 CSS 变量给出，按顺序回退。**使用者需自行确认其渲染环境中的字体授权。**
+
+---
+
+## 图片
+
+本包 `README.md` 与 `skills/` 中不包含任何第三方图片素材。
+
+`avatars/tuwen-forge.jpg` 由 AI 图像模型生成，无第三方版权。
+
+---
+
+## 免责
+
+本包提供的排版规则、配色建议与版式骨架，均为**设计工程实践的经验总结**，不构成任何形式的
+法律、商标或版权意见。使用者需自行确认其内容、图片、字体的合规性。

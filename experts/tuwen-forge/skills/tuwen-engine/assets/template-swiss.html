@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>Swiss 种子模板 · tuwen-forge</title>
+<!--
+  Swiss 瑞士国际主义 · 种子模板
+  核心规则：无衬线全家桶 · 严格网格 · 单一锚点色 · 直角发丝线 · 越大越细
+  「越大越细」是 Swiss 最容易翻车的一条：字号上去，字重必须下来。
+  用法同 Editorial：拷成 index.html → 改 data-theme → 填文案 → render.cjs → verify.cjs
+  末尾两张是公众号封面对示例（.poster.wide 21:9 + .poster.square 1:1），不用就整段删掉。
+-->
+<style>
+:root{
+  --font-sans: "PingFang SC","Hiragino Sans GB","Helvetica Neue","Noto Sans SC",system-ui,sans-serif;
+  --font-mono: "SF Mono","Menlo","JetBrains Mono",monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#8f8f8f;padding:48px;display:flex;flex-direction:column;gap:48px;align-items:flex-start}
+
+.poster{
+  width:1080px;height:1440px;flex:0 0 auto;position:relative;
+  background:var(--paper);color:var(--ink);
+  font-family:var(--font-sans);
+  padding:76px 72px;
+  display:flex;flex-direction:column;
+}
+.poster.wide{width:2100px;height:900px;padding:72px 96px}
+.poster.square{width:1080px;height:1080px;padding:72px}
+/* 长图垂直留白 120px：platform-specs.md 要求「顶部 / 底部各 120px 留白」（便于裁切与二次使用）。 */
+.poster.long{height:auto;min-height:2400px;padding:120px 84px}
+
+/* Swiss 4 套主题：单一锚点色 */
+.poster[data-theme="klein"]{--paper:#F5F5F3;--ink:#111111;--ink-2:#6B6B6B;--accent:#0B2FA8;--accent-ink:#FFFFFF;--rule:#DCDCDC}
+.poster[data-theme="lemon"]{--paper:#F7F6F1;--ink:#111111;--ink-2:#6B6B6B;--accent:#E8C400;--accent-ink:#111111;--rule:#DCDCDC}
+.poster[data-theme="lime"] {--paper:#F6F7F0;--ink:#111111;--ink-2:#6B6B6B;--accent:#A8CC1E;--accent-ink:#111111;--rule:#DCDCDC}
+.poster[data-theme="amber"]{--paper:#F6F4F0;--ink:#111111;--ink-2:#6B6B6B;--accent:#E4572E;--accent-ink:#FFFFFF;--rule:#DCDCDC}
+
+.poster-body{flex:1 1 auto;display:flex;flex-direction:column;gap:32px;min-height:0;align-items:flex-start}
+.poster-body > *{max-width:100%}
+.poster-footer{
+  margin-top:44px;padding-top:20px;border-top:2px solid var(--ink);
+  display:flex;justify-content:space-between;align-items:baseline;width:100%;
+  font-size:20px;color:var(--ink-2);letter-spacing:.06em;
+}
+.allow-void{flex:1 1 auto;min-height:60px;width:100%}
+.hairline{height:1px;background:var(--rule);width:100%;flex:0 0 auto}
+.rule-ink{height:2px;background:var(--ink);width:100%;flex:0 0 auto}
+
+/* ============ 字号阶梯：越大越细 ============ */
+.eyebrow{font-size:24px;letter-spacing:.22em;color:var(--ink-2);text-transform:uppercase;font-weight:600}
+.h-statement{font-size:118px;line-height:1.05;font-weight:300;letter-spacing:-.03em}
+.h-xl{font-size:76px;line-height:1.14;font-weight:300;letter-spacing:-.02em}
+.h-lg{font-size:52px;line-height:1.24;font-weight:500;letter-spacing:-.01em}
+.h-md{font-size:34px;line-height:1.34;font-weight:600}
+.body{font-size:30px;line-height:1.78;font-weight:400;color:var(--ink);text-wrap:pretty}
+.body-2{font-size:26px;line-height:1.7;font-weight:400;color:var(--ink-2);text-wrap:pretty}
+.caption{font-size:22px;line-height:1.6;color:var(--ink-2);text-wrap:pretty}
+.mono{font-family:var(--font-mono);font-variant-numeric:tabular-nums}
+.accent{color:var(--accent)}
+
+/* ============ 锚点色块 ============ */
+.band{background:var(--accent);color:var(--accent-ink);width:100%;padding:40px 36px}
+.band .h-lg,.band .h-xl,.band .body{color:var(--accent-ink)}
+/* 24px 而非 22px：R3 的正文下限就是 24px，且 24px 起才被 WCAG 算作「大字号」——
+   amber / dune 的 accent-ink on accent 只有 3.5–3.7:1，靠大字号才站得住。 */
+.chip{display:inline-block;background:var(--accent);color:var(--accent-ink);font-size:24px;font-weight:600;padding:8px 16px;letter-spacing:.14em}
+
+/* ============ 编号 ============ */
+.s-index{font-family:var(--font-mono);font-size:150px;line-height:.9;font-weight:300;color:var(--accent);letter-spacing:-.04em}
+
+/* ============ KPI Tower ============ */
+.kpi{display:flex;align-items:flex-end;gap:56px;width:100%;height:600px}
+.kpi-col{flex:1 1 0;display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-end;height:100%;gap:14px}
+.kpi-val{font-family:var(--font-mono);font-size:52px;font-weight:500;line-height:1}
+.kpi-bar{width:100%;background:var(--accent)}
+.kpi-bar.alt{background:var(--ink)}
+.kpi-label{font-size:24px;color:var(--ink-2);line-height:1.4}
+
+/* ============ H-Bar ============ */
+.hbars{display:flex;flex-direction:column;gap:44px;width:100%}
+.hbar{display:grid;grid-template-columns:230px 1fr 108px;align-items:center;gap:24px}
+.hbar-label{font-size:30px}
+.hbar-track{height:56px;background:var(--rule);display:block}
+.hbar-track i{display:block;height:100%;background:var(--accent)}
+.hbar-val{font-family:var(--font-mono);font-size:34px;font-weight:500;text-align:right}
+
+/* ============ Ledger ============ */
+.ledger{display:flex;flex-direction:column;width:100%;border-top:2px solid var(--ink)}
+.ledger-row{display:grid;grid-template-columns:88px 1fr;gap:24px;padding:38px 0;border-bottom:1px solid var(--rule);align-items:baseline}
+.ledger-num{font-family:var(--font-mono);font-size:26px;color:var(--accent);font-weight:700}
+.ledger-main{display:flex;flex-direction:column;gap:8px}
+.ledger-title{font-size:32px;font-weight:600;line-height:1.35}
+.ledger-desc{font-size:24px;line-height:1.6;color:var(--ink-2);text-wrap:pretty}
+
+/* ============ Matrix ============ */
+.matrix{display:grid;grid-template-columns:1fr 1fr;gap:0;width:100%;border:2px solid var(--ink)}
+.matrix-cell{padding:34px 30px;border-right:1px solid var(--rule);border-bottom:1px solid var(--rule);display:flex;flex-direction:column;gap:12px}
+.matrix-cell:nth-child(2n){border-right:0}
+.matrix-cell:nth-child(n+3){border-bottom:0}
+.matrix-tag{font-size:24px;letter-spacing:.14em;color:var(--accent);font-weight:700}
+.matrix-text{font-size:26px;line-height:1.6;text-wrap:pretty}
+
+/* ============ 步骤 ============ */
+.steps{display:flex;flex-direction:column;gap:22px;width:100%}
+.step{display:flex;gap:26px;align-items:baseline}
+.step-num{font-family:var(--font-mono);font-size:30px;font-weight:700;color:var(--accent);flex:0 0 64px}
+.step-text{font-size:30px;line-height:1.5}
+</style>
+</head>
+<body>
+
+<!-- ========== 01 封面 · S01 强调色封面 ========== -->
+<section class="poster" data-theme="klein" data-name="01-cover">
+  <div class="poster-body">
+    <span class="eyebrow">2026 · 内容工具观察</span>
+    <div class="rule-ink"></div>
+    <h1 class="h-statement">排版<br>才是<br>生产力</h1>
+    <div class="band">
+      <p class="body">不靠生图模型，用代码把内容排成可直接发布的中文图文。</p>
+    </div>
+    <div class="allow-void" data-void="封面下部留白，让锚点色块独立呼吸"></div>
+  </div>
+  <div class="poster-footer"><span>@墨匠</span><span>01 / 06</span></div>
+</section>
+
+<!-- ========== 02 章节 · S02 编号章节 ========== -->
+<section class="poster" data-theme="klein" data-name="02-section">
+  <div class="poster-body">
+    <span class="s-index">01</span>
+    <h2 class="h-xl">确定性，<br>是唯一能被质检的东西</h2>
+    <div class="hairline"></div>
+    <p class="body">同一份 HTML、同一套字体，每次渲染逐像素一致。这意味着图文第一次可以像代码一样被验证、被回归测试。</p>
+    <p class="body-2">生图做不到这一点：同一个提示词，两次结果不同，没有基准可比。</p>
+    <div class="band"><p class="body">可复现 → 可验证 → 可交付。</p></div>
+    <div class="steps">
+      <div class="step"><span class="step-num">01</span><span class="step-text">固定字体与画板尺寸</span></div>
+      <div class="step"><span class="step-num">02</span><span class="step-text">固定字号阶梯与网格</span></div>
+      <div class="step"><span class="step-num">03</span><span class="step-text">固定色票，不临时选色</span></div>
+      <div class="step"><span class="step-num">04</span><span class="step-text">交付前跑质检闸门</span></div>
+    </div>
+    <p class="caption">三条锁死之后，同一份内容每次都出同样的图。</p>
+  </div>
+  <div class="poster-footer"><span>@墨匠</span><span>02 / 06</span></div>
+</section>
+
+<!-- ========== 03 H-Bar · S10 ========== -->
+<section class="poster" data-theme="klein" data-name="03-hbar">
+  <div class="poster-body">
+    <span class="eyebrow">耗时对比</span>
+    <h2 class="h-lg">出一套 7 页图文要多久</h2>
+    <div class="hbars">
+      <div class="hbar"><span class="hbar-label">手动设计</span><span class="hbar-track"><i style="width:100%"></i></span><span class="hbar-val">180m</span></div>
+      <div class="hbar"><span class="hbar-label">手动改一版</span><span class="hbar-track"><i style="width:25%"></i></span><span class="hbar-val">45m</span></div>
+      <div class="hbar"><span class="hbar-label">生图 + 拼版</span><span class="hbar-track"><i style="width:44%"></i></span><span class="hbar-val">80m</span></div>
+      <div class="hbar"><span class="hbar-label">代码排版（首次）</span><span class="hbar-track"><i style="width:17%"></i></span><span class="hbar-val">30m</span></div>
+      <div class="hbar"><span class="hbar-label">代码排版（改一版）</span><span class="hbar-track"><i style="width:2%"></i></span><span class="hbar-val">1m</span></div>
+    </div>
+    <p class="body">横条越长，耗时越高。真正被改变的不是首次出图速度，而是「改一版」的成本——从小时级降到秒级。</p>
+    <div class="band"><p class="body">首次成本并不极端，边际成本几乎为零——这才是可维护性的价值。</p></div>
+    <p class="caption">口径：同一段内容、同一套文案，从开始到交付 PNG。</p>
+  </div>
+  <div class="poster-footer"><span>@墨匠</span><span>03 / 06</span></div>
+</section>
+
+<!-- ========== 04 KPI Tower · S09 ========== -->
+<section class="poster" data-theme="amber" data-name="04-kpi">
+  <div class="poster-body">
+    <span class="eyebrow">一套 7 页的构成</span>
+    <h2 class="h-lg">每页在干什么</h2>
+    <div class="kpi">
+      <div class="kpi-col"><span class="kpi-val mono">1</span><span class="kpi-bar" style="height:140px"></span><span class="kpi-label">封面<br>钩子</span></div>
+      <div class="kpi-col"><span class="kpi-val mono">4</span><span class="kpi-bar" style="height:400px"></span><span class="kpi-label">正文<br>一页一判断</span></div>
+      <div class="kpi-col"><span class="kpi-val mono">1</span><span class="kpi-bar alt" style="height:140px"></span><span class="kpi-label">数据<br>支撑</span></div>
+      <div class="kpi-col"><span class="kpi-val mono">1</span><span class="kpi-bar" style="height:140px"></span><span class="kpi-label">收束<br>行动</span></div>
+    </div>
+    <div class="hairline"></div>
+    <p class="body">正文占大头，封面与收束各一页。超过 9 页完读率会明显下滑，超过 12 页基本没人翻完。</p>
+    <p class="caption">柱高按页数等比映射，不是装饰。</p>
+    <p class="body-2">封面决定有没有人点进来，正文决定有没有人看完，收束决定有没有人互动——三件事不能混在一页里做。</p>
+  </div>
+  <div class="poster-footer"><span>@墨匠</span><span>04 / 06</span></div>
+</section>
+
+<!-- ========== 05 Ledger · S11 ========== -->
+<section class="poster" data-theme="klein" data-name="05-ledger">
+  <div class="poster-body">
+    <span class="eyebrow">划重点</span>
+    <h2 class="h-lg">五条硬规则</h2>
+    <div class="ledger">
+      <div class="ledger-row"><span class="ledger-num">01</span><div class="ledger-main"><span class="ledger-title">一页一个核心判断</span><span class="ledger-desc">想讲两件事，就拆两页</span></div></div>
+      <div class="ledger-row"><span class="ledger-num">02</span><div class="ledger-main"><span class="ledger-title">封面必须独立成立</span><span class="ledger-desc">脱离正文也看得懂，才有点击</span></div></div>
+      <div class="ledger-row"><span class="ledger-num">03</span><div class="ledger-main"><span class="ledger-title">正文不小于 24 像素</span><span class="ledger-desc">手机上舒服阅读的下限</span></div></div>
+      <div class="ledger-row"><span class="ledger-num">04</span><div class="ledger-main"><span class="ledger-title">一套图只用一个锚点色</span><span class="ledger-desc">多了锚点就失效了</span></div></div>
+      <div class="ledger-row"><span class="ledger-num">05</span><div class="ledger-main"><span class="ledger-title">排完必须过质检闸门</span><span class="ledger-desc">一条 error 都不许交付</span></div></div>
+    </div>
+    <div class="band"><p class="body">这五条不是审美偏好，是能让一整套图站得住的下限。</p></div>
+    <p class="caption">五条全部由 verify.cjs 自动核对，不靠肉眼。</p>
+  </div>
+  <div class="poster-footer"><span>@墨匠</span><span>05 / 06</span></div>
+</section>
+
+<!-- ========== 06 收束 · S12 CTA ========== -->
+<section class="poster" data-theme="klein" data-name="06-cta">
+  <div class="poster-body">
+    <span class="eyebrow">下一步</span>
+    <h2 class="h-statement">把内容<br>交给我</h2>
+    <div class="band">
+      <p class="body">给我一段内容、一个故事，或只是一个主题——我出整套可直接发布的图文。</p>
+    </div>
+    <div class="steps">
+      <div class="step"><span class="step-num">01</span><span class="step-text">我判断出口与页数</span></div>
+      <div class="step"><span class="step-num">02</span><span class="step-text">我选风格与主题，并说明理由</span></div>
+      <div class="step"><span class="step-num">03</span><span class="step-text">我排版、渲染、过闸门，然后交付</span></div>
+    </div>
+    <div class="allow-void" data-void="收束页留白"></div>
+  </div>
+  <div class="poster-footer"><span>@墨匠</span><span>06 / 06</span></div>
+</section>
+
+<!-- ========== 公众号封面对示例：21:9 头图（不用就整段删掉） ========== -->
+<section class="poster wide" data-theme="klein" data-name="07-wechat-wide">
+  <div class="poster-body">
+    <span class="eyebrow">内容工具观察 · 2026</span>
+    <h2 class="h-statement">排版才是生产力</h2>
+    <div class="rule-ink"></div>
+    <p class="body">不靠生图模型，用代码把内容排成可直接发布的中文图文——单图、整套轮播、封面与长图。</p>
+    <div class="allow-void" data-void="21:9 两侧留白：被中心裁切后标题仍完整"></div>
+  </div>
+  <div class="poster-footer"><span>@墨匠</span><span>公众号头图 21:9</span></div>
+</section>
+
+<!-- ========== 公众号封面对示例：1:1 分享卡 ========== -->
+<section class="poster square" data-theme="klein" data-name="08-wechat-square">
+  <div class="poster-body">
+    <span class="eyebrow">内容工具观察</span>
+    <h2 class="h-xl">排版<br>才是生产力</h2>
+    <div class="band">
+      <p class="body">用代码把内容排成可直接发布的图文</p>
+    </div>
+    <div class="allow-void" data-void="方形卡下部留白"></div>
+  </div>
+  <div class="poster-footer"><span>@墨匠</span><span>分享卡 1:1</span></div>
+</section>
+
+</body>
+</html>

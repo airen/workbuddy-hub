@@ -94,12 +94,12 @@ python3 /Applications/WorkBuddy\ AI.app/Contents/Resources/app.asar.unpacked/res
 # 必须先创 settings.json（应用会删，所以要同一条命令里完成）
 printf '{\n  "agent": "creator-ops-team-lead"\n}\n' \
   > ~/.workbuddy-ai/plugins/marketplaces/my-experts/plugins/creator-ops/settings.json
-python3 /Applications/WorkBuddy\ AI.app/Contents/Resources/app.asur.unpacked/resources/plugins/workbuddy-builtin/skills/expert-manager/scripts/package_expert.py \
+python3 /Applications/WorkBuddy\ AI.app/Contents/Resources/app.asar.unpacked/resources/plugins/workbuddy-builtin/skills/expert-manager/scripts/package_expert.py \
   ~/.workbuddy-ai/plugins/marketplaces/my-experts/plugins/creator-ops \
-  /Users/damo/workshop/WorkBuddy/dist/
+  /Users/damo/workshop/WorkBuddy/workbuddy-hub/build/
 
 # 上架前自审（解包后跑）
-unzip -q dist/creator-ops.zip -d /tmp/audit
+unzip -q build/creator-ops.zip -d /tmp/audit
 python3 ~/.workbuddy-ai/skills/expert-pack-from-skill-repo/scripts/preflight.py /tmp/audit/creator-ops
 ```
 

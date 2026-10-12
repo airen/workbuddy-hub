@@ -11,7 +11,7 @@ import tempfile
 import zipfile
 from pathlib import Path
 
-REPO_ROOT = Path(__file__).resolve().parent.parent  # .../dist（即 workbuddy-hub 仓库根）
+REPO_ROOT = Path(__file__).resolve().parent.parent  # workbuddy-hub 仓库根
 BUCKETS = {
     "skill": REPO_ROOT / "skills",
     "expert": REPO_ROOT / "experts",
