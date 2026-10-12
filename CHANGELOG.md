@@ -4,6 +4,15 @@
 
 ## [unreleased]
 
+### 2026-10-12 — life-assistant 版本递增至 1.0.1（平台重提要求）
+- 平台在**驳回后仍记录版本号**，重提同版本会被拦：「解析失败：包内版本号 "1.0.0" 必须大于当前最新版本 "1.0.0"」。
+- 递增 `experts/life-assistant` 的 `plugin.json` 与 `manifest.yaml` 至 `1.0.1`，重跑 `build_registry.py`
+  同步 `registry/experts.yaml`，重新打包 `build/life-assistant.zip`（71 KB）。
+- 校验：`validate.py` 65/65；`verify_upload_ready.py` 通过；解包 `preflight.py` **33 PASS / 1 WARN / 0 FAIL**。
+- 上传页注意：该包被驳回的**服务类目**原因是「至少应包含『工具>信息查询』类目」，须在服务类目里勾
+  **工具 → 信息查询**。已补进 `docs/platform-submission.md` 报错对照表。
+- 已知 WARN：包内无 `LICENSE` 文件（而 README 声明 MIT），preflight 判为非阻塞。
+
 ### 2026-10-10 — 新增「内容工厂专家团」（content-creation-team）
 - 新增 Team 型专家团 `teams/content-creation-team`：主理人（内容总控）+ 8 位环节专家，覆盖
   素材采集 → 灵感库 → 选题策略 → 内容日历 → 内容创作 → 多平台改编 → 审核发布 → 数据复盘 → 内容复用 的完整闭环。

@@ -374,7 +374,7 @@ experts:
   path: experts/lao-dao-editor
 - id: life-assistant
   name: 当当
-  version: 1.0.0
+  version: 1.0.1
   type: expert
   expert_type: agent
   description: 帮你管生活里的琐碎小事——今天吃什么、钱花哪了、东西放哪了、上次练了多重。按冰箱食材出菜谱与采购单，排一周食谱，记账看开销图，登记家当与保修，记录训练并对照上次。内置工具均为离线网页，数据存本地。

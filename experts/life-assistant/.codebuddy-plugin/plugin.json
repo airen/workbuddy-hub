@@ -1,6 +1,6 @@
 {
   "name": "life-assistant",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A warm life-admin assistant that handles the small but endless chores of daily life — what to cook from fridge ingredients, a weekly meal plan, expense tracking with charts, a home inventory, and a workout log — by generating ready-to-use offline tools.",
   "author": {
     "name": "大漠",

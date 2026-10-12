@@ -41,7 +41,9 @@
 ## 上架信息
 
 - 类型：单专家（`expertType: agent`）
+- 当前版本：`1.0.1`（平台已记录 `1.0.0`，重提必须**递增**）
 - 平台类目：`12-IndustryConsultant`
+- 上传页**服务类目**：必须勾选 **工具 → 信息查询**（后台若无该子类，退而选「工具 → 办公」）
 - 打包：`python scripts/package.py experts/life-assistant` → `build/life-assistant.zip`
 
 ## 许可
