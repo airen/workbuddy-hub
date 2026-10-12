@@ -2,6 +2,8 @@
 name: hai-architecture
 description: |
   Investigates architecture and change complexity from repository runtime paths to bounded modules, React components, and shared contracts. Use for 系统太绕、架构审查、模块边界、组件诊断、props API、effect/re-render, or SSOT/双源/漂移、重复规则、多处默认值、同名异形. Select global or bounded mode; return traced evidence, the complexity center, alternatives, and a first proof. React and SSOT lenses retain scored diagnosis or adjudicated treatment reports. Use hai-debug for unexplained faults and code-review-and-quality for diff/local-smell reviews.
+version: 1.0.0
+category: development-tools
 ---
 
 # Hai Architecture

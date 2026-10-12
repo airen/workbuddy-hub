@@ -1,5 +1,5 @@
 ---
-name: jikegongyuan-perspective
+name: jikegongyuan-skill
 description: |
   极客公园（GeekPark，国内AI+科技领域头部媒体）的AI科技自媒体创作思维——Why追问+历史纵深+创业者伙伴视角+深度对谈。
   触发词：「极客公园视角」「像极客公园那样写」「Why not」「非共识」「创新者社区」「创业者对谈」「Founder Park」。
@@ -8,6 +8,8 @@ description: |
 type: media-org
 author: 女娲 · Skill造人术
 调研时间: 2026-05-04
+version: 1.0.0
+category: content-creation
 ---
 
 # 极客公园 · AI科技媒体创作思维

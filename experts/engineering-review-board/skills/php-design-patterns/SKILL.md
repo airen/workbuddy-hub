@@ -1,6 +1,8 @@
 ---
 name: php-design-patterns
 description: PHP-native design-pattern guidance. Use when choosing or reviewing value objects, readonly DTOs, enums, factories, interfaces, dependency injection, adapters, repositories, application services, presenters, middleware, property hooks, or resource ownership in PHP. Do not use for ordinary PHP implementation, test-lane execution, or smell-focused review; use php-engineering, php-testing-quality, or php-antipatterns instead.
+version: 1.0.0
+category: development-tools
 ---
 
 # PHP Design Patterns

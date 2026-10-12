@@ -1,6 +1,8 @@
 ---
 name: architecture-review
 description: Review architectural boundaries, dependency direction, ports and adapters, Clean/Onion/Hexagonal/DDD hybrids, and modular monolith structure. Use for architecture-focused audits of existing systems or changes; do not use for ordinary implementation or architecture design without a review request.
+version: 1.0.0
+category: development-tools
 ---
 
 # Architecture Review Skill

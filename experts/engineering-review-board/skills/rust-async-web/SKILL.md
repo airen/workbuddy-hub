@@ -1,6 +1,8 @@
 ---
 name: rust-async-web
 description: Async Rust and Rust web/full-stack guidance. Use when working with Tokio, async tasks, cancellation, timeouts, backpressure, channels, shared state, synchronization, Axum handlers/extractors/state/middleware, Leptos components, leptos-use, server functions, SSR/hydration/WASM, or Axum-Leptos full-stack applications. Use rust-desktop-gui for native desktop GUI event-loop integration, api-design for endpoint contracts, observability-engineering for durable telemetry, css-scss-styling for CSS/SCSS/Leptos styling decisions, rust-persistence-sql for SQLx/database work, and rust-testing-quality for test lanes.
+version: 1.0.0
+category: development-tools
 ---
 
 # Rust Async And Web

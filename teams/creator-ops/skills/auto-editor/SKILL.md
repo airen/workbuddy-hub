@@ -1,6 +1,8 @@
 ---
 name: auto-editor
 description: Record a microphone or edit video/audio with the auto-editor CLI — cut out dead space (silence, motionlessness, black frames), set the pace, make manual cuts, and render the result. Use when someone wants to capture and trim a microphone, remove silence, shorten a recording, speed through quiet parts, or otherwise edit media with auto-editor.
+version: 1.0.0
+category: content-creation
 ---
 
 # Editing with auto-editor

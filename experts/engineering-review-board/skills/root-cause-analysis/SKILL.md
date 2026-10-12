@@ -1,6 +1,8 @@
 ---
 name: root-cause-analysis
 description: Structured root-cause analysis for recurring failures, incidents, regressions, systemic process gaps, and postmortem-style prevention work. Use after the direct cause of a current symptom is understood; use systematic-debugging first for active failing tests, crashes, or unknown immediate causes.
+version: 1.0.0
+category: development-tools
 ---
 
 # Root Cause Analysis

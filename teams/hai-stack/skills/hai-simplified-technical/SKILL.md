@@ -2,6 +2,8 @@
 name: hai-simplified-technical
 description: |
   Writes, rewrites and reviews technical documentation in Simplified Technical English (ASD-STE100) or its Chinese adaptation (简化技术中文): one word per concept, short sentences, named actors, no vague words or hidden verbs, imperative steps with the condition first, warnings before the step. Use for design docs, READMEs, API docs, runbooks, migration guides, commit and PR text, code comments and error messages, or when asked for STE, controlled language or plainer docs（按 STE 写、受控中文、写得干净点、去掉翻译腔）. Not for marketing, posts, speeches or fiction. Use hai-rewrite-doc to rebuild content and hai-audit-docs to check facts.
+version: 1.0.0
+category: development-tools
 ---
 
 # Hai Simplified Technical

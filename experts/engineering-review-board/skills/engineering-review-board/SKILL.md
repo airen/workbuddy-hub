@@ -1,6 +1,8 @@
 ---
 name: engineering-review-board
 description: 全仓库代码审查入口。当用户要求"审查/review 整个仓库""给这个项目做一次体检""评估架构 / 技术债 / 安全 / 测试 / 性能""这个代码库能不能放心接手或上线"，或要把一次大范围审查拆成可执行、有证据、说明范围的结论时使用。流程是：先建立仓库地图，再按需调用专项审查技能（架构、技术债、安全、性能、依赖供应链、测试、可访问性等），全程默认只读，结论必须挂证据，抽样必须说明范围。不用于单文件或单次 diff 的聚焦评审（那用 code-review），也不用于实现新功能或修复 bug。
+version: 1.0.0
+category: development-tools
 ---
 
 # Engineering Review Board · 全仓库代码审查入口

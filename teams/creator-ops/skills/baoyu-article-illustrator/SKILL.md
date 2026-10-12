@@ -5,6 +5,7 @@ version: 1.117.4
 metadata:
   openclaw:
     homepage: https://github.com/JimLiu/baoyu-skills#baoyu-article-illustrator
+category: content-creation
 ---
 
 # Article Illustrator

@@ -2,6 +2,8 @@
 name: hai-goal
 description: |
   Creates or rewrites a goal document for ambiguous, multi-phase, high-risk, or explicitly planned execution: verifiable outcome, boundary, current state, phases, proof-bearing todos, dry-run, and Go/No-Go. Use when the user asks for a goal, plan, phases, todos, or to re-anchor an existing plan（定目标、拆阶段、执行计划）. Do not interpose it on a small implementation whose outcome and verification are clear; hand ready work to normal execution, using hai-tdd only for suitable behavior changes.
+version: 1.0.0
+category: development-tools
 ---
 
 # Hai Goal

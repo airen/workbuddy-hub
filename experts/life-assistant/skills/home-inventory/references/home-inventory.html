@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>家当清单 · 东西放哪了</title>
+<style>
+  :root{--bg:#f7f5f0;--card:#fff;--ink:#2e2a24;--muted:#8d857a;--line:#e8e2d6;
+    --accent:#c2772e;--soft:#fbf2e6;--warn:#d9534f;--ok:#2bb673}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:-apple-system,"PingFang SC","Microsoft YaHei",Segoe UI,sans-serif;
+    line-height:1.6;padding:20px;max-width:1000px;margin:0 auto}
+  h1{font-size:22px;margin:0 0 4px}
+  .sub{color:var(--muted);font-size:13px;margin-bottom:16px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;
+    padding:16px;margin-bottom:16px;box-shadow:0 1px 3px rgba(0,0,0,.03)}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px}
+  label{display:block;font-size:12px;color:var(--muted);margin-bottom:3px}
+  input,select,textarea{width:100%;padding:8px 9px;border:1px solid var(--line);border-radius:9px;
+    font-size:14px;background:#fdfcf9;color:var(--ink);font-family:inherit}
+  textarea{resize:vertical;min-height:48px}
+  .btns{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+  button{border:none;border-radius:10px;padding:9px 16px;font-size:14px;font-weight:600;
+    cursor:pointer;font-family:inherit}
+  .primary{background:var(--accent);color:#fff}
+  .ghost{background:var(--soft);color:var(--accent)}
+  .ghost2{background:#eafaf1;color:var(--ok)}
+  .toolbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:12px}
+  .toolbar input,.toolbar select{flex:1;min-width:140px}
+  .items{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
+  .item{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#fff}
+  .item img{width:100%;height:130px;object-fit:cover;background:#f0ece4;display:block}
+  .item .ph{width:100%;height:130px;display:flex;align-items:center;justify-content:center;
+    color:var(--muted);background:#f0ece4;font-size:13px}
+  .item .body{padding:10px 12px}
+  .item .nm{font-weight:700;font-size:15px}
+  .item .meta{font-size:12px;color:var(--muted);margin-top:3px}
+  .badge{display:inline-block;font-size:11px;border-radius:6px;padding:1px 7px;margin-top:6px}
+  .badge.warn{background:#fdecea;color:var(--warn)}
+  .badge.soon{background:#fff3e0;color:#e08e0b}
+  .badge.ok{background:#eafaf1;color:var(--ok)}
+  .item .note{font-size:12px;color:var(--muted);margin-top:5px;white-space:pre-wrap}
+  .del{float:right;color:var(--warn);cursor:pointer;border:none;background:none;font-size:13px}
+  .empty{color:var(--muted);font-size:14px;padding:14px 2px;text-align:center}
+  .count{font-size:13px;color:var(--muted)}
+</style>
+</head>
+<body>
+  <h1>📦 家当清单 · 东西放哪了</h1>
+  <div class="sub">记录照片、房间、位置，连保修日期、发票资料也能一起存。数据存本机浏览器，可导出备份。不联网。</div>
+
+  <div class="card">
+    <div class="grid">
+      <div><label>物品名称</label><input id="name" placeholder="如：戴森吸尘器"></div>
+      <div><label>房间</label><select id="room">
+        <option>客厅</option><option>卧室</option><option>厨房</option><option>卫生间</option>
+        <option>书房</option><option>储物间</option><option>车库</option><option>其他</option>
+      </select></div>
+      <div><label>具体位置</label><input id="loc" placeholder="如：左边柜子第 2 层"></div>
+      <div><label>数量</label><input id="qty" type="number" min="1" value="1"></div>
+      <div><label>购买日期</label><input id="buy" type="date"></div>
+      <div><label>保修到期</label><input id="warranty" type="date"></div>
+      <div style="grid-column:1/-1"><label>照片（可选，自动压缩）</label><input id="photo" type="file" accept="image/*"></div>
+      <div style="grid-column:1/-1"><label>发票 / 凭证 / 说明</label><textarea id="invoice" placeholder="发票号、购买链接、序列号、凭证备注…"></textarea></div>
+    </div>
+    <div class="btns">
+      <button class="primary" onclick="addItem()">登记一件</button>
+      <button class="ghost" onclick="exportJSON()">导出备份</button>
+      <button class="ghost" onclick="importJSON()">导入备份</button>
+      <button class="ghost2" onclick="clearAll()">清空</button>
+      <input id="file" type="file" accept=".json" style="display:none" onchange="doImport(event)">
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="toolbar">
+      <input id="search" placeholder="搜索名称 / 位置…" oninput="render()">
+      <select id="filterRoom" onchange="render()"><option value="">全部房间</option></select>
+      <span class="count" id="count"></span>
+    </div>
+    <div class="items" id="list"></div>
+  </div>
+
+<script>
+const KEY='inventory_v1';
+let DATA=load();
+
+function load(){try{return JSON.parse(localStorage.getItem(KEY))||[]}catch(e){return[]}}
+function save(){localStorage.setItem(KEY,JSON.stringify(DATA))}
+
+function addItem(){
+  const name=document.getElementById('name').value.trim();
+  if(!name){alert('请填写物品名称');return;}
+  const f=document.getElementById('photo').files[0];
+  const finish=(photo)=>{
+    DATA.push({id:Date.now(),name,
+      room:document.getElementById('room').value,
+      loc:document.getElementById('loc').value.trim(),
+      qty:+document.getElementById('qty').value||1,
+      buy:document.getElementById('buy').value,
+      warranty:document.getElementById('warranty').value,
+      invoice:document.getElementById('invoice').value.trim(),
+      photo});
+    save();resetForm();render();
+  };
+  if(f){
+    const r=new FileReader();
+    r.onload=()=>{const img=new Image();img.onload=()=>{
+        const m=480;let w=img.width,h=img.height;
+        if(w>m||h>m){const r2=m/Math.max(w,h);w=Math.round(w*r2);h=Math.round(h*r2);}
+        const c=document.createElement('canvas');c.width=w;c.height=h;
+        c.getContext('2d').drawImage(img,0,0,w,h);
+        finish(c.toDataURL('image/jpeg',0.7));
+      };img.src=r.result;};
+    r.readAsDataURL(f);
+  }else finish('');
+}
+function resetForm(){['name','loc','qty','buy','warranty','invoice','photo'].forEach(id=>{
+  const el=document.getElementById(id);el.type==='file'?el.value='':el.value=id==='qty'?'1':'';});}
+
+function warrantyBadge(w){
+  if(!w)return '';
+  const d=new Date(w+'T00:00:00');const now=new Date();
+  const days=(d-now)/86400000;
+  if(days<0)return `<span class="badge warn">已过保（${w}）</span>`;
+  if(days<=30)return `<span class="badge soon">${Math.ceil(days)} 天后到期（${w}）</span>`;
+  return `<span class="badge ok">保至 ${w}</span>`;
+}
+
+function render(){
+  const q=document.getElementById('search').value.trim();
+  const fr=document.getElementById('filterRoom').value;
+  const rooms=[...new Set(DATA.map(d=>d.room))];
+  const fsel=document.getElementById('filterRoom');
+  if(fsel.options.length<=1)rooms.forEach(r=>fsel.insertAdjacentHTML('beforeend',`<option>${r}</option>`));
+  const view=DATA.filter(d=>(!fr||d.room===fr)&&
+    (!q||(d.name+d.loc+d.invoice).toLowerCase().includes(q.toLowerCase())));
+  document.getElementById('count').textContent=`共 ${view.length} 件 / 全部 ${DATA.length} 件`;
+  document.getElementById('list').innerHTML=view.length?view.slice().reverse().map(d=>
+    `<div class="item"><button class="del" onclick="del(${d.id})">删除</button>
+      ${d.photo?`<img src="${d.photo}">`:'<div class="ph">无照片</div>'}
+      <div class="body"><div class="nm">${esc(d.name)}</div>
+      <div class="meta">${d.room}${d.loc?' · '+esc(d.loc):''}${d.qty>1?' · ×'+d.qty:''}</div>
+      ${warrantyBadge(d.warranty)}
+      ${d.invoice?`<div class="note">🧾 ${esc(d.invoice)}</div>`:''}</div></div>`).join('')
+    :'<div class="empty">还没有登记任何物品，上面添加第一件吧</div>';
+}
+function esc(s){return (s||'').replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));}
+function del(id){DATA=DATA.filter(d=>d.id!==id);save();render();}
+
+function exportJSON(){
+  if(!DATA.length){alert('还没有数据');return;}
+  const blob=new Blob([JSON.stringify(DATA,null,2)],{type:'application/json'});
+  const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='家当清单.json';a.click();
+}
+function importJSON(){document.getElementById('file').click();}
+function doImport(e){const f=e.target.files[0];if(!f)return;const r=new FileReader();
+  r.onload=()=>{try{const arr=JSON.parse(r.result);if(Array.isArray(arr)){DATA=DATA.concat(arr);save();render();alert('导入完成');}}catch(err){alert('文件格式不对');}};
+  r.readAsText(f);}
+function clearAll(){if(confirm('确定清空全部家当记录？此操作不可恢复')){DATA=[];save();render();}}
+
+render();
+</script>
+</body>
+</html>

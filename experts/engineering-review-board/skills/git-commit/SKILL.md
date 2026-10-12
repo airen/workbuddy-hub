@@ -1,6 +1,8 @@
 ---
 name: git-commit
 description: Write high-quality git commits and commit messages. Use when the user asks to commit changes, split a working tree into logical commits, improve commit messages, prepare reviewer-friendly new commits, or apply Conventional Commits guidance in any plain git repository. Do not use for amend/fixup/autosquash, branch operations, integration, recovery, push, tags, or worktrees; use git-workflows.
+version: 1.0.0
+category: development-tools
 ---
 
 # Git Commit Quality

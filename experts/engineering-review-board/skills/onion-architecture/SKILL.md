@@ -1,6 +1,8 @@
 ---
 name: onion-architecture
 description: Onion Architecture guidance centered on explicit concentric domain, application, and infrastructure rings with dependencies pointing inward. Use when the main design question is ring membership, domain/application separation, or keeping infrastructure at the edge, especially when the project names Onion Architecture. Use hexagonal-architecture when inbound/outbound ports around external actors are primary, clean-architecture for use-case/interactor and interface-adapter policy flow, and architecture-review for a read-only audit. Do not use for simple CRUD, prototypes, or framework-convention-first apps where added layers reduce clarity.
+version: 1.0.0
+category: development-tools
 ---
 
 # Onion Architecture

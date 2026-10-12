@@ -1,6 +1,8 @@
 ---
 name: release-readiness
 description: Assess merge and release readiness across tests, docs, migrations, rollout, rollback, operations, and cross-functional risk. Use for a final ship or hold decision; do not use to choose a semantic patch, minor, or major version, or as the primary implementation, code-review, or deployment workflow.
+version: 1.0.0
+category: development-tools
 ---
 
 # Release Readiness Skill

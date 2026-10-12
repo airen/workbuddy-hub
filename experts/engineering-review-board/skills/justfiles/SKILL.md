@@ -1,6 +1,8 @@
 ---
 name: justfiles
 description: Create, refactor, audit, and explain Justfiles for the just command runner. Use when writing or changing Justfile recipes, variables, parameters, groups, imports/modules, aliases, shells/scripts, safety gates, or project workflow commands. Do not use when only running existing recipes without assessing or changing Justfile design, or for hosted CI/release-provider or Docker/OCI/Compose semantics beyond the Just wrappers that invoke them.
+version: 1.0.0
+category: development-tools
 ---
 
 # Justfiles

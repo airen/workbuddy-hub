@@ -1,6 +1,8 @@
 ---
 name: mysql-mariadb-sql-engineering
 description: MySQL and MariaDB SQL engineering guidance. Use with sql-engineering when adding, changing, reviewing, testing, or optimizing MySQL or MariaDB schemas, SQL queries, migrations, transactions, constraints, indexes, views, stored routines, replication, privileges, storage engines, connection pooling, or query performance in any language stack. Explicitly name which engine and version a change targets when MySQL and MariaDB diverge. Do not use for unchanged-SQL ORM or adapter mechanics. Use api-design when migrations or query outputs affect published contracts and observability-engineering for MySQL/MariaDB telemetry signals.
+version: 1.0.0
+category: development-tools
 ---
 
 # MySQL And MariaDB SQL Engineering

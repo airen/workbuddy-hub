@@ -1,6 +1,8 @@
 ---
 name: clean-architecture
 description: Clean Architecture guidance centered on the dependency rule, entities, use cases/interactors, and interface adapters that keep business policy independent from frameworks, databases, and UI. Use when the main design question is how policy flows through use cases and adapter boundaries. Use hexagonal-architecture when named inbound/outbound ports around external actors are the main concern, onion-architecture when explicit concentric domain/application rings are the requested model, and architecture-review for a read-only audit. Do not use for simple CRUD, prototypes, or framework-convention-first apps where added layers reduce clarity.
+version: 1.0.0
+category: development-tools
 ---
 
 # Clean Architecture

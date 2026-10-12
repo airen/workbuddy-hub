@@ -1,6 +1,8 @@
 ---
 name: ci-release-engineering
 description: Implement, change, review, or test checked-in CI and release provider configuration, including workflow triggers, job graphs, matrices, caches, artifacts, permissions, concurrency, environments, automated versioning, tags, releases, and package or binary publication. Do not use to choose a semantic patch, minor, or major bump from application changes; use semantic-versioning. Do not use for underlying language/test commands, Justfile wrappers, manual Git operations, final ship/hold decisions, unexplained CI failures, supply-chain-only or security-review-only audits, or production deployment infrastructure implementation.
+version: 1.0.0
+category: development-tools
 ---
 
 # CI and Release Engineering

@@ -1,0 +1,17 @@
+id: podcast-to-article
+name: 陈听
+version: 1.0.0
+type: expert
+expert_type: agent
+description: 把播客链接或逐字稿改写成中文精华长文，保留关键原声并逐章配图，可一键存入 Obsidian。
+category: content
+skills:
+- keke-podcast-to-article
+tags:
+- 播客改稿
+- 精华长文
+- 章节配图
+status: active
+platform_category: 06-ContentCreative
+license: MIT
+upstream: https://github.com/sunkeke-ai/keke-podcast-to-article

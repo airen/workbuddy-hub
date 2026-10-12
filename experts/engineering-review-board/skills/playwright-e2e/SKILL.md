@@ -1,6 +1,8 @@
 ---
 name: playwright-e2e
 description: "Playwright browser E2E guidance. Use when adding, updating, running, or debugging checked-in Playwright tests, playwright.config files, browser test helpers, targeted test runs, traces, reports, cross-browser projects, or testing browser-visible behavior through checked-in Playwright tests. Do not use for non-browser domain logic, frontend implementation without a durable Playwright artifact, or generic manual browser automation."
+version: 1.0.0
+category: development-tools
 ---
 
 # Playwright E2E

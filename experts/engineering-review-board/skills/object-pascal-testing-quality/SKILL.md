@@ -1,6 +1,8 @@
 ---
 name: object-pascal-testing-quality
 description: Object Pascal and Delphi testing and quality-lane guidance. Use when selecting, adding, running, or reviewing DUnitX, DUnit, fpcunit, TestInsight, Delphi-Mocks, Spring4D, integration tests, UI tests, or Object Pascal quality commands, and when applying TDD, BDD, or DDD to Object Pascal or Delphi projects. Do not use for ordinary Object Pascal implementation, pattern choice, or smell-only review; use object-pascal-engineering, object-pascal-design-patterns, or object-pascal-antipatterns instead.
+version: 1.0.0
+category: development-tools
 ---
 
 # Object Pascal Testing Quality

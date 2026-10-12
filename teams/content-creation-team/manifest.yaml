@@ -1,0 +1,41 @@
+id: content-creation-team
+name: 内容工厂专家团
+version: 1.0.0
+type: team
+description: 素材采集、灵感库、选题排期到创作改编与复盘复用，八位环节专家接力，把零散灵感做成内容工厂。
+category: content
+members:
+- expert_id: content-creation-team-team-lead
+  role: coordinator
+  embedded: true
+- expert_id: content-creation-team-sourcing
+  role: member
+  embedded: true
+- expert_id: content-creation-team-library
+  role: member
+  embedded: true
+- expert_id: content-creation-team-strategy
+  role: member
+  embedded: true
+- expert_id: content-creation-team-calendar
+  role: member
+  embedded: true
+- expert_id: content-creation-team-writer
+  role: member
+  embedded: true
+- expert_id: content-creation-team-adaptation
+  role: member
+  embedded: true
+- expert_id: content-creation-team-analyst
+  role: member
+  embedded: true
+- expert_id: content-creation-team-recycler
+  role: member
+  embedded: true
+workflow: agents/content-creation-team-team-lead.md
+tags:
+- 素材灵感库
+- 内容生产流水线
+- 复盘与复用
+status: active
+platform_category: 06-ContentCreative

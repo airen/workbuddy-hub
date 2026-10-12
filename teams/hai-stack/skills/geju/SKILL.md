@@ -2,6 +2,8 @@
 name: geju
 description: |
   Challenges an overly conservative, incremental, or compatibility-led proposal with a bold target model, a concrete kill/merge/split list, materially different options, and a falsifiable first proof point. Use when the user asks to think bigger, open the design space, or imagine the clean target without legacy constraints（打开格局、别太保守、不要被兼容绑架）. Use goudi to pressure-test how the chosen direction lands, and hai-idea to decide whether the idea deserves doing at all.
+version: 1.0.0
+category: development-tools
 ---
 
 # Geju

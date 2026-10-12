@@ -1,6 +1,8 @@
 ---
 name: documentation-engineering
 description: Documentation engineering guidance. Use when creating, editing, refactoring, or reviewing Markdown docs, README files, API docs, code comments, docstrings, examples, Rustdoc, pydoc, Javadoc, JSDoc/TSDoc, PHPDoc, perldoc/POD, XMLDoc/PasDoc, documentation tests, or developer-facing instructions. Do not use for code-only changes unless docs or comments are part of the change. For reusable SKILL.md contracts, use create-agent-skill.
+version: 1.0.0
+category: development-tools
 ---
 
 # Documentation Engineering

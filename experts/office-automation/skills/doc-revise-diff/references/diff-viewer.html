@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>文档差异查看器 · 看差异 / 回退</title>
+<style>
+  :root{--bg:#f7f8fa;--card:#fff;--line:#e6e8eb;--ink:#1f2329;--sub:#646a73;
+        --add:#e8f7ee;--addb:#2ea96f;--del:#fdecec;--delb:#e5484d;--brand:#2f6bff;}
+  *{box-sizing:border-box}
+  body{margin:0;font:14px/1.6 -apple-system,"PingFang SC","Microsoft YaHei",sans-serif;
+       background:var(--bg);color:var(--ink)}
+  header{padding:18px 20px;border-bottom:1px solid var(--line);background:var(--card)}
+  h1{margin:0;font-size:17px}
+  .hint{color:var(--sub);font-size:12px;margin-top:4px}
+  .wrap{display:grid;grid-template-columns:1fr 1fr;gap:14px;padding:16px 20px}
+  @media(max-width:760px){.wrap{grid-template-columns:1fr}}
+  .col{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px}
+  .col h3{margin:0 0 8px;font-size:13px;color:var(--sub);font-weight:600}
+  textarea{width:100%;min-height:220px;border:1px solid var(--line);border-radius:8px;
+           padding:10px;font:13px/1.6 ui-monospace,Menlo,Consolas,monospace;resize:vertical}
+  .bar{display:flex;gap:8px;flex-wrap:wrap;padding:0 20px 12px}
+  button{font:13px/1 inherit;border:1px solid var(--line);background:#fff;color:var(--ink);
+          padding:8px 14px;border-radius:8px;cursor:pointer}
+  button.primary{background:var(--brand);border-color:var(--brand);color:#fff}
+  button:hover{filter:brightness(.97)}
+  .out{margin:0 20px 20px;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px}
+  .out h3{margin:0 0 10px;font-size:13px;color:var(--sub)}
+  #diff{white-space:pre-wrap;word-break:break-word;font:13px/1.8 ui-monospace,Menlo,Consolas,monospace}
+  del{background:var(--del);color:var(--delb);text-decoration:line-through;border-radius:3px;padding:0 1px}
+  ins{background:var(--add);color:var(--addb);text-decoration:none;border-radius:3px;padding:0 1px}
+  .stat{font-size:12px;color:var(--sub);margin-left:8px}
+  .legend{font-size:12px;color:var(--sub);padding:0 20px 16px}
+  .legend b{font-weight:600}
+  .tag{display:inline-block;width:10px;height:10px;border-radius:2px;vertical-align:middle;margin:0 3px 0 10px}
+</style>
+</head>
+<body>
+<header>
+  <h1>文档差异查看器</h1>
+  <div class="hint">把「旧版」和「新版」贴进来（或从 .txt/.md 导入），查看词级差异，一键回退到任一版本。纯本地运行，数据不离开浏览器。</div>
+</header>
+
+<div class="wrap">
+  <div class="col">
+    <h3>旧版（Original）</h3>
+    <textarea id="old" placeholder="粘贴原始文本，或点下方「导入旧版」"></textarea>
+  </div>
+  <div class="col">
+    <h3>新版（Revised）</h3>
+    <textarea id="new" placeholder="粘贴修改后的文本，或点下方「导入新版」"></textarea>
+  </div>
+</div>
+
+<div class="bar">
+  <button class="primary" onclick="render()">查看差异</button>
+  <button onclick="document.getElementById('fileOld').click()">导入旧版</button>
+  <button onclick="document.getElementById('fileNew').click()">导入新版</button>
+  <button onclick="copyOld()">复制旧版（回退）</button>
+  <button onclick="copyNew()">复制新版</button>
+  <button onclick="downloadOld()">下载旧版 .txt</button>
+  <button onclick="downloadNew()">下载新版 .txt</button>
+  <input type="file" id="fileOld" accept=".txt,.md" hidden onchange="imp(this,'old')">
+  <input type="file" id="fileNew" accept=".txt,.md" hidden onchange="imp(this,'new')">
+</div>
+
+<div class="legend">
+  <span class="tag" style="background:var(--add)"></span><b>绿色</b>＝新增　
+  <span class="tag" style="background:var(--del)"></span><b>红色删除线</b>＝移除
+  <span class="stat" id="stat"></span>
+</div>
+
+<div class="out">
+  <h3>差异结果（旧 → 新）</h3>
+  <div id="diff">—</div>
+</div>
+
+<script>
+function tokenize(s){
+  // CJK 单字成 token；ASCII 词/数字成组；空白成组；其余单字
+  return s.match(/[一-鿿]|[A-Za-z0-9]+|\s+|[^\s]/g) || [];
+}
+function lcs(a,b){
+  const n=a.length,m=b.length;
+  const dp=Array.from({length:n+1},()=>new Int32Array(m+1));
+  for(let i=n-1;i>=0;i--)for(let j=m-1;j>=0;j--)
+    dp[i][j]=a[i]===b[j]?dp[i+1][j+1]+1:Math.max(dp[i+1][j],dp[i][j+1]);
+  const ops=[];let i=0,j=0;
+  while(i<n&&j<m){
+    if(a[i]===b[j]){ops.push(['=',a[i]]);i++;j++;}
+    else if(dp[i+1][j]>=dp[i][j+1]){ops.push(['-',a[i]]);i++;}
+    else{ops.push(['+',b[j]]);j++;}
+  }
+  while(i<n){ops.push(['-',a[i++]]);}
+  while(j<m){ops.push(['+',b[j++]]);}
+  return ops;
+}
+function render(){
+  const A=tokenize(document.getElementById('old').value);
+  const B=tokenize(document.getElementById('new').value);
+  const ops=lcs(A,B);
+  let html='',add=0,del=0;
+  for(const [t,tok] of ops){
+    const e=tok.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+    if(t==='=')html+=e;
+    else if(t==='+'){html+='<ins>'+e+'</ins>';add++;}
+    else{html+='<del>'+e+'</del>';del++;}
+  }
+  document.getElementById('diff').innerHTML=html||'—';
+  document.getElementById('stat').textContent=`新增 ${add} 处 · 移除 ${del} 处`;
+}
+function imp(input,id){
+  const f=input.files[0];if(!f)return;
+  const r=new FileReader();r.onload=()=>{document.getElementById(id).value=r.result;};
+  r.readAsText(f);input.value='';
+}
+function copyOld(){navigator.clipboard.writeText(document.getElementById('old').value).then(()=>alert('已复制旧版到剪贴板'));}
+function copyNew(){navigator.clipboard.writeText(document.getElementById('new').value).then(()=>alert('已复制新版到剪贴板'));}
+function downloadOld(){dl(document.getElementById('old').value,'旧版.txt');}
+function downloadNew(){dl(document.getElementById('new').value,'新版.txt');}
+function dl(t,name){const b=new Blob([t],{type:'text/plain;charset=utf-8'});
+  const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download=name;a.click();
+  URL.revokeObjectURL(a.href);}
+</script>
+</body>
+</html>

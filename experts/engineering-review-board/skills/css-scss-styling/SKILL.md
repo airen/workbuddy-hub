@@ -1,6 +1,8 @@
 ---
 name: css-scss-styling
 description: CSS, SCSS/Sass, and Tailwind CSS styling guidance. Use when adding, changing, reviewing, refactoring, adopting, or migrating .css, .scss, .sass, CSS modules, design tokens, cascade layers, container/media queries, responsive layout, stylesheet build pipelines, Tailwind or other utility-class conventions, CSS-in-JS, or styling integration in HTML, JavaScript/TypeScript, PHP/Smarty templates, Python templates, or Rust Leptos/Axum apps. Use ux-accessibility-review for interface accessibility or UX audits. Use language/framework skills for non-styling implementation mechanics and do not use for behavior changes with no styling surface.
+version: 1.0.0
+category: development-tools
 ---
 
 # CSS, SCSS, And Tailwind Styling

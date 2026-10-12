@@ -8,6 +8,8 @@ description: >-
   version metadata after the bump is chosen. Do not use as the primary skill for
   designing an API contract, changing checked-in release automation, creating
   Git tags, publishing artifacts, or making the final ship-or-hold decision.
+version: 1.0.0
+category: development-tools
 ---
 
 # Semantic Versioning

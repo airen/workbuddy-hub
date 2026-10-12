@@ -21,7 +21,7 @@
   },
   "displayDescription": {
     "en": "A full-repository review entry point: build the repo map first, then call architecture, tech-debt, security and testing lenses on demand. Read-only by default, evidence-backed findings, stated scope.",
-    "zh": "全仓库代码审查入口：先建地图，再按需调用架构、技术债、安全、测试等专项技能，默认只读、结论附证据。"
+    "zh": "代码审查入口：先建地图，再按需调用架构、技术债、安全、测试等专项技能，默认只读、结论附证据。"
   },
   "avatar": "avatars/engineering-review-board.jpg",
   "categoryId": "02-Engineering",

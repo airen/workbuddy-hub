@@ -5,6 +5,7 @@ version: 2.0.1
 metadata:
   openclaw:
     homepage: https://github.com/JimLiu/baoyu-skills#baoyu-xhs-images
+category: content-creation
 ---
 
 # Image Card Series Generator

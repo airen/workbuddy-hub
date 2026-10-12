@@ -1,0 +1,54 @@
+{
+  "name": "podcast-to-article",
+  "version": "1.0.0",
+  "description": "Turns YouTube / Xiaoyuzhou podcast links or raw transcripts into polished Chinese long-form articles: keeps the guest's voice with clearly-labelled quotes, restructures around the reader's questions, illustrates the first body chapter and then each remaining chapter after confirmation, and exports the finished article with its images into a local Obsidian vault.",
+  "author": {
+    "name": "大漠",
+    "email": "damo@example.com"
+  },
+  "license": "MIT",
+  "agents": ["./agents/podcast-to-article.md"],
+  "skills": ["./skills/keke-podcast-to-article"],
+
+  "expertType": "agent",
+  "agentName": "podcast-to-article",
+
+  "displayName": {
+    "en": "Chen Ting",
+    "zh": "陈听"
+  },
+  "profession": {
+    "en": "Podcast Editorial Director",
+    "zh": "播客改稿主编"
+  },
+  "displayDescription": {
+    "en": "Turns a podcast link or transcript into a polished Chinese long-form article — keeps key quotes, illustrates chapter by chapter, and saves to Obsidian.",
+    "zh": "把播客链接或逐字稿改写成中文精华长文，保留关键原声并逐章配图，可一键存入 Obsidian。"
+  },
+  "avatar": "avatars/podcast-to-article.jpg",
+  "categoryId": "06-ContentCreative",
+  "defaultInitPrompt": {
+    "zh": "用这个 YouTube 或小宇宙链接整理成中文精华长文，先出首章配图",
+    "en": "Turn this YouTube or Xiaoyuzhou link into a Chinese long-form article, starting with the first chapter's illustration"
+  },
+  "plugin": "podcast-to-article",
+  "tags": [
+    { "en": "Podcast Editing", "zh": "播客改稿" },
+    { "en": "Long-Form Essay", "zh": "精华长文" },
+    { "en": "Chapter Illustration", "zh": "章节配图" }
+  ],
+  "quickPrompts": [
+    {
+      "zh": "用这个 YouTube 或小宇宙链接整理成中文精华长文，先出首章配图",
+      "en": "Turn this YouTube or Xiaoyuzhou link into a Chinese long-form article, starting with the first chapter's illustration"
+    },
+    {
+      "zh": "整理这份播客逐字稿，只要文章，暂不配图",
+      "en": "Clean up this podcast transcript into an article only — no illustrations for now"
+    },
+    {
+      "zh": "把这篇成稿和已确认的配图存入我的 Obsidian",
+      "en": "Save this finished article and the approved illustrations into my Obsidian"
+    }
+  ]
+}

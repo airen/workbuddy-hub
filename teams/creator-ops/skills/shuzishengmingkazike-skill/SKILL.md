@@ -7,6 +7,8 @@ description: |
 type: skill
 author: 女娲 · Skill造人术
 调研时间: 2026-05-03
+version: 1.0.0
+category: content-creation
 ---
 
 # 数字生命卡兹克 · AI科技自媒体创作思维

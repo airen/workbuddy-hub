@@ -1,6 +1,8 @@
 ---
 name: php-antipatterns
 description: Evidence-backed PHP smell review and refactoring guidance. Use when auditing or refactoring PHP for dynamic properties, magic accessors, weak types, global state, unsafe loading, injection risks, framework leakage, brittle tests, dependency sprawl, or PHP 8.4 migration smells. Do not use for ordinary implementation, pattern selection, or test execution; use php-engineering, php-design-patterns, or php-testing-quality instead.
+version: 1.0.0
+category: development-tools
 ---
 
 # PHP Anti-Patterns

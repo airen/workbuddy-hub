@@ -1,6 +1,8 @@
 ---
 name: rust-code-review
 description: Review Rust code with Rust-specific rigor. Use with code-review when changes touch Rust ownership, lifetimes, traits, error contracts, crate boundaries, feature flags, tests, Rustdoc, async, Tokio, Axum, Leptos, SQLx, SeaQuery, SeaORM, Diesel, SQLite, unsafe code, macros, FFI, public APIs, design patterns, anti-patterns, or performance-sensitive behavior. Use sql-engineering, postgresql-sql-engineering, mysql-mariadb-sql-engineering, or sqlite-sql-engineering too for database-native schema, SQL, migrations, privileges, or query plans.
+version: 1.0.0
+category: development-tools
 ---
 
 # Rust Code Review

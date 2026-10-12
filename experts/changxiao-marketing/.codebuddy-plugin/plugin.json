@@ -1,0 +1,59 @@
+{
+  "name": "changxiao-marketing",
+  "version": "1.0.0",
+  "description": "An AI marketing expert that delivers practical marketing outputs — SEO audits, homepage CRO, welcome email sequences, ad copy, growth & retention playbooks, pricing & launch plans — composing ~50 marketing skills into one routable agent.",
+  "author": {
+    "name": "大漠",
+    "email": "damo@example.com"
+  },
+  "agents": ["./agents/changxiao-marketing.md"],
+  "skills": [
+    "./skills/product-marketing",
+    "./skills/conversion-optimization",
+    "./skills/copywriting-content",
+    "./skills/seo-discovery",
+    "./skills/ads-measurement",
+    "./skills/growth-retention",
+    "./skills/monetization-sales"
+  ],
+  "expertType": "agent",
+  "agentName": "changxiao-marketing",
+  "displayName": {
+    "en": "Changxiao",
+    "zh": "长销"
+  },
+  "profession": {
+    "en": "AI Marketing Expert",
+    "zh": "AI 营销专家"
+  },
+  "displayDescription": {
+    "en": "SEO audits, CRO, emails, copywriting, growth & retention, ads & measurement — ~50 marketing skills, one agent, composed on demand.",
+    "zh": "SEO 审计、文案写作、转化优化、邮件、增长留存、投放衡量……约 50 项营销技能一站搞定。"
+  },
+  "avatar": "avatars/changxiao-marketing.jpg",
+  "categoryId": "06-ContentCreative",
+  "defaultInitPrompt": {
+    "zh": "给我的 SaaS 官网做一次完整营销体检：先看 SEO 怎么样，再给我提一份首页转化率优化方案",
+    "en": "Give my SaaS site a full marketing checkup: first audit the SEO, then propose a homepage CRO plan."
+  },
+  "plugin": "changxiao-marketing",
+  "tags": [
+    { "en": "SEO & Copy", "zh": "SEO 与文案" },
+    { "en": "Conversion & Growth", "zh": "转化与增长" },
+    { "en": "Full-stack Marketing", "zh": "营销一站搞定" }
+  ],
+  "quickPrompts": [
+    {
+      "zh": "给我的 SaaS 官网做一次完整营销体检：先看 SEO 怎么样，再给我提一份首页转化率优化方案",
+      "en": "Give my SaaS site a full marketing checkup: first audit the SEO, then propose a homepage CRO plan."
+    },
+    {
+      "zh": "帮我设计 5 封欢迎邮件（welcome series），每封带主题行与正文",
+      "en": "Design a 5-email welcome series, with subject lines and body for each."
+    },
+    {
+      "zh": "重新写一下我们官网首页的文案，按 AIDA 框架来",
+      "en": "Rewrite our homepage copy following the AIDA framework."
+    }
+  ]
+}

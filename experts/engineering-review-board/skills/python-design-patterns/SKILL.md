@@ -1,6 +1,8 @@
 ---
 name: python-design-patterns
 description: Python design pattern guidance. Use when choosing, implementing, or reviewing idiomatic Python patterns such as dataclasses, value objects, protocols, context managers, dependency injection, adapters, repositories, factories, CLI/service boundaries, async resource handling, pytest fixtures, or Clean/Hexagonal/Onion expression in Python. Use python-antipatterns for smell-focused audits and python-engineering for broader Python workflow.
+version: 1.0.0
+category: development-tools
 ---
 
 # Python Design Patterns

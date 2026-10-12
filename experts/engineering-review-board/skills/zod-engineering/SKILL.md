@@ -1,6 +1,8 @@
 ---
 name: zod-engineering
 description: Select, add, migrate, review, test, or optimize Zod schemas; parse unknown JSON, form, query, environment, event, or tool data; map Zod errors; or use Zod-to-JSON-Schema and backend interoperability. Do not use for static TypeScript-only work, backend-native validation, public API design, authorization, sanitization, or domain-invariant ownership.
+version: 1.0.0
+category: development-tools
 ---
 
 # Zod Engineering

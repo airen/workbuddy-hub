@@ -7,6 +7,8 @@ description: |
 type: skill
 author: 女娲 · Skill造人术
 调研时间: 2026-05-03
+version: 1.0.0
+category: content-creation
 ---
 
 # 赛文乔伊 · AI科技短视频创作思维

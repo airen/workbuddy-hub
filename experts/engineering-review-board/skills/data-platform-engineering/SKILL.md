@@ -9,6 +9,8 @@ description: >-
   TMDL, RLS or OLS, refresh, promotion, gateways, capacity, recovery, and
   runbooks. Do not use for application domain modeling, physical OLTP database
   design, generic distributed protocols, generic UX, or final release decisions.
+version: 1.0.0
+category: development-tools
 ---
 
 # Data Platform Engineering

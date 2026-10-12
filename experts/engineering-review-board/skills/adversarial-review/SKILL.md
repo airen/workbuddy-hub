@@ -1,6 +1,8 @@
 ---
 name: adversarial-review
 description: Skeptically verify completed changes, agent work, merge readiness, and hidden regressions. Use after implementation when claims need independent proof; do not use as the primary implementation or ordinary code-review workflow.
+version: 1.0.0
+category: development-tools
 ---
 
 # Adversarial Review Skill

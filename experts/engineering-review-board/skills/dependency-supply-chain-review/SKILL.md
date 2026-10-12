@@ -1,6 +1,8 @@
 ---
 name: dependency-supply-chain-review
 description: Dependency and software supply-chain security review. Use for dependency audits, SBOM/SCA output, CVE/GHSA advisories, package or binary provenance, registry trust, manifests, lockfiles, checksums/signatures, install/postinstall scripts, vendored/generated code, transitive dependency risk, CI actions, container or base-image pinning, or package-manager security policy. Do not use for routine package-manager workflow, language-specific dependency implementation, or third-party API docs without a supply-chain risk question.
+version: 1.0.0
+category: development-tools
 ---
 
 # Dependency Supply-Chain Review

@@ -1,6 +1,8 @@
 ---
 name: object-pascal-design-patterns
 description: Object Pascal and Delphi design-pattern guidance. Use when choosing or reviewing interfaces, factories, adapters, repositories, value objects, records, observers/events, decorators, strategies, commands, builders, state machines, dependency injection, resource ownership, or VCL/FMX/LCL presentation patterns in Object Pascal or Delphi. Do not use for ordinary Object Pascal implementation, test-lane execution, or smell-focused review; use object-pascal-engineering, object-pascal-testing-quality, or object-pascal-antipatterns instead.
+version: 1.0.0
+category: development-tools
 ---
 
 # Object Pascal Design Patterns

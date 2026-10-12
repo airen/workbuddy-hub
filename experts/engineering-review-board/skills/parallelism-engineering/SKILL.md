@@ -1,6 +1,8 @@
 ---
 name: parallelism-engineering
 description: Design and implement cross-language CPU-bound, data-parallel, and task-parallel computation. Use when decomposing a measured workload into partitions or tasks; selecting granularity, executors or worker pools, reductions, cancellation, failure handling, or deterministic concurrency tests. Do not use for routine async I/O, distributed coordination, Spark, GPU programming, or review-only performance work.
+version: 1.0.0
+category: development-tools
 ---
 
 # Parallelism Engineering

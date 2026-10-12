@@ -1,6 +1,8 @@
 ---
 name: git-workflows
 description: Safe Git branch, remote, history-inspection, integration, rewrite, conflict, recovery, tag, and worktree workflows. Use when switching or restoring, fetching/pulling/pushing, managing upstreams or remotes, inspecting history with log/blame/bisect, merging/rebasing/squashing/cherry-picking/reverting/resetting, resolving conflicts, recovering with reflog, or managing tags and worktrees. Do not use for commit grouping or message drafting, checked-in CI/release automation, code review, GitHub pull-request operations, or release-readiness decisions.
+version: 1.0.0
+category: development-tools
 ---
 
 # Git Workflows

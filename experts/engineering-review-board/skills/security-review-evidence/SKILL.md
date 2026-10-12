@@ -2,6 +2,8 @@
 name: security-review-evidence
 description: Companion evidence checklist for security-sensitive changes and reviews. Use only with security-review, threat-modeling, or dependency-supply-chain-review to keep evidence sanitized, scoped, and tied to repository policy. Do not use as standalone security analysis.
 user-invocable: false
+version: 1.0.0
+category: development-tools
 ---
 
 # Security Review Evidence

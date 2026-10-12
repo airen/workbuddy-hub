@@ -1,6 +1,8 @@
 ---
 name: testing-strategy
 description: Review test strategy, confidence gaps, TDD and BDD fit, flaky tests, boundary coverage, and suite maintainability. Use for a risk-focused audit of tests or test plans; do not use to write a single test, debug an active failure, or run a routine TDD loop.
+version: 1.0.0
+category: development-tools
 ---
 
 # Testing Strategy Skill

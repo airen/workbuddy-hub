@@ -1,6 +1,8 @@
 ---
 name: systematic-debugging
 description: Evidence-driven debugging for active bugs, failing tests, runtime exceptions, flaky behavior, performance regressions, build/lint/type/compile failures, integration failures, crashes, and unexpected behavior. Use before proposing fixes for a current symptom. Use root-cause-analysis for recurring incidents, systemic failures, and postmortem-style prevention work.
+version: 1.0.0
+category: development-tools
 ---
 
 # Systematic Debugging

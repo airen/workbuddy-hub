@@ -1,6 +1,8 @@
 ---
 name: brainstorming
 description: Structured ideation for ambiguous software engineering work. Use when agents need to generate multiple options, compare tradeoffs, or converge on a recommendation before implementation, architecture, domain modeling, API design, migration, refactor, testing strategy, or debugging choices after systematic reproduction. Do not use for simple mechanical tasks, obvious single-path fixes, or active unexplained symptoms; use systematic-debugging first.
+version: 1.0.0
+category: development-tools
 ---
 
 # Brainstorming

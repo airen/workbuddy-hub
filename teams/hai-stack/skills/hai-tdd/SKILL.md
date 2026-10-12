@@ -2,6 +2,8 @@
 name: hai-tdd
 description: |
   Drives a real behavior change through red-green-refactor and records the failing RED evidence, minimal GREEN implementation, refactor decision, and verification commands. Use when the user explicitly asks for TDD/tests first, adds or fixes testable behavior, or needs regression protection（先写测试、红绿重构、补回归测试）. Do not force TDD onto documentation, configuration, styling, renames, package moves, or other purely structural changes; report honest non-TDD verification instead.
+version: 1.0.0
+category: development-tools
 ---
 
 # Hai TDD

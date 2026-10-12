@@ -2,6 +2,8 @@
 name: hai-ast-grep
 description: |
   Produces a ready-to-run ast-grep command or reusable YAML lint/codemod rule, validated against positive and negative fixtures. Use when search or rewrite depends on syntax structure: finding all call shapes, avoiding regex matches in comments/strings, batch-changing signatures, or enforcing a structural rule（结构化搜索、批量改写、写 lint 规则）. Do not use for plain-text replacement or type-semantic refactors that require a compiler/type checker.
+version: 1.0.0
+category: development-tools
 ---
 
 # hai-ast-grep

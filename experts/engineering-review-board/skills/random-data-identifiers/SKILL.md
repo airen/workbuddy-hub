@@ -1,6 +1,8 @@
 ---
 name: random-data-identifiers
 description: Randomness, generated identifiers, random words, sentences, passphrases, synthetic text, and test data guidance. Use when generating random numbers, UUIDs, CUIDs, ULIDs, nonces, tokens, filenames, fixture data, reproducible seeded simulations, human-readable synthetic content, or collision-resistant IDs in code or tests. Prefer cryptographically secure randomness for secrets, passphrases, security-sensitive IDs, and public IDs that must be unguessable; use explicit seeded PRNGs for reproducible tests and simulations. Do not use for fixed examples with no randomness, copyediting fixed text, or database-native ID/index design without a generated-value decision.
+version: 1.0.0
+category: development-tools
 ---
 
 # Random Data and Identifiers

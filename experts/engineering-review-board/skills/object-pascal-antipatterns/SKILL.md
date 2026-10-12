@@ -1,6 +1,8 @@
 ---
 name: object-pascal-antipatterns
 description: Evidence-backed Object Pascal and Delphi smell review and refactoring guidance. Use when auditing or refactoring Object Pascal or Delphi for with-statement abuse, global state, memory and ownership errors, interface reference-counting pitfalls, exception swallowing, disabled compiler checks, untyped collections, thread misuse, UI reentrancy, string-built SQL, or framework leakage. Do not use for ordinary implementation, pattern selection, or test execution; use object-pascal-engineering, object-pascal-design-patterns, or object-pascal-testing-quality instead.
+version: 1.0.0
+category: development-tools
 ---
 
 # Object Pascal Anti-Patterns

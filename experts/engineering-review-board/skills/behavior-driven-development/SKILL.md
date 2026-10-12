@@ -1,6 +1,8 @@
 ---
 name: behavior-driven-development
 description: Apply Behavior-Driven Development to clarify user-visible behavior, acceptance criteria, business workflows, and executable examples before or during implementation. Do not use to author formal .feature syntax; use gherkin.
+version: 1.0.0
+category: development-tools
 ---
 
 # Behavior-Driven Development

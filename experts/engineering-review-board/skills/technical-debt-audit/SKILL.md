@@ -1,6 +1,8 @@
 ---
 name: technical-debt-audit
 description: Perform repository-wide or focused technical-debt audits covering maintainability, complexity, duplication, dependency health, testing gaps, architecture erosion, documentation drift, and remediation priorities. Use when the user asks to assess accumulated debt, modernization risk, change friction, quick wins, or blockers to future work or scaling. Do not use for an ordinary diff review, an active unexplained failure, implementation, or a vulnerability-only audit.
+version: 1.0.0
+category: development-tools
 ---
 
 # Technical Debt Audit

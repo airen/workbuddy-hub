@@ -14,6 +14,7 @@ metadata:
       anyBins:
         - bun
         - npx
+category: content-creation
 ---
 
 # Translator

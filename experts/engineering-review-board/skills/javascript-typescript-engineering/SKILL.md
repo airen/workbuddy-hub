@@ -1,6 +1,8 @@
 ---
 name: javascript-typescript-engineering
 description: JavaScript and TypeScript engineering guidance. Use when adding, changing, reviewing, testing, linting, formatting, dependency-managing, packaging, or refactoring JS/TS source, package.json scripts, lockfiles, workspaces, CLIs, Node/npm, Bun, Deno, pnpm, or Yarn workflows, or project automation. Do not use for checked-in hosted CI/release-provider or Docker/OCI/Compose configuration except the JS/TS commands they invoke; use ci-release-engineering or container-engineering. Use api-design for public service/SDK/CLI contracts, observability-engineering for telemetry/logging signal design, css-scss-styling for CSS/SCSS/CSS-module/CSS-in-JS/utility styling decisions, and svelte-sveltekit-engineering for Svelte/SvelteKit component, routing, and reactivity decisions. Do not use for checked-in Playwright test design; use playwright-e2e.
+version: 1.0.0
+category: development-tools
 ---
 
 # JavaScript and TypeScript Engineering

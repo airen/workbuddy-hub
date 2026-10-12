@@ -1,6 +1,8 @@
 ---
 name: digital-asset-management
 description: Digital asset management (DAM) engineering guidance for photo and video ingest, asset identity, immutable originals, derivatives, metadata, non-destructive edits, organization, smart collections, hierarchies, viewing, sharing, and validation. Use when building, changing, reviewing, or testing a photo/video catalog, media library, asset browser, editing workflow, or related API and data model. Do not use for standalone codec implementation, generic SQL/API/CSS work, or non-media document management without a DAM lifecycle.
+version: 1.0.0
+category: development-tools
 ---
 
 # Digital Asset Management

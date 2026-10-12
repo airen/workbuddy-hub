@@ -8,6 +8,7 @@ metadata:
     requires:
       anyBins:
         - wx
+category: content-creation
 ---
 
 # WeChat Group Summary

@@ -4,6 +4,8 @@ description: Create branded architecture, architecture delta, IT current-state, 
 license: MIT
 metadata:
   version: "2.6"
+version: 1.0.0
+category: development-tools
 ---
 
 # Diagram Design

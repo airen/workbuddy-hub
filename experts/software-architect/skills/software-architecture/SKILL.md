@@ -1,6 +1,8 @@
 ---
 name: software-architecture
 description: Deep reference library and decision method for software architecture. Use when designing, reviewing, or documenting a system architecture — quality attributes and -ilities, tradeoff analysis, ADRs, fitness functions, technical debt, Conway's Law; SOLID, coupling/cohesion, boundaries, ports and adapters, YAGNI/KISS, deep modules, complexity budget; layered/modular monolith/microservices/hexagonal/onion/clean/event-driven/CQRS/event sourcing; DDD strategic design, bounded contexts, context mapping, aggregates, ubiquitous language, anti-corruption layer; data ownership, SQL vs NoSQL, replication, partitioning, transactions, Saga, Outbox, polyglot persistence; CAP/PACELC, consistency models, quorum, failure modes, idempotency, Raft, fallacies of distributed computing; REST vs gRPC vs async, queues, pub/sub, event streaming, API contracts and versioning, choreography vs orchestration, gateways and service mesh; evolutionary architecture, strangler fig, observability, SLIs/SLOs/error budgets, resilience patterns, security and secrets; C4 model, architecture kata, design reviews, and classic case studies.
+version: 1.0.0
+category: development-tools
 ---
 
 # Software Architecture

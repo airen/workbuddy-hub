@@ -5,6 +5,7 @@ version: 1.117.5
 metadata:
   openclaw:
     homepage: https://github.com/JimLiu/baoyu-skills#baoyu-cover-image
+category: content-creation
 ---
 
 # Cover Image Generator

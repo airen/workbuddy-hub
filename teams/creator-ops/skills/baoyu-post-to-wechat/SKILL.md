@@ -9,6 +9,7 @@ metadata:
       anyBins:
         - bun
         - npx
+category: content-creation
 ---
 
 # Post to WeChat Official Account

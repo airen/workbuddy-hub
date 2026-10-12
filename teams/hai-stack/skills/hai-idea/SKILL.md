@@ -2,6 +2,8 @@
 name: hai-idea
 description: |
   Evaluates whether an idea, feature, product, or project deserves attention and returns one verdict—Do, Validate first, Reframe, Defer, or Kill—plus the strongest objection and cheapest decision-changing test. Use when the user asks whether something is worth doing, is a fake need or distraction, should be built/killed/postponed, or which idea to prioritize（值不值得做、是不是伪需求、要不要砍）. Use hai-goal after the decision to proceed is made.
+version: 1.0.0
+category: development-tools
 ---
 
 # Hai Idea

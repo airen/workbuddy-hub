@@ -1,6 +1,8 @@
 ---
 name: typescript-javascript-antipatterns
 description: TypeScript and JavaScript anti-pattern detection and correction guidance. Use when reviewing or refactoring generated or hand-written JS/TS for any, unsafe assertions, missing runtime validation, unawaited promises, framework or UI leakage, singleton service bags, import-time side effects, Math.random misuse, over-mocked tests, brittle E2E tests, dependency sprawl, or architecture boundary violations.
+version: 1.0.0
+category: development-tools
 ---
 
 # TypeScript And JavaScript Anti-Patterns

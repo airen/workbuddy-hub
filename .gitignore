@@ -10,6 +10,9 @@ archive/
 # ⚠️ 不要再建 dist/ —— 历史上反复出现过「build 与 dist 重复」，已统一到 build。
 build/
 
+# 图像生成产物（ImageGen 的原始输出，属草稿；正式头像已收进各自包的 avatars/）
+generated-images/
+
 # Python
 __pycache__/
 *.pyc

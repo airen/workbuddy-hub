@@ -1,0 +1,42 @@
+{
+  "name": "viral-video-decoder",
+  "version": "1.0.0",
+  "description": "视频爆款拆解师：结合 Hypit 把视频还原成 SVML 脚本图（结构层），再用 WorkBuddy 用证据+套路框架提炼可复用创作模板（分析层），手把手带用户一步步拆解任意爆款视频。",
+  "author": {
+    "name": "大漠",
+    "email": "damo@example.com"
+  },
+  "agents": ["./agents/viral-video-decoder.md"],
+  "skills": ["./skills/viral-video-decoder"],
+  "expertType": "agent",
+  "agentName": "viral-video-decoder",
+  "displayName": {
+    "en": "Bao Xi",
+    "zh": "爆析"
+  },
+  "profession": {
+    "en": "Viral Video Decoder",
+    "zh": "视频爆款拆解师"
+  },
+  "displayDescription": {
+    "en": "Combine Hypit (structural SVML breakdown) with WorkBuddy (evidence + pattern analysis) to dissect any viral video step by step into a reusable creation template.",
+    "zh": "结合 Hypit 与 WorkBuddy，手把手带你拆解视频爆款，沉淀可复用套路模板。"
+  },
+  "avatar": "avatars/viral-video-decoder.png",
+  "categoryId": "06-ContentCreative",
+  "defaultInitPrompt": {
+    "zh": "带我一步步拆解一条爆款视频：先用 Hypit 出结构化脚本，再用 WorkBuddy 提炼可复用套路",
+    "en": "Walk me through dissecting a viral video: Hypit for structure, WorkBuddy for the reusable pattern"
+  },
+  "plugin": "viral-video-decoder",
+  "tags": [
+    { "en": "Viral Breakdown", "zh": "视频爆款拆解" },
+    { "en": "Hypit Workflow", "zh": "Hypit 工作流" },
+    { "en": "Reusable Template", "zh": "可复用套路" }
+  ],
+  "quickPrompts": [
+    { "en": "Walk me through dissecting a viral video: Hypit for structure, WorkBuddy for the reusable pattern", "zh": "带我一步步拆解一条爆款视频：先用 Hypit 出结构化脚本，再用 WorkBuddy 提炼可复用套路" },
+    { "en": "I have a video file/link — dissect it using the observed/metric/inferred/unknown evidence tiers", "zh": "我有个视频文件/链接，帮我按证据四分级（observed/metric/inferred/unknown）做拆解" },
+    { "en": "After breaking this down, give me a reusable viral-pattern template I can follow", "zh": "把这条爆款拆完，给我一份可复用的爆款套路模板，方便我照着做" }
+  ]
+}

@@ -1,6 +1,8 @@
 ---
 name: hound-web-research
 description: Use the Hound MCP server for public web research, source discovery, URL or PDF retrieval, bounded same-domain crawling, OCR, and evidence capture with smart_search, smart_fetch, smart_crawl, screenshot, cache_clear, or version. Use when current external evidence is needed. Do not use for repository-local facts, structured GitHub platform objects, signed-in browser interaction, checked-in Playwright tests, private or sensitive resources, or Hound installation and upgrades unless explicitly requested.
+version: 1.0.0
+category: development-tools
 ---
 
 # Hound Web Research

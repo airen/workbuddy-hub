@@ -1,9 +1,9 @@
 id: lao-dao-editor
 name: 老刀
-version: 1.0.1
+version: 1.1.0
 type: expert
 expert_type: agent
-description: 以资深编辑标准重写文稿，删净AI腔与机械句式，注入真实人声，三遍打磨交付像人写的自然文本。
+description: 按三层模型（表层/措辞/结构）重写 AI 味文稿。先动结构骨架——删掉讲明的道理、把结尾打开、把泛指换成具体、留一条没收的线头；再清措辞与用词标点。附结构改动回执与自检脚本，杜绝「只换词不动结构」的假去味。
 category: research
 skills:
 - de-ai-rewrite

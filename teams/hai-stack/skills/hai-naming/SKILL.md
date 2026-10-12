@@ -2,6 +2,8 @@
 name: hai-naming
 description: |
   Recommends names for concepts, identifiers, modules, files, entities, events, or product terms, or audits an existing naming set for misleading vocabulary and viewpoint drift. Use for “what should I call this?”, rename requests, or naming reviews（起名、命名、改名、名字不清楚）. Give a concise answer for one local name; use the full vocabulary map and migration scope only for cross-module or public naming audits. Route boundary problems exposed by naming to hai-architecture.
+version: 1.0.0
+category: development-tools
 ---
 
 # Hai Naming

@@ -1,6 +1,8 @@
 ---
 name: write-technical-acceptance-report
 description: Verify a defined software change against requirements and produce a proportional, evidence-backed acceptance report with specification precedence, scope boundaries, requirement-to-evidence traceability, executed test results, risk findings, a release verdict, and an automation/regression plan. Use for 技术验收报告, 变更验收, release-readiness reviews, implementation-vs-spec audits, high-risk migrations, billing/quota/stateful changes, or requests to decide what can be validated automatically instead of manually.
+version: 1.0.0
+category: development-tools
 ---
 
 # Write Technical Acceptance Report

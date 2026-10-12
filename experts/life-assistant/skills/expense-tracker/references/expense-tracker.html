@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>记账本 · 钱花哪了</title>
+<style>
+  :root{--bg:#f6f8fb;--card:#fff;--ink:#26303a;--muted:#8b97a3;--line:#e7ecf1;
+    --accent:#3a7afe;--out:#e8543b;--in:#2bb673;--soft:#eef4ff}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:-apple-system,"PingFang SC","Microsoft YaHei",Segoe UI,sans-serif;
+    line-height:1.6;padding:20px;max-width:920px;margin:0 auto}
+  h1{font-size:22px;margin:0 0 4px}
+  .sub{color:var(--muted);font-size:13px;margin-bottom:16px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;
+    padding:16px;margin-bottom:16px;box-shadow:0 1px 3px rgba(0,0,0,.03)}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px}
+  label{display:block;font-size:12px;color:var(--muted);margin-bottom:3px}
+  input,select{width:100%;padding:8px 9px;border:1px solid var(--line);border-radius:9px;
+    font-size:14px;background:#fcfdff;color:var(--ink);font-family:inherit}
+  .radio{display:flex;gap:14px;align-items:center;padding-top:6px}
+  .radio label{margin:0;color:var(--ink);font-size:14px}
+  .btns{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+  button{border:none;border-radius:10px;padding:9px 16px;font-size:14px;font-weight:600;
+    cursor:pointer;font-family:inherit}
+  .primary{background:var(--accent);color:#fff}
+  .ghost{background:var(--soft);color:var(--accent)}
+  .ghost2{background:#eafaf1;color:var(--in)}
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;text-align:center}
+  .stat{border-radius:12px;padding:12px;background:var(--soft)}
+  .stat .k{font-size:12px;color:var(--muted)}
+  .stat .v{font-size:20px;font-weight:700;margin-top:2px}
+  .v.out{color:var(--out)}.v.in{color:var(--in)}.v.net{color:var(--accent)}
+  h2{font-size:16px;margin:0 0 10px}
+  .bar{display:flex;align-items:center;gap:8px;margin:5px 0;font-size:13px}
+  .bar .name{width:64px;color:var(--muted);flex:none}
+  .bar .track{flex:1;background:#eef1f4;border-radius:6px;height:16px;overflow:hidden}
+  .bar .fill{height:100%;background:var(--accent);border-radius:6px}
+  .bar .amt{width:74px;text-align:right;flex:none;color:var(--ink)}
+  table{width:100%;border-collapse:collapse;font-size:13px}
+  th,td{border-bottom:1px solid var(--line);padding:7px 8px;text-align:left}
+  th{color:var(--muted);font-weight:600}
+  .amt.out{color:var(--out)}.amt.in{color:var(--in)}
+  .del{color:var(--out);cursor:pointer;border:none;background:none;font-size:13px}
+  .empty{color:var(--muted);font-size:14px;padding:10px 2px}
+  .filter{margin-bottom:8px;font-size:13px;color:var(--muted)}
+</style>
+</head>
+<body>
+  <h1>💰 记账本 · 钱花哪了</h1>
+  <div class="sub">按账户、分类记收支，图表看开销，数据存本机浏览器。可导出 / 导入 CSV。不联网、不要账号。</div>
+
+  <div class="card">
+    <div class="grid">
+      <div><label>日期</label><input id="date" type="date"></div>
+      <div><label>金额</label><input id="amount" type="number" min="0" step="0.01" placeholder="0.00"></div>
+      <div><label>账户</label><select id="account">
+        <option>现金</option><option>银行卡</option><option>支付宝</option><option>微信</option><option>信用卡</option>
+      </select></div>
+      <div><label>分类</label><select id="category">
+        <option>餐饮</option><option>交通</option><option>购物</option><option>居住</option>
+        <option>娱乐</option><option>医疗</option><option>工资</option><option>其他</option>
+      </select></div>
+      <div style="grid-column:1/-1"><label>备注</label><input id="note" placeholder="如：午饭 / 地铁 / 房租"></div>
+    </div>
+    <div class="radio">
+      <label><input type="radio" name="type" value="out" checked> 支出</label>
+      <label><input type="radio" name="type" value="in"> 收入</label>
+    </div>
+    <div class="btns">
+      <button class="primary" onclick="addTx()">添加一笔</button>
+      <button class="ghost" onclick="exportCSV()">导出 CSV</button>
+      <button class="ghost" onclick="importCSV()">导入 CSV</button>
+      <button class="ghost2" onclick="clearAll()">清空</button>
+      <input id="file" type="file" accept=".csv" style="display:none" onchange="doImport(event)">
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="stats">
+      <div class="stat"><div class="k">本月支出</div><div class="v out" id="sOut">¥0</div></div>
+      <div class="stat"><div class="k">本月收入</div><div class="v in" id="sIn">¥0</div></div>
+      <div class="stat"><div class="k">本月结余</div><div class="v net" id="sNet">¥0</div></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>支出分布（按分类）</h2>
+    <div id="chart"><div class="empty">还没有支出记录</div></div>
+    <h2 style="margin-top:16px">账户余额小计</h2>
+    <div id="byAcc"><div class="empty">暂无数据</div></div>
+  </div>
+
+  <div class="card">
+    <div class="filter">显示月份：
+      <select id="month" onchange="render()"></select>
+    </div>
+    <table><thead><tr><th>日期</th><th>类型</th><th>分类</th><th>账户</th><th>备注</th><th>金额</th><th></th></tr></thead>
+    <tbody id="list"></tbody></table>
+  </div>
+
+<script>
+const KEY='expenses_v1';
+const COLORS=['#3a7afe','#e8543b','#2bb673','#f4a02c','#9b5de5','#00bbf9','#ff6b9d','#6c757d'];
+let DATA=load();
+
+function load(){try{return JSON.parse(localStorage.getItem(KEY))||[]}catch(e){return[]}}
+function save(){localStorage.setItem(KEY,JSON.stringify(DATA))}
+function today(){return new Date().toISOString().slice(0,10)}
+function monthOf(d){return d.slice(0,7)}
+
+document.getElementById('date').value=today();
+
+function addTx(){
+  const amount=parseFloat(document.getElementById('amount').value);
+  if(!(amount>0)){alert('请输入大于 0 的金额');return;}
+  const type=document.querySelector('input[name=type]:checked').value;
+  const tx={id:Date.now(),date:document.getElementById('date').value||today(),
+    type,amount:Math.round(amount*100)/100,
+    account:document.getElementById('account').value,
+    category:document.getElementById('category').value,
+    note:document.getElementById('note').value.trim()};
+  DATA.push(tx);save();
+  document.getElementById('amount').value='';document.getElementById('note').value='';
+  render();
+}
+function del(id){DATA=DATA.filter(t=>t.id!==id);save();render();}
+function yuan(n){return '¥'+n.toLocaleString('zh-CN',{minimumFractionDigits:2,maximumFractionDigits:2})}
+
+function render(){
+  // 月份下拉
+  const months=[...new Set(DATA.map(t=>monthOf(t.date)))].sort().reverse();
+  const sel=document.getElementById('month');
+  const cur=sel.value||(months[0]||monthOf(today()));
+  sel.innerHTML=months.length?months.map(m=>`<option ${m===cur?'selected':''}>${m}</option>`).join(''):`<option>${monthOf(today())}</option>`;
+  const view=DATA.filter(t=>monthOf(t.date)===cur).sort((a,b)=>b.date.localeCompare(a.date)||b.id-a.id);
+  const out=view.filter(t=>t.type==='out').reduce((s,t)=>s+t.amount,0);
+  const inc=view.filter(t=>t.type==='in').reduce((s,t)=>s+t.amount,0);
+  document.getElementById('sOut').textContent=yuan(out);
+  document.getElementById('sIn').textContent=yuan(inc);
+  document.getElementById('sNet').textContent=yuan(inc-out);
+
+  // 分类图
+  const byCat={};view.filter(t=>t.type==='out').forEach(t=>byCat[t.category]=(byCat[t.category]||0)+t.amount);
+  const catEntries=Object.entries(byCat).sort((a,b)=>b[1]-a[1]);
+  const maxC=catEntries.length?catEntries[0][1]:1;
+  document.getElementById('chart').innerHTML=catEntries.length?catEntries.map(([k,v],i)=>
+    `<div class="bar"><span class="name">${k}</span><span class="track"><span class="fill" style="width:${v/maxC*100}%;background:${COLORS[i%COLORS.length]}"></span></span><span class="amt">${yuan(v)}</span></div>`).join('')
+    :'<div class="empty">还没有支出记录</div>';
+
+  // 账户小计
+  const byAcc={};view.forEach(t=>byAcc[t.account]=(byAcc[t.account]||0)+(t.type==='in'?t.amount:-t.amount));
+  document.getElementById('byAcc').innerHTML=Object.entries(byAcc).length?
+    Object.entries(byAcc).map(([k,v])=>`<div class="bar"><span class="name">${k}</span><span class="amt" style="width:auto;margin-left:8px">${v>=0?'+':''}${yuan(v)}</span></div>`).join('')
+    :'<div class="empty">暂无数据</div>';
+
+  // 列表
+  document.getElementById('list').innerHTML=view.length?view.map(t=>
+    `<tr><td>${t.date}</td><td>${t.type==='out'?'支出':'收入'}</td><td>${t.category}</td>
+     <td>${t.account}</td><td>${t.note||''}</td>
+     <td class="amt ${t.type}">${t.type==='out'?'-':'+'}${yuan(t.amount)}</td>
+     <td><button class="del" onclick="del(${t.id})">删除</button></td></tr>`).join('')
+    :'<tr><td colspan="7" class="empty">这个月还没有记录，上面添加第一笔吧</td></tr>';
+}
+
+function exportCSV(){
+  if(!DATA.length){alert('还没有数据');return;}
+  const head='日期,类型,分类,账户,金额,备注\n';
+  const body=DATA.map(t=>`${t.date},${t.type==='out'?'支出':'收入'},${t.category},${t.account},${t.amount},"${t.note||''}"`).join('\n');
+  const blob=new Blob([head+body],{type:'text/csv;charset=utf-8'});
+  const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='记账本.csv';a.click();
+}
+function importCSV(){document.getElementById('file').click();}
+function doImport(e){
+  const f=e.target.files[0];if(!f)return;const r=new FileReader();
+  r.onload=()=>{const lines=r.result.split('\n').filter(l=>l.trim());
+    lines.slice(1).forEach(l=>{const p=l.split(',');
+      if(p.length<5)return;
+      const type=p[1].includes('收')?'in':'out';
+      DATA.push({id:Date.now()+Math.random(),date:p[0],type,
+        category:p[2],account:p[3],amount:parseFloat(p[4])||0,note:(p[5]||'').replace(/"/g,'')});
+    });save();render();alert('导入完成');};
+  r.readAsText(f);
+}
+function clearAll(){if(confirm('确定清空全部记录？此操作不可恢复')){DATA=[];save();render();}}
+
+render();
+</script>
+</body>
+</html>

@@ -2,6 +2,8 @@
 name: hai-audit-docs
 description: |
   Audits documentation for internal contradictions and/or mismatches with code, config, schemas, and approved contracts. Use for 文档审计、前后冲突、术语漂移、README 是否过时、文档和代码一致吗, including check-and-fix requests. Select evidence sources from the request; return prioritized findings, source precedence, and repair ownership. Apply clear local repairs only when requested. Use hai-rewrite-doc for wholesale reconstruction, hai-prd for product shaping, and readme-beautifier for formatting only.
+version: 1.0.0
+category: development-tools
 ---
 
 # Hai Audit Docs

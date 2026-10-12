@@ -1,6 +1,8 @@
 ---
 name: spec-driven-development
 description: "The complete Spec Kit methodology, adapted for WorkBuddy. Use when writing or reviewing a project constitution, a feature specification, clarification questions, a technical plan, a requirements-quality checklist, a dependency-ordered task list, a cross-artifact consistency analysis, an implementation run, a convergence check, a bug-fix assessment, or an idea assessment. Contains the SDD philosophy, the nine-command pipeline, the artifact directory layout, and the official spec/plan/tasks/checklist/constitution templates."
+version: 1.0.0
+category: development-tools
 ---
 
 # Spec-Driven Development (Spec Kit 方法论)

@@ -1,6 +1,8 @@
 ---
 name: svg-diagram
 description: SVG diagramming conventions blending a technical look with CJK-friendly typography. Use when creating flowcharts, architecture diagrams, and similar SVG figures. For one-shot generation, prefer invoking it from a subagent so the main context does not have to carry this skill plus the SVG XML; for multi-round tweaking, use it directly in the main context.
+version: 1.0.0
+category: development-tools
 ---
 
 # SVG Diagramming Conventions

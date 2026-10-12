@@ -1,6 +1,8 @@
 ---
 name: creator-toolbox
 description: 自媒体外部工具箱地图。收录 9 个不能打包进专家包的创作者工具（热榜聚合、竞品监控、多平台发布、口播剪辑、无损剪切、代码生成视频），说明各自解决什么问题、什么时候该把活交接出去、以及从哪里获取。当用户提到 TrendRadar、beacon 烽火台、RSSHub、AutoX、ScriptCut、auto-editor、Remotion、LosslessCut，或问「有没有工具能做 X」时加载本技能。
+version: 1.0.0
+category: content-creation
 ---
 
 # 自媒体外部工具箱地图

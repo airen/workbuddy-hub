@@ -2,6 +2,8 @@
 name: entity-model-auditor
 description: |
   Audits an entity model field by field: what should exist, what exists now, where each value belongs (column, config, computed runtime value, or removal), and what must migrate. Use when comparing a PRD with a schema/model, designing entity fields, or deciding “store or compute?”, “column or JSON?”, or “does this field belong at all?”. Use hai-prd first when the product intent is still unsettled.
+version: 1.0.0
+category: development-tools
 ---
 
 # Entity Model Auditor

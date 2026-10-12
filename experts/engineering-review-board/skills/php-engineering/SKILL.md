@@ -1,6 +1,8 @@
 ---
 name: php-engineering
 description: PHP engineering guidance for PHP source, Composer manifests and lockfiles, runtime and extension discovery, PHP 8.4 implementation or migration, PHPUnit/Pest configuration, PHPStan/Psalm, PHP-CS-Fixer/PHP_CodeSniffer, PHP templates, packaging, and project quality commands. Use for ordinary PHP implementation and project mechanics; use php-design-patterns for pattern choice, php-antipatterns for smell-focused review, and php-testing-quality for test-lane work.
+version: 1.0.0
+category: development-tools
 ---
 
 # PHP Engineering

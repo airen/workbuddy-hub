@@ -1,6 +1,8 @@
 ---
 name: ux-accessibility-review
 description: Review UI and UX quality, visual polish, responsive behavior, interaction states, and WCAG accessibility. Use for focused interface audits of existing products or changes; do not use as the primary styling, frontend implementation, or browser-test workflow.
+version: 1.0.0
+category: development-tools
 ---
 
 # UX Accessibility Review Skill

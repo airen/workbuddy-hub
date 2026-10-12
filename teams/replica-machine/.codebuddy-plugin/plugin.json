@@ -1,0 +1,104 @@
+{
+  "name": "replica-machine",
+  "version": "1.0.0",
+  "description": "A site-replication team. REA reverse-engineers a reference site's page structure, scripts and network calls; an implementation engineer rebuilds it in code; an independent verifier diffs every detail before the lead signs off.",
+  "author": {
+    "name": "大漠",
+    "email": "damo@example.com"
+  },
+  "agents": [
+    "./agents/replica-machine-team-lead.md",
+    "./agents/replica-machine-recon-analyst.md",
+    "./agents/replica-machine-replica-engineer.md",
+    "./agents/replica-machine-parity-verifier.md"
+  ],
+  "skills": [
+    "./skills/rea-recon",
+    "./skills/replica-blueprint",
+    "./skills/replica-build",
+    "./skills/replica-parity-check",
+    "./skills/replica-delivery"
+  ],
+  "expertType": "team",
+  "agentName": "replica-machine-team-lead",
+  "teamInfo": {
+    "leadAgent": "replica-machine-team-lead",
+    "memberAgents": [
+      "replica-machine-recon-analyst",
+      "replica-machine-replica-engineer",
+      "replica-machine-parity-verifier"
+    ]
+  },
+  "displayName": {
+    "en": "Replica Machine",
+    "zh": "复刻机"
+  },
+  "profession": {
+    "en": "Replica Machine",
+    "zh": "复刻机"
+  },
+  "displayDescription": {
+    "en": "Use REA to reverse-engineer a reference site's pages, scripts and network calls, rebuild it in code, then have an independent verifier diff every detail before delivery.",
+    "zh": "用 REA 侦察参考站的页面、脚本与网络请求，据此复刻实现，独立验证员逐项比对后交付。"
+  },
+  "avatar": "avatars/replica-machine.jpg",
+  "categoryId": "02-Engineering",
+  "defaultInitPrompt": {
+    "zh": "复刻这个网站：先用 REA 研究它的页面结构、脚本和网络请求，再照着实现一个",
+    "en": "Clone this site: use REA to study its page structure, scripts and network calls, then build one"
+  },
+  "plugin": "replica-machine",
+  "tags": [
+    { "en": "Site Replication", "zh": "网站复刻" },
+    { "en": "Reverse-Engineered Recon", "zh": "逆向侦察" },
+    { "en": "Parity Verification", "zh": "逐项比对验证" }
+  ],
+  "quickPrompts": [
+    {
+      "zh": "复刻这个网站：先用 REA 研究它的页面结构、脚本和网络请求，再照着实现一个",
+      "en": "Clone this site: use REA to study its page structure, scripts and network calls, then build one"
+    },
+    {
+      "zh": "研究这个站的某个功能是怎么实现的：它发了哪些请求、脚本怎么写的",
+      "en": "Figure out how a feature on this site works: what requests it fires, how the scripts are written"
+    },
+    {
+      "zh": "把复刻品和参考站逐项比对，看视觉、交互和网络还差在哪",
+      "en": "Diff my replica against the reference site: visuals, interactions, and network behavior"
+    }
+  ],
+  "members": [
+    {
+      "id": "replica-machine-team-lead",
+      "displayName": { "en": "Ke Fuke", "zh": "柯复刻" },
+      "name": { "en": "Ke Fuke", "zh": "柯复刻" },
+      "profession": { "en": "Replica Delivery Director", "zh": "复刻交付总监" },
+      "avatar": "avatars/replica-machine-team-lead.jpg",
+      "role": "lead"
+    },
+    {
+      "id": "replica-machine-recon-analyst",
+      "displayName": { "en": "Zhen Tanyuan", "zh": "甄探源" },
+      "name": { "en": "Zhen Tanyuan", "zh": "甄探源" },
+      "profession": { "en": "Reverse-Engineering Recon Analyst", "zh": "逆向侦察分析师" },
+      "avatar": "avatars/replica-machine-recon-analyst.jpg",
+      "role": "member"
+    },
+    {
+      "id": "replica-machine-replica-engineer",
+      "displayName": { "en": "Cheng Yima", "zh": "程一码" },
+      "name": { "en": "Cheng Yima", "zh": "程一码" },
+      "profession": { "en": "Replica Implementation Engineer", "zh": "复刻实现工程师" },
+      "avatar": "avatars/replica-machine-replica-engineer.jpg",
+      "role": "member"
+    },
+    {
+      "id": "replica-machine-parity-verifier",
+      "displayName": { "en": "Yan Jiaozhen", "zh": "严较真" },
+      "name": { "en": "Yan Jiaozhen", "zh": "严较真" },
+      "profession": { "en": "Parity Verifier", "zh": "一致性验证员" },
+      "avatar": "avatars/replica-machine-parity-verifier.jpg",
+      "role": "member"
+    }
+  ]
+}

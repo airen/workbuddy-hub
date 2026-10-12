@@ -11,6 +11,8 @@ description: >-
   security review except telemetry leakage or audit controls, BDD/TDD mechanics,
   or documentation-only edits; load those existing skills instead or alongside
   this skill when their trigger is primary.
+version: 1.0.0
+category: development-tools
 ---
 
 # Observability Engineering

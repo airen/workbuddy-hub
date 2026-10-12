@@ -1,6 +1,8 @@
 ---
 name: internationalization-localization
 description: Internationalization and localization guidance, including Project Fluent and Fluent Translation List (.ftl) files. Use when adding, changing, reviewing, or testing localized, multilingual, or localization-ready user-facing text, locale negotiation, translation catalogs, plural/select behavior, localized date/number formatting, or Fluent integrations in JavaScript, TypeScript, PHP, Python, Rust, or web UI. Do not use for fixed-language copyediting with no localization surface. Consult current official documentation for Fluent binding APIs and use security-review plus security-review-evidence when localized content crosses trust boundaries.
+version: 1.0.0
+category: development-tools
 ---
 
 # Internationalization and Localization

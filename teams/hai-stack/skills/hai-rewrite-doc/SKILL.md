@@ -2,6 +2,8 @@
 name: hai-rewrite-doc
 description: |
   Rebuilds a drifted, repeatedly patched document from verified current conclusions. It inventories old blocks, preserves verified wording, removes disproved material, writes authoritative replacement coverage only from verified sources, and reports keep/delete/replace/undecided dispositions. Use when the user wants a rotten document verified and rewritten rather than patched again（按最新结论重写、逐条核实、推倒重写）. Use hai-prd for PRDs, hai-goal for plans, and a document-audit skill when no rewrite is requested.
+version: 1.0.0
+category: development-tools
 ---
 
 # Hai Rewrite Doc

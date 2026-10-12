@@ -6,6 +6,8 @@ description: >-
   prompts, capability discovery, stdio transport, Streamable HTTP, or legacy
   HTTP+SSE compatibility. Do not use merely to operate an existing MCP server;
   use the applicable provider or service skill instead.
+version: 1.0.0
+category: development-tools
 ---
 
 # MCP Server Engineering

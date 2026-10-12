@@ -1,6 +1,8 @@
 ---
 name: suggest-lucide-icons
 description: Pick real Lucide icons for a concept, UI placement, button, section header, or note frontmatter. Use when the user asks what Lucide icon to use, requests icon candidates, or needs an icon name verified. Do not use for non-Lucide icon libraries or general icon or artwork design.
+version: 1.0.0
+category: development-tools
 ---
 
 # Suggest Lucide Icons

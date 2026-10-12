@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>训练记录 · 练了多重</title>
+<style>
+  :root{--bg:#f4f7f5;--card:#fff;--ink:#243029;--muted:#7e8a82;--line:#e3eae5;
+    --accent:#2f9e6b;--soft:#eafaf2;--warn:#e08e0b}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:-apple-system,"PingFang SC","Microsoft YaHei",Segoe UI,sans-serif;
+    line-height:1.6;padding:20px;max-width:880px;margin:0 auto}
+  h1{font-size:22px;margin:0 0 4px}
+  .sub{color:var(--muted);font-size:13px;margin-bottom:16px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;
+    padding:16px;margin-bottom:16px;box-shadow:0 1px 3px rgba(0,0,0,.03)}
+  label{display:block;font-size:12px;color:var(--muted);margin-bottom:3px}
+  input,textarea{width:100%;padding:8px 9px;border:1px solid var(--line);border-radius:9px;
+    font-size:14px;background:#fcfefd;color:var(--ink);font-family:inherit}
+  textarea{resize:vertical;min-height:40px}
+  .row{display:grid;grid-template-columns:2fr 1fr 1fr 1fr auto;gap:8px;align-items:end}
+  .btns{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+  button{border:none;border-radius:10px;padding:9px 16px;font-size:14px;font-weight:600;
+    cursor:pointer;font-family:inherit}
+  .primary{background:var(--accent);color:#fff}
+  .ghost{background:var(--soft);color:var(--accent)}
+  .ghost2{background:#fff4e5;color:var(--warn)}
+  .ex{border:1px solid var(--line);border-radius:10px;padding:10px 12px;margin-top:8px}
+  .ex .top{display:flex;justify-content:space-between;align-items:center}
+  .ex .nm{font-weight:700;font-size:15px}
+  .ex .det{color:var(--muted);font-size:13px;margin-top:2px}
+  .ex .last{font-size:12px;color:var(--accent);margin-top:4px}
+  .ex .note{font-size:12px;color:var(--muted);margin-top:3px;white-space:pre-wrap}
+  .del{color:#d9534f;cursor:pointer;border:none;background:none;font-size:13px}
+  .timer{text-align:center}
+  .timer .big{font-size:46px;font-weight:800;font-variant-numeric:tabular-nums;color:var(--accent);margin:6px 0}
+  .timer .ctrl{display:flex;gap:10px;justify-content:center;align-items:center;flex-wrap:wrap}
+  .hist{font-size:14px}
+  .hist .s{border-bottom:1px solid var(--line);padding:8px 0}
+  .hist .s .d{font-weight:600}
+  .hist .s .e{color:var(--muted);font-size:12px}
+  .empty{color:var(--muted);font-size:14px;padding:8px 2px}
+  .mini{width:auto;padding:7px 12px;font-size:13px}
+</style>
+</head>
+<body>
+  <h1>🏋️ 训练记录 · 练了多重</h1>
+  <div class="sub">记录组数、次数和重量，自动对照上次训练，组间休息带计时提醒。数据存本机浏览器，不联网。</div>
+
+  <div class="card">
+    <div class="row" style="margin-bottom:8px">
+      <div><label>本次日期</label><input id="date" type="date"></div>
+      <div style="grid-column:2/-1"><label>本次备注（如：练胸 / 练腿）</label><input id="snote" placeholder="练胸日"></div>
+    </div>
+    <div class="row">
+      <div><label>动作</label><input id="ex" list="exnames" placeholder="卧推"><datalist id="exnames"></datalist></div>
+      <div><label>组数</label><input id="sets" type="number" min="1" value="3"></div>
+      <div><label>次数/组</label><input id="reps" type="number" min="1" value="10"></div>
+      <div><label>重量kg</label><input id="wt" type="number" min="0" step="0.5" value="0"></div>
+      <div><button class="primary mini" onclick="addEx()">加动作</button></div>
+    </div>
+    <div class="btns">
+      <button class="primary" onclick="saveSession()">保存本次训练</button>
+      <button class="ghost" onclick="copyLast()">复制上次动作</button>
+      <button class="ghost" onclick="exportJSON()">导出备份</button>
+      <button class="ghost" onclick="importJSON()">导入备份</button>
+      <button class="ghost2" onclick="clearAll()">清空</button>
+      <input id="file" type="file" accept=".json" style="display:none" onchange="doImport(event)">
+    </div>
+    <div id="cur"></div>
+  </div>
+
+  <div class="card timer">
+    <h2 style="margin:0 0 4px;font-size:16px">⏱ 组间休息计时</h2>
+    <div class="big" id="clock">90</div>
+    <div class="ctrl">
+      <label style="margin:0">秒数 <input id="rest" type="number" min="5" value="90" style="width:70px;display:inline"></label>
+      <button class="primary mini" onclick="startTimer()">开始</button>
+      <button class="ghost mini" onclick="pauseTimer()">暂停</button>
+      <button class="ghost2 mini" onclick="resetTimer()">重置</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2 style="margin:0 0 8px;font-size:16px">历史训练</h2>
+    <div class="hist" id="hist"></div>
+  </div>
+
+<script>
+const KEY='workout_v1';
+let DATA=load();
+let CUR=[];
+let timer=null,remain=90,running=false;
+
+function load(){try{return JSON.parse(localStorage.getItem(KEY))||[]}catch(e){return[]}}
+function save(){localStorage.setItem(KEY,JSON.stringify(DATA))}
+document.getElementById('date').value=new Date().toISOString().slice(0,10);
+
+function lastOf(name){
+  for(let i=DATA.length-1;i>=0;i--){
+    const e=DATA[i].exercises.find(x=>x.name===name);
+    if(e)return {session:DATA[i].date,...e};
+  }
+  return null;
+}
+function addEx(){
+  const name=document.getElementById('ex').value.trim();
+  if(!name){alert('请填写动作名称');return;}
+  const sets=+document.getElementById('sets').value||1;
+  const reps=+document.getElementById('reps').value||1;
+  const wt=+document.getElementById('wt').value||0;
+  CUR.push({name,sets,reps,wt});
+  renderCur();
+  document.getElementById('ex').value='';document.getElementById('sets').value=3;
+  document.getElementById('reps').value=10;document.getElementById('wt').value=0;
+  document.getElementById('ex').focus();
+}
+function renderCur(){
+  const names=[...new Set(DATA.flatMap(s=>s.exercises.map(e=>e.name)))];
+  document.getElementById('exnames').innerHTML=names.map(n=>`<option value="${n}">`).join('');
+  document.getElementById('cur').innerHTML=CUR.length?CUR.map((e,i)=>{
+    const l=lastOf(e.name);
+    return `<div class="ex"><div class="top"><span class="nm">${e.name}</span>
+      <button class="del" onclick="delCur(${i})">删除</button></div>
+      <div class="det">${e.sets} 组 × ${e.reps} 次${e.wt?` · ${e.wt} kg`:''}</div>
+      ${l?`<div class="last">上次（${l.session}）：${l.sets} 组 × ${l.reps} 次${l.wt?` · ${l.wt} kg`:''}</div>`:'<div class="last">首次训练，无对照</div>'}</div>`;
+  }).join(''):'<div class="empty">还没加动作，上面填好点"加动作"</div>';
+}
+function delCur(i){CUR.splice(i,1);renderCur();}
+function saveSession(){
+  if(!CUR.length){alert('先加几个动作再保存');return;}
+  DATA.push({id:Date.now(),date:document.getElementById('date').value,
+    note:document.getElementById('snote').value.trim(),exercises:CUR});
+  save();CUR=[];renderCur();renderHist();
+}
+function copyLast(){
+  if(!DATA.length){alert('还没有历史记录');return;}
+  CUR=DATA[DATA.length-1].exercises.map(e=>({name:e.name,sets:e.sets,reps:e.reps,wt:e.wt}));
+  renderCur();
+}
+function renderHist(){
+  document.getElementById('hist').innerHTML=DATA.length?DATA.slice().reverse().map(s=>
+    `<div class="s"><span class="d">${s.date}</span> ${s.note?`· ${s.note}`:''}
+     <div class="e">${s.exercises.map(e=>`${e.name} ${e.sets}×${e.reps}${e.wt?'@'+e.wt+'kg':''}`).join('，')}</div></div>`).join('')
+    :'<div class="empty">还没有保存的训练记录</div>';
+}
+
+/* 计时器 */
+function tick(){
+  if(!running)return;
+  remain--;
+  document.getElementById('clock').textContent=remain;
+  if(remain<=0){beep();pauseTimer();}
+}
+function startTimer(){
+  remain=+document.getElementById('rest').value||90;
+  running=true;document.getElementById('clock').textContent=remain;
+  clearInterval(timer);timer=setInterval(tick,1000);
+}
+function pauseTimer(){running=false;clearInterval(timer);}
+function resetTimer(){pauseTimer();remain=+document.getElementById('rest').value||90;document.getElementById('clock').textContent=remain;}
+function beep(){
+  try{const ctx=new (window.AudioContext||window.webkitAudioContext)();
+    [0,0.25,0.5].forEach(t=>{const o=ctx.createOscillator(),g=ctx.createGain();
+      o.frequency.value=880;o.connect(g);g.connect(ctx.destination);
+      o.start(ctx.currentTime+t);g.gain.setValueAtTime(0.3,ctx.currentTime+t);
+      o.stop(ctx.currentTime+t+0.18);});}catch(e){}
+}
+
+function exportJSON(){
+  if(!DATA.length){alert('还没有数据');return;}
+  const blob=new Blob([JSON.stringify(DATA,null,2)],{type:'application/json'});
+  const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='训练记录.json';a.click();
+}
+function importJSON(){document.getElementById('file').click();}
+function doImport(e){const f=e.target.files[0];if(!f)return;const r=new FileReader();
+  r.onload=()=>{try{const arr=JSON.parse(r.result);if(Array.isArray(arr)){DATA=DATA.concat(arr);save();renderCur();renderHist();alert('导入完成');}}catch(err){alert('文件格式不对');}};
+  r.readAsText(f);}
+function clearAll(){if(confirm('确定清空全部训练记录？此操作不可恢复')){DATA=[];save();renderCur();renderHist();}}
+
+renderCur();renderHist();
+</script>
+</body>
+</html>

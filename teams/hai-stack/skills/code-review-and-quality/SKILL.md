@@ -2,6 +2,8 @@
 name: code-review-and-quality
 description: |
   Reviews a code change for correctness, security, maintainability, architecture, performance, and verification gaps, or performs a local code-smell review. Use for review this diff/PR、变更评审、代码审查、代码整洁度. Return evidence-backed findings and a scoped verdict; diagnose without editing unless fixes are requested. Use hai-architecture for system design or a React component deep dive, and write-technical-acceptance-report for executed requirement acceptance.
+version: 1.0.0
+category: development-tools
 ---
 
 # Code Review and Quality

@@ -1,0 +1,240 @@
+{
+  "name": "content-creation-team",
+  "version": "1.0.0",
+  "description": "A repeatable content production team: sourcing, idea library, topic strategy, calendar, creation, multi-platform adaptation, review and recycling — with a human gate before anything is published.",
+  "author": {
+    "name": "大漠",
+    "email": "damo@example.com"
+  },
+  "agents": [
+    "./agents/content-creation-team-team-lead.md",
+    "./agents/content-creation-team-sourcing.md",
+    "./agents/content-creation-team-library.md",
+    "./agents/content-creation-team-strategy.md",
+    "./agents/content-creation-team-calendar.md",
+    "./agents/content-creation-team-writer.md",
+    "./agents/content-creation-team-adaptation.md",
+    "./agents/content-creation-team-analyst.md",
+    "./agents/content-creation-team-recycler.md"
+  ],
+  "skills": [
+    "./skills/content-factory-playbook"
+  ],
+  "expertType": "team",
+  "agentName": "content-creation-team-team-lead",
+  "teamInfo": {
+    "leadAgent": "content-creation-team-team-lead",
+    "memberAgents": [
+      "content-creation-team-sourcing",
+      "content-creation-team-library",
+      "content-creation-team-strategy",
+      "content-creation-team-calendar",
+      "content-creation-team-writer",
+      "content-creation-team-adaptation",
+      "content-creation-team-analyst",
+      "content-creation-team-recycler"
+    ]
+  },
+  "displayName": {
+    "en": "Content Factory Team",
+    "zh": "内容工厂专家团"
+  },
+  "profession": {
+    "en": "Content Factory Team",
+    "zh": "内容工厂专家团"
+  },
+  "displayDescription": {
+    "en": "Turns scattered ideas into a repeatable content factory: sourcing, idea library, topic strategy, calendar, creation, multi-platform adaptation, review and recycling — human-gated before publishing.",
+    "zh": "素材采集、灵感库、选题排期到创作改编与复盘复用，八位环节专家接力，把零散灵感做成内容工厂。"
+  },
+  "avatar": "avatars/team.jpg",
+  "categoryId": "06-ContentCreative",
+  "defaultInitPrompt": {
+    "zh": "帮我搭一套从灵感库到发布的内容工厂流程",
+    "en": "Set up a content factory flow from idea library to publishing"
+  },
+  "plugin": "content-creation-team",
+  "tags": [
+    {
+      "en": "Material & Idea Library",
+      "zh": "素材灵感库"
+    },
+    {
+      "en": "Content Production Pipeline",
+      "zh": "内容生产流水线"
+    },
+    {
+      "en": "Review & Recycling",
+      "zh": "复盘与复用"
+    }
+  ],
+  "quickPrompts": [
+    {
+      "zh": "帮我搭一套从灵感库到发布的内容工厂流程",
+      "en": "Set up a content factory flow from idea library to publishing"
+    },
+    {
+      "zh": "把这批旧内容整理进灵感库，并排好下周日历",
+      "en": "File these old pieces into my idea library and plan next week's calendar"
+    },
+    {
+      "zh": "这条内容数据不错，帮我拆成系列并改写成多平台版本",
+      "en": "This post did well — turn it into a series and adapt it across platforms"
+    }
+  ],
+  "members": [
+    {
+      "id": "content-creation-team-team-lead",
+      "name": {
+        "en": "Yue Zhangduo",
+        "zh": "岳掌舵"
+      },
+      "displayName": {
+        "en": "Yue Zhangduo",
+        "zh": "岳掌舵"
+      },
+      "profession": {
+        "en": "Content Director",
+        "zh": "内容总控"
+      },
+      "avatar": "avatars/content-creation-team-team-lead.jpg",
+      "role": "lead"
+    },
+    {
+      "id": "content-creation-team-sourcing",
+      "name": {
+        "en": "Ge Shibei",
+        "zh": "葛拾贝"
+      },
+      "displayName": {
+        "en": "Ge Shibei",
+        "zh": "葛拾贝"
+      },
+      "profession": {
+        "en": "Sourcing Specialist",
+        "zh": "素材采集师"
+      },
+      "avatar": "avatars/content-creation-team-sourcing.jpg",
+      "role": "member"
+    },
+    {
+      "id": "content-creation-team-library",
+      "name": {
+        "en": "Chu Youfang",
+        "zh": "储有方"
+      },
+      "displayName": {
+        "en": "Chu Youfang",
+        "zh": "储有方"
+      },
+      "profession": {
+        "en": "Idea Librarian",
+        "zh": "灵感库管家"
+      },
+      "avatar": "avatars/content-creation-team-library.jpg",
+      "role": "member"
+    },
+    {
+      "id": "content-creation-team-strategy",
+      "name": {
+        "en": "Zhen Youce",
+        "zh": "甄有策"
+      },
+      "displayName": {
+        "en": "Zhen Youce",
+        "zh": "甄有策"
+      },
+      "profession": {
+        "en": "Topic Strategist",
+        "zh": "选题策略师"
+      },
+      "avatar": "avatars/content-creation-team-strategy.jpg",
+      "role": "member"
+    },
+    {
+      "id": "content-creation-team-calendar",
+      "name": {
+        "en": "Qiao Dingdang",
+        "zh": "乔定档"
+      },
+      "displayName": {
+        "en": "Qiao Dingdang",
+        "zh": "乔定档"
+      },
+      "profession": {
+        "en": "Content Scheduler",
+        "zh": "内容排期师"
+      },
+      "avatar": "avatars/content-creation-team-calendar.jpg",
+      "role": "member"
+    },
+    {
+      "id": "content-creation-team-writer",
+      "name": {
+        "en": "Lu Shenghua",
+        "zh": "陆生花"
+      },
+      "displayName": {
+        "en": "Lu Shenghua",
+        "zh": "陆生花"
+      },
+      "profession": {
+        "en": "Content Creator",
+        "zh": "内容创作师"
+      },
+      "avatar": "avatars/content-creation-team-writer.jpg",
+      "role": "member"
+    },
+    {
+      "id": "content-creation-team-adaptation",
+      "name": {
+        "en": "Yi Baibian",
+        "zh": "易百变"
+      },
+      "displayName": {
+        "en": "Yi Baibian",
+        "zh": "易百变"
+      },
+      "profession": {
+        "en": "Multi-Platform Adapter",
+        "zh": "多平台改编师"
+      },
+      "avatar": "avatars/content-creation-team-adaptation.jpg",
+      "role": "member"
+    },
+    {
+      "id": "content-creation-team-analyst",
+      "name": {
+        "en": "Ming Youju",
+        "zh": "明有据"
+      },
+      "displayName": {
+        "en": "Ming Youju",
+        "zh": "明有据"
+      },
+      "profession": {
+        "en": "Data Reviewer",
+        "zh": "数据复盘师"
+      },
+      "avatar": "avatars/content-creation-team-analyst.jpg",
+      "role": "member"
+    },
+    {
+      "id": "content-creation-team-recycler",
+      "name": {
+        "en": "Xu Zaisheng",
+        "zh": "许再生"
+      },
+      "displayName": {
+        "en": "Xu Zaisheng",
+        "zh": "许再生"
+      },
+      "profession": {
+        "en": "Content Recycler",
+        "zh": "内容复用师"
+      },
+      "avatar": "avatars/content-creation-team-recycler.jpg",
+      "role": "member"
+    }
+  ]
+}

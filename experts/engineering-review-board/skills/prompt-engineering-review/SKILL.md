@@ -1,6 +1,8 @@
 ---
 name: prompt-engineering-review
 description: Review and improve prompts and bounded agent-system instruction interfaces for coding agents. Use for prompt audits, rewrites, multi-agent roles, delegation and handoff contracts, acceptance criteria, and quality gates; do not use for application implementation, runtime architecture audits, or reusable SKILL.md authoring.
+version: 1.0.0
+category: development-tools
 ---
 
 # Prompt Engineering Review Skill

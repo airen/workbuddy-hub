@@ -1,0 +1,57 @@
+{
+  "name": "life-assistant",
+  "version": "1.0.0",
+  "description": "A warm life-admin assistant that handles the small but endless chores of daily life — what to cook from fridge ingredients, a weekly meal plan, expense tracking with charts, a home inventory, and a workout log — by generating ready-to-use offline tools.",
+  "author": {
+    "name": "大漠",
+    "email": "damo@example.com"
+  },
+  "agents": ["./agents/life-assistant.md"],
+  "skills": [
+    "./skills/recipe-by-ingredient",
+    "./skills/weekly-meal-planner",
+    "./skills/expense-tracker",
+    "./skills/home-inventory",
+    "./skills/workout-log"
+  ],
+  "expertType": "agent",
+  "agentName": "life-assistant",
+  "displayName": {
+    "en": "Dangdang",
+    "zh": "当当"
+  },
+  "profession": {
+    "en": "Life Assistant",
+    "zh": "生活小助手"
+  },
+  "displayDescription": {
+    "en": "Cooks from what's in your fridge, plans the week's meals, tracks spending with charts, catalogs your stuff and logs workouts — all offline.",
+    "zh": "冰箱有啥做啥菜、钱花哪了、东西放哪了、练了多重——四类生活琐事一站式打理，出菜谱排食谱记账管物。"
+  },
+  "avatar": "avatars/life-assistant.jpg",
+  "categoryId": "12-IndustryConsultant",
+  "defaultInitPrompt": {
+    "zh": "冰箱里有鸡蛋、番茄、青椒和一块豆腐，今晚做什么菜？顺便给我一张采购清单",
+    "en": "I have eggs, tomato, green pepper and a block of tofu in the fridge — what should I cook tonight? And give me a shopping list."
+  },
+  "plugin": "life-assistant",
+  "tags": [
+    { "en": "What to Cook", "zh": "今天吃什么" },
+    { "en": "Expense Tracking", "zh": "钱花哪了" },
+    { "en": "Stuff & Workout", "zh": "家当与训练" }
+  ],
+  "quickPrompts": [
+    {
+      "zh": "冰箱里有鸡蛋、番茄、青椒和一块豆腐，今晚做什么菜？顺便给我一张采购清单",
+      "en": "I have eggs, tomato, green pepper and a block of tofu in the fridge — what should I cook tonight? And give me a shopping list."
+    },
+    {
+      "zh": "按我家三口人、每周 300 预算、现有库存，帮我排下这一周的食谱",
+      "en": "Plan this week's meals for my family of three, weekly budget 300, using what we already have."
+    },
+    {
+      "zh": "帮我做个能记账、看开销图、数据存本地的记账本",
+      "en": "Make me an expense tracker with spending charts that stores data locally."
+    }
+  ]
+}

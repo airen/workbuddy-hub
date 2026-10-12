@@ -1,6 +1,8 @@
 ---
 name: piwigo-plugin-engineering
 description: Piwigo plugin integration guidance. Use when working on Piwigo plugins, main.inc.php, maintain.inc.php, plugin admin pages, Smarty .tpl files, Piwigo events/actions, language catalogs, plugin upgrades, or plugin-owned PHP, HTML, CSS, JavaScript, or TypeScript. Do not use for generic PHP, frontend, localization, SQL, security, or browser-test mechanics outside a Piwigo host integration; load the owning skill with this one.
+version: 1.0.0
+category: development-tools
 ---
 
 # Piwigo Plugin Engineering

@@ -51,7 +51,7 @@
   },
   "displayDescription": {
     "en": "An engineering workflow coach from idea to ship: turn fuzzy asks into specs and tickets, implement test-first, review the diff, and grill the design when you get stuck.",
-    "zh": "从想法到交付的工程流程教练：把模糊需求写成规格、拆成工单、按 TDD 实现并评审，卡住时拷问到底。"
+    "zh": "从想法到交付的流程教练：把模糊需求写成规格、拆成工单、按 TDD 实现并评审，卡住时拷问到底。"
   },
   "avatar": "avatars/eng-workflow-coach.png",
   "categoryId": "02-Engineering",

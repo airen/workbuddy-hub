@@ -2,6 +2,8 @@
 name: hai-debug
 description: |
   Diagnoses an unexplained software failure through reproduction, competing hypotheses, discriminating checks, and a causal explanation. Use for 排障、根因分析、偶发失败、环境差异、重复执行, or a bug whose cause is unclear. Return observed evidence, ruled-out hypotheses, cause/confidence, and a regression target; fix and verify only when the request includes fixing. Use hai-tdd when the cause and desired behavior are already known, and hai-architecture for change complexity without a malfunction.
+version: 1.0.0
+category: development-tools
 ---
 
 # Hai Debug

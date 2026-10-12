@@ -15,6 +15,8 @@ description: >-
   primary.
   Use semantic-versioning when the primary question is choosing or applying a
   patch, minor, or major release bump after contract impact is understood.
+version: 1.0.0
+category: development-tools
 ---
 
 # API Design

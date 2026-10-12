@@ -1,6 +1,8 @@
 ---
 name: auto-editor-transcribe
 description: Transcribe a media file or live microphone to text or subtitles with auto-editor's whisper subcommand, then edit by spoken content — cut to keep (or drop) sections whose subtitles match a word or regex. Use when someone wants a transcript, captions, live speech transcription, or to cut a video based on what is said rather than on loudness.
+version: 1.0.0
+category: content-creation
 ---
 
 # Transcribe & edit by speech

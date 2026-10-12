@@ -2,6 +2,8 @@
 name: readme-beautifier
 description: |
   Reformats and restructures a README or similar Markdown project document without changing its factual content, voice, or scope, then summarizes formatting-only edits. Use when the user asks to beautify, tidy, organize, or professionally format a README（README 美化、排版、格式化、太乱了）. Use document-audit skills to judge correctness or consistency, and hai-rewrite-doc when meaning or claims must change.
+version: 1.0.0
+category: development-tools
 ---
 
 # Readme Beautifier

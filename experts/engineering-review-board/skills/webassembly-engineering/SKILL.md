@@ -1,6 +1,8 @@
 ---
 name: webassembly-engineering
 description: WebAssembly engineering guidance for Wasm/WAT modules, WASI, WIT and the Component Model, host/guest contracts, runtime and target selection, capability grants, memory/ABI/serialization, lifecycle/errors, testing, packaging, and deployment. Use when a WebAssembly artifact, host embedding, runtime, component, or WASI boundary is being designed, changed, tested, reviewed, packaged, or deployed. Do not use for source-language/compiler mechanics, generic dependency work without a Wasm boundary, or a product comparison without repository and current-doc evidence.
+version: 1.0.0
+category: development-tools
 ---
 
 # WebAssembly Engineering

@@ -1,6 +1,8 @@
 ---
 name: auto-editor-export
 description: Export auto-editor's edit or microphone recording to a video editor (Premiere, DaVinci Resolve, Final Cut Pro, ShotCut, Kdenlive), to individual clips, or to auto-editor timeline files (.v1/.v2/.v3); and import timeline/XML files to render them. Use when someone wants an editor-ready project, a preserved microphone source, split clips, or timeline files instead of a finished video.
+version: 1.0.0
+category: content-creation
 ---
 
 # Exporting & importing

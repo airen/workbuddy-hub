@@ -1,6 +1,8 @@
 ---
 name: object-pascal-engineering
 description: Object Pascal and Delphi engineering guidance. Use when adding, changing, reviewing, testing, packaging, or refactoring Object Pascal or Delphi source, .pas/.dpr/.dpk/.inc files, Delphi or Free Pascal projects, .dproj/.dpr/.lpi/.lpk project files, VCL/FMX/LCL forms and frames, units, packages, compiler directives, or build tooling. Use for ordinary Object Pascal implementation and project mechanics; use object-pascal-design-patterns for pattern choice, object-pascal-antipatterns for smell-focused review, object-pascal-testing-quality for test-lane work, and photo-supreme-scripting for Photo Supreme's embedded scripting environment. Do not use for database-native schema/query design, checked-in CI/release-provider configuration, Docker/OCI/Compose configuration, or a public API contract; use the owning SQL, CI/release, container, or API skill instead.
+version: 1.0.0
+category: development-tools
 ---
 
 # Object Pascal and Delphi Engineering

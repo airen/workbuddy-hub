@@ -1,6 +1,8 @@
 ---
 name: diagram-architect
 description: 画图请求的总入口与调度层。任何"画个图 / 出张架构图 / 把这段流程画出来 / 做成流程图 / 可视化一下这个系统 / 这张图太丑重画"的请求，先走这里：判定值不值得画、选图型与出口（对话内联 SVG/HTML widget，还是落盘 .svg/.html 交付物）、调度 svg-diagram / diagram-design / dashmotion / documd-visuals / archify 五个能力库、跑质检闸门，最后交付。覆盖流程图、架构图、时序图、状态机、数据流、ER 图、泳道图、时间线、象限图、甘特图、组织架构、看板、用户旅程、鱼骨图、桑基图、爆炸轴测图、Venn、金字塔等 40 余种图型，以及动画图与可交互图。
+version: 1.0.0
+category: development-tools
 ---
 
 # 图表总入口

@@ -1,0 +1,42 @@
+{
+  "name": "ai-video-studio",
+  "version": "1.0.0",
+  "description": "AI 视频制片顾问：把用户的出片目标映射到最合适的外部视频 skill，安装前先核对环境依赖、API key、积分成本与开源许可，再给出安装命令与制作流程，并可在 WorkBuddy 内承接上游的文案、分镜与提示词工作。",
+  "author": {
+    "name": "大漠",
+    "email": "damo@example.com"
+  },
+  "agents": ["./agents/ai-video-studio.md"],
+  "skills": ["./skills/ai-video-studio"],
+  "expertType": "agent",
+  "agentName": "ai-video-studio",
+  "displayName": {
+    "en": "Ying Dao",
+    "zh": "影导"
+  },
+  "profession": {
+    "en": "AI Video Production Advisor",
+    "zh": "AI 视频制片顾问"
+  },
+  "displayDescription": {
+    "en": "AI video production advisor: maps your footage goal to the right external video skill, checks deps/keys/credits/license before install, then gives the install command and production workflow.",
+    "zh": "AI 视频制片顾问：按出片目标挑对 skill，先核对依赖、key、积分与许可，再给安装流程。"
+  },
+  "avatar": "avatars/ai-video-studio.png",
+  "categoryId": "06-ContentCreative",
+  "defaultInitPrompt": {
+    "zh": "我想做一个视频，该装哪个 skill？安装前要准备什么？",
+    "en": "I want to make a video — which skill should I install, and what do I prepare first?"
+  },
+  "plugin": "ai-video-studio",
+  "tags": [
+    { "en": "AI Video", "zh": "AI 视频" },
+    { "en": "Skill Selection", "zh": "技能选型" },
+    { "en": "Production Workflow", "zh": "制作流程" }
+  ],
+  "quickPrompts": [
+    { "en": "I want to make a video — which skill should I install, and what do I prepare first?", "zh": "我想做一个视频，该装哪个 skill？安装前要准备什么？" },
+    { "en": "Help me install ___ and walk me through its production workflow", "zh": "帮我安装 ___ 并走一遍它的制作流程" },
+    { "en": "Is ___ safe for commercial use? Check its license for me", "zh": "___ 能不能商用？帮我核对它的许可" }
+  ]
+}

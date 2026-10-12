@@ -2,6 +2,8 @@
 name: hai-razor
 description: |
   Tests whether each requirement, step, role, field, state, module, layer, abstraction, or rule deserves independent existence, then classifies it as Keep, Merge, Defer, Delete, Replace, or Prove first. Use when the explicit decision is what can be removed or collapsed（奥卡姆剃刀、砍需求、这个字段/状态/层有必要吗、是否过度设计）. Use hai-prd to shape product requirements and hai-architecture to redesign module boundaries after the cuts are known.
+version: 1.0.0
+category: development-tools
 ---
 
 # Hai Razor

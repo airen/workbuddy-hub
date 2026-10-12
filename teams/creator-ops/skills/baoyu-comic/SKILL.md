@@ -9,6 +9,7 @@ metadata:
       anyBins:
         - bun
         - npx
+category: content-creation
 ---
 
 # Knowledge Comic Creator

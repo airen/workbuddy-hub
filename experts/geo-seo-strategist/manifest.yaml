@@ -1,0 +1,19 @@
+id: geo-seo-strategist
+name: 显扬
+version: 1.0.0
+type: expert
+expert_type: agent
+description: 网站与应用 GEO SEO 顾问：从选题、写作到 llms.txt，让 AI 与搜索更常引用你。
+category: content
+skills:
+- seo-foundations
+- geo-topic-research
+- geo-content-writing
+- llms-txt-builder
+- geo-measurement
+tags:
+- GEO 优化
+- 搜索可见性
+- 内容选题
+status: active
+platform_category: 06-ContentCreative

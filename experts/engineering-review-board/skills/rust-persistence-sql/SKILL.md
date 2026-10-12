@@ -1,6 +1,8 @@
 ---
 name: rust-persistence-sql
 description: Rust persistence, SQLx, SeaQuery, and SQL-library guidance. Use when adding, changing, reviewing, or testing SQLx queries/macros, SeaQuery builders, SeaORM, Diesel, raw SQL choices, Rust database adapters, pools, transactions, offline query metadata, migrations invoked from Rust, SQLite support, database-backed Rust tests, dynamic SQL construction, or persistence boundaries. Use sql-engineering, postgresql-sql-engineering, mysql-mariadb-sql-engineering, or sqlite-sql-engineering for database-native design.
+version: 1.0.0
+category: development-tools
 ---
 
 # Rust Persistence, SQLx, And SeaQuery

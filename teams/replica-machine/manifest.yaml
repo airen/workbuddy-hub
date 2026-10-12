@@ -1,0 +1,26 @@
+id: replica-machine
+name: 复刻机
+version: 1.0.0
+type: team
+description: 用 REA 逆向侦察参考站的页面、脚本与网络请求，据此复刻实现，再由独立验证员逐项比对差异，主理人把关需求与交付。
+category: development
+members:
+- expert_id: replica-machine-team-lead
+  role: coordinator
+  embedded: true
+- expert_id: replica-machine-recon-analyst
+  role: member
+  embedded: true
+- expert_id: replica-machine-replica-engineer
+  role: member
+  embedded: true
+- expert_id: replica-machine-parity-verifier
+  role: member
+  embedded: true
+workflow: agents/replica-machine-team-lead.md
+tags:
+- 网站复刻
+- 逆向侦察
+- 逐项比对验证
+status: active
+platform_category: 02-Engineering

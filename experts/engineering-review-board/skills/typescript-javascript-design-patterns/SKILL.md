@@ -1,6 +1,8 @@
 ---
 name: typescript-javascript-design-patterns
 description: TypeScript and JavaScript design pattern guidance. Use when choosing, implementing, or reviewing patterns such as discriminated unions, branded types, schema validation boundaries, functional core/imperative shell, adapter modules, command/use-case handlers, dependency injection, async orchestration, module boundaries, test builders, or Clean/Hexagonal/Onion expression in JS/TS. Use typescript-javascript-antipatterns for smell-focused audits.
+version: 1.0.0
+category: development-tools
 ---
 
 # TypeScript And JavaScript Design Patterns

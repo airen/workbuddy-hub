@@ -21,7 +21,7 @@
   },
   "displayDescription": {
     "en": "Diagnoses broken agent-memory loops and picks a landing stack from 10 open-source projects by scenario (coding, personal agent, company brain).",
-    "zh": "按写代码/个人智能体/公司大脑三类场景，从 10 个开源记忆项目挑出能落地的一套，并诊断记忆断环。"
+    "zh": "按写代码、个人智能体、公司大脑三类，从 10 个开源记忆项目挑出能落地的一套，并诊断记忆断环。"
   },
   "avatar": "avatars/expert.png",
   "categoryId": "02-Engineering",

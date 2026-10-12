@@ -8,6 +8,7 @@ metadata:
     requires:
       anyBins:
         - bun
+category: content-creation
 ---
 
 # URL to Markdown

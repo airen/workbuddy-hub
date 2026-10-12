@@ -43,7 +43,7 @@
   },
   "displayDescription": {
     "en": "A seven-role research pipeline — navigate, clean, parse, archive, trace — that turns scattered web pages and thick reports into a source-linked research report you can replay.",
-    "zh": "七角色的研究流水线：导航、清洗、解构、归档、溯源各司其职，把散乱网页与厚报告变成可回看的带源报告。"
+    "zh": "七角色研究流水线：导航、清洗、解构、归档、溯源各司其职，把散乱网页与报告变成可回看的带源报告。"
   },
   "avatar": "avatars/team.jpg",
   "categoryId": "04-DataAI",

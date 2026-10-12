@@ -1,6 +1,8 @@
 ---
 name: photo-supreme-scripting
 description: Photo Supreme (idimager) embedded Object Pascal scripting guidance. Use when writing, changing, reviewing, or debugging Photo Supreme scripts, .psc quick scripts, Script Studio scripts, search/filter/sort scripts, inline %code scripts, download pre/post scripts, or Photo Supreme API calls (idCatalog, idCore, xom*, OMPublic, UIPublic). Do not use for standard Object Pascal or Delphi application development outside Photo Supreme; use object-pascal-engineering instead.
+version: 1.0.0
+category: development-tools
 ---
 
 # Photo Supreme Scripting

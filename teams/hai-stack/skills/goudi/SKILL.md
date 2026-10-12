@@ -2,6 +2,8 @@
 name: goudi
 description: |
   Pressure-tests an ambitious proposal and returns a landing judgment, one minimum viable proof, explicit cuts, success/failure signals, and a stop rule. Use when a direction has more vision than executable grounding or the user asks how to land it, reduce first-step scope, price risk, or define rollback（落地、别太飘、最小可行、止损）. Use geju when the goal is to open the frame rather than ground an existing direction.
+version: 1.0.0
+category: development-tools
 ---
 
 # Goudi

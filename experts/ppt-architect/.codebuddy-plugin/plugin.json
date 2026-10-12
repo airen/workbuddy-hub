@@ -1,7 +1,7 @@
 {
   "name": "ppt-architect",
-  "version": "1.0.0",
-  "description": "PPT architecture expert who transforms any topic into production-ready presentations with professional design, supporting both editable PPTX and browser-ready HTML formats.",
+  "version": "1.1.0",
+  "description": "PPT architecture expert who transforms any topic into production-ready presentations with professional design — native editable PPTX, browser-ready HTML, or social image — applying 14 Chinese-context styles and a 5-dimension self-check.",
   "author": {
     "name": "大漠",
     "email": "damo@example.com"
@@ -21,8 +21,8 @@
     "zh": "PPT 架构师"
   },
   "displayDescription": {
-    "en": "Transforms any topic into production-ready presentations: chooses between editable PPTX or browser-ready HTML, applies professional design systems with 14 built-in styles, and delivers polished results ready for formal delivery.",
-    "zh": "把任意主题变成可直接交付的 PPT：按需选 PPTX 或 HTML 格式，内置 14 种专业风格，产出可直接投屏的正式汇报材料。"
+    "en": "Turns any topic into a deliverable deck: native editable PPTX, browser-ready HTML, or social image — 14 Chinese-context styles, with a 5-dimension self-check.",
+    "zh": "把任意主题做成可交付 PPT：原生可改 PPTX、网页高颜值、图片发社媒，14 风格任选。"
   },
   "avatar": "avatars/ppt-architect.png",
   "categoryId": "02-Engineering",
@@ -38,7 +38,7 @@
   ],
   "quickPrompts": [
     { "en": "Make a 12-page PPT about AI tools annual review, ink magazine style", "zh": "帮我做一份 12 页的 PPT，主题 AI 工具号年度复盘，墨水杂志风格" },
-    { "en": "Convert this outline into a PPTX for formal presentation", "zh": "把这份大纲转成 PPTX，用于正式汇报" },
-    { "en": "Make an HTML presentation with speaker notes", "zh": "做一个带演讲者备注的 HTML 演示文稿" }
+    { "en": "Turn this outline into a native, editable PPTX for formal handoff to colleagues", "zh": "把这份大纲转成原生可编辑的 PPTX，用于正式汇报、交给同事改" },
+    { "en": "Beautify this PPT matching the reference image, change nothing in the text; or export an image version for social media", "zh": "美化这份 PPT，照这张参考图风格来、文字一字都别改；要发社媒就出图片版" }
   ]
 }

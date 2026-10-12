@@ -2,6 +2,8 @@
 name: hai-visual-explainer
 description: |
   Turns supplied content into self-contained HTML and PNG in two modes: card for one shareable frame（知识卡、信息卡、金句卡、封面、把要点做成一张图）, report for multi-section documents（可视化报告、HTML 汇报页、PRD/计划/评审做成网页）. Preserve source meaning and use structure-appropriate typography, diagrams, matrices, and evidence. Owns presentation, not the underlying architecture or product judgment; use a frontend or document-design skill for apps or print artifacts.
+version: 1.0.0
+category: development-tools
 ---
 
 # Hai Visual Explainer

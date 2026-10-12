@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>一周食谱规划器</title>
+<style>
+  :root{
+    --bg:#fffaf3; --card:#ffffff; --ink:#2f2a25; --muted:#8a8178;
+    --line:#ece3d6; --accent:#e8743b; --accent2:#3a9d8c; --soft:#fff3e8;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:-apple-system,"PingFang SC","Microsoft YaHei",Segoe UI,sans-serif;
+    line-height:1.6;padding:20px;max-width:960px;margin:0 auto}
+  h1{font-size:22px;margin:0 0 4px}
+  .sub{color:var(--muted);font-size:13px;margin-bottom:18px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;
+    padding:16px;margin-bottom:16px;box-shadow:0 1px 3px rgba(0,0,0,.03)}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+  label{display:block;font-size:13px;color:var(--muted);margin-bottom:4px}
+  input,textarea{width:100%;padding:9px 10px;border:1px solid var(--line);
+    border-radius:9px;font-size:14px;background:#fffdf9;color:var(--ink);font-family:inherit}
+  textarea{resize:vertical;min-height:54px}
+  .btns{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+  button{border:none;border-radius:10px;padding:10px 18px;font-size:14px;
+    font-weight:600;cursor:pointer;font-family:inherit}
+  .primary{background:var(--accent);color:#fff}
+  .ghost{background:var(--soft);color:var(--accent)}
+  .ghost2{background:#eef6f4;color:var(--accent2)}
+  table{width:100%;border-collapse:collapse;font-size:14px;margin-top:4px}
+  th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+  th{background:var(--soft);font-weight:600;color:var(--accent)}
+  td .meal{color:var(--muted);font-size:12px;display:block}
+  .cost{color:var(--accent2);font-weight:600;white-space:nowrap}
+  .shop{background:var(--soft);border-radius:10px;padding:12px 14px;margin-top:10px;font-size:14px}
+  .shop b{color:var(--accent)}
+  .tag{display:inline-block;background:#eef6f4;color:var(--accent2);
+    border-radius:6px;padding:1px 7px;font-size:12px;margin:2px 4px 2px 0}
+  .empty{color:var(--muted);font-size:14px;padding:8px 2px}
+  h2{font-size:17px;margin:0 0 10px}
+</style>
+</head>
+<body>
+  <h1>🍳 一周食谱规划器</h1>
+  <div class="sub">按天数、人数、预算和现有库存排一周食谱，自动汇总采购清单。数据只存本机浏览器，不联网。</div>
+
+  <div class="card">
+    <div class="grid">
+      <div><label>规划天数</label><input id="days" type="number" min="1" max="14" value="7"></div>
+      <div><label>用餐人数</label><input id="people" type="number" min="1" max="10" value="1"></div>
+      <div><label>每日预算（¥，可留空）</label><input id="budget" type="number" min="0" placeholder="不限"></div>
+      <div style="grid-column:1/-1"><label>现有库存（逗号分隔，如：鸡蛋,番茄,土豆）</label>
+        <textarea id="inv" placeholder="鸡蛋, 番茄, 土豆, 大米"></textarea></div>
+    </div>
+    <div class="btns">
+      <button class="primary" onclick="plan()">生成周食谱</button>
+      <button class="ghost" onclick="exportPlan()">导出计划</button>
+      <button class="ghost2" onclick="clearAll()">清空</button>
+    </div>
+  </div>
+
+  <div class="card" id="out"></div>
+
+<script>
+/* 菜谱池：n 菜名, c 每份约¥, i 主料, m 适合餐次 */
+const POOL = [
+  {n:"白粥+咸菜",c:2,i:["大米","咸菜"],m:["早"]},
+  {n:"鸡蛋羹",c:3,i:["鸡蛋"],m:["早"]},
+  {n:"牛奶燕麦",c:4,i:["牛奶","燕麦"],m:["早"]},
+  {n:"三明治",c:6,i:["面包","鸡蛋","生菜"],m:["早"]},
+  {n:"阳春面",c:4,i:["面条","青菜"],m:["早"]},
+  {n:"葱油拌面",c:4,i:["面条"],m:["早"]},
+  {n:"小米南瓜粥",c:3,i:["小米","南瓜"],m:["早"]},
+  {n:"豆浆油条",c:5,i:["豆浆","油条"],m:["早"]},
+  {n:"蛋炒饭",c:5,i:["米饭","鸡蛋","火腿"],m:["早","午"]},
+  {n:"番茄炒蛋",c:6,i:["番茄","鸡蛋"],m:["午","晚"]},
+  {n:"青椒炒蛋",c:6,i:["青椒","鸡蛋"],m:["午","晚"]},
+  {n:"麻婆豆腐",c:8,i:["豆腐","猪肉末","豆瓣酱"],m:["午","晚"]},
+  {n:"家常豆腐",c:7,i:["豆腐","青椒","木耳"],m:["午","晚"]},
+  {n:"青椒肉丝",c:10,i:["青椒","猪肉丝"],m:["午","晚"]},
+  {n:"宫保鸡丁",c:12,i:["鸡肉","黄瓜","花生"],m:["午","晚"]},
+  {n:"可乐鸡翅",c:12,i:["鸡翅","可乐"],m:["午","晚"]},
+  {n:"红烧鸡块",c:11,i:["鸡肉","土豆"],m:["午","晚"]},
+  {n:"回锅肉",c:12,i:["五花肉","青椒","蒜苗"],m:["午","晚"]},
+  {n:"红烧排骨",c:16,i:["排骨","土豆"],m:["午","晚"]},
+  {n:"清蒸鱼",c:18,i:["鱼"],m:["午","晚"]},
+  {n:"红烧鱼",c:16,i:["鱼","番茄酱"],m:["午","晚"]},
+  {n:"虾仁炒蛋",c:12,i:["虾仁","鸡蛋"],m:["午","晚"]},
+  {n:"西兰花炒虾仁",c:13,i:["西兰花","虾仁"],m:["午","晚"]},
+  {n:"地三鲜",c:8,i:["土豆","茄子","青椒"],m:["午","晚"]},
+  {n:"醋溜土豆丝",c:5,i:["土豆","青椒"],m:["午","晚"]},
+  {n:"鱼香肉丝",c:11,i:["猪肉丝","胡萝卜","木耳","笋"],m:["午","晚"]},
+  {n:"咖喱鸡",c:12,i:["鸡肉","土豆","胡萝卜","洋葱","咖喱块"],m:["午","晚"]},
+  {n:"罗宋汤",c:13,i:["牛肉","番茄","土豆","洋葱"],m:["午","晚"]},
+  {n:"牛肉面",c:14,i:["面条","牛肉"],m:["午","晚"]},
+  {n:"炸酱面",c:10,i:["面条","猪肉末","黄瓜"],m:["午","晚"]},
+  {n:"白菜炖豆腐",c:7,i:["白菜","豆腐","粉条"],m:["午","晚"]},
+  {n:"酸辣白菜",c:5,i:["白菜"],m:["午","晚"]},
+  {n:"蒜蓉西兰花",c:6,i:["西兰花"],m:["午","晚"]},
+  {n:"蚝油生菜",c:5,i:["生菜"],m:["午","晚"]},
+  {n:"拍黄瓜",c:4,i:["黄瓜"],m:["午","晚"]},
+  {n:"芹菜炒香干",c:7,i:["芹菜","香干"],m:["午","晚"]},
+  {n:"蒜苔炒肉",c:10,i:["蒜苔","猪肉丝"],m:["午","晚"]},
+  {n:"红烧茄子",c:6,i:["茄子"],m:["午","晚"]},
+  {n:"玉米排骨汤",c:13,i:["玉米","排骨"],m:["午","晚"]},
+  {n:"冬瓜排骨汤",c:11,i:["冬瓜","排骨"],m:["午","晚"]},
+  {n:"番茄蛋汤",c:4,i:["番茄","鸡蛋"],m:["午","晚"]},
+  {n:"紫菜蛋花汤",c:4,i:["紫菜","鸡蛋"],m:["午","晚"]}
+];
+
+const VEGS = ["酸辣白菜","蒜蓉西兰花","蚝油生菜","拍黄瓜","红烧茄子","醋溜土豆丝","白菜炖豆腐"];
+const MAINS = POOL.filter(d=>d.m.includes("午")||d.m.includes("晚"));
+const BFAST = POOL.filter(d=>d.m.includes("早"));
+
+function norm(s){return (s||"").split(/[,，\s]+/).map(x=>x.trim()).filter(Boolean);}
+function overlap(d,inv){return d.i.filter(x=>inv.includes(x)).length;}
+
+/* 选一道：在候选里优先用库存、尽量不重复，带随机性 */
+function pick(cands,inv,used,seed){
+  if(!cands.length) return null;
+  const scored = cands.map(d=>({d, score: overlap(d,inv)*3 - used.filter(u=>u===d.n).length*5 + (Math.sin(seed*7+d.n.length)%1)}));
+  scored.sort((a,b)=>b.score-a.score);
+  // 在前 40% 里随机，保证多样又有偏好
+  const top = scored.slice(0, Math.max(1, Math.ceil(scored.length*0.4)));
+  const chosen = top[Math.floor(Math.abs(Math.sin(seed))*top.length)%top.length].d;
+  return chosen;
+}
+
+let LAST=null;
+function plan(){
+  const D=Math.max(1,Math.min(14,+document.getElementById('days').value||7));
+  const P=Math.max(1,+document.getElementById('people').value||1);
+  const B=(+document.getElementById('budget').value)||0;
+  const inv=norm(document.getElementById('inv').value);
+  const rows=[]; const shopSet=new Set(); const used=[];
+  for(let day=1;day<=D;day++){
+    const bf=pick(BFAST,inv,used,day*1.3);
+    let lunchM=pick(MAINS,inv,used,day*2.1);
+    let lunchV=pick(VEGS.map(n=>POOL.find(d=>d.n===n)),inv,used,day*2.7);
+    let dinnerM=pick(MAINS.filter(d=>!lunchM||d.n!==lunchM.n),inv,used,day*3.3);
+    let dinnerV=pick(VEGS.map(n=>POOL.find(d=>d.n===n)).filter(d=>!lunchV||d.n!==lunchV.n),inv,used,day*3.9);
+    [bf,lunchM,lunchV,dinnerM,dinnerV].forEach(d=>{if(d){used.push(d.n);d.i.forEach(x=>{if(!inv.includes(x))shopSet.add(x);});}});
+    const items=[bf,lunchM,lunchV,dinnerM,dinnerV].filter(Boolean);
+    const dayCost=items.reduce((s,d)=>s+d.c,0)*P;
+    rows.push({day,bf,lunchM,lunchV,dinnerM,dinnerV,dayCost});
+  }
+  LAST={rows,shop:[...shopSet],P,inv,D};
+  render(rows,[...shopSet],P);
+  try{localStorage.setItem('mealplan',JSON.stringify(LAST));}catch(e){}
+}
+
+function cell(d){return d?`<b>${d.n}</b><span class="meal">¥${d.c}/份</span>`:'<span class="empty">—</span>';}
+function render(rows,shop,P){
+  let h=`<h2>本周食谱（${rows.length} 天 · ${P} 人）</h2><table><thead><tr>
+    <th>第几天</th><th>早餐</th><th>午餐</th><th>晚餐</th><th>当日约</th></tr></thead><tbody>`;
+  rows.forEach(r=>{
+    h+=`<tr><td><b>${r.day}</b></td><td>${cell(r.bf)}</td>
+      <td>${cell(r.lunchM)}<br>${cell(r.lunchV)}</td>
+      <td>${cell(r.dinnerM)}<br>${cell(r.dinnerV)}</td>
+      <td class="cost">¥${r.dayCost}</td></tr>`;
+  });
+  h+=`</tbody></table>`;
+  if(shop.length){
+    h+=`<div class="shop"><b>🛒 采购清单</b>（现有库存之外的主料）<br>`+
+       shop.map(s=>`<span class="tag">${s}</span>`).join('')+`</div>`;
+  }else{
+    h+=`<div class="shop">🎉 现有库存已够，基本不用采购！</div>`;
+  }
+  document.getElementById('out').innerHTML=h;
+}
+
+function exportPlan(){
+  if(!LAST){alert('请先生成食谱');return;}
+  let t=`一周食谱（${LAST.D}天·${LAST.P}人）\n`;
+  LAST.rows.forEach(r=>{
+    t+=`第${r.day}天｜早:${r.bf?r.bf.n:'-'}｜午:${r.lunchM?r.lunchM.n:'-'}+${r.lunchV?r.lunchV.n:'-'}｜晚:${r.dinnerM?r.dinnerM.n:'-'}+${r.dinnerV?r.dinnerV.n:'-'}\n`;
+  });
+  if(LAST.shop.length) t+=`\n采购清单: ${LAST.shop.join('、')}\n`;
+  const blob=new Blob([t],{type:'text/plain;charset=utf-8'});
+  const a=document.createElement('a');a.href=URL.createObjectURL(blob);
+  a.download='周食谱.txt';a.click();
+}
+
+function clearAll(){
+  document.getElementById('out').innerHTML='';
+  LAST=null;try{localStorage.removeItem('mealplan');}catch(e){}
+}
+
+/* 进入时恢复上次计划 */
+try{const s=localStorage.getItem('mealplan');if(s){LAST=JSON.parse(s);render(LAST.rows,LAST.shop,LAST.P);}}catch(e){}
+</script>
+</body>
+</html>

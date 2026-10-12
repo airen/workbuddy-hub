@@ -1,6 +1,8 @@
 ---
 name: gossamer-engineering
 description: 'Gossamer `.gos`, `gos`, `project.toml`, and `project.lock` engineering guidance. Use for existing Gossamer repositories and explicitly requested bounded Gossamer evaluation/proof work: implementation, review, testing, build, package, deployment, Rust bindings, goroutines, or targets. Do not use for generic language/toolchain selection before Gossamer is selected, including standalone Wasm requirements, or for the unrelated ChainSafe Go project named Gossamer.'
+version: 1.0.0
+category: development-tools
 ---
 
 # Gossamer Engineering

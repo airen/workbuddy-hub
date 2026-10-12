@@ -1,6 +1,8 @@
 ---
 name: python-engineering
 description: Python engineering guidance with uv. Use when adding, changing, reviewing, testing, packaging, linting, formatting, typing, dependency-managing, or refactoring Python code, pyproject.toml, uv.lock, pytest/unittest tests, Python scripts, Python web templates, or Python project workflows. Do not use as the primary skill for distributed PySpark SQL/DataFrame execution, execution plans, shuffles, Structured Streaming, or notebook/cluster lifecycle; use data-platform-engineering. Do not use as the primary skill for smell-focused Python audits; use python-antipatterns. Do not use for checked-in hosted CI/release-provider or Docker/OCI/Compose configuration except the Python commands they invoke; use ci-release-engineering or container-engineering. Use api-design for public service/SDK/CLI contracts, observability-engineering for telemetry/logging signal design, and css-scss-styling for CSS/SCSS/template styling decisions.
+version: 1.0.0
+category: development-tools
 ---
 
 # Python Engineering

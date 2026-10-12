@@ -1,6 +1,8 @@
 ---
 name: domain-modeling
 description: Review tactical DDD models, aggregates, entities, value objects, invariants, domain services, and ubiquitous language. Use for a focused audit of an existing domain model; do not use to design a new model or force DDD onto simple data-centric work.
+version: 1.0.0
+category: development-tools
 ---
 
 # Domain Modeling Skill

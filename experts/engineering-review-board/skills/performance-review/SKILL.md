@@ -1,6 +1,8 @@
 ---
 name: performance-review
 description: Review performance and scalability using workload, baseline, profiling, query-plan, rendering, concurrency, and resource evidence. Use for bottleneck audits, benchmark plans, capacity risks, or performance-sensitive changes; do not use for active unexplained regressions or implementation mechanics alone.
+version: 1.0.0
+category: development-tools
 ---
 
 # Performance Review

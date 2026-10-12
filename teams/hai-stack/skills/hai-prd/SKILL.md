@@ -2,6 +2,8 @@
 name: hai-prd
 description: |
   Decides whether a PRD is needed, drafts one from a product problem, repairs an existing PRD, or judges its split/merge boundary. Use for PRDs, product requirements, requirement specs, scope, user-visible behavior, and acceptance criteria（写 PRD、需求文档、PRD 拆分或打磨）. Use hai-goal for execution phases, hai-architecture for technical design, entity-model-auditor for field placement, and document-audit skills when the task is consistency diagnosis rather than product shaping.
+version: 1.0.0
+category: development-tools
 ---
 
 # Hai PRD

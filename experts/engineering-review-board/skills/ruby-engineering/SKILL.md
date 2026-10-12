@@ -1,6 +1,8 @@
 ---
 name: ruby-engineering
 description: Ruby engineering guidance. Use when creating, changing, reviewing, testing, packaging, or scripting Ruby source, gems, Gemfiles, Bundler, Rake, Minitest, RSpec, Rails-adjacent Ruby, or Ruby CLIs. Do not use merely to choose among scripting languages without Ruby implementation, or for framework-specific behavior whose owning skill is more precise.
+version: 1.0.0
+category: development-tools
 ---
 
 # Ruby Engineering

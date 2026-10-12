@@ -7,6 +7,8 @@ description: |
 type: skill
 author: 女娲 · Skill造人术
 调研时间: 2026-05-04
+version: 1.0.0
+category: content-creation
 ---
 # 硅星人 · 思维操作系统
 

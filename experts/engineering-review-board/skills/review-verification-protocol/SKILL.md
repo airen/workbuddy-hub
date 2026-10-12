@@ -2,6 +2,8 @@
 name: review-verification-protocol
 description: Mandatory evidence gates for review findings. Load with code-review and any specialist review skill before reporting findings, or read/apply manually if the runtime hides this skill.
 user-invocable: false
+version: 1.0.0
+category: development-tools
 ---
 
 # Review Verification Protocol

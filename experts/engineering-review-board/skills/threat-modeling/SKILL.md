@@ -1,6 +1,8 @@
 ---
 name: threat-modeling
 description: Threat modeling and security design analysis. Use when asked to threat model, identify abuse cases, model actors/assets/data flows/trust boundaries, STRIDE, attack trees, attack surface, security requirements, mitigations, assumptions, or residual risk for new features, systems, integrations, APIs, tenants, uploads, plugins, webhooks, command surfaces, or sensitive-data flows. Do not use for ordinary code review, confirmed vulnerability validation, dependency/SBOM/CVE supply-chain review, language implementation, or third-party API docs.
+version: 1.0.0
+category: development-tools
 ---
 
 # Threat Modeling

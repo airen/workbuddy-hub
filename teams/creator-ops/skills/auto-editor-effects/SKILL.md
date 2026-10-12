@@ -1,6 +1,8 @@
 ---
 name: auto-editor-effects
 description: Apply actions and animations to sections of a video/audio with auto-editor — change speed, duck or fade volume, de-ess, zoom/Ken Burns, rotate/spin, draw boxes, overlay logos or picture-in-picture, and animate any of these with ramps and easing. Use when someone wants creative effects or per-section behavior rather than plain silence-cutting.
+version: 1.0.0
+category: content-creation
 ---
 
 # Actions & animations

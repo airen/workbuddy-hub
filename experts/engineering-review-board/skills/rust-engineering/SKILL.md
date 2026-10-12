@@ -1,6 +1,8 @@
 ---
 name: rust-engineering
 description: Core Rust engineering guidance. Use when adding or changing Rust crates, modules, public APIs, domain logic, ownership and lifetime structure, traits, generics, error types, feature flags, workspaces, refactors, design patterns, or declarative/procedural macros. Do not use for checked-in hosted CI/release-provider or Docker/OCI/Compose configuration except the Rust commands they invoke; use ci-release-engineering or container-engineering. Use api-design for public service/SDK/CLI contracts, observability-engineering for telemetry/logging signal design, rust-testing-quality for test and CI lanes, rust-async-web for Tokio/Axum/Leptos work, rust-desktop-gui for native desktop GUI frameworks and delivery, rust-persistence-sql for SQLx, SeaQuery, and database adapter work, and rust-code-review for requested reviews.
+version: 1.0.0
+category: development-tools
 ---
 
 # Rust Engineering

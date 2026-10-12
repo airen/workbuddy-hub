@@ -1,6 +1,8 @@
 ---
 name: sql-engineering
 description: Database-neutral SQL engineering guidance. Use when reading, writing, refactoring, reviewing, testing, or optimizing SQL queries, schemas, migrations, tables, views, functions, triggers, constraints, indexes, transactions, reporting queries, or data behavior before choosing a database-specific skill. Use api-design when SQL changes affect published contracts, observability-engineering for database telemetry, and PostgreSQL, MySQL/MariaDB, or SQLite skills for engine-specific behavior.
+version: 1.0.0
+category: development-tools
 ---
 
 # SQL Engineering

@@ -1,6 +1,8 @@
 ---
 name: svelte-sveltekit-engineering
 description: Svelte and SvelteKit engineering guidance. Use when adding, changing, reviewing, or testing .svelte components, Svelte 5 runes, stores, context, SvelteKit routing, load functions, form actions, hooks, adapters, or deciding between standalone Svelte and full SvelteKit. Use javascript-typescript-engineering for generic JS/TS package/build/test mechanics, css-scss-styling for stylesheet and Tailwind decisions, api-design for backend contract shape, and ux-accessibility-review for accessibility audits. Do not use for non-Svelte frontend frameworks.
+version: 1.0.0
+category: development-tools
 ---
 
 # Svelte and SvelteKit Engineering

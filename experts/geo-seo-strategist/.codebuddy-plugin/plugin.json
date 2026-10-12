@@ -1,0 +1,58 @@
+{
+  "name": "geo-seo-strategist",
+  "version": "1.0.0",
+  "description": "Step-by-step GEO and SEO advisor for your site and app: from topic research and writing to llms.txt, so AI search and Google cite you more.",
+  "author": {
+    "name": "大漠",
+    "email": "damo@example.com"
+  },
+  "license": "MIT",
+  "agents": ["./agents/geo-seo-strategist.md"],
+  "skills": [
+    "./skills/seo-foundations",
+    "./skills/geo-topic-research",
+    "./skills/geo-content-writing",
+    "./skills/llms-txt-builder",
+    "./skills/geo-measurement"
+  ],
+  "expertType": "agent",
+  "agentName": "geo-seo-strategist",
+  "displayName": {
+    "en": "Xian Yang",
+    "zh": "显扬"
+  },
+  "profession": {
+    "en": "GEO/SEO Growth Advisor",
+    "zh": "GEO/SEO 增长顾问"
+  },
+  "displayDescription": {
+    "en": "Step-by-step GEO and SEO advisor for your site and app: from topic research and writing to llms.txt, so AI search and Google cite you more.",
+    "zh": "网站与应用 GEO SEO 顾问：从选题、写作到 llms.txt，让 AI 与搜索更常引用你。"
+  },
+  "avatar": "avatars/geo-seo-strategist.png",
+  "categoryId": "06-ContentCreative",
+  "defaultInitPrompt": {
+    "zh": "帮我的网站做一次 GEO 选题诊断，找出真正值得写的主题机会",
+    "en": "Run a GEO topic diagnosis on my site and find the topics actually worth writing"
+  },
+  "plugin": "geo-seo-strategist",
+  "tags": [
+    { "en": "GEO Optimization", "zh": "GEO 优化" },
+    { "en": "Search Visibility", "zh": "搜索可见性" },
+    { "en": "Content Topic Research", "zh": "内容选题" }
+  ],
+  "quickPrompts": [
+    {
+      "zh": "帮我的网站做一次 GEO 选题诊断，找出真正值得写的主题机会",
+      "en": "Run a GEO topic diagnosis on my site and find the topics actually worth writing"
+    },
+    {
+      "zh": "按 GEO 方法帮我写一篇工具对比/评测文章，含 Entity、对比与可核实证据",
+      "en": "Write a GEO-style comparison/review article with entities, comparisons and verifiable evidence"
+    },
+    {
+      "zh": "给网站生成一份 llms.txt，并列出要补的机器可读资产",
+      "en": "Generate an llms.txt for my site and list the machine-readable assets to add"
+    }
+  ]
+}

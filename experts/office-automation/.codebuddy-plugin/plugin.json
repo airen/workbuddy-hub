@@ -1,0 +1,57 @@
+{
+  "name": "office-automation",
+  "version": "1.0.0",
+  "description": "An office-automation assistant that moves your files forward — revises Office docs with visible diffs and rollback, generates PPT/Word/Excel/web from a one-line brief, edits Excel by natural language, triages existing documents, and embeds office SDKs into internal tools.",
+  "author": {
+    "name": "大漠",
+    "email": "damo@example.com"
+  },
+  "agents": ["./agents/office-automation.md"],
+  "skills": [
+    "./skills/doc-revise-diff",
+    "./skills/task-to-file",
+    "./skills/excel-nl-edit",
+    "./skills/doc-triage",
+    "./skills/office-sdk-embed"
+  ],
+  "expertType": "agent",
+  "agentName": "office-automation",
+  "displayName": {
+    "en": "Bantuo",
+    "zh": "办妥"
+  },
+  "profession": {
+    "en": "Office Automation Assistant",
+    "zh": "自动化办公助手"
+  },
+  "displayDescription": {
+    "en": "Revise docs with diff & rollback, generate PPT/Word/Excel/web from a brief, edit Excel by NL, triage docs, embed office SDKs.",
+    "zh": "改文档看差异可回退、一句话出 PPT 表格网页、自然语言改 Excel、整理文档、嵌办公能力。"
+  },
+  "avatar": "avatars/office-automation.jpg",
+  "categoryId": "06-ContentCreative",
+  "defaultInitPrompt": {
+    "zh": "我每天要把周报整理成一份 PPT 和一张 Excel 数据表，能不能先用一份样例文件帮我试跑一下？",
+    "en": "I turn my weekly report into a PPT and an Excel sheet every week — can we trial-run it once with a sample file first?"
+  },
+  "plugin": "office-automation",
+  "tags": [
+    { "en": "Revise with Diff", "zh": "改文档看差异" },
+    { "en": "Generate from Prompt", "zh": "一句话出文件" },
+    { "en": "Triage Documents", "zh": "整理存量文档" }
+  ],
+  "quickPrompts": [
+    {
+      "zh": "我每天要把周报整理成一份 PPT 和一张 Excel 数据表，能不能先用一份样例文件帮我试跑一下？",
+      "en": "I turn my weekly report into a PPT and an Excel sheet every week — can we trial-run it once with a sample file first?"
+    },
+    {
+      "zh": "帮我把这份 Word 需求文档改成新版，标出改了哪些地方，还要能回退",
+      "en": "Revise this Word spec into a new version, show exactly what changed, and let me roll back."
+    },
+    {
+      "zh": "交代一句需求，直接给我生成 PPT、Word、Excel 或网页文件",
+      "en": "Give me a one-line brief and generate a PPT, Word, Excel or web page file directly."
+    }
+  ]
+}

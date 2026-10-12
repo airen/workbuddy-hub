@@ -1,6 +1,8 @@
 ---
 name: script-engineering
 description: Script and automation engineering guidance. Use when creating, changing, reviewing, or testing POSIX shell, Bash, zsh, Fish, PowerShell, Python, Ruby, PHP, Node, Object Pascal/Delphi, or other repository scripts; choosing a scripting language or interpreter; deciding whether automation belongs in a script or shell; or exposing script workflows through Just or package scripts. Do not use when only running an existing script or recipe, for ordinary application code with no automation surface, or for hosted CI/release-provider or container semantics beyond the commands scripts invoke.
+version: 1.0.0
+category: development-tools
 ---
 
 # Script Engineering

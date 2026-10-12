@@ -1,6 +1,8 @@
 ---
 name: hexagonal-architecture
 description: Hexagonal Architecture / Ports and Adapters guidance centered on how external actors drive or are driven by an application through explicit inbound and outbound ports and adapters. Use when classifying port ownership, replacing delivery or infrastructure mechanisms, or testing the core through those seams. Use clean-architecture when entities, use cases/interactors, and interface-adapter policy flow are primary, onion-architecture for explicit concentric domain/application rings, and architecture-review for a read-only audit. Do not use for simple CRUD, prototypes, or trivial pass-through interfaces.
+version: 1.0.0
+category: development-tools
 ---
 
 # Hexagonal Architecture

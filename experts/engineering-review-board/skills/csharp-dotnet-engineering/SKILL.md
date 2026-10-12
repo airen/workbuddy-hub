@@ -1,6 +1,8 @@
 ---
 name: csharp-dotnet-engineering
 description: C# and .NET engineering guidance. Use when adding, changing, reviewing, testing, packaging, restoring, building, publishing, or refactoring C# source, SDK-style .csproj projects, Directory.Build.props/targets, global.json, .sln/.slnx solutions, MSBuild, NuGet PackageReference, ASP.NET Core, Blazor, EF Core, or .NET test projects. Do not use for database-native schema/query design, general WebAssembly host/guest/runtime decisions, checked-in CI/release-provider configuration, Docker/OCI/Compose configuration, or a public API contract; use the owning SQL, WebAssembly, CI/release, container, or API skill instead.
+version: 1.0.0
+category: development-tools
 ---
 
 # C# and .NET Engineering

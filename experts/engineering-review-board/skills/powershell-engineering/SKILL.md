@@ -1,6 +1,8 @@
 ---
 name: powershell-engineering
 description: Cross-platform PowerShell engineering guidance. Use when creating, changing, reviewing, or testing `.ps1`, `.psm1`, or `.psd1` files, PowerShell functions/modules, Pester tests, PSScriptAnalyzer configuration, native-command orchestration, or Windows/macOS/Linux PowerShell automation. Do not use merely to run an existing PowerShell command or for generic script-language selection with no PowerShell implementation.
+version: 1.0.0
+category: development-tools
 ---
 
 # PowerShell Engineering

@@ -1,6 +1,8 @@
 ---
 name: container-engineering
 description: Implement, change, review, or test Dockerfile, Containerfile, .dockerignore, BuildKit/OCI image, and Docker Compose configuration, including build contexts and stages, caches, runtime users, entrypoints, health checks, ports, networks, volumes, secrets, lifecycle, and resource or privilege controls. Do not use for routine command execution or log inspection, Kubernetes/Helm/ECS/Nomad/cloud deployment, application-only changes, supply-chain-only or security-review-only audits, hosted CI pipelines, final ship decisions, or unexplained container failures.
+version: 1.0.0
+category: development-tools
 ---
 
 # Container Engineering

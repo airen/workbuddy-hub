@@ -1,0 +1,59 @@
+MIT License
+
+Copyright (c) 2026 sunkeke-ai (upstream skill)
+Copyright (c) 2026 大漠 (WorkBuddy expert package)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+---
+
+## Attribution / 归属说明
+
+本专家包是对开源技能项目 **keke-podcast-to-article** 的封装转化。
+
+- 上游仓库：https://github.com/sunkeke-ai/keke-podcast-to-article
+- 上游作者：sunkeke-ai
+- 上游许可：MIT License, Copyright (c) 2026 sunkeke-ai
+
+### 原样搬运的文件（保留上游内容与许可）
+
+- `skills/keke-podcast-to-article/SKILL.md` — 核心写作与配图规则，正文逐字保留，未翻译、未简化、未改写。
+- `skills/keke-podcast-to-article/references/**` — `editorial-examples.md`、`source-input-workflow.md`、`punk-illustration-workflow.md`、`obsidian-export.md`，逐字保留。
+- `skills/keke-podcast-to-article/scripts/save_to_obsidian.py` — Obsidian 导出脚本，逐字保留。
+- `skills/keke-podcast-to-article/agents/openai.yaml` — 上游展示信息，逐字保留。
+- `assets/upstream-workflow.png` — 上游 README 工作流配图（`readme-workflow.png`），仅缩放体积，内容未改。
+
+### 本包新写的文件
+
+- `.codebuddy-plugin/plugin.json` — WorkBuddy 专家包元数据
+- `agents/podcast-to-article.md` — 专家 persona（角色定义、SOP、确认点、WorkBuddy 机制适配、注意事项）
+- `manifest.yaml` — hub 内部索引元数据
+- `README.md` — 本包说明
+- `LICENSE` — 本许可文件（MIT 原文 + 归属说明）
+- `avatars/podcast-to-article.jpg` — 专家头像（AI 生成）
+
+### 改动说明
+
+本包**未修改任何上游技能正文与脚本逻辑**。唯一的上游文件改动是给 `skills/keke-podcast-to-article/SKILL.md` 的 frontmatter **追加**了四个 WorkBuddy 平台必需的字段（`display_name`、`display_name_en`、`category: content-creation`、`version: 1.0.0`）；原有 `name` 与 `description` 一字未动，正文零改动。
+
+所有新增内容都是围绕上游技能的**编排层**：把上游「单一 Skill + 4 篇 references + 1 个脚本」的组织，映射为一个 WorkBuddy Agent 型专家（persona + 1 个预加载技能）。
+
+上游 README 中提到的第三方依赖（`punk-cover` 及其风格资源、平台字幕/转写能力）**不在本仓库授权范围内**，也未随本包分发；缺失时本专家照常交付文章，只说明配图尚未完成。
+
+上游与本包同为 MIT 许可。

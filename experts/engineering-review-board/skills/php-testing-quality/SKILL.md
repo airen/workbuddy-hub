@@ -1,6 +1,8 @@
 ---
 name: php-testing-quality
 description: PHP testing and quality-lane guidance. Use when selecting, adding, running, or reviewing PHPUnit, Pest, Behat, PHPStan, Psalm, PHP_CodeSniffer, PHP-CS-Fixer, Infection, framework harnesses, PHP integration tests, browser E2E tests, or PHP 8.4 compatibility tests. Do not use for ordinary PHP implementation, pattern choice, or smell-only review; use php-engineering, php-design-patterns, or php-antipatterns instead.
+version: 1.0.0
+category: development-tools
 ---
 
 # PHP Testing Quality

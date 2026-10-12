@@ -1,6 +1,8 @@
 ---
 name: gherkin
 description: Write clear, idiomatic formal Gherkin feature specifications. Use when creating or editing .feature files, Scenario Outlines, Examples tables, Background sections, dialect keywords, or step wording. Do not use for behavior clarification before a formal artifact; use behavior-driven-development.
+version: 1.0.0
+category: development-tools
 ---
 
 # Gherkin

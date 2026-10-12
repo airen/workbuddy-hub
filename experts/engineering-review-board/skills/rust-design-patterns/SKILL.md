@@ -1,6 +1,8 @@
 ---
 name: rust-design-patterns
 description: Rust design pattern and idiom guidance. Use when choosing, implementing, or reviewing Rust patterns such as newtypes, builders, RAII guards, traits, strategy, visitor, command, compose-structs, small crates, contained unsafe modules, custom traits for complex bounds, macros, or ownership-driven API design. Use rust-antipatterns for smell-focused audits and load rust-engineering whenever applying or implementing a pattern.
+version: 1.0.0
+category: development-tools
 ---
 
 # Rust Design Patterns

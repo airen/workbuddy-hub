@@ -1,6 +1,6 @@
 {
   "name": "visual-forge-studio",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A visual design studio that turns a text brief into finished visuals: page interfaces, brand colour systems, social graphics, interactive web tools, generative art, image generation and optimisation — all held to one consistent brand line.",
   "author": {
     "name": "大漠",
@@ -17,7 +17,10 @@
     "./skills/algorithmic-art",
     "./skills/brand-guidelines",
     "./skills/image-generation",
-    "./skills/image-optimizer"
+    "./skills/image-optimizer",
+    "./skills/ui-ux-pro-max",
+    "./skills/ui-styling",
+    "./skills/design-system"
   ],
   "expertType": "agent",
   "agentName": "visual-forge-studio",

@@ -73,7 +73,7 @@
   },
   "displayDescription": {
     "en": "A six-role iteration team: judge whether the work deserves doing, settle boundaries and fields, land it test-first, confirm with executed evidence, and leave every doc with one reading only.",
-    "zh": "把一次软件迭代做对：先判断值不值得做，再设计边界、按测试驱动落地，用证据确认，最后把文档沉淀干净。"
+    "zh": "把软件迭代做对：先判断值不值得做，再设计边界、按测试驱动落地，用证据确认，最后把文档沉淀干净。"
   },
   "avatar": "avatars/team.png",
   "categoryId": "02-Engineering",

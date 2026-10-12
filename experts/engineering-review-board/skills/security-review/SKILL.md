@@ -1,6 +1,8 @@
 ---
 name: security-review
 description: Security review and audit guidance for concrete code, config, docs, and command-surface changes. Use when implemented changes touch authentication, authorization, crypto, certificates, tokens, signatures, secrets, passwords, sessions, session cookies, CORS, CSP, CSRF, OAuth/OIDC/SAML, redirect/callback handling, input validation, file paths, command execution, or other trust boundaries. Pair with code-review for review findings; use threat-modeling for design-time boundary analysis and dependency-supply-chain-review for supply-chain-specific review.
+version: 1.0.0
+category: development-tools
 ---
 
 # Security Review

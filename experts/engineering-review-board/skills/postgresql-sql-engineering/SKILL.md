@@ -1,6 +1,8 @@
 ---
 name: postgresql-sql-engineering
 description: PostgreSQL and SQL engineering guidance. Use with sql-engineering when adding, changing, reviewing, testing, or optimizing PostgreSQL schemas, SQL queries, migrations, transactions, constraints, indexes, views, functions, row-level security, privileges, data behavior, or database performance in any language stack. Do not use for unchanged-SQL ORM or adapter mechanics. Use api-design when migrations or query outputs affect published contracts and observability-engineering for PostgreSQL telemetry signals.
+version: 1.0.0
+category: development-tools
 ---
 
 # PostgreSQL And SQL Engineering
