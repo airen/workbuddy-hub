@@ -1,0 +1,55 @@
+{
+  "name": "geo-fanout-tracer",
+  "version": "1.0.0",
+  "description": "Traces how one question expands into AI search queries, which sources the search returned, and which pages the final answer actually cited — then exports a self-contained offline evidence report. Records only what the OpenAI Responses API returns; never infers hidden searches.",
+  "author": {
+    "name": "大漠",
+    "email": "damo@example.com"
+  },
+  "license": "MIT",
+  "agents": ["./agents/geo-fanout-tracer.md"],
+  "skills": [
+    "./skills/fanout-trace",
+    "./skills/fanout-analysis"
+  ],
+  "expertType": "agent",
+  "agentName": "geo-fanout-tracer",
+  "displayName": {
+    "en": "Su Wen",
+    "zh": "溯问"
+  },
+  "profession": {
+    "en": "AI Search Evidence Analyst",
+    "zh": "AI 搜索取证师"
+  },
+  "displayDescription": {
+    "en": "Trace how one question expands into AI search queries, which sources were returned, and which pages the final answer cited — exported as an offline evidence report.",
+    "zh": "把一个问题扔进 AI 搜索，抓回它被展开成哪些搜索词、搜到哪些来源、答案最终引用了谁。"
+  },
+  "avatar": "avatars/geo-fanout-tracer.jpg",
+  "categoryId": "06-ContentCreative",
+  "defaultInitPrompt": {
+    "zh": "帮我跑一次 fan-out 取证，看看这个问题被 AI 展开成哪些搜索词",
+    "en": "Run a fan-out trace and show how this question expands into search queries"
+  },
+  "plugin": "geo-fanout-tracer",
+  "tags": [
+    { "en": "Query Fan-out", "zh": "Query Fan-out" },
+    { "en": "AI Search Tracing", "zh": "AI 搜索溯源" },
+    { "en": "Source & Citation", "zh": "来源与引用" }
+  ],
+  "quickPrompts": [
+    {
+      "zh": "帮我跑一次 fan-out 取证，看看这个问题被 AI 展开成哪些搜索词",
+      "en": "Run a fan-out trace and show how this question expands into search queries"
+    },
+    {
+      "zh": "对比这几个问题的 fan-out 结果，找出我站内还没覆盖的主题缺口",
+      "en": "Compare fan-out results across questions and find topic gaps my site has not covered"
+    },
+    {
+      "zh": "用已保存的 raw-response.json 重新解析，离线重建取证报告",
+      "en": "Reparse a saved raw-response.json and rebuild the evidence report offline"
+    }
+  ]
+}

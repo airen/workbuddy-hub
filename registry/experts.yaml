@@ -622,3 +622,21 @@ experts:
   platform_category: 04-DataAI
   _source: manifest.yaml
   path: experts/web-recon-desk
+- id: geo-fanout-tracer
+  name: 溯问
+  version: 1.0.0
+  type: expert
+  expert_type: agent
+  description: 把一个问题扔进 AI 搜索，抓回它被展开成哪些搜索词、搜到哪些来源、答案最终引用了谁。
+  category: content
+  skills:
+  - fanout-trace
+  - fanout-analysis
+  tags:
+  - Query Fan-out
+  - AI 搜索溯源
+  - 来源与引用
+  status: active
+  platform_category: 06-ContentCreative
+  _source: manifest.yaml
+  path: experts/geo-fanout-tracer

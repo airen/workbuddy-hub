@@ -1,0 +1,64 @@
+MIT License
+
+Copyright (c) 2026 Zimu (upstream skill: chatgpt-fanout-queries)
+Copyright (c) 2026 大漠 (WorkBuddy expert package: geo-fanout-tracer)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+---
+
+## Attribution / 归属说明
+
+本专家包的方法与输出契约源自开源技能项目 **chatgpt-fanout-queries**。
+
+- 上游仓库：https://github.com/JeffLi1993/open-growth-skills
+- 上游子目录：`chatgpt-fanout-queries/`
+- 上游作者：Zimu（子木）
+- 上游许可：MIT License, Copyright (c) 2026 Zimu
+
+### 继承的部分（不是复制粘贴，是重写实现）
+
+上游的**数据契约、计数语义与克制原则**被完整继承，是本包的灵魂：
+
+- 原问题原样直送，不重写、不偷加研究指令
+- 先落盘完整 `raw-response.json`，再做任何解析
+- 只保留 API 实际返回的 `queries` / `query`，缺了就记警告，绝不反推
+- **搜索来源与最终引用分开计数**，不混成一个数
+- 打开页面、页内查找与搜索分开计数
+- 不推断隐藏搜索、不评价来源可信度、不等同于 ChatGPT 网页版
+
+### 本包重写的文件
+
+- `skills/fanout-trace/scripts/run_fanout.py` — **重写**。上游用 `openai` SDK + `python-dotenv`
+  （需 `pip install`），本包改为纯 Python 标准库（`urllib` + `json`）直调 REST API 并自行解析
+  `.env`，使 WorkBuddy 用户安装后无需装任何依赖即可运行。请求体、产物文件名与计数语义与上游一致。
+- `skills/fanout-trace/scripts/report_template.py` — **重写**。报告模板与渲染改为中文界面与中文概览；
+  原始问题、fan-out 搜索词、来源标题一律保留原文不翻译。
+- `skills/fanout-trace/references/output-contract.md` — 改写为中文，契约内容与上游一致。
+- `skills/fanout-trace/SKILL.md`、`skills/fanout-analysis/SKILL.md` — 本包新写。
+- `agents/geo-fanout-tracer.md` — 本包新写的专家 persona（溯问）。
+- `.codebuddy-plugin/plugin.json`、`manifest.yaml`、`README.md`、`references/**` — 本包新写。
+- `avatars/geo-fanout-tracer.jpg` — 专家头像（AI 生成）。
+
+### 未随本包分发
+
+上游的 `tests/`（unittest + mock HTTP）未搬入：本包的平台规范要求专家包不含测试目录，
+回归验证改由本仓库 `tests/` 下的专项用例承担。
+
+上游与本包同为 MIT 许可。
