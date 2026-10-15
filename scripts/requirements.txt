@@ -1,4 +1,13 @@
-# 管理工具层依赖（Python 3.11+）
+# 管理工具层 + 站点构建依赖（Python 3.11+）
 # 安装：pip install -r scripts/requirements.txt
-pyyaml>=6.0
-jsonschema>=4.20
+#
+# ⚠️ 版本锁定为精确值：本文件同时被 GitHub Actions 的部署工作流使用
+#    （.github/workflows/pages.yml），浮动版本会引入供应链风险。
+pyyaml==6.0.3
+jsonschema==4.26.0
+
+# 站点构建：头像压缩（scripts/build_site.py）
+Pillow==12.3.0
+
+# 站点自检的浏览器检查（tests/verify_site.py --browser，CI 中同样会执行）
+websocket-client==1.9.2

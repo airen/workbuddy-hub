@@ -10,6 +10,10 @@ archive/
 # ⚠️ 不要再建 dist/ —— 历史上反复出现过「build 与 dist 重复」，已统一到 build。
 build/
 
+# 站点构建产物 —— 由 scripts/build_site.py 生成，GitHub Actions 部署时重建（不提交）
+# 注意必须锚定仓库根：写成裸 site/ 会连带忽略 templates/site/（页面模板）
+/site/
+
 # 图像生成产物（ImageGen 的原始输出，属草稿；正式头像已收进各自包的 avatars/）
 generated-images/
 

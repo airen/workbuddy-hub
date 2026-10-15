@@ -4,6 +4,44 @@
 
 ## [unreleased]
 
+### 2026-10-15 — 新增资产市场站点（GitHub Pages 独立访问页）
+
+- **目标**：从 `registry/*.yaml` 自动生成静态单页站点，由 GitHub Actions 部署到 GitHub Pages，
+  公开地址 `https://airen.github.io/workbuddy-hub/`，任何人无需安装 WorkBuddy 即可浏览全部专家与专家团。
+- **新增交付物**（全部入库）：
+  - `scripts/build_site.py` — 生成器：读 registry → 压缩头像（256×256 JPEG q82）→ 服务端渲染卡片 → 写 `site/index.html`
+  - `templates/site/page.html` — 单文件模板（内联 CSS/JS，零外部请求，`{{token}}` 占位）
+  - `.github/workflows/pages.yml` — CI 构建 + 部署（build / deploy 双 job）
+  - `tests/verify_site.py` — 站点验收自检（AC1–AC10，`--browser` 启用真实浏览器 CDP 检查）
+  - `tests/test_build_site.py` — 生成器单元回归（AC11，含 9 个路径穿越攻击向量）
+  - `docs/hub-site-spec.md` — 规格与验收标准（目标 / 非目标 / 字段映射 / F1–F11 / AC1–AC11 / 风险）
+- **改动既有文件**：`.gitignore` 新增 `/site/`（**带前导斜杠**——裸写 `site/` 会连带忽略 `templates/site/`，
+  导致 CI 缺模板）；`scripts/requirements.txt` 锁精确版本（`pyyaml==6.0.3 jsonschema==4.26.0 Pillow==12.3.0 websocket-client==1.9.2`）。
+- **关键设计约束**：project site 地址含子路径 `/workbuddy-hub/`，页面内所有资源引用**必须相对路径**，
+  禁止 `href="/..."` / `src="/..."`（AC4 已断言）。卡片由 Python 服务端渲染（非 JS），
+  禁用 JS 仍可浏览全部资产，兼顾 SEO/GEO。产物按 `(分类序, 类型序, id)` 排序，保证幂等逐字节一致（AC10）。
+- **四路并行审查**（五轴代码审查 / 安全审计 / 测试覆盖 / 性能审计）后修复：
+  - **安全**：F1 路径穿越（HIGH，`id`/`path` 拼进文件系统路径 → 加白名单正则 + `is_relative_to` 归属断言 + `prepare_avatars` 第二道防线）；
+    F2 workflow 权限最小化（build 仅 `contents: read`，`pages: write`/`id-token: write` 只在 deploy job）；
+    F3 五个第三方 Action 全部 pin 到 commit SHA；F4 依赖锁版本；F5 `--out` 改白名单校验；
+    F6 `_clean_out_dir` 不跟随符号链接且失败降级为警告；F7 `checkout` 加 `persist-credentials: false`。
+  - **可访问性**：R1 主要控件点击区 ≥44×44 px、分类 chips ≥36×36 px（高于 WCAG 2.1 AA 的 24×24）；
+    R2 次要文字色由 `#79818f`（实测 3.93:1 不达标）改为 `#667085`（在 `#ffffff` / `#f5f6f8` 上实测 4.97 / 4.60，达标）。
+  - **健壮性**：R3 `--no-avatars` 不再产生失效头像引用（改首字母占位）；R4 `--quiet` 不再吞掉错误输出；
+    R5/R6 验收断言加强（AC2 校验每张头像真实存在、AC3 对比 registry 计数、AC10 对**全部**产物做哈希）。
+  - **复验二轮（安全审计）**：F1–F7 复验全 PASS；另提 4 条 Low 已一并修掉 ——
+    N1 超长 id 不再抛栈（id 白名单加长度上限 64 + `_avatar_source` 与 `main` 兜住 `OSError`）；
+    N2 `--out` 归属判据改用本脚本专属标记 `.hub-site-build`（不再拿通用的 `.nojekyll` 当「这是我建的目录」的证据）；
+    N3 `<out>/assets/avatars` 被预置为符号链接时拒绝写入；N4 workflow 构建前先 `rm -rf site`。
+  - **构建改为「先写后删」（自测发现）**：原实现先删 `index.html` 与旧头像再重写，**一次中断就把站点打成半成品**
+    （本次实测到「`index.html` 消失 + 35 张头像只剩 8 张」）。改为新产物全部落盘后才清理陈旧头像
+    （`_prune_stale_avatars`），中断时目录内仍是上一次的完整产物。
+  - **回归结果**：`tests/test_build_site.py` **33/33** 通过（含 9 个路径穿越/符号链接攻击向量 + 写失败清引用）；`tests/verify_site.py` **13/13** 通过（`--browser` 真实 Chrome CDP 全绿，含 AC8 未捕获异常检测、AC9d URL 还原、AC12 外链属性）。
+  - **三轮（测试覆盖 + 性能）补强**：测试覆盖审查抓出 AC8 Critical 缺口 —— 验收此前只断言「网络失败请求」，**不抓页面 JS 运行时未捕获异常**（且 CDP 事件缓冲未排空，晚到异常会漏判）；一并补齐 AC9d（带 `#q=播客&type=expert` 直达、再 `about:blank` 后还原，断言 q 与全部专家态恢复）、AC12（35 张卡片 `target="_blank"` + `rel="noopener"`）、CDP 连接/超时异常降级为可读结论而非栈。性能侧：首屏首行 6 张头像由 `loading="lazy"` 改 `loading="eager" fetchpriority="high"` 优化 LCP；次要文字色 `#6b7280` 实测仅 4.47:1 不达标，**未采用**。
+  - **部署门禁修正（终验发现）**：`verify_site.py --browser` 在 GitHub runner（默认无 Chrome）会把「未找到 Chrome」判为失败并**永久阻断部署**；改为缺失 Chrome / websocket-client 时降级为「跳过」（非阻塞），CI 仍强制静态检查（AC2–AC7 / AC10 / AC12），交互检查（AC8 / AC9）在有 Chrome 的本地环境补全（如需 CI 也跑交互检查，可给 build job 加装 chromium 的步骤）。
+- **⚠️ 人工前置（无法脚本化）**：仓库 **Settings → Pages → Build and deployment → Source** 选择
+  **「GitHub Actions」**，之后 push 到 `main` 即自动构建部署。
+
 ### 2026-10-12 — life-assistant 版本递增至 1.0.1（平台重提要求）
 - 平台在**驳回后仍记录版本号**，重提同版本会被拦：「解析失败：包内版本号 "1.0.0" 必须大于当前最新版本 "1.0.0"」。
 - 递增 `experts/life-assistant` 的 `plugin.json` 与 `manifest.yaml` 至 `1.0.1`，重跑 `build_registry.py`

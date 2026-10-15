@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WorkBuddy 能力资产枢纽 · 专家与专家团目录</title>
+<meta name="description" content="workbuddy-hub 收录 {{total}} 项 WorkBuddy 能力资产：{{stats_experts}} 位专家、{{stats_teams}} 个专家团、{{stats_skills}} 个技能。可按名称、描述、标签与分类检索。">
+<meta name="color-scheme" content="light dark">
+<meta property="og:type" content="website">
+<meta property="og:title" content="WorkBuddy 能力资产枢纽 · 专家与专家团目录">
+<meta property="og:description" content="收录 {{total}} 项 WorkBuddy 能力资产：{{stats_experts}} 位专家、{{stats_teams}} 个专家团、{{stats_skills}} 个技能。">
+<meta property="og:url" content="{{site_url}}">
+<link rel="canonical" href="{{site_url}}">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232f6df6'/%3E%3Ccircle cx='11' cy='11' r='3.4' fill='%23fff'/%3E%3Ccircle cx='21' cy='11' r='3.4' fill='%23fff' opacity='.72'/%3E%3Ccircle cx='11' cy='21' r='3.4' fill='%23fff' opacity='.72'/%3E%3Ccircle cx='21' cy='21' r='3.4' fill='%23fff' opacity='.45'/%3E%3C/svg%3E">
+<style>
+:root{
+  --bg:#f5f6f8;
+  --surface:#ffffff;
+  --surface-2:#fafbfc;
+  --border:#e5e7eb;
+  --border-strong:#d2d7de;
+  --text:#14161a;
+  --text-2:#4b5563;
+  --muted:#667085;
+  --accent:#2f6df6;
+  --accent-ink:#1d4ed8;
+  --accent-soft:#eef3ff;
+  --on-accent:#ffffff;
+  --team:#7c3aed;
+  --team-soft:#f4efff;
+  --radius:14px;
+  --radius-sm:9px;
+  --shadow:0 1px 2px rgba(16,24,40,.04),0 1px 3px rgba(16,24,40,.06);
+  --shadow-lg:0 8px 24px rgba(16,24,40,.10),0 2px 6px rgba(16,24,40,.06);
+  --maxw:1180px;
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --bg:#0e1014;
+    --surface:#171a20;
+    --surface-2:#1c2027;
+    --border:#262b34;
+    --border-strong:#39404c;
+    --text:#e9ebef;
+    --text-2:#c3c9d3;
+    --muted:#8d96a4;
+    --accent:#6b9bff;
+    --accent-ink:#a8c4ff;
+    --accent-soft:#18233a;
+    --on-accent:#0e1014;
+    --team:#b39dff;
+    --team-soft:#241d38;
+    --shadow:0 1px 2px rgba(0,0,0,.45),0 1px 3px rgba(0,0,0,.35);
+    --shadow-lg:0 10px 28px rgba(0,0,0,.55);
+  }
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei","Helvetica Neue",Arial,sans-serif;
+  font-size:16px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+a{color:inherit}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;font-size:.92em}
+.wrap{width:100%;max-width:var(--maxw);margin:0 auto;padding:0 clamp(16px,4vw,32px)}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.skip{position:absolute;left:-9999px;top:0;z-index:20;background:var(--surface);color:var(--text);padding:10px 16px;border:1px solid var(--border);border-radius:0 0 var(--radius-sm) 0}
+.skip:focus{left:0}
+
+/* ---------- Hero ---------- */
+.hero{
+  padding:clamp(40px,6.5vw,72px) 0 clamp(26px,3.5vw,38px);
+  background:linear-gradient(180deg,var(--surface) 0%,var(--bg) 100%);
+  border-bottom:1px solid var(--border);
+}
+.hero h1{
+  margin:0 0 12px;
+  font-size:clamp(25px,4vw,38px);
+  line-height:1.22;
+  font-weight:700;
+  letter-spacing:-.022em;
+}
+.lede{
+  margin:0 0 26px;
+  max-width:62ch;
+  font-size:clamp(14.5px,1.5vw,16.5px);
+  color:var(--text-2);
+}
+.stats{display:flex;flex-wrap:wrap;gap:10px;margin:0;padding:0;list-style:none}
+.stats li{
+  display:flex;align-items:baseline;gap:6px;
+  padding:7px 16px;
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:999px;
+  box-shadow:var(--shadow);
+}
+.stats b{font-size:19px;font-weight:700;color:var(--accent-ink);font-variant-numeric:tabular-nums}
+.stats span{font-size:13px;color:var(--muted)}
+
+/* ---------- Toolbar ---------- */
+.toolbar{
+  display:flex;flex-wrap:wrap;align-items:center;gap:12px;
+  margin:clamp(24px,3.5vw,34px) 0 16px;
+}
+.search{position:relative;flex:1 1 260px;min-width:220px}
+.search svg{
+  position:absolute;left:13px;top:50%;transform:translateY(-50%);
+  width:17px;height:17px;color:var(--muted);pointer-events:none;
+}
+.search input{
+  width:100%;
+  padding:11px 14px 11px 38px;
+  font:inherit;font-size:15px;
+  color:var(--text);
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:var(--radius-sm);
+  box-shadow:var(--shadow);
+  outline:none;
+  transition:border-color .15s ease,box-shadow .15s ease;
+}
+.search input::placeholder{color:var(--muted)}
+.search input:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.seg{
+  display:inline-flex;gap:2px;padding:3px;
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:var(--radius-sm);
+  box-shadow:var(--shadow);
+}
+.seg button{
+  min-height:44px;padding:10px 15px;
+  font:inherit;font-size:14px;white-space:nowrap;
+  color:var(--text-2);background:transparent;
+  border:0;border-radius:6px;cursor:pointer;
+  transition:background .15s ease,color .15s ease;
+}
+.seg button:hover:not([aria-pressed="true"]){background:var(--surface-2);color:var(--text)}
+.seg button[aria-pressed="true"]{background:var(--accent);color:var(--on-accent);font-weight:600}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
+.chips button{
+  min-height:36px;padding:8px 14px;
+  font:inherit;font-size:13.5px;
+  color:var(--text-2);background:var(--surface);
+  border:1px solid var(--border);border-radius:999px;cursor:pointer;
+  transition:background .15s ease,border-color .15s ease,color .15s ease;
+}
+.chips button:hover:not([aria-pressed="true"]){border-color:var(--border-strong);color:var(--text)}
+.chips button[aria-pressed="true"]{
+  background:var(--accent-soft);
+  border-color:var(--accent);
+  color:var(--accent-ink);
+  font-weight:600;
+}
+.count{margin:0 0 14px;font-size:13.5px;color:var(--muted);font-variant-numeric:tabular-nums}
+.noscript{
+  margin:0 0 16px;padding:11px 14px;
+  font-size:13.5px;color:var(--text-2);
+  background:var(--accent-soft);
+  border:1px solid var(--border);
+  border-radius:var(--radius-sm);
+}
+
+/* ---------- Grid & cards ---------- */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(min(300px,100%),1fr));
+  gap:16px;
+  padding-bottom:56px;
+}
+.card{
+  display:flex;gap:14px;
+  padding:18px;
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  text-decoration:none;
+  transition:transform .16s ease,box-shadow .16s ease,border-color .16s ease;
+}
+.card:hover{transform:translateY(-2px);box-shadow:var(--shadow-lg);border-color:var(--border-strong)}
+.card:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.card[hidden]{display:none}
+.avatar{
+  flex:0 0 auto;
+  width:52px;height:52px;
+  border-radius:13px;
+  object-fit:cover;
+  background:var(--surface-2);
+  border:1px solid var(--border);
+}
+.avatar--ph{
+  display:grid;place-items:center;
+  font-size:20px;font-weight:700;
+  color:var(--accent-ink);background:var(--accent-soft);
+}
+.card-main{display:flex;flex-direction:column;gap:7px;min-width:0;flex:1}
+.card-head{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.card-name{font-size:16px;font-weight:650;line-height:1.35;letter-spacing:-.01em}
+.badge{
+  flex:0 0 auto;
+  padding:4px 8px;
+  font-size:11.5px;font-weight:600;line-height:1;
+  border-radius:6px;
+}
+.badge--expert{background:var(--accent-soft);color:var(--accent-ink)}
+.badge--team{background:var(--team-soft);color:var(--team)}
+.card-desc{
+  display:-webkit-box;
+  -webkit-line-clamp:3;
+  -webkit-box-orient:vertical;
+  overflow:hidden;
+  margin:0;
+  font-size:13.5px;line-height:1.62;color:var(--text-2);
+}
+.card-tags{display:flex;flex-wrap:wrap;gap:6px}
+.tag{
+  padding:4px 8px;
+  font-size:11.5px;line-height:1;
+  color:var(--muted);
+  background:var(--surface-2);
+  border:1px solid var(--border);
+  border-radius:5px;
+}
+.card-meta{
+  display:flex;flex-wrap:wrap;align-items:center;
+  margin-top:auto;
+  font-size:12px;color:var(--muted);
+  font-variant-numeric:tabular-nums;
+}
+.card-meta span+span::before{content:"·";padding:0 7px;color:var(--border-strong)}
+.meta-ver{letter-spacing:.01em}
+
+/* ---------- Empty ---------- */
+.empty{
+  margin-bottom:56px;
+  padding:64px 20px;
+  text-align:center;
+  color:var(--muted);
+  border:1px dashed var(--border-strong);
+  border-radius:var(--radius);
+}
+.empty p{margin:0 0 16px;font-size:15px}
+.empty button{
+  min-height:44px;padding:11px 20px;
+  font:inherit;font-size:14px;font-weight:600;
+  color:var(--on-accent);background:var(--accent);
+  border:0;border-radius:var(--radius-sm);cursor:pointer;
+}
+.empty button:hover{opacity:.9}
+
+/* ---------- Footer ---------- */
+footer{border-top:1px solid var(--border);padding:26px 0 44px}
+footer p{margin:0;font-size:13px;color:var(--muted);line-height:1.8}
+footer a{color:var(--accent-ink);text-decoration:none}
+footer a:hover{text-decoration:underline}
+
+@media (max-width:640px){
+  .grid{grid-template-columns:minmax(0,1fr);gap:12px}
+  .seg{width:100%}
+  .seg button{flex:1}
+}
+@media (prefers-reduced-motion:reduce){
+  *{transition:none!important;animation:none!important}
+  .card:hover{transform:none}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#grid">跳到资产列表</a>
+
+<header class="hero">
+  <div class="wrap">
+    <h1>WorkBuddy 能力资产枢纽</h1>
+    <p class="lede">把散落在各处的技能、专家与专家团集中到一个仓库：统一规范、索引自动派生、随时可查。下面是本仓库收录的全部能力资产，点击任意卡片可直达其源码目录。</p>
+    <ul class="stats">
+      <li><b>{{stats_experts}}</b><span>位专家</span></li>
+      <li><b>{{stats_teams}}</b><span>个专家团</span></li>
+      <li><b>{{stats_skills}}</b><span>个技能</span></li>
+    </ul>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="toolbar">
+    <div class="search">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.6-3.6"></path></svg>
+      <label class="sr-only" for="q">搜索资产</label>
+      <input id="q" type="search" placeholder="搜索名称、描述或标签…" autocomplete="off" spellcheck="false">
+    </div>
+    <div class="seg" role="group" aria-label="按类型筛选">
+      <button type="button" data-filter-type="all" aria-pressed="true">全部</button>
+      <button type="button" data-filter-type="expert" aria-pressed="false">专家</button>
+      <button type="button" data-filter-type="team" aria-pressed="false">专家团</button>
+    </div>
+  </div>
+
+  <div class="chips" role="group" aria-label="按分类筛选">
+    {{category_chips}}
+  </div>
+
+  <p class="count" id="count" aria-live="polite">共 {{total}} 项资产（专家 / 专家团）</p>
+  <noscript><p class="noscript">当前浏览器未启用 JavaScript：筛选与搜索不可用，但仍可浏览下方全部资产。</p></noscript>
+
+  <div class="grid" id="grid">
+{{cards}}
+  </div>
+
+  <div class="empty" id="empty" hidden>
+    <p>没有匹配的资产，换个关键词或清除筛选试试。</p>
+    <button type="button" id="reset">清除全部筛选</button>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>
+      数据来源 <code>registry/*.yaml</code> · 由 <code>scripts/build_site.py</code> 自动生成 ·
+      <a href="{{repo_url}}" target="_blank" rel="noopener">在 GitHub 查看仓库</a>
+    </p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  "use strict";
+
+  var grid = document.getElementById("grid");
+  var countEl = document.getElementById("count");
+  var emptyEl = document.getElementById("empty");
+  var qEl = document.getElementById("q");
+  var resetBtn = document.getElementById("reset");
+  if (!grid || !countEl || !emptyEl || !qEl) return;
+
+  var cards = Array.prototype.slice.call(grid.querySelectorAll(".card"));
+  var typeBtns = Array.prototype.slice.call(document.querySelectorAll("[data-filter-type]"));
+  var catBtns = Array.prototype.slice.call(document.querySelectorAll("[data-filter-cat]"));
+
+  // 预计算检索文本：只取有检索意义的字段，避免把版本号、计数也当成关键词命中
+  cards.forEach(function (card) {
+    var parts = [card.getAttribute("data-id") || ""];
+    [".card-name", ".card-desc", ".card-tags", ".meta-cat"].forEach(function (sel) {
+      var node = card.querySelector(sel);
+      if (node) parts.push(node.textContent);
+    });
+    card._hay = parts.join(" ").toLowerCase();
+  });
+
+  var state = { q: "", type: "all", cat: "all" };
+  var total = cards.length;
+
+  function readHash() {
+    var raw = location.hash.replace(/^#/, "");
+    if (!raw) return;
+    var params = new URLSearchParams(raw);
+    state.q = (params.get("q") || "").trim();
+    state.type = params.get("type") || "all";
+    state.cat = params.get("cat") || "all";
+  }
+
+  function writeHash() {
+    var params = new URLSearchParams();
+    if (state.q) params.set("q", state.q);
+    if (state.type !== "all") params.set("type", state.type);
+    if (state.cat !== "all") params.set("cat", state.cat);
+    var query = params.toString();
+    history.replaceState(null, "", location.pathname + location.search + (query ? "#" + query : ""));
+  }
+
+  function apply() {
+    var q = state.q.toLowerCase();
+    var shown = 0;
+    cards.forEach(function (card) {
+      var ok = true;
+      if (state.type !== "all" && card.getAttribute("data-type") !== state.type) ok = false;
+      if (ok && state.cat !== "all" && card.getAttribute("data-cat") !== state.cat) ok = false;
+      if (ok && q && card._hay.indexOf(q) === -1) ok = false;
+      card.hidden = !ok;
+      if (ok) shown += 1;
+    });
+    // 口径写明「专家 / 专家团」：技能只计入头部统计，不作为卡片列出
+    var suffix = " 项资产（专家 / 专家团）";
+    countEl.textContent = shown === total
+      ? "共 " + total + suffix
+      : "匹配 " + shown + " / 共 " + total + suffix;
+    emptyEl.hidden = shown !== 0;
+  }
+
+  function markPressed(buttons, active) {
+    buttons.forEach(function (btn) {
+      btn.setAttribute("aria-pressed", String(btn === active));
+    });
+  }
+
+  function update() {
+    apply();
+    writeHash();
+  }
+
+  function pick(buttons, attr, value, fallback) {
+    for (var i = 0; i < buttons.length; i += 1) {
+      if (buttons[i].getAttribute(attr) === value) return buttons[i];
+    }
+    return fallback || buttons[0];
+  }
+
+  qEl.addEventListener("input", function () {
+    state.q = qEl.value.trim();
+    update();
+  });
+
+  typeBtns.forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      state.type = btn.getAttribute("data-filter-type");
+      markPressed(typeBtns, btn);
+      update();
+    });
+  });
+
+  catBtns.forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      state.cat = btn.getAttribute("data-filter-cat");
+      markPressed(catBtns, btn);
+      update();
+    });
+  });
+
+  if (resetBtn) {
+    resetBtn.addEventListener("click", function () {
+      state = { q: "", type: "all", cat: "all" };
+      qEl.value = "";
+      markPressed(typeBtns, typeBtns[0]);
+      markPressed(catBtns, catBtns[0]);
+      update();
+      qEl.focus();
+    });
+  }
+
+  // 初始化：从 URL hash 还原筛选状态，并校正到真实存在的按钮上
+  readHash();
+  qEl.value = state.q;
+  var activeType = pick(typeBtns, "data-filter-type", state.type);
+  var activeCat = pick(catBtns, "data-filter-cat", state.cat);
+  state.type = activeType.getAttribute("data-filter-type");
+  state.cat = activeCat.getAttribute("data-filter-cat");
+  markPressed(typeBtns, activeType);
+  markPressed(catBtns, activeCat);
+  apply();
+  writeHash();
+})();
+</script>
+</body>
+</html>
