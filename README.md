@@ -73,6 +73,30 @@ python scripts/package.py --all
 python scripts/generate_readme.py
 ```
 
+## 资产市场站点（GitHub Pages）
+
+把 `registry/*.yaml` 自动构建成一个**对外公开、无需安装 WorkBuddy 即可浏览**的静态单页站点，
+由 GitHub Actions 部署到 GitHub Pages。任何人都能在浏览器里检索、筛选、查看全部专家与专家团，
+并一键跳转到仓库对应目录。
+
+- 公开地址：`https://airen.github.io/workbuddy-hub/`
+- 规格与验收标准：`docs/hub-site-spec.md`
+
+> ⚠️ 首次启用需人工操作一次：仓库 **Settings → Pages → Build and deployment → Source** 选
+> **「GitHub Actions」**。此步骤无法脚本化；不开则 Actions 的 deploy 阶段会失败。
+
+```bash
+# 本地预览：重新生成站点（产物在 site/，已被 .gitignore 忽略）
+python scripts/build_site.py
+
+# 本地验收：静态检查 + 真实浏览器交互检查（需本机 Chrome + websocket-client）
+python tests/verify_site.py            # 仅静态检查（AC2–AC7 / AC10 / AC12）
+python tests/verify_site.py --browser  # 额外跑 AC8 / AC9 交互检查（无 Chrome 时自动跳过）
+
+# 提交到 main 即触发 GitHub Actions 自动构建并部署（见 .github/workflows/pages.yml）
+git push origin main
+```
+
 ## 统一默认头像
 
 为节省图像生成积分，hub 内置一张统一默认头像 `assets/avatars/_default.jpg`。
