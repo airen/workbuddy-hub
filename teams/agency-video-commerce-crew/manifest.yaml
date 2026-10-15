@@ -1,0 +1,29 @@
+id: agency-video-commerce-crew
+name: 短视频直播电商专家团
+version: 1.0.0
+type: team
+description: 把想法做成能投放能成交的短视频与直播生意：抖音打法、视频号私域、直播复盘与剪辑交付五环节接力。
+category: other
+members:
+- expert_id: agency-video-commerce-crew-team-lead
+  role: coordinator
+  embedded: true
+- expert_id: agency-video-commerce-crew-channels
+  role: member
+  embedded: true
+- expert_id: agency-video-commerce-crew-live
+  role: member
+  embedded: true
+- expert_id: agency-video-commerce-crew-bilibili
+  role: member
+  embedded: true
+- expert_id: agency-video-commerce-crew-editor
+  role: member
+  embedded: true
+workflow: agents/agency-video-commerce-crew-team-lead.md
+tags:
+- 短视频运营
+- 直播电商
+- 多平台分发
+status: active
+platform_category: 05-MarketingGrowth

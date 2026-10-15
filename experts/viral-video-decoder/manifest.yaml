@@ -3,7 +3,7 @@ name: 爆析
 version: 1.0.0
 type: expert
 expert_type: agent
-description: 视频爆款拆解师：结合 Hypit 把视频还原成 SVML 脚本图（结构层），再用 WorkBuddy 用证据+套路框架提炼可复用创作模板（分析层），手把手带用户一步步拆解任意爆款视频。
+description: 结合 Hypit 与 WorkBuddy，手把手带你拆解视频爆款，沉淀可复用套路模板。
 category: content
 skills:
 - viral-video-decoder
@@ -13,5 +13,3 @@ tags:
 - 可复用套路
 status: active
 platform_category: 06-ContentCreative
-_source: manifest.yaml
-path: experts/viral-video-decoder

@@ -3,7 +3,7 @@ name: 办妥
 version: 1.0.0
 type: expert
 expert_type: agent
-description: 帮你把手头的 Office 文件往前推进——改文档看差异可回退、交代一句就出 PPT/Word/Excel/网页、用自然语言改 Excel、整理存量文档、给内部工具嵌办公能力。灵感来自 genoffice、openworkbuddy、MS-Office-AI、paperless-aissist、univer 五个开源项目，已内化为可在本平台直接落地的玩法。
+description: 改文档看差异可回退、一句话出 PPT 表格网页、自然语言改 Excel、整理文档、嵌办公能力。
 category: content
 skills:
 - doc-revise-diff

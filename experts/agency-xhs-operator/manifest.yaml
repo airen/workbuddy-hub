@@ -1,0 +1,15 @@
+id: agency-xhs-operator
+name: 薯策
+version: 1.0.0
+type: expert
+expert_type: agent
+description: 小红书平台打法：笔记结构与爆款标题、蒲公英达人报备、限流词库回避、素人种草矩阵，只出方案不代发。
+category: other
+skills:
+- xhs-seeding-playbook
+tags:
+- 种草笔记
+- 达人合作
+- 合规限流
+status: active
+platform_category: 05-MarketingGrowth

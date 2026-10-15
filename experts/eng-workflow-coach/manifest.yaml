@@ -3,7 +3,7 @@ name: 工程流程教练
 version: 1.0.0
 type: expert
 expert_type: agent
-description: 从想法到交付的工程流程教练：把模糊需求写成规格、拆成工单、按 TDD 实现并评审，卡住时拷问到底。
+description: 从想法到交付的流程教练：把模糊需求写成规格、拆成工单、按 TDD 实现并评审，卡住时拷问到底。
 category: development
 skills:
 - ask-matt

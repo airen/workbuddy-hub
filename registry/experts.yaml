@@ -1,10 +1,112 @@
 experts:
+- id: agency-brand-guardian
+  name: 守一
+  version: 1.0.0
+  type: expert
+  expert_type: agent
+  description: 守住品牌一致性：定位、调性、视觉与语气规范落地成审核清单，跨项目跨平台不跑偏，红线明确说不。
+  category: other
+  skills:
+  - brand-consistency-checklist
+  tags:
+  - 品牌一致性
+  - 调性守门
+  - 审核清单
+  status: active
+  platform_category: 05-MarketingGrowth
+  _source: manifest.yaml
+  path: experts/agency-brand-guardian
+- id: agency-multi-agent-architect
+  name: 织网
+  version: 1.0.0
+  type: expert
+  expert_type: agent
+  description: 给多智能体流水线做架构：拓扑选型、上下文预算、最小权限、故障恢复与人在环门控，评测先行。
+  category: research
+  skills:
+  - topology-select
+  tags:
+  - 拓扑设计
+  - 故障恢复
+  - 可观测性
+  status: active
+  platform_category: 04-DataAI
+  _source: manifest.yaml
+  path: experts/agency-multi-agent-architect
+- id: agency-prompt-architect
+  name: 构意
+  version: 1.0.0
+  type: expert
+  expert_type: agent
+  description: 把模糊需求写成系统提示词：角色契约、思维链、少样本与输出格式一次定清，再用评测集验证改动。
+  category: research
+  skills:
+  - prompt-eval-loop
+  tags:
+  - 系统提示词
+  - 评测迭代
+  - 结构化输出
+  status: active
+  platform_category: 04-DataAI
+  _source: manifest.yaml
+  path: experts/agency-prompt-architect
+- id: agency-tech-translator
+  name: 译码
+  version: 1.0.0
+  type: expert
+  expert_type: agent
+  description: 技术与文档的中英双向翻译：术语一致、语气不翻译腔、长句拆短，代码与接口名原样保留，对照稿即可用。
+  category: other
+  skills:
+  - tech-translation-rules
+  tags:
+  - 技术翻译
+  - 术语一致
+  - 文档本地化
+  status: active
+  platform_category: 09-OperationsHR
+  _source: manifest.yaml
+  path: experts/agency-tech-translator
+- id: agency-workflow-architect
+  name: 径流
+  version: 1.0.0
+  type: expert
+  expert_type: agent
+  description: 在动手造之前把每条路径写清：正常路径、分支条件、故障模式、恢复动作与交接契约，维护工作流注册表。
+  category: development
+  skills:
+  - workflow-tree-template
+  tags:
+  - 流程规格
+  - 交接契约
+  - 故障模式
+  status: active
+  platform_category: 02-Engineering
+  _source: manifest.yaml
+  path: experts/agency-workflow-architect
+- id: agency-xhs-operator
+  name: 薯策
+  version: 1.0.0
+  type: expert
+  expert_type: agent
+  description: 小红书平台打法：笔记结构与爆款标题、蒲公英达人报备、限流词库回避、素人种草矩阵，只出方案不代发。
+  category: other
+  skills:
+  - xhs-seeding-playbook
+  tags:
+  - 种草笔记
+  - 达人合作
+  - 合规限流
+  status: active
+  platform_category: 05-MarketingGrowth
+  _source: manifest.yaml
+  path: experts/agency-xhs-operator
 - id: agent-memory-advisor
   name: 智能体记忆选型顾问
   version: 1.0.0
   type: expert
   expert_type: agent
-  description: 按写代码/个人智能体/公司大脑三类场景，从 10 个开源记忆项目挑出能落地的一套，并诊断记忆断环。
+  description: 按写代码、个人智能体、公司大脑三类，从 10 个开源记忆项目挑出能落地的一套，并诊断记忆断环。
   category: development
   skills: []
   tags:
@@ -56,7 +158,7 @@ experts:
   version: 1.0.0
   type: expert
   expert_type: agent
-  description: 把查财报、理投资逻辑、跑策略回测这些活交给 AI，从五个开源项目挑能落地的一套并核对前置与合规。
+  description: 把查财报、理投资逻辑、跑策略回测这些活交给 AI，从五个开源项目挑能落地的一套并核对。
   category: research
   skills:
   - invest-stack-selector
@@ -92,8 +194,7 @@ experts:
   version: 1.0.0
   type: expert
   expert_type: agent
-  description: AI 视频制片顾问：把用户的出片目标映射到最合适的外部视频 skill，安装前先核对环境依赖、API key、积分成本与开源许可，再给出安装命令与制作流程，并可在 WorkBuddy
-    内承接上游的文案、分镜与提示词工作。
+  description: AI 视频制片顾问：按出片目标挑对 skill，先核对依赖、key、积分与许可，再给安装流程。
   category: content
   skills:
   - ai-video-studio
@@ -110,8 +211,7 @@ experts:
   version: 1.0.0
   type: expert
   expert_type: agent
-  description: 一站搞定营销活儿：SEO 审计、文案写作、转化优化、邮件、社媒、SEO 与发现、投放与衡量、增长留存、商业化销售。先定产品营销基础（受众/定位），再按需选专项，给可直接拿去用的成果。灵感来自
-    coreyhaines31/marketingskills（约 50 个营销技能），已内化为 7 类可落地玩法。
+  description: SEO 审计、文案写作、转化优化、邮件、增长留存、投放衡量……约 50 项营销技能一站搞定。
   category: content
   skills:
   - product-marketing
@@ -173,7 +273,7 @@ experts:
   version: 1.0.0
   type: expert
   expert_type: agent
-  description: 从想法到交付的工程流程教练：把模糊需求写成规格、拆成工单、按 TDD 实现并评审，卡住时拷问到底。
+  description: 从想法到交付的流程教练：把模糊需求写成规格、拆成工单、按 TDD 实现并评审，卡住时拷问到底。
   category: development
   skills:
   - ask-matt
@@ -217,7 +317,7 @@ experts:
   version: 1.0.0
   type: expert
   expert_type: agent
-  description: 全仓库代码审查入口：先建地图，再按需调用架构、技术债、安全、测试等专项技能，默认只读、结论附证据。
+  description: 代码审查入口：先建地图，再按需调用架构、技术债、安全、测试等专项技能，默认只读、结论附证据。
   category: development
   skills:
   - adversarial-review
@@ -311,6 +411,24 @@ experts:
   platform_category: 02-Engineering
   _source: manifest.yaml
   path: experts/engineering-review-board
+- id: geo-fanout-tracer
+  name: 溯问
+  version: 1.0.0
+  type: expert
+  expert_type: agent
+  description: 把一个问题扔进 AI 搜索，抓回它被展开成哪些搜索词、搜到哪些来源、答案最终引用了谁。
+  category: content
+  skills:
+  - fanout-trace
+  - fanout-analysis
+  tags:
+  - Query Fan-out
+  - AI 搜索溯源
+  - 来源与引用
+  status: active
+  platform_category: 06-ContentCreative
+  _source: manifest.yaml
+  path: experts/geo-fanout-tracer
 - id: geo-seo-strategist
   name: 显扬
   version: 1.0.0
@@ -384,7 +502,7 @@ experts:
   version: 1.1.0
   type: expert
   expert_type: agent
-  description: 按三层模型（表层/措辞/结构）重写 AI 味文稿。先动结构骨架——删掉讲明的道理、把结尾打开、把泛指换成具体、留一条没收的线头；再清措辞与用词标点。附结构改动回执与自检脚本，杜绝「只换词不动结构」的假去味。
+  description: 资深编辑式去AI味：删掉讲明的道理、打开整齐的结尾、泛指换具体，再清措辞与AI腔，附改动回执。
   category: research
   skills:
   - de-ai-rewrite
@@ -401,7 +519,7 @@ experts:
   version: 1.0.1
   type: expert
   expert_type: agent
-  description: 帮你管生活里的琐碎小事——今天吃什么、钱花哪了、东西放哪了、上次练了多重。按冰箱食材出菜谱与采购单，排一周食谱，记账看开销图，登记家当与保修，记录训练并对照上次。内置工具均为离线网页，数据存本地。
+  description: 冰箱有啥做啥菜、钱花哪了、东西放哪了、练了多重——四类生活琐事一站式打理，出菜谱排食谱记账管物。
   category: other
   skills:
   - recipe-by-ingredient
@@ -422,8 +540,7 @@ experts:
   version: 1.0.0
   type: expert
   expert_type: agent
-  description: 帮你把手头的 Office 文件往前推进——改文档看差异可回退、交代一句就出 PPT/Word/Excel/网页、用自然语言改 Excel、整理存量文档、给内部工具嵌办公能力。灵感来自
-    genoffice、openworkbuddy、MS-Office-AI、paperless-aissist、univer 五个开源项目，已内化为可在本平台直接落地的玩法。
+  description: 改文档看差异可回退、一句话出 PPT 表格网页、自然语言改 Excel、整理文档、嵌办公能力。
   category: content
   skills:
   - doc-revise-diff
@@ -454,8 +571,6 @@ experts:
   - 章节配图
   status: active
   platform_category: 06-ContentCreative
-  license: MIT
-  upstream: https://github.com/sunkeke-ai/keke-podcast-to-article
   _source: manifest.yaml
   path: experts/podcast-to-article
 - id: ppt-architect
@@ -463,7 +578,7 @@ experts:
   version: 1.1.0
   type: expert
   expert_type: agent
-  description: 把任意主题变成可直接交付的 PPT：按需选 PPTX 或 HTML 格式，内置 14 种专业风格，产出可直接投屏的正式汇报材料。
+  description: 把任意主题做成可交付 PPT：原生可改 PPTX、网页高颜值、图片发社媒，14 风格任选。
   category: development
   skills:
   - ppt-architect
@@ -540,7 +655,7 @@ experts:
   version: 1.0.0
   type: expert
   expert_type: agent
-  description: 用代码把内容、故事或主题精确排成可直接发布的中文图文：单图、整套轮播、公众号封面与长图，风格可自选也可自动匹配。
+  description: 用代码把内容精确排成可直接发布的中文图文：单图、整套轮播、公众号封面与长图，风格自动匹配。
   category: content
   skills:
   - tuwen-engine
@@ -553,8 +668,6 @@ experts:
   - 版式与风格系统
   status: active
   platform_category: 06-ContentCreative
-  license: MIT
-  created: '2026-10-12'
   _source: manifest.yaml
   path: experts/tuwen-forge
 - id: viral-video-decoder
@@ -562,7 +675,7 @@ experts:
   version: 1.0.0
   type: expert
   expert_type: agent
-  description: 视频爆款拆解师：结合 Hypit 把视频还原成 SVML 脚本图（结构层），再用 WorkBuddy 用证据+套路框架提炼可复用创作模板（分析层），手把手带用户一步步拆解任意爆款视频。
+  description: 结合 Hypit 与 WorkBuddy，手把手带你拆解视频爆款，沉淀可复用套路模板。
   category: content
   skills:
   - viral-video-decoder
@@ -622,21 +735,3 @@ experts:
   platform_category: 04-DataAI
   _source: manifest.yaml
   path: experts/web-recon-desk
-- id: geo-fanout-tracer
-  name: 溯问
-  version: 1.0.0
-  type: expert
-  expert_type: agent
-  description: 把一个问题扔进 AI 搜索，抓回它被展开成哪些搜索词、搜到哪些来源、答案最终引用了谁。
-  category: content
-  skills:
-  - fanout-trace
-  - fanout-analysis
-  tags:
-  - Query Fan-out
-  - AI 搜索溯源
-  - 来源与引用
-  status: active
-  platform_category: 06-ContentCreative
-  _source: manifest.yaml
-  path: experts/geo-fanout-tracer

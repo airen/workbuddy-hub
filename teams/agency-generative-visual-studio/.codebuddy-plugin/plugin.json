@@ -1,0 +1,144 @@
+{
+  "name": "agency-generative-visual-studio",
+  "version": "1.0.0",
+  "description": "把视觉想法写成能直接投喂生图生视频工具的提示词，对成本与废片率负责，出图前后各做一次把关。",
+  "author": {
+    "name": "大漠"
+  },
+  "agents": [
+    "./agents/agency-generative-visual-studio-team-lead.md",
+    "./agents/agency-generative-visual-studio-video.md",
+    "./agents/agency-generative-visual-studio-ux.md",
+    "./agents/agency-generative-visual-studio-inclusive.md"
+  ],
+  "skills": [
+    "./skills/visual-prompt-kit"
+  ],
+  "expertType": "team",
+  "agentName": "agency-generative-visual-studio-team-lead",
+  "plugin": "agency-generative-visual-studio",
+  "displayName": {
+    "zh": "生成式视觉专家团",
+    "en": "Generative Visual Studio"
+  },
+  "profession": {
+    "zh": "生成式视觉专家团",
+    "en": "Generative Visual Studio"
+  },
+  "displayDescription": {
+    "en": "把视觉想法写成能直接投喂生图生视频工具的提示词，对成本与废片率负责，出图前后各做一次把关。",
+    "zh": "把视觉想法写成能直接投喂生图生视频工具的提示词，对成本与废片率负责，出图前后各做一次把关。"
+  },
+  "avatar": "avatars/agency-generative-visual-studio.jpg",
+  "categoryId": "06-ContentCreative",
+  "defaultInitPrompt": {
+    "zh": "帮我把这段视觉需求写成能直接出图的提示词",
+    "en": "Turn this visual brief into a production-ready image prompt"
+  },
+  "tags": [
+    {
+      "zh": "图像提示词",
+      "en": "Image Prompting"
+    },
+    {
+      "zh": "视频提示词",
+      "en": "Video Prompting"
+    },
+    {
+      "zh": "包容性视觉",
+      "en": "Inclusive Visuals"
+    }
+  ],
+  "quickPrompts": [
+    {
+      "zh": "帮我把这段视觉需求写成能直接出图的提示词",
+      "en": "Turn this visual brief into a production-ready image prompt"
+    },
+    {
+      "zh": "这条视频提示词大概要花多少钱，先用低成本规格验证",
+      "en": "How much will this video prompt cost — validate with a cheap spec first"
+    },
+    {
+      "zh": "这批图里有没有刻板印象或者偏见，帮我查一遍",
+      "en": "Check this batch of images for stereotypes or bias"
+    }
+  ],
+  "teamInfo": {
+    "leadAgent": "agency-generative-visual-studio-team-lead",
+    "memberAgents": [
+      "agency-generative-visual-studio-video",
+      "agency-generative-visual-studio-ux",
+      "agency-generative-visual-studio-inclusive"
+    ]
+  },
+  "members": [
+    {
+      "id": "agency-generative-visual-studio-team-lead",
+      "name": {
+        "en": "Tu Gou",
+        "zh": "图构"
+      },
+      "displayName": {
+        "en": "Tu Gou",
+        "zh": "图构"
+      },
+      "profession": {
+        "en": "Visual Director",
+        "zh": "视觉总控"
+      },
+      "avatar": "avatars/agency-generative-visual-studio-team-lead.jpg",
+      "role": "lead"
+    },
+    {
+      "id": "agency-generative-visual-studio-video",
+      "name": {
+        "en": "Ying Gou",
+        "zh": "影构"
+      },
+      "displayName": {
+        "en": "Ying Gou",
+        "zh": "影构"
+      },
+      "profession": {
+        "en": "Video Prompt Engineer",
+        "zh": "视频提示词工程师"
+      },
+      "avatar": "avatars/agency-generative-visual-studio-video.jpg",
+      "role": "member"
+    },
+    {
+      "id": "agency-generative-visual-studio-ux",
+      "name": {
+        "en": "Yan Xu",
+        "zh": "研需"
+      },
+      "displayName": {
+        "en": "Yan Xu",
+        "zh": "研需"
+      },
+      "profession": {
+        "en": "UX Researcher",
+        "zh": "用户研究员"
+      },
+      "avatar": "avatars/agency-generative-visual-studio-ux.jpg",
+      "role": "member"
+    },
+    {
+      "id": "agency-generative-visual-studio-inclusive",
+      "name": {
+        "en": "Heng Jian",
+        "zh": "衡见"
+      },
+      "displayName": {
+        "en": "Heng Jian",
+        "zh": "衡见"
+      },
+      "profession": {
+        "en": "Inclusive Visuals Reviewer",
+        "zh": "包容性视觉审查师"
+      },
+      "avatar": "avatars/agency-generative-visual-studio-inclusive.jpg",
+      "role": "member"
+    }
+  ]
+}

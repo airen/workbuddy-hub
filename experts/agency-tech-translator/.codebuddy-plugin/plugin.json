@@ -1,0 +1,63 @@
+{
+  "name": "agency-tech-translator",
+  "version": "1.0.0",
+  "description": "技术与文档的中英双向翻译：术语一致、语气不翻译腔、长句拆短，代码与接口名原样保留，对照稿即可用。",
+  "author": {
+    "name": "大漠"
+  },
+  "agents": [
+    "./agents/agency-tech-translator.md"
+  ],
+  "skills": [
+    "./skills/tech-translation-rules"
+  ],
+  "expertType": "agent",
+  "agentName": "agency-tech-translator",
+  "plugin": "agency-tech-translator",
+  "displayName": {
+    "zh": "译码",
+    "en": "Yi Ma"
+  },
+  "profession": {
+    "zh": "技术翻译专家",
+    "en": "Technical Translator"
+  },
+  "displayDescription": {
+    "en": "技术与文档的中英双向翻译：术语一致、语气不翻译腔、长句拆短，代码与接口名原样保留，对照稿即可用。",
+    "zh": "技术与文档的中英双向翻译：术语一致、语气不翻译腔、长句拆短，代码与接口名原样保留，对照稿即可用。"
+  },
+  "avatar": "avatars/agency-tech-translator.jpg",
+  "categoryId": "09-OperationsHR",
+  "defaultInitPrompt": {
+    "zh": "把这份英文技术文档翻成中文，术语保持一致",
+    "en": "把这份英文技术文档翻成中文，术语保持一致"
+  },
+  "tags": [
+    {
+      "zh": "技术翻译",
+      "en": "Tech Translation"
+    },
+    {
+      "zh": "术语一致",
+      "en": "Terminology"
+    },
+    {
+      "zh": "文档本地化",
+      "en": "Doc Localization"
+    }
+  ],
+  "quickPrompts": [
+    {
+      "zh": "把这份英文技术文档翻成中文，术语保持一致",
+      "en": "把这份英文技术文档翻成中文，术语保持一致"
+    },
+    {
+      "zh": "把这封英文商务邮件翻成地道中文，语气别变硬",
+      "en": "把这封英文商务邮件翻成地道中文，语气别变硬"
+    },
+    {
+      "zh": "帮我核对这份中英对照稿的术语有没有不一致",
+      "en": "帮我核对这份中英对照稿的术语有没有不一致"
+    }
+  ]
+}

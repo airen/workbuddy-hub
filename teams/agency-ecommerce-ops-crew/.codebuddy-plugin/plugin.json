@@ -1,0 +1,125 @@
+{
+  "name": "agency-ecommerce-ops-crew",
+  "version": "1.0.0",
+  "description": "从选品上架到跨境出海再到供应商把关，淘天拼京全平台运营与 1688 供应商评估前后端接起来。",
+  "author": {
+    "name": "大漠"
+  },
+  "agents": [
+    "./agents/agency-ecommerce-ops-crew-team-lead.md",
+    "./agents/agency-ecommerce-ops-crew-crossborder.md",
+    "./agents/agency-ecommerce-ops-crew-vendor.md"
+  ],
+  "skills": [
+    "./skills/ecommerce-ops-kit"
+  ],
+  "expertType": "team",
+  "agentName": "agency-ecommerce-ops-crew-team-lead",
+  "plugin": "agency-ecommerce-ops-crew",
+  "displayName": {
+    "zh": "电商运营专家团",
+    "en": "Ecommerce Operations Crew"
+  },
+  "profession": {
+    "zh": "电商运营专家团",
+    "en": "Ecommerce Operations Crew"
+  },
+  "displayDescription": {
+    "en": "从选品上架到跨境出海再到供应商把关，淘天拼京全平台运营与 1688 供应商评估前后端接起来。",
+    "zh": "从选品上架到跨境出海再到供应商把关，淘天拼京全平台运营与 1688 供应商评估前后端接起来。"
+  },
+  "avatar": "avatars/agency-ecommerce-ops-crew.jpg",
+  "categoryId": "05-MarketingGrowth",
+  "defaultInitPrompt": {
+    "zh": "帮我把这个品类拆成一张全平台运营与选品方案",
+    "en": "Break this category into an omnichannel ops and sourcing plan"
+  },
+  "tags": [
+    {
+      "zh": "全平台运营",
+      "en": "Omnichannel Ops"
+    },
+    {
+      "zh": "跨境出海",
+      "en": "Cross-border"
+    },
+    {
+      "zh": "供应链管理",
+      "en": "Supply Chain"
+    }
+  ],
+  "quickPrompts": [
+    {
+      "zh": "帮我把这个品类拆成一张全平台运营与选品方案",
+      "en": "Break this category into an omnichannel ops and sourcing plan"
+    },
+    {
+      "zh": "1688 上这几家供应商，怎么筛出真正靠谱的",
+      "en": "Among these 1688 suppliers, how do I find the reliable ones"
+    },
+    {
+      "zh": "这个产品想出海东南亚，Listing 和合规要准备什么",
+      "en": "I want to sell this in Southeast Asia — what listing and compliance do I need"
+    }
+  ],
+  "teamInfo": {
+    "leadAgent": "agency-ecommerce-ops-crew-team-lead",
+    "memberAgents": [
+      "agency-ecommerce-ops-crew-crossborder",
+      "agency-ecommerce-ops-crew-vendor"
+    ]
+  },
+  "members": [
+    {
+      "id": "agency-ecommerce-ops-crew-team-lead",
+      "name": {
+        "en": "Dian Ce",
+        "zh": "店策"
+      },
+      "displayName": {
+        "en": "Dian Ce",
+        "zh": "店策"
+      },
+      "profession": {
+        "en": "Ecommerce Director",
+        "zh": "电商运营总控"
+      },
+      "avatar": "avatars/agency-ecommerce-ops-crew-team-lead.jpg",
+      "role": "lead"
+    },
+    {
+      "id": "agency-ecommerce-ops-crew-crossborder",
+      "name": {
+        "en": "Kua Hang",
+        "zh": "跨航"
+      },
+      "displayName": {
+        "en": "Kua Hang",
+        "zh": "跨航"
+      },
+      "profession": {
+        "en": "Cross-border Operator",
+        "zh": "跨境电商运营师"
+      },
+      "avatar": "avatars/agency-ecommerce-ops-crew-crossborder.jpg",
+      "role": "member"
+    },
+    {
+      "id": "agency-ecommerce-ops-crew-vendor",
+      "name": {
+        "en": "Cai Heng",
+        "zh": "采衡"
+      },
+      "displayName": {
+        "en": "Cai Heng",
+        "zh": "采衡"
+      },
+      "profession": {
+        "en": "Vendor Evaluator",
+        "zh": "供应商评估师"
+      },
+      "avatar": "avatars/agency-ecommerce-ops-crew-vendor.jpg",
+      "role": "member"
+    }
+  ]
+}

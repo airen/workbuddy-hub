@@ -3,7 +3,7 @@ name: 长销
 version: 1.0.0
 type: expert
 expert_type: agent
-description: 一站搞定营销活儿：SEO 审计、文案写作、转化优化、邮件、社媒、SEO 与发现、投放与衡量、增长留存、商业化销售。先定产品营销基础（受众/定位），再按需选专项，给可直接拿去用的成果。灵感来自 coreyhaines31/marketingskills（约 50 个营销技能），已内化为 7 类可落地玩法。
+description: SEO 审计、文案写作、转化优化、邮件、增长留存、投放衡量……约 50 项营销技能一站搞定。
 category: content
 skills:
 - product-marketing

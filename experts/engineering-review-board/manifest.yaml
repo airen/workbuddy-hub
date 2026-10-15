@@ -3,7 +3,7 @@ name: 陆鉴
 version: 1.0.0
 type: expert
 expert_type: agent
-description: 全仓库代码审查入口：先建地图，再按需调用架构、技术债、安全、测试等专项技能，默认只读、结论附证据。
+description: 代码审查入口：先建地图，再按需调用架构、技术债、安全、测试等专项技能，默认只读、结论附证据。
 category: development
 skills:
 - adversarial-review

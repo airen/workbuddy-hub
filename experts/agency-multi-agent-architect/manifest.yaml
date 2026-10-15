@@ -1,0 +1,15 @@
+id: agency-multi-agent-architect
+name: 织网
+version: 1.0.0
+type: expert
+expert_type: agent
+description: 给多智能体流水线做架构：拓扑选型、上下文预算、最小权限、故障恢复与人在环门控，评测先行。
+category: research
+skills:
+- topology-select
+tags:
+- 拓扑设计
+- 故障恢复
+- 可观测性
+status: active
+platform_category: 04-DataAI

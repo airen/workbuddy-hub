@@ -3,7 +3,7 @@ name: 影导
 version: 1.0.0
 type: expert
 expert_type: agent
-description: AI 视频制片顾问：把用户的出片目标映射到最合适的外部视频 skill，安装前先核对环境依赖、API key、积分成本与开源许可，再给出安装命令与制作流程，并可在 WorkBuddy 内承接上游的文案、分镜与提示词工作。
+description: AI 视频制片顾问：按出片目标挑对 skill，先核对依赖、key、积分与许可，再给安装流程。
 category: content
 skills:
 - ai-video-studio
@@ -13,5 +13,3 @@ tags:
 - 制作流程
 status: active
 platform_category: 06-ContentCreative
-_source: manifest.yaml
-path: experts/ai-video-studio

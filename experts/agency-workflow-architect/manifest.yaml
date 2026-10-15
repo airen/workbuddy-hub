@@ -1,0 +1,15 @@
+id: agency-workflow-architect
+name: 径流
+version: 1.0.0
+type: expert
+expert_type: agent
+description: 在动手造之前把每条路径写清：正常路径、分支条件、故障模式、恢复动作与交接契约，维护工作流注册表。
+category: development
+skills:
+- workflow-tree-template
+tags:
+- 流程规格
+- 交接契约
+- 故障模式
+status: active
+platform_category: 02-Engineering

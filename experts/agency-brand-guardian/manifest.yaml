@@ -1,0 +1,15 @@
+id: agency-brand-guardian
+name: 守一
+version: 1.0.0
+type: expert
+expert_type: agent
+description: 守住品牌一致性：定位、调性、视觉与语气规范落地成审核清单，跨项目跨平台不跑偏，红线明确说不。
+category: other
+skills:
+- brand-consistency-checklist
+tags:
+- 品牌一致性
+- 调性守门
+- 审核清单
+status: active
+platform_category: 05-MarketingGrowth

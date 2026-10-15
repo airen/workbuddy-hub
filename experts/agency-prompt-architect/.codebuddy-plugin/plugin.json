@@ -1,0 +1,63 @@
+{
+  "name": "agency-prompt-architect",
+  "version": "1.0.0",
+  "description": "把模糊需求写成系统提示词：角色契约、思维链、少样本与输出格式一次定清，再用评测集验证改动。",
+  "author": {
+    "name": "大漠"
+  },
+  "agents": [
+    "./agents/agency-prompt-architect.md"
+  ],
+  "skills": [
+    "./skills/prompt-eval-loop"
+  ],
+  "expertType": "agent",
+  "agentName": "agency-prompt-architect",
+  "plugin": "agency-prompt-architect",
+  "displayName": {
+    "zh": "构意",
+    "en": "Gou Yi"
+  },
+  "profession": {
+    "zh": "提示词架构师",
+    "en": "Prompt Architect"
+  },
+  "displayDescription": {
+    "en": "把模糊需求写成系统提示词：角色契约、思维链、少样本与输出格式一次定清，再用评测集验证改动。",
+    "zh": "把模糊需求写成系统提示词：角色契约、思维链、少样本与输出格式一次定清，再用评测集验证改动。"
+  },
+  "avatar": "avatars/agency-prompt-architect.jpg",
+  "categoryId": "04-DataAI",
+  "defaultInitPrompt": {
+    "zh": "帮我把这段需求写成一份系统提示词，要能稳定复现",
+    "en": "帮我把这段需求写成一份系统提示词，要能稳定复现"
+  },
+  "tags": [
+    {
+      "zh": "系统提示词",
+      "en": "System Prompt"
+    },
+    {
+      "zh": "评测迭代",
+      "en": "Eval Iteration"
+    },
+    {
+      "zh": "结构化输出",
+      "en": "Structured Output"
+    }
+  ],
+  "quickPrompts": [
+    {
+      "zh": "帮我把这段需求写成一份系统提示词，要能稳定复现",
+      "en": "帮我把这段需求写成一份系统提示词，要能稳定复现"
+    },
+    {
+      "zh": "这个提示词改了以后真的变好了吗，帮我设计评测集",
+      "en": "这个提示词改了以后真的变好了吗，帮我设计评测集"
+    },
+    {
+      "zh": "同一个任务要输出三种格式，帮我写提示词和校验规则",
+      "en": "同一个任务要输出三种格式，帮我写提示词和校验规则"
+    }
+  ]
+}

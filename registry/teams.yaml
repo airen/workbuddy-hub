@@ -1,4 +1,113 @@
 teams:
+- id: agency-ecommerce-ops-crew
+  name: 电商运营专家团
+  version: 1.0.0
+  type: team
+  description: 从选品上架到跨境出海再到供应商把关，淘天拼京全平台运营与 1688 供应商评估前后端接起来。
+  category: other
+  members:
+  - expert_id: agency-ecommerce-ops-crew-team-lead
+    role: coordinator
+    embedded: true
+  - expert_id: agency-ecommerce-ops-crew-crossborder
+    role: member
+    embedded: true
+  - expert_id: agency-ecommerce-ops-crew-vendor
+    role: member
+    embedded: true
+  workflow: agents/agency-ecommerce-ops-crew-team-lead.md
+  tags:
+  - 全平台运营
+  - 跨境出海
+  - 供应链管理
+  status: active
+  platform_category: 05-MarketingGrowth
+  _source: manifest.yaml
+  path: teams/agency-ecommerce-ops-crew
+- id: agency-generative-visual-studio
+  name: 生成式视觉专家团
+  version: 1.0.0
+  type: team
+  description: 把视觉想法写成能直接投喂生图生视频工具的提示词，对成本与废片率负责，出图前后各做一次把关。
+  category: content
+  members:
+  - expert_id: agency-generative-visual-studio-team-lead
+    role: coordinator
+    embedded: true
+  - expert_id: agency-generative-visual-studio-video
+    role: member
+    embedded: true
+  - expert_id: agency-generative-visual-studio-ux
+    role: member
+    embedded: true
+  - expert_id: agency-generative-visual-studio-inclusive
+    role: member
+    embedded: true
+  workflow: agents/agency-generative-visual-studio-team-lead.md
+  tags:
+  - 图像提示词
+  - 视频提示词
+  - 包容性视觉
+  status: active
+  platform_category: 06-ContentCreative
+  _source: manifest.yaml
+  path: teams/agency-generative-visual-studio
+- id: agency-legal-finance-desk
+  name: 法务财税合规团
+  version: 1.0.0
+  type: team
+  description: 签合同先把风险挑出来，按三法合规起草制度与隐私政策，管好发票报销全流程，业务不等票据。
+  category: other
+  members:
+  - expert_id: agency-legal-finance-desk-team-lead
+    role: coordinator
+    embedded: true
+  - expert_id: agency-legal-finance-desk-policy
+    role: member
+    embedded: true
+  - expert_id: agency-legal-finance-desk-invoice
+    role: member
+    embedded: true
+  workflow: agents/agency-legal-finance-desk-team-lead.md
+  tags:
+  - 合同风险
+  - 数据合规
+  - 发票财税
+  status: active
+  platform_category: 11-SecurityCompliance
+  _source: manifest.yaml
+  path: teams/agency-legal-finance-desk
+- id: agency-video-commerce-crew
+  name: 短视频直播电商专家团
+  version: 1.0.0
+  type: team
+  description: 把想法做成能投放能成交的短视频与直播生意：抖音打法、视频号私域、直播复盘与剪辑交付五环节接力。
+  category: other
+  members:
+  - expert_id: agency-video-commerce-crew-team-lead
+    role: coordinator
+    embedded: true
+  - expert_id: agency-video-commerce-crew-channels
+    role: member
+    embedded: true
+  - expert_id: agency-video-commerce-crew-live
+    role: member
+    embedded: true
+  - expert_id: agency-video-commerce-crew-bilibili
+    role: member
+    embedded: true
+  - expert_id: agency-video-commerce-crew-editor
+    role: member
+    embedded: true
+  workflow: agents/agency-video-commerce-crew-team-lead.md
+  tags:
+  - 短视频运营
+  - 直播电商
+  - 多平台分发
+  status: active
+  platform_category: 05-MarketingGrowth
+  _source: manifest.yaml
+  path: teams/agency-video-commerce-crew
 - id: content-creation-team
   name: 内容工厂专家团
   version: 1.0.0
@@ -83,7 +192,7 @@ teams:
   name: 深度研究专家团
   version: 1.0.0
   type: team
-  description: 七角色的研究流水线：导航、清洗、解构、归档、溯源各司其职，把散乱网页与厚报告变成可回看的带源报告。
+  description: 七角色研究流水线：导航、清洗、解构、归档、溯源各司其职，把散乱网页与报告变成可回看的带源报告。
   category: research
   members:
   - expert_id: deep-research-crew-team-lead
@@ -151,7 +260,7 @@ teams:
   name: 软件迭代专家团
   version: 1.0.0
   type: team
-  description: 把一次软件迭代做对：先判断值不值得做，再设计边界、按测试驱动落地，用证据确认，最后把文档沉淀干净。
+  description: 把软件迭代做对：先判断值不值得做，再设计边界、按测试驱动落地，用证据确认，最后把文档沉淀干净。
   category: development
   members:
   - expert_id: hai-stack-team-lead
@@ -213,7 +322,7 @@ teams:
   name: 复刻机
   version: 1.0.0
   type: team
-  description: 用 REA 逆向侦察参考站的页面、脚本与网络请求，据此复刻实现，再由独立验证员逐项比对差异，主理人把关需求与交付。
+  description: 用 REA 侦察参考站的页面、脚本与网络请求，据此复刻实现，独立验证员逐项比对后交付。
   category: development
   members:
   - expert_id: replica-machine-team-lead

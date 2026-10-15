@@ -2,7 +2,7 @@ id: replica-machine
 name: 复刻机
 version: 1.0.0
 type: team
-description: 用 REA 逆向侦察参考站的页面、脚本与网络请求，据此复刻实现，再由独立验证员逐项比对差异，主理人把关需求与交付。
+description: 用 REA 侦察参考站的页面、脚本与网络请求，据此复刻实现，独立验证员逐项比对后交付。
 category: development
 members:
 - expert_id: replica-machine-team-lead

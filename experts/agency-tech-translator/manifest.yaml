@@ -1,0 +1,15 @@
+id: agency-tech-translator
+name: 译码
+version: 1.0.0
+type: expert
+expert_type: agent
+description: 技术与文档的中英双向翻译：术语一致、语气不翻译腔、长句拆短，代码与接口名原样保留，对照稿即可用。
+category: other
+skills:
+- tech-translation-rules
+tags:
+- 技术翻译
+- 术语一致
+- 文档本地化
+status: active
+platform_category: 09-OperationsHR

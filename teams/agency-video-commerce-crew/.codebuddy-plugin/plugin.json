@@ -1,0 +1,163 @@
+{
+  "name": "agency-video-commerce-crew",
+  "version": "1.0.0",
+  "description": "把想法做成能投放能成交的短视频与直播生意：抖音打法、视频号私域、直播复盘与剪辑交付五环节接力。",
+  "author": {
+    "name": "大漠"
+  },
+  "agents": [
+    "./agents/agency-video-commerce-crew-team-lead.md",
+    "./agents/agency-video-commerce-crew-channels.md",
+    "./agents/agency-video-commerce-crew-live.md",
+    "./agents/agency-video-commerce-crew-bilibili.md",
+    "./agents/agency-video-commerce-crew-editor.md"
+  ],
+  "skills": [
+    "./skills/short-video-launch-kit"
+  ],
+  "expertType": "team",
+  "agentName": "agency-video-commerce-crew-team-lead",
+  "plugin": "agency-video-commerce-crew",
+  "displayName": {
+    "zh": "短视频直播电商专家团",
+    "en": "Video Commerce Crew"
+  },
+  "profession": {
+    "zh": "短视频直播电商专家团",
+    "en": "Video Commerce Crew"
+  },
+  "displayDescription": {
+    "en": "把想法做成能投放能成交的短视频与直播生意：抖音打法、视频号私域、直播复盘与剪辑交付五环节接力。",
+    "zh": "把想法做成能投放能成交的短视频与直播生意：抖音打法、视频号私域、直播复盘与剪辑交付五环节接力。"
+  },
+  "avatar": "avatars/agency-video-commerce-crew.jpg",
+  "categoryId": "05-MarketingGrowth",
+  "defaultInitPrompt": {
+    "zh": "帮我把这个产品做成一条能投放的抖音短视频方案",
+    "en": "Turn this product into a Douyin short video plan that can be launched"
+  },
+  "tags": [
+    {
+      "zh": "短视频运营",
+      "en": "Short Video"
+    },
+    {
+      "zh": "直播电商",
+      "en": "Live Commerce"
+    },
+    {
+      "zh": "多平台分发",
+      "en": "Multi-platform"
+    }
+  ],
+  "quickPrompts": [
+    {
+      "zh": "帮我把这个产品做成一条能投放的抖音短视频方案",
+      "en": "Turn this product into a Douyin short video plan that can be launched"
+    },
+    {
+      "zh": "这场直播的数据不好看，帮我找出问题在哪",
+      "en": "This livestream's numbers are weak — find out why"
+    },
+    {
+      "zh": "同一条内容要发抖音、视频号、B站，帮我改三个版本",
+      "en": "Adapt one piece for Douyin, WeChat Channels and Bilibili"
+    }
+  ],
+  "teamInfo": {
+    "leadAgent": "agency-video-commerce-crew-team-lead",
+    "memberAgents": [
+      "agency-video-commerce-crew-channels",
+      "agency-video-commerce-crew-live",
+      "agency-video-commerce-crew-bilibili",
+      "agency-video-commerce-crew-editor"
+    ]
+  },
+  "members": [
+    {
+      "id": "agency-video-commerce-crew-team-lead",
+      "name": {
+        "en": "Dou Ce",
+        "zh": "抖策"
+      },
+      "displayName": {
+        "en": "Dou Ce",
+        "zh": "抖策"
+      },
+      "profession": {
+        "en": "Short Video Director",
+        "zh": "短视频总控"
+      },
+      "avatar": "avatars/agency-video-commerce-crew-team-lead.jpg",
+      "role": "lead"
+    },
+    {
+      "id": "agency-video-commerce-crew-channels",
+      "name": {
+        "en": "Shi Shou",
+        "zh": "视守"
+      },
+      "displayName": {
+        "en": "Shi Shou",
+        "zh": "视守"
+      },
+      "profession": {
+        "en": "Channels Operator",
+        "zh": "视频号运营师"
+      },
+      "avatar": "avatars/agency-video-commerce-crew-channels.jpg",
+      "role": "member"
+    },
+    {
+      "id": "agency-video-commerce-crew-live",
+      "name": {
+        "en": "Bo Lian",
+        "zh": "播练"
+      },
+      "displayName": {
+        "en": "Bo Lian",
+        "zh": "播练"
+      },
+      "profession": {
+        "en": "Live Commerce Coach",
+        "zh": "直播教练"
+      },
+      "avatar": "avatars/agency-video-commerce-crew-live.jpg",
+      "role": "member"
+    },
+    {
+      "id": "agency-video-commerce-crew-bilibili",
+      "name": {
+        "en": "Bi Yan",
+        "zh": "哔研"
+      },
+      "displayName": {
+        "en": "Bi Yan",
+        "zh": "哔研"
+      },
+      "profession": {
+        "en": "Bilibili Strategist",
+        "zh": "B站策略师"
+      },
+      "avatar": "avatars/agency-video-commerce-crew-bilibili.jpg",
+      "role": "member"
+    },
+    {
+      "id": "agency-video-commerce-crew-editor",
+      "name": {
+        "en": "Jian Cheng",
+        "zh": "剪承"
+      },
+      "displayName": {
+        "en": "Jian Cheng",
+        "zh": "剪承"
+      },
+      "profession": {
+        "en": "Editing Coach",
+        "zh": "剪辑指导师"
+      },
+      "avatar": "avatars/agency-video-commerce-crew-editor.jpg",
+      "role": "member"
+    }
+  ]
+}

@@ -109,3 +109,105 @@
 - 编写管理工具：`import_asset.py`、`sync_manifests.py`、`build_registry.py`、`validate.py`，及 `schemas/*.json`。
 - 归档非核心/第三方资产（mattpocock-skills、creator-ops、media-content-team 等）至 `archive/`，不进入 registry。
 - 上架指引与安装报告归入 `docs/operations/`。
+
+### 2026-10-15 — 从 agency-agents-zh 引入 10 个专家/专家团（4 团 + 7 单专家，实际产出 10 个资产）
+
+- **来源**：[jnMetaCode/agency-agents-zh](https://github.com/jnMetaCode/agency-agents-zh)（MIT，277 个中文角色角色库），
+  经大漠从 28 个勾选角色中裁决收敛。**不是平移，是按 WorkBuddy 专家包格式重造。**
+- **产出（4 个专家团）**：
+  - `teams/video-commerce-crew` 短视频直播电商专家团（5 成员，主理人「抖策」）：抖音策略师 / 视频号运营 / 直播教练 / B站 / 剪辑指导
+  - `teams/ecommerce-ops-crew` 电商运营专家团（3 成员，主理人「店策」）：中国电商运营 / 跨境电商 / 供应商评估
+  - `teams/legal-finance-desk` 法务财税合规团（3 成员，主理人「律衡」）：合同审查 / 制度文件 / 发票管理
+  - `teams/generative-visual-studio` 生成式视觉专家团（4 成员，主理人「图构」）：图像提示词 / 视频提示词 / UX 研究 / 包容性视觉
+- **产出（6 个单专家）**：`prompt-architect` 构意 · `multi-agent-architect` 织网 · `workflow-architect` 径流 ·
+  `brand-guardian` 守一 · `tech-translator` 译码 · `xhs-operator` 薯策
+- **重复裁决（与大漠逐项确认后落定）**：
+  - 工程四角色 → 弃前端/后端（`engineering-review-board` 82 项技能 + `software-architect` 已覆盖），只留多智能体与工作流架构
+  - 设计四角色 → 弃 UI 设计师 / UX 架构师（`visual-forge-studio` + `ui-design-field-manual` 已覆盖），留 UX 研究 + 包容性视觉并入视觉团
+  - 平台内容四角色 → 弃知乎/微博/公众号/多平台发布（`media-content-team` + `self-media-studio` + `creator-ops` 已覆盖），只做短视频与直播
+  - 提示词工程 / 品牌守护 / 技术翻译 → 三者各自独立成单专家，不塞进任何团
+- **品牌清洗（三类分治，实测 8 条断言 + 全量扫描）**：
+  - C1 中性化：Claude / ChatGPT / Gemini / Cursor / Midjourney / Sora / Veo / Seedance / Salesforce / Ahrefs / Semrush 等 → 中性表述
+  - C2 逐字保留：`ClaudeBot` / `Claude-SearchBot` / `GPTBot` / `PerplexityBot` 等 **真实 crawler user-agent 名**
+    （清洗掉会让 GEO 技能失效）。实现上用 `\x00` 数字占位符，避免占位符被后续规则吃掉——第一版用 `§KEEP§` 实测被清空，已修。
+  - C3 保留：MCP / AWS / Kubernetes / Docker / Terraform / GitHub 及抖音 / 小红书 / 1688 / 蒲公英等平台专名
+  - **坑**：上游 `description` 字段也会进入展示层与路由匹配，必须一并清洗；第一版只洗正文导致 `Sora/Veo/Seedance` 漏网，
+    且 `build.py` 自带 `load_body` 覆盖了 `importer.load_source`，两处都修后才清零。
+- **合规修正**：剥离上游全部非标准 frontmatter 字段（`emoji` / `color` / `tools` / `services`），
+  改写为 WorkBuddy 原生格式（`displayName` / `profession` / `maxTurns`）。
+- **许可**：每个资产带 `LICENSE` + 团队包带 `ATTRIBUTION.md`，保留上游 MIT 声明与改造说明。
+- **校验结果**：`validate_expert.py`（官方）20/20 通过；`validate.py` 77/77；
+  `verify_upload_ready.py` 10/10 通过 **0 提示**（`displayDescription.zh` 43–48 字、`tags` 恰好 3 个、
+  `quickPrompts` 恰好 3 条且 `[0]` 等于 `defaultInitPrompt`）。
+- **注册**：`.workbuddy` 与 `.workbuddy-ai` **两处配置根各注册 10/10**，各 45 条。
+  ⚠️ 注意 `validate_expert.py` / `register_expert.py` 读 `WORKBUDDY_CONFIG_DIR`（缺省 `~/.workbuddy`），
+  校验 `.workbuddy-ai` 下的资产会报「不在专家目录下」——**这是默认路径未覆盖，不是该目录无效**，须显式传环境变量。
+- **包体积**：503–536 KB（上限 20 MB）。`build/<id>.zip` 第一层即资产目录。
+- **头像**：统一用 `assets/avatars/_default.jpg`（255 KB），未用 ImageGen（避免 5–10 credits/张）。
+
+### 2026-10-15（续）— 为上述 10 个资产补齐技能包（skills 从 0 → 10）
+
+- **背景**：第一批只交付了人格（`agents/`），`skills/` 全为空——专家「能聊但不能干活」。
+  本次把上游正文里的交付物模板抽成 `SKILL.md` + `references/`，共 **10 个 SKILL.md + 47 个 references、73,929 字**。
+- **技能清单**：
+  | 资产 | 技能 ID | references |
+  |---|---|---:|
+  | `xhs-operator` | `xhs-seeding-playbook` | 4（笔记模板/投放排期/合规红线/复盘指标） |
+  | `video-commerce-crew` | `short-video-launch-kit` | 7（抖音脚本/排品/话术/千川/算法红线/B站/剪辑） |
+  | `ecommerce-ops-crew` | `ecommerce-ops-kit` | 5（评分卡/验厂报告/年度策略/跨境/国内） |
+  | `legal-finance-desk` | `legal-finance-kit` | 7（合同七类清单/意见书/三法/隐私政策/发票制度/健康度/税务红线） |
+  | `generative-visual-studio` | `visual-prompt-kit` | 10（图像四层/视频五段/负面词/成本/研究计划/画像/包容性三件） |
+  | `prompt-architect` | `prompt-eval-loop` | 3（四段模板/设计原则/评测迭代） |
+  | `multi-agent-architect` | `topology-select` | 3（五拓扑/上下文架构/硬规则） |
+  | `workflow-architect` | `workflow-tree-template` | 2（四视图注册表/发现方法） |
+  | `brand-guardian` | `brand-consistency-checklist` | 2（品牌基础/守门规则） |
+  | `tech-translator` | `tech-translation-rules` | 3（风格指南/常见模式/五步流程） |
+- **references 一律逐字抽取上游原文**，只做三件机械处理：剥 frontmatter、章节 emoji 前缀归一、品牌清洗。
+  每个文件头部注明「已做 / 未做」，不冒充原创。
+- **踩坑（值得记）**：
+  1. **抽取结束边界误匹配代码块内部的 `## `**：上游把 Markdown 模板放在 ```markdown 代码块里，
+     块内也有 `## 研究目标` 这类标题。用 `^## ` 当结束正则会把内容截断在代码块中间——
+     实测 `ux-research-plan` / `system-prompt-template` / `brand-foundation` 三个被截成 20 字。
+     **修法：结束判定必须排除代码块内的行**（用 fence 开关跟踪），`fix_refs.py` 已修。
+  2. **「过短」不等于「残缺」**：用尾行比对法逐个对照源章节，确认 12 个短文件全部完整——
+     合规红线、算法权重这类清单上游原文本就精炼。没有这一步就会误改好文件。
+- **校验**：官方 `validate_expert.py` 20/20（含 skills 引用路径检查）；`validate.py` 77/77；
+  `verify_upload_ready.py` 10/10 0 提示；品牌残留扫描 78 个文件 **0 命中**。
+- **体积**：508–562 KB（含 skills 后仍远低于 20 MB 上限）。
+
+### 2026-10-15（再续）— 全量改名规避平台名称占用（`xhs-operator` 已被占用）
+
+- **触发**：上传 `xhs-operator` 被平台拒——「专家名称 "xhs-operator" 已被占用」。
+  平台对 `name` 是**全平台全局唯一**（不是账号内唯一），通用名极易撞车。
+- **处置**：一次性给**全部 10 个**资产加 `agency-` 前缀，而非只改报错那一个。
+  理由：其余 9 个同样是通用名（`prompt-architect` / `brand-guardian` / `tech-translator`…），
+  逐个撞名再逐个重打包，每次驳回还占版本号，成本远高于一次全改。
+
+| 旧 id | 新 id |
+|---|---|
+| `video-commerce-crew` | `agency-video-commerce-crew` |
+| `ecommerce-ops-crew` | `agency-ecommerce-ops-crew` |
+| `legal-finance-desk` | `agency-legal-finance-desk` |
+| `generative-visual-studio` | `agency-generative-visual-studio` |
+| `prompt-architect` | `agency-prompt-architect` |
+| `multi-agent-architect` | `agency-multi-agent-architect` |
+| `workflow-architect` | `agency-workflow-architect` |
+| `brand-guardian` | `agency-brand-guardian` |
+| `tech-translator` | `agency-tech-translator` |
+| `xhs-operator` | `agency-xhs-operator` |
+
+- **改名必须同步的 8 处**（漏一处就被校验器抓住）：
+  1. 目录名 2. `plugin.json` 的 `name` 3. `plugin` 4. `agentName`
+  5. `agents[]` 路径 6. `agents/*.md` 文件名 7. `agents/*.md` frontmatter 的 `name`
+  8. `settings.json` 的 `agent`（team）＋ `teamInfo` ＋ `members[].id` ＋ 头像文件名与 `avatar` 字段
+- **踩坑（改名连踩三个）**：
+  1. **只改文件名不改 frontmatter `name`** → 官方校验器报 `frontmatter name 'x' != filename 'y'`，10 个全挂。
+     修 21 个 `agents/*.md` 后才过。
+  2. **`avatar` 字段与成员头像路径没跟着改** → 20 个「头像缺失」。补 `avatars/<id>.jpg` + 改字段。
+  3. **`rm -rf` 删不掉 `~/.workbuddy*` 下的旧目录** → `safe-delete` 守卫报 `state lock timeout`
+     但 **exit code 仍是 0**（假象），实际一个都没删。改用「保留旧目录 + 从 `marketplace.json`
+     移除旧 id 条目」达成同等效果，不触碰删除。
+- **注册清单被覆盖**：`cp -r` 同步资产后 `.workbuddy` 的 `marketplace.json` 掉回 35 条，
+  需重新补写 10 条。最终两处各 **45 条、10/10 全在**。
+- **体积变化**：团包 1.3–1.8 MB（成员头像从 0 → 每人一张），单专家 508–525 KB。均远低于 20 MB。
+- **校验**：官方 `validate_expert.py` 10/10；`verify_upload_ready.py` 10/10 **0 提示**。

@@ -1,0 +1,15 @@
+id: agency-prompt-architect
+name: 构意
+version: 1.0.0
+type: expert
+expert_type: agent
+description: 把模糊需求写成系统提示词：角色契约、思维链、少样本与输出格式一次定清，再用评测集验证改动。
+category: research
+skills:
+- prompt-eval-loop
+tags:
+- 系统提示词
+- 评测迭代
+- 结构化输出
+status: active
+platform_category: 04-DataAI

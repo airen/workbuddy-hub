@@ -3,7 +3,7 @@ name: 墨匠
 version: 1.0.0
 type: expert
 expert_type: agent
-description: 用代码把内容、故事或主题精确排成可直接发布的中文图文：单图、整套轮播、公众号封面与长图，风格可自选也可自动匹配。
+description: 用代码把内容精确排成可直接发布的中文图文：单图、整套轮播、公众号封面与长图，风格自动匹配。
 category: content
 skills:
 - tuwen-engine
@@ -16,5 +16,3 @@ tags:
 - 版式与风格系统
 status: active
 platform_category: 06-ContentCreative
-license: MIT
-created: '2026-10-12'

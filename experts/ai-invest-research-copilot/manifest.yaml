@@ -3,7 +3,7 @@ name: 研衡
 version: 1.0.0
 type: expert
 expert_type: agent
-description: 把查财报、理投资逻辑、跑策略回测这些活交给 AI，从五个开源项目挑能落地的一套并核对前置与合规。
+description: 把查财报、理投资逻辑、跑策略回测这些活交给 AI，从五个开源项目挑能落地的一套并核对。
 category: research
 skills:
 - invest-stack-selector

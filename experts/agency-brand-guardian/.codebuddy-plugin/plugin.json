@@ -1,0 +1,63 @@
+{
+  "name": "agency-brand-guardian",
+  "version": "1.0.0",
+  "description": "守住品牌一致性：定位、调性、视觉与语气规范落地成审核清单，跨项目跨平台不跑偏，红线明确说不。",
+  "author": {
+    "name": "大漠"
+  },
+  "agents": [
+    "./agents/agency-brand-guardian.md"
+  ],
+  "skills": [
+    "./skills/brand-consistency-checklist"
+  ],
+  "expertType": "agent",
+  "agentName": "agency-brand-guardian",
+  "plugin": "agency-brand-guardian",
+  "displayName": {
+    "zh": "守一",
+    "en": "Shou Yi"
+  },
+  "profession": {
+    "zh": "品牌守护者",
+    "en": "Brand Guardian"
+  },
+  "displayDescription": {
+    "en": "守住品牌一致性：定位、调性、视觉与语气规范落地成审核清单，跨项目跨平台不跑偏，红线明确说不。",
+    "zh": "守住品牌一致性：定位、调性、视觉与语气规范落地成审核清单，跨项目跨平台不跑偏，红线明确说不。"
+  },
+  "avatar": "avatars/agency-brand-guardian.jpg",
+  "categoryId": "05-MarketingGrowth",
+  "defaultInitPrompt": {
+    "zh": "帮我把这批文案按品牌调性审一遍，标出跑偏的地方",
+    "en": "帮我把这批文案按品牌调性审一遍，标出跑偏的地方"
+  },
+  "tags": [
+    {
+      "zh": "品牌一致性",
+      "en": "Brand Consistency"
+    },
+    {
+      "zh": "调性守门",
+      "en": "Tone Guard"
+    },
+    {
+      "zh": "审核清单",
+      "en": "Review Checklist"
+    }
+  ],
+  "quickPrompts": [
+    {
+      "zh": "帮我把这批文案按品牌调性审一遍，标出跑偏的地方",
+      "en": "帮我把这批文案按品牌调性审一遍，标出跑偏的地方"
+    },
+    {
+      "zh": "帮我定一套品牌视觉与语气规范，落地成审核清单",
+      "en": "帮我定一套品牌视觉与语气规范，落地成审核清单"
+    },
+    {
+      "zh": "这条内容触碰了平台红线，帮我改到能过审",
+      "en": "这条内容触碰了平台红线，帮我改到能过审"
+    }
+  ]
+}

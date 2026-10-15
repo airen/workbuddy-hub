@@ -1,0 +1,26 @@
+id: agency-generative-visual-studio
+name: 生成式视觉专家团
+version: 1.0.0
+type: team
+description: 把视觉想法写成能直接投喂生图生视频工具的提示词，对成本与废片率负责，出图前后各做一次把关。
+category: content
+members:
+- expert_id: agency-generative-visual-studio-team-lead
+  role: coordinator
+  embedded: true
+- expert_id: agency-generative-visual-studio-video
+  role: member
+  embedded: true
+- expert_id: agency-generative-visual-studio-ux
+  role: member
+  embedded: true
+- expert_id: agency-generative-visual-studio-inclusive
+  role: member
+  embedded: true
+workflow: agents/agency-generative-visual-studio-team-lead.md
+tags:
+- 图像提示词
+- 视频提示词
+- 包容性视觉
+status: active
+platform_category: 06-ContentCreative

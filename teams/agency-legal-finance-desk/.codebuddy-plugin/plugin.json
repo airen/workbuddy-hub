@@ -1,0 +1,125 @@
+{
+  "name": "agency-legal-finance-desk",
+  "version": "1.0.0",
+  "description": "签合同先把风险挑出来，按三法合规起草制度与隐私政策，管好发票报销全流程，业务不等票据。",
+  "author": {
+    "name": "大漠"
+  },
+  "agents": [
+    "./agents/agency-legal-finance-desk-team-lead.md",
+    "./agents/agency-legal-finance-desk-policy.md",
+    "./agents/agency-legal-finance-desk-invoice.md"
+  ],
+  "skills": [
+    "./skills/legal-finance-kit"
+  ],
+  "expertType": "team",
+  "agentName": "agency-legal-finance-desk-team-lead",
+  "plugin": "agency-legal-finance-desk",
+  "displayName": {
+    "zh": "法务财税合规团",
+    "en": "Legal Finance Desk"
+  },
+  "profession": {
+    "zh": "法务财税合规团",
+    "en": "Legal Finance Desk"
+  },
+  "displayDescription": {
+    "en": "签合同先把风险挑出来，按三法合规起草制度与隐私政策，管好发票报销全流程，业务不等票据。",
+    "zh": "签合同先把风险挑出来，按三法合规起草制度与隐私政策，管好发票报销全流程，业务不等票据。"
+  },
+  "avatar": "avatars/agency-legal-finance-desk.jpg",
+  "categoryId": "11-SecurityCompliance",
+  "defaultInitPrompt": {
+    "zh": "帮我审一下这份合同，把风险点和修改建议列出来",
+    "en": "Review this contract — list the risks and proposed changes"
+  },
+  "tags": [
+    {
+      "zh": "合同风险",
+      "en": "Contract Risk"
+    },
+    {
+      "zh": "数据合规",
+      "en": "Data Compliance"
+    },
+    {
+      "zh": "发票财税",
+      "en": "Invoice Tax"
+    }
+  ],
+  "quickPrompts": [
+    {
+      "zh": "帮我审一下这份合同，把风险点和修改建议列出来",
+      "en": "Review this contract — list the risks and proposed changes"
+    },
+    {
+      "zh": "帮我起草一份隐私政策，按三法合规来写",
+      "en": "Draft a privacy policy compliant with PIPL, DSL and CSL"
+    },
+    {
+      "zh": "报销和发票这块流程该怎么搭才不卡业务",
+      "en": "How should I set up invoicing and reimbursement without blocking business"
+    }
+  ],
+  "teamInfo": {
+    "leadAgent": "agency-legal-finance-desk-team-lead",
+    "memberAgents": [
+      "agency-legal-finance-desk-policy",
+      "agency-legal-finance-desk-invoice"
+    ]
+  },
+  "members": [
+    {
+      "id": "agency-legal-finance-desk-team-lead",
+      "name": {
+        "en": "Lv Heng",
+        "zh": "律衡"
+      },
+      "displayName": {
+        "en": "Lv Heng",
+        "zh": "律衡"
+      },
+      "profession": {
+        "en": "Legal Director",
+        "zh": "法务总控"
+      },
+      "avatar": "avatars/agency-legal-finance-desk-team-lead.jpg",
+      "role": "lead"
+    },
+    {
+      "id": "agency-legal-finance-desk-policy",
+      "name": {
+        "en": "Zhui Zhi",
+        "zh": "制撰"
+      },
+      "displayName": {
+        "en": "Zhui Zhi",
+        "zh": "制撰"
+      },
+      "profession": {
+        "en": "Policy Writer",
+        "zh": "制度文件撰写师"
+      },
+      "avatar": "avatars/agency-legal-finance-desk-policy.jpg",
+      "role": "member"
+    },
+    {
+      "id": "agency-legal-finance-desk-invoice",
+      "name": {
+        "en": "Piao Li",
+        "zh": "票理"
+      },
+      "displayName": {
+        "en": "Piao Li",
+        "zh": "票理"
+      },
+      "profession": {
+        "en": "Invoice Manager",
+        "zh": "发票管理师"
+      },
+      "avatar": "avatars/agency-legal-finance-desk-invoice.jpg",
+      "role": "member"
+    }
+  ]
+}

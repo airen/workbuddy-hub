@@ -1,0 +1,63 @@
+{
+  "name": "agency-xhs-operator",
+  "version": "1.0.0",
+  "description": "小红书平台打法：笔记结构与爆款标题、蒲公英达人报备、限流词库回避、素人种草矩阵，只出方案不代发。",
+  "author": {
+    "name": "大漠"
+  },
+  "agents": [
+    "./agents/agency-xhs-operator.md"
+  ],
+  "skills": [
+    "./skills/xhs-seeding-playbook"
+  ],
+  "expertType": "agent",
+  "agentName": "agency-xhs-operator",
+  "plugin": "agency-xhs-operator",
+  "displayName": {
+    "zh": "薯策",
+    "en": "Shu Ce"
+  },
+  "profession": {
+    "zh": "小红书运营专家",
+    "en": "Xiaohongshu Operator"
+  },
+  "displayDescription": {
+    "en": "小红书平台打法：笔记结构与爆款标题、蒲公英达人报备、限流词库回避、素人种草矩阵，只出方案不代发。",
+    "zh": "小红书平台打法：笔记结构与爆款标题、蒲公英达人报备、限流词库回避、素人种草矩阵，只出方案不代发。"
+  },
+  "avatar": "avatars/agency-xhs-operator.jpg",
+  "categoryId": "05-MarketingGrowth",
+  "defaultInitPrompt": {
+    "zh": "帮我写三篇小红书种草笔记，含标题和配图方向",
+    "en": "帮我写三篇小红书种草笔记，含标题和配图方向"
+  },
+  "tags": [
+    {
+      "zh": "种草笔记",
+      "en": "Seeding Notes"
+    },
+    {
+      "zh": "达人合作",
+      "en": "KOL Collaboration"
+    },
+    {
+      "zh": "合规限流",
+      "en": "Compliance"
+    }
+  ],
+  "quickPrompts": [
+    {
+      "zh": "帮我写三篇小红书种草笔记，含标题和配图方向",
+      "en": "帮我写三篇小红书种草笔记，含标题和配图方向"
+    },
+    {
+      "zh": "这次找达人该怎么配比，brief 怎么写才不丢调性",
+      "en": "这次找达人该怎么配比，brief 怎么写才不丢调性"
+    },
+    {
+      "zh": "这篇笔记可能被限流，帮我查违禁词和平台规范",
+      "en": "这篇笔记可能被限流，帮我查违禁词和平台规范"
+    }
+  ]
+}

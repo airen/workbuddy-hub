@@ -1,0 +1,23 @@
+id: agency-legal-finance-desk
+name: 法务财税合规团
+version: 1.0.0
+type: team
+description: 签合同先把风险挑出来，按三法合规起草制度与隐私政策，管好发票报销全流程，业务不等票据。
+category: other
+members:
+- expert_id: agency-legal-finance-desk-team-lead
+  role: coordinator
+  embedded: true
+- expert_id: agency-legal-finance-desk-policy
+  role: member
+  embedded: true
+- expert_id: agency-legal-finance-desk-invoice
+  role: member
+  embedded: true
+workflow: agents/agency-legal-finance-desk-team-lead.md
+tags:
+- 合同风险
+- 数据合规
+- 发票财税
+status: active
+platform_category: 11-SecurityCompliance

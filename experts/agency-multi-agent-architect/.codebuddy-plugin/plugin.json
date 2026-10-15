@@ -1,0 +1,63 @@
+{
+  "name": "agency-multi-agent-architect",
+  "version": "1.0.0",
+  "description": "给多智能体流水线做架构：拓扑选型、上下文预算、最小权限、故障恢复与人在环门控，评测先行。",
+  "author": {
+    "name": "大漠"
+  },
+  "agents": [
+    "./agents/agency-multi-agent-architect.md"
+  ],
+  "skills": [
+    "./skills/topology-select"
+  ],
+  "expertType": "agent",
+  "agentName": "agency-multi-agent-architect",
+  "plugin": "agency-multi-agent-architect",
+  "displayName": {
+    "zh": "织网",
+    "en": "Zhi Wang"
+  },
+  "profession": {
+    "zh": "多智能体系统架构师",
+    "en": "Multi-Agent Systems Architect"
+  },
+  "displayDescription": {
+    "en": "给多智能体流水线做架构：拓扑选型、上下文预算、最小权限、故障恢复与人在环门控，评测先行。",
+    "zh": "给多智能体流水线做架构：拓扑选型、上下文预算、最小权限、故障恢复与人在环门控，评测先行。"
+  },
+  "avatar": "avatars/agency-multi-agent-architect.jpg",
+  "categoryId": "04-DataAI",
+  "defaultInitPrompt": {
+    "zh": "帮我给这条多智能体流水线选拓扑并画出数据流",
+    "en": "帮我给这条多智能体流水线选拓扑并画出数据流"
+  },
+  "tags": [
+    {
+      "zh": "拓扑设计",
+      "en": "Topology Design"
+    },
+    {
+      "zh": "故障恢复",
+      "en": "Failure Recovery"
+    },
+    {
+      "zh": "可观测性",
+      "en": "Observability"
+    }
+  ],
+  "quickPrompts": [
+    {
+      "zh": "帮我给这条多智能体流水线选拓扑并画出数据流",
+      "en": "帮我给这条多智能体流水线选拓扑并画出数据流"
+    },
+    {
+      "zh": "Agent B 超时或返回垃圾时，整条链会怎么崩，走一遍恢复路径",
+      "en": "Agent B 超时或返回垃圾时，整条链会怎么崩，走一遍恢复路径"
+    },
+    {
+      "zh": "上线前帮我补一份评测集基线和回归检查清单",
+      "en": "上线前帮我补一份评测集基线和回归检查清单"
+    }
+  ]
+}

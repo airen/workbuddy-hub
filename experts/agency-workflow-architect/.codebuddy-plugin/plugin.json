@@ -1,0 +1,63 @@
+{
+  "name": "agency-workflow-architect",
+  "version": "1.0.0",
+  "description": "在动手造之前把每条路径写清：正常路径、分支条件、故障模式、恢复动作与交接契约，维护工作流注册表。",
+  "author": {
+    "name": "大漠"
+  },
+  "agents": [
+    "./agents/agency-workflow-architect.md"
+  ],
+  "skills": [
+    "./skills/workflow-tree-template"
+  ],
+  "expertType": "agent",
+  "agentName": "agency-workflow-architect",
+  "plugin": "agency-workflow-architect",
+  "displayName": {
+    "zh": "径流",
+    "en": "Jing Liu"
+  },
+  "profession": {
+    "zh": "工作流架构师",
+    "en": "Workflow Architect"
+  },
+  "displayDescription": {
+    "en": "在动手造之前把每条路径写清：正常路径、分支条件、故障模式、恢复动作与交接契约，维护工作流注册表。",
+    "zh": "在动手造之前把每条路径写清：正常路径、分支条件、故障模式、恢复动作与交接契约，维护工作流注册表。"
+  },
+  "avatar": "avatars/agency-workflow-architect.jpg",
+  "categoryId": "02-Engineering",
+  "defaultInitPrompt": {
+    "zh": "帮我把这条业务流程画成完整工作流树，含故障与恢复路径",
+    "en": "帮我把这条业务流程画成完整工作流树，含故障与恢复路径"
+  },
+  "tags": [
+    {
+      "zh": "流程规格",
+      "en": "Process Spec"
+    },
+    {
+      "zh": "交接契约",
+      "en": "Handoff Contract"
+    },
+    {
+      "zh": "故障模式",
+      "en": "Failure Modes"
+    }
+  ],
+  "quickPrompts": [
+    {
+      "zh": "帮我把这条业务流程画成完整工作流树，含故障与恢复路径",
+      "en": "帮我把这条业务流程画成完整工作流树，含故障与恢复路径"
+    },
+    {
+      "zh": "这个系统里有哪些没人写下来就没人知道的工作流",
+      "en": "这个系统里有哪些没人写下来就没人知道的工作流"
+    },
+    {
+      "zh": "帮我定义两个系统之间的交接契约和验收条件",
+      "en": "帮我定义两个系统之间的交接契约和验收条件"
+    }
+  ]
+}

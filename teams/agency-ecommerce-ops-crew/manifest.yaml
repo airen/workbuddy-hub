@@ -1,0 +1,23 @@
+id: agency-ecommerce-ops-crew
+name: 电商运营专家团
+version: 1.0.0
+type: team
+description: 从选品上架到跨境出海再到供应商把关，淘天拼京全平台运营与 1688 供应商评估前后端接起来。
+category: other
+members:
+- expert_id: agency-ecommerce-ops-crew-team-lead
+  role: coordinator
+  embedded: true
+- expert_id: agency-ecommerce-ops-crew-crossborder
+  role: member
+  embedded: true
+- expert_id: agency-ecommerce-ops-crew-vendor
+  role: member
+  embedded: true
+workflow: agents/agency-ecommerce-ops-crew-team-lead.md
+tags:
+- 全平台运营
+- 跨境出海
+- 供应链管理
+status: active
+platform_category: 05-MarketingGrowth
