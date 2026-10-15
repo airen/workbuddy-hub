@@ -9,7 +9,8 @@
 
 | 类别 | 内容 | 许可 |
 |---|---|---|
-| **新增** | plugin.json、7 个 agents/*.md、8 个头像、入口技能 `creator-ops`、工具箱 `creator-toolbox`、README、本 LICENSE | MIT |
+| **新增** | plugin.json、7 个 agents/*.md、8 个头像、入口技能 `creator-ops`、工具箱 `creator-toolbox`、技术社区交底 `tech-community-publisher`、README、本 LICENSE | MIT |
+| **提炼重写（非搬运）** | `tech-community-publisher` 的方法论提炼自无 LICENSE 的上游（LDJ-creat/MediaManager、media-skills） | MIT（仅方法论，未复制原文） |
 | **搬运（原文保留）** | 来自 5 个上游仓库的 skills/（详见归属表） | 与上游一致（多数为 MIT） |
 | **上游 LICENSE 原文** | 见下文「二、上游许可全文」 | 逐项照录 |
 | **Awesome 清单** | 仅作为文档引用，未搬运文件 | CC0-1.0 |
@@ -155,6 +156,7 @@
 | `auto-editor-export` | WyattBlue/auto-editor `skills/` | master | Unlicense |
 | `creator-ops`（入口编排） | 本包新增 | — | MIT |
 | `creator-toolbox`（工具箱地图） | 本包新增 | — | MIT |
+| `tech-community-publisher`（技术社区发布/数据交底） | 本包新增，**方法论提炼自** LDJ-creat/MediaManager 与 LDJ-creat/media-skills | — | MIT（未复制原文，见第六节） |
 
 ---
 
@@ -173,6 +175,10 @@
 | LosslessCut | mifi/lossless-cut | GPL-2.0 | 工具箱引用，不打包 |
 | awesome-creator-tools | lucky-verma | CC0-1.0 | 工具箱引用，文档 |
 | awesome-ai-media | JuneYaooo | ⚠️ README 标 CC0-1.0，无 LICENSE 文件 | 工具箱引用，文档 |
+| `media` CLI | LDJ-creat/MediaManager | ⚠️ **未声明 LICENSE（版权默认保留）** | 技术社区技能引用，**不打包**，用户自行获取 |
+| MediaCrawler | NanmiCoder/MediaCrawler | ⚠️ 使用前请自行核实条款 | 知乎等平台公开内容采集，不打包 |
+| zhihu-scraper | LoneKnightz/zhihu-scraper | ⚠️ 使用前请自行核实条款 | 知乎内容转 Markdown，不打包 |
+| auto-editor | WyattBlue/auto-editor | Unlicense | 工具箱引用，命令行工具 |
 
 ---
 
@@ -185,3 +191,18 @@
 - `baoyu-fetch@0.1.2`
 
 它们在 npm 上均以「MIT」方式由 `JimLiu` 发布（具体许可以上游 npm 包的 `LICENSE` 为准）。
+
+---
+
+## 六、关于 `tech-community-publisher` 的提炼声明
+
+**背景**：2026-10-14 核验，`LDJ-creat/MediaManager` 与 `LDJ-creat/media-skills` 两个仓库在 GitHub 根目录**均不含 LICENSE 文件**。依据 GitHub 服务条款，未附许可声明的仓库其源代码默认由作者保留全部权利。
+
+**因此本包采取的处理方式（合规底线）**：
+
+1. **未搬运任何上游文件**。包名 `tech-community-publisher` 下的内容是本包作者独立撰写。
+2. **未复制上游文档原文**。仅提炼不受版权保护的操作约定与方法论思想（`media` CLI 的命令契约、认证文件发现顺序、草稿优先策略、三层数据报告结构），并用本包自身的语言重新表述。
+3. **CC0 之外的引用均标注来源**（见该技能 §9 及本文件第四节）。
+4. **实际执行工具不打包**。`media` CLI 需用户自行从上游获取，**合规责任由使用者自行承担**；商用前请先联系上游作者取得书面授权。
+
+> ⚠️ **给二次分发者的提醒**：若你要转载或商用本专家包，第四、六节中标注「⚠️ 未声明 LICENSE」的条目需要你自行重新评估法律风险。本包提供的是**交底与路由**，不是这些工具的再分发渠道。

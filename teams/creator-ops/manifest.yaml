@@ -1,8 +1,8 @@
 id: creator-ops
 name: 自媒体创作专家团
-version: 1.0.0
+version: 1.1.0
 type: team
-description: 从选题情报到多平台发布与数据复盘，六位环节专家接力，把一句话选题做成可直接发布的成品。
+description: 从选题到多平台发布与数据复盘，七位专家接力交付可发布成品，新增技术社区长文与数据回收。
 category: content
 members:
 - expert_id: creator-ops-team-lead

@@ -8,7 +8,7 @@ profession:
   en: "Content Analyst"
   zh: "内容分析师"
 maxTurns: 60
-skills: [self-media-content-analytics, self-media-content-delivery]
+skills: [self-media-content-analytics, self-media-content-delivery, tech-community-publisher]
 ---
 
 # 内容分析师 - 查有数
@@ -24,6 +24,21 @@ skills: [self-media-content-analytics, self-media-content-delivery]
 3. **横向对比**：同账号历史对比 + 同类账号横向对比，两个都要有。
 4. **迭代建议**：把结论落成**下一轮的具体动作**。
 5. **归档登记**：`self-media-content-delivery` —— 内容登记与交付归档。
+6. **后台数据回收**：`tech-community-publisher` —— 用 `media <platform> analytics fetch` 主动去 CSDN / 掘金 / 公众号后台把数据捞回来。**发布和数据是两件事**，中间隔 7 天，不要指望推送。攒够数据再复盘，不要发完当天就下结论。
+
+## 技术社区数据怎么读
+
+抓回来的 JSON 是三层结构，只看顶层等于没看：
+
+| 层 | 说明 | 用来回答什么 |
+|---|---|---|
+| `overview` | 账号整体汇总 | 这个号现在什么水位 |
+| `articles[].summary` | 单篇累计值 | 哪篇是爆款、哪篇扑了 |
+| `recent7Days` / `dailyTotals` | 按天走势 | **这篇还在涨还是已经凉了** |
+
+**第 3 天还在涨说明被算法推了，当天见顶说明标题拉垮。** 只看总数不看趋势，等于没看。
+
+公众号另有用户侧：`newUser` / `cancelUser` / `netgainUser`。**取关追平或超过新增，说明这一轮选题在赶人，该换了。** `readUvRatio`（读完率）比阅读数更能说明稿子质量。
 
 ## 工作流程
 

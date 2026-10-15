@@ -26,10 +26,29 @@
   - 内容生产：10 个 `self-media-*`（选题到复盘全流程）+ 21 个 `baoyu-*`（宝玉的写作/视觉/翻译/信息图/小红书图）+ 12 个 `*-skill`（蒸馏自真实 AI 自媒体大 V 的写作人格）
   - 视频制片：4 个 `auto-editor*`（去静音、转写、效果、导出）
   - 多平台发布：1 个 `self-media-wechat-publisher`、3 个 `baoyu-post-to-*`、4 个 `*-upload`
+  - **技术社区长文**：1 个 `tech-community-publisher`（CSDN / 掘金 / 知乎 / 公众号的发布与后台数据回收）
   - 工具箱：1 个 `creator-toolbox`（9 个外部软件的交接指引）
   - 入口：1 个 `creator-ops`（先判链路再派活）
 
-总计 **53 个技能**。
+总计 **54 个技能**。
+
+### 技术社区这一条赛道为什么单独讲
+
+中文长文（CSDN / 掘金 / 知乎 / 公众号）跟社媒短视频是两种物种，`tech-community-publisher` 负责交底：
+
+- 正文是 **Markdown + 代码块**，不是封面九宫格，提前转 HTML 会把代码块搞糊
+- **默认产物是草稿箱**，终发一律要先拿到你的确认
+- **发布和数据是两件事**，中间隔 7 天，数据得主动去后台抓：`media <平台> analytics fetch`
+- **知乎目前没有可靠的自动发文方案**——本专家团会把稿子整理成知乎适配形态交给你手动发，**不假装能自动发**；但知乎的**素材采集**可以用 MediaCrawler / zhihu-scraper
+
+自动化的真实水位线（动手前先看这张表）：
+
+| 平台 | 落草稿 | 自主终发 | 后台数据 |
+|---|---|---|---|
+| CSDN | ✅ 自动 | ❌ 不建议 | ✅ 自动 |
+| 掘金 | ✅ 自动 | ❌ 自主放弃 | ✅ 自动 |
+| 微信公众号 | ✅ 已有能力 | ✅ 需确认 | ✅ 自动 |
+| 知乎 | ⚠️ 不稳 | ❌ | ⚠️ 仅公开侧采集 |
 
 ## 怎么用
 
@@ -49,6 +68,9 @@
 | `baoyu-md` / `baoyu-chrome-cdp` / `baoyu-fetch`（npm） | baoyu 的发布/抓取类技能 | 在技能 `scripts/` 目录里 `bun install` |
 | `auto-editor`（Nim CLI） | 4 个 `auto-editor*` 技能 | 见 `creator-toolbox` 第 6 条 |
 | `sau`（social-auto-upload CLI） | 4 个 `*-upload` 技能 | 见 `creator-toolbox` 第 4 条 |
+| `media`（MediaManager CLI） | `tech-community-publisher` | 先跑 `media workspace show` 确认可用 |
+
+> ⚠️ `media` CLI 来自 **LDJ-creat/MediaManager**，该仓库**未声明 LICENSE**（版权默认保留）。本包**不打包其任何文件**，仅提炼方法论。需你自行获取并自行承担合规责任；商用请先向上游作者取得授权。
 
 **先验证再承诺。** 用户说「帮我发到抖音」时，先跑 `sau --help` 确认能通。跑不了就直说，不要假装完成。
 
@@ -66,9 +88,10 @@
 
 ## 许可与归属
 
-- 本包新增内容（plugin.json、7 个 agent MD、8 个头像、入口技能、工具箱技能、README）以 **MIT** 发布
+- 本包新增内容（plugin.json、7 个 agent MD、8 个头像、入口技能、工具箱技能、技术社区交底技能、README）以 **MIT** 发布
 - 上游 51 个技能原文保留，按上游许可继承（详见 `LICENSE` 的「归属表」）
-- 9 个外部软件**未打包**，仅在 `creator-toolbox` 里给出用途与获取方式
+- `tech-community-publisher` 为**方法论提炼重写**，非搬运；其参考的两个上游仓库**未声明 LICENSE**，详见 `LICENSE` 第六节
+- 外部软件**未打包**，仅给出用途与获取方式
 
 完整许可与归属表见 [`LICENSE`](./LICENSE)。
 
@@ -105,5 +128,5 @@ python3 ~/.workbuddy-ai/skills/expert-pack-from-skill-repo/scripts/preflight.py 
 
 ## 致谢
 
-- 5 个上游开源项目（详见 `LICENSE` 第三、四节）
+- 5 个上游开源项目的原文技能 + `tech-community-publisher` 的方法论参考来源（详见 `LICENSE` 第三、四、六节）
 - 本包由 [大漠](mailto:damo@example.com) 整理与封装

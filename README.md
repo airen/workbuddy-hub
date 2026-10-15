@@ -121,6 +121,7 @@ python scripts/generate_readme.py
 | `changxiao-marketing` | 长销 | 一站搞定营销活儿：SEO 审计、文案写作、转化优化、邮件、社媒、SEO 与发现、投放与衡量、增长留存、商业化销售。先定产品营销基础（受众/定位），再按需选专项，给可直接拿去用的成果。灵感来自 coreyhaines31/marketing… |
 | `geo-seo-strategist` | 显扬 | 网站与应用 GEO SEO 顾问：从选题、写作到 llms.txt，让 AI 与搜索更常引用你。 |
 | `growth-demand-studio` | 路拓 | 从定位到获客的增长营销：起名查域名、支付接入、客户线索研究、SEO 审计、选题挖掘与长文撰写。 |
+| `ip-visual-forge` | 颜定 | 从一张照片或一句人设开始建立可复用角色档案，再按文章、场景或平台产出风格统一的配图与图解。七条角色 IP 路线按用途选：建档、从零设计、头像 Logo、文章配图、跨平台长期复用、角色图解、长文统一视觉，核心是「换文章换场景还认得出同一个你」。 |
 | `office-automation` | 办妥 | 帮你把手头的 Office 文件往前推进——改文档看差异可回退、交代一句就出 PPT/Word/Excel/网页、用自然语言改 Excel、整理存量文档、给内部工具嵌办公能力。灵感来自 genoffice、openworkbuddy、MS… |
 | `podcast-to-article` | 陈听 | 把播客链接或逐字稿改写成中文精华长文，保留关键原声并逐章配图，可一键存入 Obsidian。 |
 | `self-media-studio` | 柳成文 | 从一句话选题到多平台发布与数据复盘，编排十个模块完成自媒体内容生产闭环，坚持人工确认与证据优先。 |

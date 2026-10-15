@@ -1,0 +1,3 @@
+# Loose Connector Snap-Back Scene Prompt
+
+Use the reference identity exactly. Landscape modern color rubber-hose tech cartoon. Cable Juggler repairs a loose connector. Same comma-curl hair, cobalt jacket, white shirt with orange patch, olive belt, red-orange cable hook, mint route spool. A loose cable connector hangs away from the spool; the IP stretches one long rubber-hose arm, hooks the cable, and snaps it back into the spool; the route becomes straight and one mint signal dot glows. Clean dark outline, bright flat colors, simple background, clear problem-action-result. No text, no speech bubbles, no vintage franchise imitation, no white gloves, no creepy mascot.

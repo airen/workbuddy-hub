@@ -32,7 +32,8 @@ category: content-creation
 | **① 选题情报** | 热点、竞品、素材采集 | `creator-ops-topic-scout` | 选题清单 + 证据包 |
 | **② 内容生产** | 文案 + 视觉 | `creator-ops-copywriter` / `creator-ops-visual` | 平台原生文案 + 配图组 |
 | **③ 视频制片** | 口播剪辑、切片、字幕 | `creator-ops-video` | 成片 + 封面 |
-| **④ 多平台发布** | 分发到各平台 | `creator-ops-publisher` | 发布包 / 已发布 |
+| **④ 多平台发布** | 分发到各平台（含技术社区长文） | `creator-ops-publisher` | 发布包 / 草稿 / 已发布 |
+| **⑤ 数据复盘** | 数据回看、下一轮迭代 | `creator-ops-analyst` | 复盘报告 + 下一轮选题 |
 | **⑤ 数据复盘** | 数据回看、下一轮迭代 | `creator-ops-analyst` | 复盘报告 + 下一轮选题 |
 
 **环节②的文案与视觉可以并行**（同一份大纲，一个写一个画），其余环节串行。
@@ -203,6 +204,7 @@ category: content-creation
 | 技能 | 何时加载 |
 |---|---|
 | `self-media-wechat-publisher` | 公众号发布编排 |
+| `tech-community-publisher` | CSDN / 掘金 / 知乎 / 公众号的发布交底与后台数据回收 |
 | `self-media-video-publisher` | 多平台视频发布编排 |
 | `baoyu-post-to-wechat` | 公众号排版并发布 |
 | `baoyu-post-to-weibo` | 微博发布 |
@@ -236,6 +238,7 @@ category: content-creation
 | `baoyu-md` / `baoyu-chrome-cdp` / `baoyu-fetch`（npm 包） | `baoyu-post-to-wechat`、`baoyu-post-to-weibo`、`baoyu-post-to-x`、`baoyu-url-to-markdown` | 在各技能的 `scripts/` 目录里 `bun install` 或 `npm install` |
 | `auto-editor`（Nim CLI） | 4 个 `auto-editor*` 技能 | 见 `creator-toolbox` |
 | `sau`（social-auto-upload CLI） | 4 个 `*-upload` 技能 | 见 `creator-toolbox` |
+| `media`（MediaManager CLI） | `tech-community-publisher` | 先跑 `media workspace show`；上游**未声明 LICENSE**，需自行获取 |
 
 **先验证再承诺**。用户说「帮我发到抖音」时，先确认 `sau` 能不能跑；跑不了就直说，并给替代方案（手动导出发布包），不要假装完成了。
 

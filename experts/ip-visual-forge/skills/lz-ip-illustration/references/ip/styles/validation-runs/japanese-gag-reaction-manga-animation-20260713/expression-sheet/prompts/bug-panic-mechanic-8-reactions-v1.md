@@ -1,0 +1,3 @@
+# 8-Reaction Expression Sheet Prompt
+
+Use the reference image identity exactly. Create a clean 2x4 expression sheet of the same original character, Bug Panic Mechanic, in Japanese gag-reaction manga-animation style. Same hair hook, teal work jacket, cream shirt with red warning triangle, mustard belt, coral clipboard, mint tester. Eight half-body reactions, no text: normal explaining; huge shock eyes open mouth; panic sweat and elastic arms; deadpan line eyes; smug win; defeated slump with dizzy stars; refocus determined; relieved exhale. Clean dark contour, bright flat colors, funny exaggerated faces, stable identity. No franchise imitation, no blue robot cat, no speech bubbles, no glossy anime, no chibi stickers.

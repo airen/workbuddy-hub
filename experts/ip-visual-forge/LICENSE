@@ -1,0 +1,172 @@
+# ip-visual-forge — 许可与归属 / License & Attribution
+
+本专家包（`ip-visual-forge`）由两部分组成：
+
+1. **本包新写的编排层**——`.codebuddy-plugin/plugin.json`、`agents/ip-visual-forge.md`、
+   `skills/ip-visual-router/`、`README.md`、`avatars/`、本 `LICENSE` 文件。
+2. **原样搬运的上游技能内容**——`skills/` 下 7 个技能目录内的 `SKILL.md`、
+   `references/`、`templates/`、`assets/`、`examples/`、`scripts/`、`docs/` 等文件，
+   逐字取自下列上游仓库（仅有两处技术性追加，见文末「本包对上游内容做过的改动」）。
+
+编排层与本包随附的上游内容**分别适用其各自的许可**，说明如下。
+
+---
+
+## 一、MIT 许可的上游（3 个）
+
+### 1. `skills/ip-character-designer/` — 取自 Beatatata/ip-character-designer
+
+```
+MIT License
+
+Copyright (c) 2026 TATALAB
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
+
+### 2. `skills/ip-as-logo/` — 取自 s1dashu/ip-as-logo-skill
+
+```
+MIT License
+
+Copyright (c) 2026 s1dashu
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
+
+### 3. `skills/ip-diagram-creator/` — 取自 haloshin/ip-diagram-creator
+
+```
+MIT License
+
+Copyright (c) 2026 ip-diagram-creator contributors
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
+
+---
+
+## 二、⚠️ 非商业许可的上游（1 个）——**上架前必须确认**
+
+### `skills/punk-ip-article-illustrations/` — 取自 adrianpunk/punk-ip-illustrations
+
+该上游**不是 MIT**。其 `LICENSE` 原文摘要如下（全文见上游仓库的
+`LICENSE`、`LICENSE-PERSONAL.md`、`LICENSE-ASSETS`、`COMMERCIAL-LICENSE.md`，
+本包未随附这些文件，请以 <https://github.com/adrianpunk/punk-ip-illustrations> 为准）：
+
+> **Punk IP Illustrations License**
+> Copyright (c) 2026 Adrian Punk. All rights reserved.
+>
+> Punk IP Illustrations 以 **Punk IP Illustrations Personal Use License 1.0** 提供。
+> **个人、非商业用途免费。任何商业用途都需要同时满足：**
+> 1. 事先取得许可方的书面授权；且
+> 2. 全额支付适用的商业许可费用。
+>
+> 历史上以 MIT 许可分发过的旧版本副本，仍适用其随附的 MIT 许可（见 `LICENSE-MIT-LEGACY`）。
+
+**这意味着：**
+
+- 个人、非商业用途使用该技能**免费**。
+- **任何商业用途**（包括但不限于把它打包进商业产品、付费服务、企业内训、
+  代客交付）**必须**先向原作者取得书面授权并付费。
+- 该技能内置的角色资产（`assets/punk-character-sheet.png`、
+  `assets/punk-character-reference-clean.png`）另受 `LICENSE-ASSETS` 约束。
+- 若本专家包要用于商业场景或作为商业产品上架，**应当先移除该技能**，
+  或先取得 Adrian Punk 的书面商业授权。
+
+---
+
+## 三、⚠️ 上游未声明许可（3 个）——**上架前必须确认**
+
+以下 3 个上游仓库**没有 LICENSE 文件，README 里也没有任何许可声明**。
+按著作权法默认，未声明许可 = **保留所有权利（All rights reserved）**，
+并未授予复制、修改、再分发或商用的许可。本包随附其内容，是作为**个人本地使用**
+的整理；若要将本专家包公开分发或商业使用，**应当先取得原作者授权**。
+
+| 包内路径 | 上游仓库 | 上游许可状态 |
+|---|---|---|
+| `skills/comic-ip-onboarder/` | <https://github.com/irenerachel/comic-ip-onboarder-skill> | 无 LICENSE，README 无许可声明 |
+| `skills/lz-ip-illustration/` | <https://github.com/xing006/lz-ip-illustration> | 无 LICENSE，README 无许可声明 |
+| `skills/editorial-ip-visuals/` | <https://github.com/zaoshangduziteng/Editorial-IP-Visuals> | 无 LICENSE，README 无许可声明 |
+
+---
+
+## 四、本包对上游内容做过的改动
+
+除下列两处**技术性追加**外，上游技能正文**一字未改**：
+
+1. **补 frontmatter 字段**：上游 `SKILL.md` 的 frontmatter 只有 `name` + `description`
+   （`lz-ip-illustration` 另有 `version`）。WorkBuddy 上架校验要求每个嵌套技能的
+   frontmatter 必须含 `name`、`description`、`version`、`category`，因此为缺失的
+   技能补了 `version: 1.0.0` 与 `category`（`design-tools` 或 `content-creation`）。
+   正文未改。
+2. **目录名对齐 frontmatter 的 `name`**：上游仓库名与技能 `name` 不一致的，包内目录
+   取 `name` 的值（`comic-ip-onboarder-skill` → `comic-ip-onboarder`；
+   `ip-as-logo-skill` → `ip-as-logo`；`punk-ip-illustrations` →
+   `punk-ip-article-illustrations`；`Editorial-IP-Visuals` → `editorial-ip-visuals`）。
+   技能内部的相对引用（`references/…`、`templates/…`）因此保持零改写可解析。
+
+另外，为控制包体积，做了这些**减量**处理（不影响技能逻辑）：
+
+- 体积较大的示例/展示图片统一缩到长边 1200px 的 JPEG（q82）；身份关键资产
+  （Punk 角色设定板与干净参考图、`editorial-ip-visuals` 的默认 IP 参考图）保留原图。
+- 同一张图同时存在 `.png` 与 `.webp` 两个版本时，只保留体积更小的 `.webp`。
+- 未收录纯 QA 证据用的 `lz-ip-illustration/references/ip/styles/validation-runs/**/images/`
+  与 `lz-ip-illustration/examples/style-atlas/images/*` 逐张风格图（保留了 5 张批次接触表）。
+- 未收录各上游仓库的仓库治理文件（`.gitignore`、`CONTRIBUTING.md`、`CLA.md`、
+  `THIRD_PARTY_NOTICES.md`）与 OpenAI 运行时配置 `agents/openai.yaml`。
+
+---
+
+## 五、免责
+
+本包为上游开源/公开内容的**个人使用整理与编排**，不对上游内容的准确性、合法性
+或适用性作任何担保。使用前请自行核对各上游仓库的最新许可条款。

@@ -1,0 +1,53 @@
+{
+  "name": "ip-visual-forge",
+  "version": "1.0.0",
+  "description": "Character IP visual director: turns a photo, a plush toy, an existing mascot, or a single line of persona into a reusable personal-IP character, then keeps that same character recognizable across articles, scenes, and platforms. Routes across seven bundled IP skills (character onboarding / from-scratch design / avatar-and-logo mark / photo-to-article illustrations / long-term cross-platform reuse / character-driven knowledge diagrams / whole-article editorial visual system), locks one identity anchor plus one visual spec before any generation, and runs a consistency gate on every image.",
+  "author": {
+    "name": "大漠",
+    "email": "damo@example.com"
+  },
+  "agents": ["./agents/ip-visual-forge.md"],
+  "skills": [
+    "./skills/ip-visual-router",
+    "./skills/comic-ip-onboarder",
+    "./skills/ip-character-designer",
+    "./skills/ip-as-logo",
+    "./skills/punk-ip-article-illustrations",
+    "./skills/lz-ip-illustration",
+    "./skills/ip-diagram-creator",
+    "./skills/editorial-ip-visuals"
+  ],
+
+  "expertType": "agent",
+  "agentName": "ip-visual-forge",
+
+  "displayName": {
+    "en": "Yan Ding",
+    "zh": "颜定"
+  },
+  "profession": {
+    "en": "Character IP Visual Director",
+    "zh": "角色IP视觉统筹"
+  },
+  "displayDescription": {
+    "en": "Builds one reusable character from a photo or a single line of persona, then keeps it recognizable across every article, scene and platform.",
+    "zh": "从一张照片或一句人设开始，建立可复用角色档案，再按文章、场景或平台产出风格统一的配图与图解。"
+  },
+  "avatar": "avatars/ip-visual-forge.jpg",
+  "categoryId": "06-ContentCreative",
+  "defaultInitPrompt": {
+    "zh": "我只有一张自拍，想做一个能长期复用的文章配图角色",
+    "en": "I only have a selfie — build me a reusable character for article illustrations"
+  },
+  "plugin": "ip-visual-forge",
+  "tags": [
+    { "en": "Character IP Consistency", "zh": "角色IP一致性" },
+    { "en": "Article Illustration & Diagrams", "zh": "文章配图与图解" },
+    { "en": "Character Profile & Visual Spec", "zh": "角色档案与视觉规范" }
+  ],
+  "quickPrompts": [
+    { "en": "I only have a selfie — build me a reusable character for article illustrations", "zh": "我只有一张自拍，想做一个能长期复用的文章配图角色" },
+    { "en": "Turn this article into one unified visual set: cover + 1:1 thumbnail + body diagrams", "zh": "把这篇文章做成一套统一视觉：封面 + 1:1 缩略图 + 正文论证图" },
+    { "en": "Use my character to make knowledge diagrams that explain one method", "zh": "用我的角色做几张知识图解，把一个方法论讲清楚" }
+  ]
+}

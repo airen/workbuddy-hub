@@ -1,0 +1,22 @@
+id: ip-visual-forge
+name: 颜定
+version: 1.0.0
+type: expert
+expert_type: agent
+description: 从一张照片或一句人设开始，建立可复用角色档案，再按文章、场景或平台产出风格统一的配图与图解。
+category: content
+skills:
+- ip-visual-router
+- comic-ip-onboarder
+- ip-character-designer
+- ip-as-logo
+- punk-ip-article-illustrations
+- lz-ip-illustration
+- ip-diagram-creator
+- editorial-ip-visuals
+tags:
+- 角色IP一致性
+- 文章配图与图解
+- 角色档案与视觉规范
+status: active
+platform_category: 06-ContentCreative

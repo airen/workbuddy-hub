@@ -1,0 +1,3 @@
+# Visual Master Prompt
+
+Modern color rubber-hose tech cartoon portrait visual master, original IP Cable Juggler. Rounded human workflow mechanic, dark comma-curl hair, dot eyes, cobalt blue short jacket, warm white shirt with small orange lightning patch, olive tool belt, red-orange cable hook, mint green route spool. Clean dark outlines, bright flat colors, simple shading, neutral background. Stable neutral explaining pose with slightly flexible tube-like limbs. No text. No named cartoon imitation, no Mickey/Felix/Cuphead/Bendy, no black-white nostalgia, no white gloves, no creepy mascot, no glossy 3D.

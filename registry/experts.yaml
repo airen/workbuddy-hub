@@ -355,6 +355,30 @@ experts:
   platform_category: 06-ContentCreative
   _source: manifest.yaml
   path: experts/growth-demand-studio
+- id: ip-visual-forge
+  name: 颜定
+  version: 1.0.0
+  type: expert
+  expert_type: agent
+  description: 从一张照片或一句人设开始，建立可复用角色档案，再按文章、场景或平台产出风格统一的配图与图解。
+  category: content
+  skills:
+  - ip-visual-router
+  - comic-ip-onboarder
+  - ip-character-designer
+  - ip-as-logo
+  - punk-ip-article-illustrations
+  - lz-ip-illustration
+  - ip-diagram-creator
+  - editorial-ip-visuals
+  tags:
+  - 角色IP一致性
+  - 文章配图与图解
+  - 角色档案与视觉规范
+  status: active
+  platform_category: 06-ContentCreative
+  _source: manifest.yaml
+  path: experts/ip-visual-forge
 - id: lao-dao-editor
   name: 老刀
   version: 1.1.0
@@ -513,7 +537,7 @@ experts:
   path: experts/spec-driven-dev
 - id: tuwen-forge
   name: 墨匠
-  version: 1.1.2
+  version: 1.0.0
   type: expert
   expert_type: agent
   description: 用代码把内容、故事或主题精确排成可直接发布的中文图文：单图、整套轮播、公众号封面与长图，风格可自选也可自动匹配。
