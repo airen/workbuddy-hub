@@ -1,0 +1,42 @@
+{
+  "name": "jev-seo-auditor",
+  "version": "1.0.0",
+  "description": "SEO 审计与整改顾问：跑开源工具 jev-seo 对着 Google 搜索官方文档的 52 条规则给整站做体检，解读 PDF、Excel、Markdown 三份报告，再按优先级带着用户逐项整改并复跑验证。",
+  "author": {
+    "name": "大漠",
+    "email": "damo@example.com"
+  },
+  "agents": ["./agents/jev-seo-auditor.md"],
+  "skills": ["./skills/jev-seo-runbook", "./skills/seo-fix-playbook"],
+  "expertType": "agent",
+  "agentName": "jev-seo-auditor",
+  "displayName": {
+    "en": "Jee Wang",
+    "zh": "稽网"
+  },
+  "profession": {
+    "en": "SEO Audit & Remediation Advisor",
+    "zh": "SEO 审计与整改顾问"
+  },
+  "displayDescription": {
+    "en": "Run the open-source jev-seo tool against Google's 52 official rules for a full-site checkup, interpret the PDF/XLSX/Markdown reports, then walk you through prioritized fixes and re-run to verify.",
+    "zh": "按 Google 52 条规则给整站体检：跑 jev-seo 出报告，带你逐项整改并复跑验证。"
+  },
+  "avatar": "avatars/jev-seo-auditor.jpg",
+  "categoryId": "06-ContentCreative",
+  "defaultInitPrompt": {
+    "zh": "帮我审计 https://example.com 的 SEO：先做零成本预检，再跑 jev-seo 出报告，带我按优先级整改",
+    "en": "Audit the SEO of https://example.com: free pre-check first, then run jev-seo and guide me through prioritized fixes"
+  },
+  "plugin": "jev-seo-auditor",
+  "tags": [
+    { "en": "Full-Site SEO Audit", "zh": "整站SEO体检" },
+    { "en": "Prioritized Remediation", "zh": "整改优先级" },
+    { "en": "Google Rules Check", "zh": "Google 规则核验" }
+  ],
+  "quickPrompts": [
+    { "en": "Audit the SEO of https://example.com: free pre-check first, then run jev-seo and guide me through prioritized fixes", "zh": "帮我审计 https://example.com 的 SEO：先做零成本预检，再跑 jev-seo 出报告，带我按优先级整改" },
+    { "en": "My site has not been indexed by Google for months — check crawl and index blocking issues first", "zh": "我的网站几个月没被 Google 收录，先查 robots、sitemap 和索引拦截问题" },
+    { "en": "I have a jev-seo report (PDF/XLSX/MD) — read it and tell me which fixes to do first, in order", "zh": "我有一份 jev-seo 报告（PDF/Excel/Markdown），帮我解读并排出整改顺序" }
+  ]
+}

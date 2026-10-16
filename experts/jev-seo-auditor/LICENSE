@@ -1,0 +1,36 @@
+MIT License
+
+Copyright (c) 2026 大漠
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+---
+
+## 归属说明（Attribution）
+
+本专家包（jev-seo-auditor）是围绕开源项目 **jev-seo**（https://github.com/AgriciDaniel/jev-seo，MIT License，Copyright (c) AgriciDaniel）构建的**原创编排层内容**：本包未复制、未修改、未再分发 jev-seo 的任何代码、数据或报告模板，仅把该工具的运行方式、成本口径、报告解读与整改方法论整理为 WorkBuddy 专家形态。使用本专家前，用户需自行从上游仓库安装 jev-seo 并自行承担其 API 费用与条款。
+
+本包引用的公开方法论与数据来源：
+
+- **Google Search Central 文档**（developers.google.com/search）—— 52 条规则区域划分与各整改项的官方出处依据；
+- **web.dev / Core Web Vitals 文档**（web.dev/articles/vitals）—— LCP / INP / CLS 阈值与优化口径；
+- **llms.txt**（llmstxt.org）—— 社区提案标准，非 Google 官方标准，本包中已如实标注；
+- **jev-seo 上游实测数据**（2026-09-22，见其 README）—— 分数稳定性、盲审一致性与成本口径，引用时已注明测量条件与限定。
+
+第三方服务（TypeSafe Jev、DataForSEO、Google PageSpeed Insights）各有自己的服务条款，不在本包授权范围内。本包不为任何上游项目或第三方服务背书。

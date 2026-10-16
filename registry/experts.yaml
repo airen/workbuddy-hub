@@ -497,6 +497,24 @@ experts:
   platform_category: 06-ContentCreative
   _source: manifest.yaml
   path: experts/ip-visual-forge
+- id: jev-seo-auditor
+  name: 稽网
+  version: 1.0.0
+  type: expert
+  expert_type: agent
+  description: 按 Google 52 条规则给整站体检：跑 jev-seo 出报告，带你逐项整改并复跑验证。
+  category: content
+  skills:
+  - jev-seo-runbook
+  - seo-fix-playbook
+  tags:
+  - 整站SEO体检
+  - 整改优先级
+  - Google 规则核验
+  status: active
+  platform_category: 06-ContentCreative
+  _source: manifest.yaml
+  path: experts/jev-seo-auditor
 - id: lao-dao-editor
   name: 老刀
   version: 1.1.0

@@ -7,7 +7,7 @@ categories:
   count: 35
 - id: content
   label: 内容生产
-  count: 17
+  count: 18
 - id: design
   label: 设计与视觉
   count: 0
@@ -19,4 +19,4 @@ categories:
   count: 17
 - id: _total
   label: 合计
-  count: 77
+  count: 78
