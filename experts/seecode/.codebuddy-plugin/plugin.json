@@ -1,0 +1,44 @@
+{
+  "name": "seecode",
+  "version": "1.0.0",
+  "description": "Turns a sentence into animated, explorable, export-ready diagrams. Wraps the upstream SeeCode skill: a compact JSON spec in, and the bundled CLI handles layout, motion, checks, brand theming and export to SVG/PNG/GIF/MP4; imports Mermaid, Graphviz, PlantUML, D2, draw.io, Excalidraw, SQL/Prisma/DBML, OpenAPI and CSV.",
+  "author": {
+    "name": "大漠",
+    "email": "damo@example.com"
+  },
+  "agents": ["./agents/seecode.md"],
+  "skills": ["./skills/seecode"],
+
+  "expertType": "agent",
+  "agentName": "seecode",
+
+  "displayName": {
+    "en": "Gu Jian",
+    "zh": "顾见"
+  },
+  "profession": {
+    "en": "Motion Diagram Engineer",
+    "zh": "动态图表工程师"
+  },
+  "displayDescription": {
+    "en": "Turns a description into one of 45 animated, explorable diagram types: write a compact JSON spec and layout, motion, checks and export run themselves.",
+    "zh": "把描述变成 45 种可交互动画图表：只写 JSON 规格，布局、动效、质检、导出全自动。"
+  },
+  "avatar": "avatars/seecode.jpg",
+  "categoryId": "02-Engineering",
+  "defaultInitPrompt": {
+    "zh": "把这个系统的架构画成一张可交互的图，标出主要请求路径",
+    "en": "Draw this system's architecture as an interactive diagram and mark the main request path"
+  },
+  "plugin": "seecode",
+  "tags": [
+    { "en": "Diagram Generation", "zh": "图表生成" },
+    { "en": "Technical Visualization", "zh": "技术可视化" },
+    { "en": "Diagram Import & Export", "zh": "图表导入导出" }
+  ],
+  "quickPrompts": [
+    { "en": "Draw this system's architecture as an interactive diagram and mark the main request path", "zh": "把这个系统的架构画成一张可交互的图，标出主要请求路径" },
+    { "en": "Redraw docs/architecture.mmd as a SeeCode-style diagram and export it as SVG", "zh": "把 docs/architecture.mmd 重绘成 SeeCode 风格的图并导出 SVG" },
+    { "en": "Draw an isometric exploded view of an AI agent stack", "zh": "用等距 3D 画一个 AI Agent 技术栈的爆炸分解图" }
+  ]
+}

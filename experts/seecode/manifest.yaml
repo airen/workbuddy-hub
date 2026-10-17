@@ -1,0 +1,15 @@
+id: seecode
+name: 顾见
+version: 1.0.0
+type: expert
+expert_type: agent
+description: 把描述变成 45 种可交互动画图表：只写 JSON 规格，布局、动效、质检、导出全自动。
+category: development
+skills:
+- seecode
+tags:
+- 图表生成
+- 技术可视化
+- 图表导入导出
+status: active
+platform_category: 02-Engineering

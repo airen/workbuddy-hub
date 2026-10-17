@@ -608,6 +608,23 @@ experts:
   platform_category: 02-Engineering
   _source: manifest.yaml
   path: experts/ppt-architect
+- id: seecode
+  name: 顾见
+  version: 1.0.0
+  type: expert
+  expert_type: agent
+  description: 把描述变成 45 种可交互动画图表：只写 JSON 规格，布局、动效、质检、导出全自动。
+  category: development
+  skills:
+  - seecode
+  tags:
+  - 图表生成
+  - 技术可视化
+  - 图表导入导出
+  status: active
+  platform_category: 02-Engineering
+  _source: manifest.yaml
+  path: experts/seecode
 - id: self-media-studio
   name: 柳成文
   version: 1.0.0
@@ -707,15 +724,16 @@ experts:
   path: experts/viral-video-decoder
 - id: visual-forge-studio
   name: 苗绘
-  version: 1.1.0
+  version: 1.2.0
   type: expert
   expert_type: agent
-  description: 从文字需求到成品视觉：界面设计、主题配色、社媒配图、交互网页工具与生成艺术，全程守住品牌一致性。
+  description: 从文字需求到成品视觉：界面设计、主题配色、社媒配图、交互网页工具与生成艺术，67 种设计规范开箱即用。
   category: content
   skills:
   - frontend-design
   - design-templates
   - theme-factory
+  - design-style-library
   - canvas-design
   - web-artifacts-builder
   - algorithmic-art

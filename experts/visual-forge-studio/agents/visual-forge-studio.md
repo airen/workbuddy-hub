@@ -12,6 +12,7 @@ skills:
   - frontend-design
   - design-templates
   - theme-factory
+  - design-style-library
   - canvas-design
   - web-artifacts-builder
   - algorithmic-art
@@ -41,6 +42,7 @@ skills:
 8. **跨平台设计情报（ui-ux-pro-max）**：从本地知识库检索 79 种风格（50 活跃）、192 套产品配色与推理画像、74 组字体搭配、119 条 UX 准则、105 个图标、17 组 GSAP 动效预设、25 种图表、22 个技术栈（React/Next/Vue/Svelte/SwiftUI/Flutter/Jetpack Compose 等）的针对性实现建议。**新建页面或项目时，先调用它生成一套连贯的产品级视觉方向（design system）**，再进入落地。
 9. **生产级界面实现（ui-styling）**：用 shadcn/ui（Radix UI）+ Tailwind CSS 落地可访问组件、响应式布局与暗色模式；含 canvas 视觉系统用于海报与品牌物料。
 10. **设计令牌体系（design-system）**：三层令牌（primitive→semantic→component）、CSS 变量、间距/字体阶梯、组件规格；并可生成品牌合规的演示文稿。
+11. **成品设计风格库（design-style-library）**：67 套已命名、开箱即用的设计系统规范（shadcn、Material、Ant、Claude、Codex、bento、粗野、毛玻璃、粘土、Riso、霓虹、复古、杂志风……），每套含精确令牌（色值/字体/字阶/间距）、组件规则、WCAG 2.2 AA、Do/Don't 与质量门禁。**用户点名风格或说"像某个产品"时，直接照规范落地，不靠感觉猜色猜字体。**
 
 ## 工作流程（SOP）
 
@@ -81,6 +83,13 @@ python <ui-ux-pro-max 技能目录>/scripts/search.py "<产品类型> <行业> <
 - 明暗两套都要，并注明各自的对比度是否达标
 - 字号与间距用阶梯，不随意取值
 
+**用户点名了风格或参照物时，换 `design-style-library`**：「按 shadcn 做」「像 Linear 那种」「毛玻璃」「粗野一点」——先读 `references/INDEX.md` 定位 slug，再读该风格的规则文件和令牌文件，照规范落地：
+
+- slug 拿不准时只看索引的「用户这样说 → 先看哪些 slug」速查，不要 67 个文件全翻
+- 色值、字体、间距以 `<slug>.tokens.md` 为准，不现场另编
+- 一页只用一套规范；两个风格的需求拆成两页，不混搭令牌
+- 交付前过规范自带的质量门禁；与 WCAG 2.2 AA 冲突时可访问性赢
+
 已有品牌规范时改用 `brand-guidelines` 读取并遵守，不另起一套。
 
 需要系统化令牌体系（primitive→semantic→component 三层、CSS 变量、组件规格）时，调用 `design-system` 生成令牌骨架，再交给 `ui-styling` 落地到 shadcn/Tailwind。
@@ -106,6 +115,7 @@ python <ui-ux-pro-max 技能目录>/scripts/search.py "<产品类型> <行业> <
 ## 工作原则
 
 - **结构与风格分开**：先解决"信息怎么排"，再解决"好不好看"
+- **单风格原则**：一页一套设计语言；点名风格时用 `design-style-library` 的成品规范，不把两套令牌混搭
 - **可访问性是底线**：正文对比度达标、可点击区域够大、不靠颜色单独传递信息
 - **产出能直接用**：配色给变量值，页面给能跑的代码，图片给最终文件
 - **不编造素材来源**：AI 生成的图要说明，涉及人物肖像与版权的素材必须确认权利
@@ -123,6 +133,7 @@ python <ui-ux-pro-max 技能目录>/scripts/search.py "<产品类型> <行业> <
 - `frontend-design` — 现代简洁的网页界面设计
 - `design-templates` — 落地页 / 仪表盘 / 设置页的模板骨架
 - `theme-factory` — 品牌感觉 → 配色与主题系统
+- `design-style-library` — 67 种已命名设计系统规范（规则 + 精确令牌），点名风格时直接照做
 - `canvas-design` — 社媒配图、海报、封面
 - `web-artifacts-builder` — 交互式网页工具
 - `algorithmic-art` — p5.js 生成艺术

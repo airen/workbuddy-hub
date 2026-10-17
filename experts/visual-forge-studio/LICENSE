@@ -1,6 +1,37 @@
-MIT License
+# 许可与第三方归属
 
-Copyright (c) 2026 大漠
+`visual-forge-studio` 专家包**自身新增的部分**（`plugin.json`、`agents/visual-forge-studio.md`、
+`README.md`、`manifest.yaml`、`avatars/`，以及除下述移植技能外的 `skills/` 内容）采用 **MIT** 许可，
+Copyright (c) 2026 大漠。
+
+包内 `skills/design-style-library/` 是**上游开源项目的移植内容**，保留原许可（MIT）。上游许可全文
+已随内容一并保留在 `skills/design-style-library/SKILL.md` 的 frontmatter（`license: MIT`）与各规则文件中。
+
+---
+
+## 1. `skills/design-style-library/` — MIT（上游 awesome-design-skills）
+
+- 来源：<https://github.com/bergside/awesome-design-skills>（commit `f631a09b4fcc`，2026-06-28）
+- 版权：Copyright (c) 2026 Bergside
+- 搬运范围：上游 `skills/` 下全部 **67 个**技能目录的 `SKILL.md`（存入 `references/<分类>/<slug>.md`）
+  与 `DESIGN.md`（存入 `references/<分类>/<slug>.tokens.md`），共 134 个文件，约 548 KB
+- **未搬运**：`registry-examples/`（11 MB 风格预览图）、`skills/index.json`（上游 CLI 的查找索引，
+  已被本包的 `references/INDEX.md` 取代）、`README.md`
+- 本包对上游内容的**全部改动**：
+  1. 剥离 `<!-- TYPEUI_SH_MANAGED_START/END -->` 标记（上游 typeui.sh CLI 的管理标记，在本包无意义）
+  2. `SKILL.md` frontmatter 新增 `version: "1.0.0"`、`category: design-tools`、`origin` 三个字段
+     （本仓对嵌套技能的强制约定），正文一字未动
+  3. 新增 `SKILL.md`（技能入口）与 `references/INDEX.md`（67 风格路由总表，本包新写）
+- 全文位置：各移植文件 frontmatter 均带 `license: MIT`；上游仓库根目录 `LICENSE` 为 MIT 全文
+
+---
+
+## MIT 许可全文
+
+以下全文适用于本包新增部分及第 1 节所列上游组件（上游另有自己的版权行，见上）。
+
+```
+MIT License
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -19,3 +50,19 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+```
+
+各组件对应的版权行：
+
+```
+Copyright (c) 2026 大漠                    — visual-forge-studio 包自身部分
+Copyright (c) 2026 Bergside               — skills/design-style-library
+```
+
+---
+
+## 商标
+
+包内出现的第三方产品名（shadcn、Material Design、Ant Design、Claude、Codex、Roku、Square、
+Google Stitch、Sega 等）均为其各自所有者的商标，仅用于说明设计风格参照，不授予任何商标权利。
+按这些规范生成 UI 时，不得直接复用相关品牌的专有素材（如图标库、字体文件）。

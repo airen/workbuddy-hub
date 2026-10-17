@@ -1,0 +1,68 @@
+# 许可与第三方归属
+
+`seecode` 专家包**自身新增的部分**（`.codebuddy-plugin/plugin.json`、`agents/seecode.md`、
+`README.md`、`manifest.yaml`、`avatars/`）采用 **MIT** 许可。
+
+包内 `skills/seecode/` 是**上游开源项目的移植内容**，保留原许可（MIT）。上游许可全文已随内容
+一并保留在技能目录内（见第 1 节「全文位置」）。
+
+---
+
+## 1. `skills/seecode/` — MIT（上游 SeeCode，v0.6.1）
+
+- 来源：<https://github.com/Aryanutkarsh/SeeCode>（`skills/seecode/` 与 `examples/specs/`）
+- 版权：Copyright (c) 2026 Aryanutkarsh
+- 原样搬运：`SKILL.md`、`references/**`、`schemas/**`、`scripts/**`（`seecode.mjs`、`lib/`、`vendor/`）、
+  `assets/**`、`LICENSE`；`examples/specs/**` 取自上游 `examples/specs/`
+- **未搬运**：上游仓库根目录的 `commands/`、`tools/`、`test/`、`docs/`、`branding/`、`package.json`
+  （服务于上游仓库自身的斜杠命令、图库构建、测试与站点，不属于技能运行所需）
+- 本包对上游内容的**唯一改动**：在 `SKILL.md` frontmatter 中新增 `version: "0.6.1"` 与
+  `category: development-tools` 两个字段（本仓对嵌套技能的强制约定），正文一字未动
+- 全文位置：`skills/seecode/LICENSE`
+
+---
+
+## MIT 许可全文
+
+以下全文适用于本包新增部分及第 1 节所列上游组件（上游另有自己的版权行，见上）。
+
+```
+MIT License
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
+
+上游组件对应的版权行：
+
+```
+Copyright (c) 2026 Aryanutkarsh             — skills/seecode
+```
+
+---
+
+## 第三方运行时说明
+
+生成的 HTML 图表默认从 Google Fonts 加载字体、从 CDN 加载 GIF/MP4 编码器（上游行为，未改动）；
+浏览器内导出 PNG/JPEG/GIF/MP4 需本地 Chrome/Edge。这些均非本包代码，本包未打包任何第三方运行时依赖
+（上游徽章：Zero dependencies）。
+
+## 商标
+
+包内出现的第三方产品名（Mermaid、Graphviz、PlantUML、D2、draw.io、Excalidraw、Kafka、Postgres、
+Stripe 等）均为其各自所有者的商标，仅用于说明所支持的导入格式与示例，不授予任何商标权利。

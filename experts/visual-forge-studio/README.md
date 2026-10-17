@@ -1,6 +1,6 @@
 # 视觉设计工坊（visual-forge-studio）
 
-从一段文字需求到成品视觉：界面设计、主题配色、社媒配图、交互网页工具与生成艺术，全程守住品牌一致性。
+从一段文字需求到成品视觉：界面设计、主题配色、社媒配图、交互网页工具与生成艺术；内置 67 种已命名设计系统规范（精确令牌 + 组件规则 + 无障碍 + 质量门禁），点名风格即可照做，全程守住品牌一致性。
 
 > 素材来源：一份按用途整理的 Claude Skills 清单（Anthropic 官方仓库、Awesome Design、社区市场等公开来源），本包按其方法论重写为可在 WorkBuddy 直接执行的形式。
 
@@ -15,13 +15,14 @@
 - **可访问性是底线**：对比度达标、可点击区域够大、不靠颜色单独传递信息
 - **限制要明说**：AI 生成要注明，肖像与版权不猜
 
-## 内置技能（12 个）
+## 内置技能（13 个）
 
 | 技能 | 做什么 |
 |---|---|
 | `frontend-design` | 现代简洁的网页界面：层级 → 动线 → 布局 → 断点 → 可访问性 |
 | `design-templates` | 落地页 / 仪表盘 / 设置页 / 表单的模板骨架，填完即用 |
 | `theme-factory` | 一句话品牌感觉 → 配色 + 字体 + 间距，落到 CSS 变量或 Tailwind，明暗两套 |
+| `design-style-library` | 67 种已命名设计系统规范（规则 + 精确令牌 + WCAG 2.2 AA + 质量门禁），点名风格时直接照做 |
 | `canvas-design` | 社媒配图、海报、封面，按平台尺寸与缩略效果检查 |
 | `web-artifacts-builder` | 交互式仪表盘、计算器、单文件离线工作台 |
 | `algorithmic-art` | p5.js 生成艺术：噪声场、粒子、分形，参数可控可复现 |
@@ -66,4 +67,6 @@
 
 ## 许可
 
-MIT
+MIT。其中 `skills/design-style-library/`（67 个设计的规则与令牌参考）移植自
+[bergside/awesome-design-skills](https://github.com/bergside/awesome-design-skills)（MIT，© Bergside），
+归属与搬运范围详见本目录 `LICENSE`。

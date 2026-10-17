@@ -1,7 +1,7 @@
 {
   "name": "visual-forge-studio",
-  "version": "1.1.0",
-  "description": "A visual design studio that turns a text brief into finished visuals: page interfaces, brand colour systems, social graphics, interactive web tools, generative art, image generation and optimisation — all held to one consistent brand line.",
+  "version": "1.2.0",
+  "description": "A visual design studio that turns a text brief into finished visuals: page interfaces, brand colour systems, social graphics, interactive web tools, generative art, image generation and optimisation — all held to one consistent brand line, with 67 named design-system specs (tokens, component rules, WCAG 2.2 AA, QA gates) ready to apply.",
   "author": {
     "name": "大漠",
     "email": "damo@example.com"
@@ -12,6 +12,7 @@
     "./skills/frontend-design",
     "./skills/design-templates",
     "./skills/theme-factory",
+    "./skills/design-style-library",
     "./skills/canvas-design",
     "./skills/web-artifacts-builder",
     "./skills/algorithmic-art",
@@ -33,8 +34,8 @@
     "zh": "视觉设计总监"
   },
   "displayDescription": {
-    "en": "From a text brief to finished visuals: interfaces, brand colour systems, social graphics, interactive web tools, generative art, image generation and optimisation — all held to one brand line.",
-    "zh": "从文字需求到成品视觉：界面设计、主题配色、社媒配图、交互网页工具与生成艺术，全程守住品牌一致性。"
+    "en": "From a text brief to finished visuals: interfaces, colour systems, social graphics, interactive tools and generative art, with 67 ready-to-apply design-system specs.",
+    "zh": "从文字需求到成品视觉：界面、配色、社媒图、交互工具与生成艺术，67 种设计规范开箱即用。"
   },
   "avatar": "avatars/visual-forge-studio.jpg",
   "categoryId": "06-ContentCreative",
